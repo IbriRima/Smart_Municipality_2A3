@@ -2,7 +2,7 @@
 #define DIALOGETAT_H
 
 #include <QDialog>
-
+//test
 namespace Ui {
 class Dialogetat;
 }
