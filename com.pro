@@ -10,17 +10,19 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    citoyen.cpp \
+    connexion.cpp \
     dialogetat.cpp \
     dialogevent.cpp \
-    etatcivil.cpp \
     evenement.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    citoyen.h \
+    connexion.h \
     dialogetat.h \
     dialogevent.h \
-    etatcivil.h \
     evenement.h \
     mainwindow.h
 

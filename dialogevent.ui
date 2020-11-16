@@ -16,14 +16,14 @@
   <widget class="QStackedWidget" name="stackedWidge_etat">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>50</y>
+     <x>90</x>
+     <y>40</y>
      <width>771</width>
      <height>391</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page_list">
     <widget class="QPushButton" name="pushButton">
@@ -105,6 +105,11 @@
      </row>
      <column>
       <property name="text">
+       <string>Identifiant</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>Nom</string>
       </property>
      </column>
@@ -155,45 +160,50 @@
      </column>
      <item row="0" column="0">
       <property name="text">
-       <string>Hanfi</string>
+       <string>AKT23</string>
       </property>
      </item>
      <item row="0" column="1">
       <property name="text">
-       <string>Nardine</string>
+       <string>Hanfi</string>
       </property>
      </item>
      <item row="0" column="2">
       <property name="text">
-       <string>Femme</string>
+       <string>Nardine</string>
       </property>
      </item>
      <item row="0" column="3">
       <property name="text">
-       <string/>
+       <string>Femme</string>
       </property>
      </item>
      <item row="0" column="4">
       <property name="text">
-       <string>Tunis</string>
+       <string/>
       </property>
      </item>
      <item row="0" column="5">
       <property name="text">
-       <string>nardine.hanfi@esprit.tn</string>
+       <string>Tunis</string>
       </property>
      </item>
      <item row="0" column="6">
       <property name="text">
-       <string>94212389</string>
+       <string>nardine.hanfi@esprit.tn</string>
       </property>
      </item>
      <item row="0" column="7">
       <property name="text">
-       <string>modifier</string>
+       <string>94212389</string>
       </property>
      </item>
      <item row="0" column="8">
+      <property name="text">
+       <string>modifier</string>
+      </property>
+     </item>
+     <item row="0" column="9">
       <property name="text">
        <string>supprimer</string>
       </property>
@@ -244,7 +254,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>60</y>
+       <y>80</y>
        <width>55</width>
        <height>16</height>
       </rect>
@@ -257,7 +267,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>100</y>
+       <y>120</y>
        <width>55</width>
        <height>16</height>
       </rect>
@@ -270,7 +280,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>180</y>
+       <y>190</y>
        <width>111</width>
        <height>16</height>
       </rect>
@@ -283,7 +293,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>220</y>
+       <y>230</y>
        <width>111</width>
        <height>16</height>
       </rect>
@@ -296,7 +306,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>140</y>
+       <y>150</y>
        <width>91</width>
        <height>16</height>
       </rect>
@@ -309,7 +319,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>260</y>
+       <y>280</y>
        <width>101</width>
        <height>16</height>
       </rect>
@@ -322,7 +332,7 @@
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>50</y>
+       <y>80</y>
        <width>113</width>
        <height>22</height>
       </rect>
@@ -332,7 +342,7 @@
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>90</y>
+       <y>110</y>
        <width>113</width>
        <height>22</height>
       </rect>
@@ -342,7 +352,7 @@
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>170</y>
+       <y>190</y>
        <width>110</width>
        <height>22</height>
       </rect>
@@ -352,7 +362,7 @@
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>130</y>
+       <y>150</y>
        <width>113</width>
        <height>22</height>
       </rect>
@@ -362,7 +372,7 @@
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>250</y>
+       <y>270</y>
        <width>113</width>
        <height>22</height>
       </rect>
@@ -372,7 +382,7 @@
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>210</y>
+       <y>230</y>
        <width>113</width>
        <height>22</height>
       </rect>
@@ -382,7 +392,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>300</y>
+       <y>320</y>
        <width>71</width>
        <height>16</height>
       </rect>
@@ -395,7 +405,30 @@
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>290</y>
+       <y>310</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>50</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Identifiant unique</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_id">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>50</y>
        <width>113</width>
        <height>22</height>
       </rect>

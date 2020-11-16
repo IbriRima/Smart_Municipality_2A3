@@ -1,6 +1,7 @@
 #include "dialogevent.h"
 #include "ui_dialogevent.h"
 #include<QMessageBox>
+#include "citoyen.h"
 Dialogevent::Dialogevent(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialogevent)
@@ -42,10 +43,24 @@ void Dialogevent::on_pushButton_clicked()
 
 void Dialogevent::on_pushButton_save_clicked()
 {
+    //recupération des information saisies
+    int id= ui->input_id->text().toInt();
+    QString nom= ui->input_nom->text();
+    QString prenom= ui->input_prenom->text();
+    QString sexe= ui->input_sexe->text();
+    QString date= ui->input_naissance->text();
+    QString lieu= ui->input_lieu->text();
+    QString mail= ui->input_mail->text();
+    int tel= ui->input_tel->text().toInt();
+    Citoyen C(id,nom,prenom,sexe,date,lieu,mail,tel); //instancier un objet de la classe citoyen
+    bool test=C.ajouter(); //insertion de citoyen dans la table
+    if (test)
+    {
     QMessageBox msgB;
     msgB.setText("Le citoyen a été enregistré avec succes ");
     msgB.exec();
     ui->stackedWidge_etat->setCurrentIndex(0);
+    }
 }
 
 void Dialogevent::on_pushButton_cancel_clicked()
