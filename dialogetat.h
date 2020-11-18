@@ -1,6 +1,6 @@
 #ifndef DIALOGETAT_H
 #define DIALOGETAT_H
-
+#include "evenement.h"
 #include <QDialog>
 //test
 namespace Ui {
@@ -33,8 +33,15 @@ private slots:
 
     void on_Menu_clicked();
 
+    void on_pushButton_maj_event_clicked();
+
+    void on_pushButton_del_event_clicked();
+
+    void on_pushButton_mail_clicked();
+
 private:
     Ui::Dialogetat *ui;
+    Evenement Etmp;
 };
 
 #endif // DIALOGETAT_H

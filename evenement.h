@@ -11,6 +11,7 @@
 class Evenement
 {   private :
     int Id_event;
+    QString Nom_event;
     QString Type_event;
     QString Date_event;
     QString Horaire_event;
@@ -19,9 +20,10 @@ class Evenement
       public :
      //constructeurs
      Evenement();
-     Evenement(QString,QString,QString,QString,QString,QString);
+     Evenement(int,QString,QString,QString,QString,QString,QString);
      //setters
      void setId(int id) {Id_event=id;}
+     void setNom(QString nom) {Nom_event=nom;}
      void setType(QString type) {Type_event=type;}
      void setDate(QString date) {Date_event=date;}
      void setHor(QString hor) {Horaire_event=hor;}
@@ -29,6 +31,7 @@ class Evenement
      void setEtat(QString etat) {Etat_event=etat;}
      //getters
      int getId(){return Id_event;}
+     QString getNom(){return Nom_event;}
      QString getType(){return Type_event;}
      QString getDate(){return Date_event;}
      QString getHor(){return Horaire_event;}

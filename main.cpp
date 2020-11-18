@@ -2,6 +2,8 @@
 #include <QApplication>
 #include "connexion.h"
 #include<QMessageBox>
+#include "dialogetat.h"
+#include "dialogevent.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -20,7 +22,7 @@ int main(int argc, char *argv[])
                     QObject::tr("connection failed.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
-
+   // Dialogevent D;
 
     return a.exec();
 }

@@ -43,8 +43,8 @@ public:
     int getTel(){return Tel_cit;}
     //fonctionnalités de base
     bool ajouter();
-    QSqlQueryModel * afficher();
     bool supprimer(int);
+    QSqlQueryModel * afficher();
     //fonctionnalités avancées
 };
 

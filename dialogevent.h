@@ -2,7 +2,7 @@
 #define DIALOGEVENT_H
 
 #include <QDialog>
-
+#include "citoyen.h"
 namespace Ui {
 class Dialogevent;
 }
@@ -32,8 +32,15 @@ private slots:
 
     void on_Menu_clicked();
 
+    void on_pushButton_maj_cit_clicked();
+
+    void on_pushButton_del_cit_clicked();
+
+    void on_pushButton_impression_clicked();
+
 private:
     Ui::Dialogevent *ui;
+    Citoyen Ctmp;
 };
 
 #endif // DIALOGEVENT_H
