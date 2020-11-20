@@ -34,8 +34,19 @@
       <family>Jokerman</family>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">#stackedWidget_Environnement {
+background-color:  trasparent; 
+border-image:url(:background.jpg); 
+background: none;
+border:none; 
+background-repeat: none;
+}
+
+</string>
+    </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="Sous_Menu_Env">
      <property name="styleSheet">
@@ -1391,6 +1402,9 @@ background-repeat: none;
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="displayFormat">
+       <string>HH:mm:ss</string>
+      </property>
       <property name="calendarPopup">
        <bool>true</bool>
       </property>
@@ -1534,8 +1548,38 @@ background-repeat: none;
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="maximumDateTime">
+       <datetime>
+        <hour>23</hour>
+        <minute>59</minute>
+        <second>59</second>
+        <year>2020</year>
+        <month>12</month>
+        <day>31</day>
+       </datetime>
+      </property>
+      <property name="minimumDateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2004</year>
+        <month>9</month>
+        <day>14</day>
+       </datetime>
+      </property>
+      <property name="currentSection">
+       <enum>QDateTimeEdit::DaySection</enum>
+      </property>
       <property name="calendarPopup">
-       <bool>true</bool>
+       <bool>false</bool>
+      </property>
+      <property name="date">
+       <date>
+        <year>2020</year>
+        <month>1</month>
+        <day>1</day>
+       </date>
       </property>
      </widget>
      <widget class="QLabel" name="label_7">
@@ -2066,7 +2110,7 @@ background-repeat: none;
        </datetime>
       </property>
       <property name="calendarPopup">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="date">
        <date>
@@ -2158,6 +2202,9 @@ background-repeat: none;
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+      <property name="displayFormat">
+       <string>HH:mm:ss</string>
       </property>
      </widget>
      <widget class="QSpinBox" name="spinBox_NbPoubelle_AJ">
@@ -3630,7 +3677,131 @@ background-repeat: none;
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page"/>
+    <widget class="QWidget" name="page">
+     <widget class="QChartView" name="graphicsView">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>180</y>
+        <width>241</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>192</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView_StatR">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>181</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#tableView_StatR {
+background-color: transparent;
+border-image: url(:LL.jpg);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ExtendedSelection</enum>
+      </property>
+      <property name="textElideMode">
+       <enum>Qt::ElideMiddle</enum>
+      </property>
+      <property name="gridStyle">
+       <enum>Qt::NoPen</enum>
+      </property>
+     </widget>
+     <widget class="QChartView" name="graphicsView_2">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>170</y>
+        <width>241</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>192</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>580</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>40</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>En fonction de la date du ramassage</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_2">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>70</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>En fonction de la durée du ramassage</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>20</y>
+        <width>231</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Nombre de poubelles ramassées</string>
+      </property>
+     </widget>
+     <zorder>groupBox_3</zorder>
+     <zorder>graphicsView</zorder>
+     <zorder>tableView_StatR</zorder>
+     <zorder>graphicsView_2</zorder>
+     <zorder>pushButton_2</zorder>
+     <zorder>checkBox</zorder>
+     <zorder>checkBox_2</zorder>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -3645,6 +3816,13 @@ background-repeat: none;
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header>QtCharts</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

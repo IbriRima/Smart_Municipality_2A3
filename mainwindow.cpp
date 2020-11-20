@@ -17,7 +17,14 @@
 #include <QMovie>
 #include <QSize>
 #include <QSortFilterProxyModel>
-
+#include <QtCharts>
+#include <QChartView>
+#include <QLineSeries>
+#include <QVXYModelMapper>
+#include <QtCore>
+#include <QHeaderView>
+#include <QGridLayout>
+#include <QtWidgets/QTableView>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -54,9 +61,17 @@ ui->lineEdit_Aire_ZV_AJ->setValidator(new QIntValidator(0,99999, this));
 
 
 //Affichage des tabView
-  ui->tableView_ZV ->setModel(tmpZV.afficher());
-  ui->tableView_Ramas->setModel(tmpR.afficher());
+     ui->tableView_ZV ->setModel(tmpZV.afficher());
+     ui->tableView_ZV ->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
+
+
+  ui->tableView_Ramas->setModel(tmpR.afficher());
+  ui->tableView_Ramas->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+
+ui->tableView_StatR->setModel(tmpR.afficherSTAT());
+ui->tableView_StatR->adjustSize();
 
 
 //Delete gif
@@ -324,6 +339,7 @@ void MainWindow::on_pushButton_Close_Envir_clicked()
 void MainWindow::on_pushButton_Close_Envir_2_clicked()
 {
        QApplication::quit();
+
 }
 
 void MainWindow::on_pushButton_Close_Envir_3_clicked()
@@ -716,7 +732,7 @@ void MainWindow::on_pushButton_SaveR_MAJ_clicked()
    Matricule=ui->lineEdit_Matricule_MAJ->text();
 
     Nom_Cartier=ui->comboBox_NomCartier_MAJ->currentText();
-    Date=ui->dateEditR_MAJ->date().toString();
+    Date=ui->dateEditR_MAJ->date().toString("dd/MM/yyyy");
     Heure=ui->timeEdit_DebMAJ->time().toString();
     Duree=ui->timeEdit_DureeMAJ->time().toString();
 
@@ -746,7 +762,6 @@ ui->lineEdit_NomCartier_Aff->setText(Nom_Cartier);
 ui->lineEdit_HeureDebut_Aff->setText(Heure);
 ui->stackedWidget_Environnement->setCurrentIndex(1);
   }
-
 
 
 
@@ -803,5 +818,160 @@ ui->groupBox_2->setTitle("");
 
 void MainWindow::on_pushButton_Mail_clicked()
 {
+
+}
+
+void MainWindow::on_pushButton_StatR_clicked()
+{
+
+   ui->stackedWidget_Environnement->setCurrentIndex(7);
+   ui->graphicsView->hide();
+          ui->graphicsView_2->hide();
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+
+}
+
+void MainWindow::on_checkBox_stateChanged(int arg1)
+{
+    QBarSet *set0 = new QBarSet("start");
+
+               ui->tableView_StatR->setModel(tmpR.afficherSTAT());
+           ui->tableView_StatR->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+
+
+                QStringList list, list2;
+
+
+
+                qDebug()<<"Col   "<< ui->tableView_StatR->model()->columnCount();
+                  qDebug()<<"row   "<< ui->tableView_StatR->model()->rowCount();
+
+                  for( int row = 0; row < ui->tableView_StatR->model()->rowCount(); ++row )
+                    {
+
+                       QModelIndex index2 =ui->tableView_StatR->model()->index(row,2);
+                         list.append(index2.data().toString());
+
+                         QModelIndex index =ui->tableView_StatR->model()->index(row,1);
+
+                   qDebug()<<"Index1   "<<index.data().toInt();
+                    qDebug()<<"Index2   "<<index2.data().toString();
+             //ui->aff_trait->insertRow(ui->aff_trait->rowCount());
+               //int ligne=ui->aff_trait->rowCount()-1;
+
+           *set0<<index.data().toInt();
+
+             }
+
+
+
+               ui->stackedWidget_Environnement->setCurrentIndex(7);
+
+
+            QBarSeries *series = new QBarSeries();
+                 series->append(set0);
+
+                QChart *chart = new QChart;
+                 chart->addSeries(series);
+                 chart->setTitle("First essay ");
+            chart->setAnimationOptions(QChart::AllAnimations);
+
+            QBarCategoryAxis *axis= new QBarCategoryAxis();
+            axis->append(list);
+            chart->createDefaultAxes();
+
+            chart->setAxisX(axis,series);
+            chart->legend()->setVisible(true);
+            chart->legend()->setAlignment(Qt::AlignBottom);
+    if(arg1)
+     {
+ui->graphicsView->show();
+
+
+        ui->graphicsView->setChart(chart);
+        ui->graphicsView->setRenderHint(QPainter::Antialiasing);
+        ui->graphicsView->setMinimumSize(460,380);
+    }
+        else
+        {
+
+
+ui->graphicsView->hide();
+        }
+
+
+
+}
+
+
+
+void MainWindow::on_checkBox_2_stateChanged(int arg1)
+{   QBarSet *set0 = new QBarSet("start");
+
+    ui->tableView_StatR->setModel(tmpR.afficherSTAT());
+   ui->tableView_StatR->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+
+
+     QStringList list, list2;
+
+
+
+     qDebug()<<"Col   "<< ui->tableView_StatR->model()->columnCount();
+       qDebug()<<"row   "<< ui->tableView_StatR->model()->rowCount();
+
+       for( int row = 0; row < ui->tableView_StatR->model()->rowCount(); ++row )
+         {
+
+            QModelIndex index2 =ui->tableView_StatR->model()->index(row,0);
+              list.append(index2.data().toString());
+
+              QModelIndex index =ui->tableView_StatR->model()->index(row,1);
+
+        qDebug()<<"Index1   "<<index.data().toInt();
+         qDebug()<<"Index2   "<<index2.data().toString();
+  //ui->aff_trait->insertRow(ui->aff_trait->rowCount());
+    //int ligne=ui->aff_trait->rowCount()-1;
+
+*set0<<index.data().toInt();
+
+  }
+
+
+
+    ui->stackedWidget_Environnement->setCurrentIndex(7);
+
+
+ QBarSeries *series = new QBarSeries();
+      series->append(set0);
+
+     QChart *chart = new QChart;
+      chart->addSeries(series);
+      chart->setTitle("First essay ");
+ chart->setAnimationOptions(QChart::AllAnimations);
+
+ QBarCategoryAxis *axis= new QBarCategoryAxis();
+ axis->append(list);
+ chart->createDefaultAxes();
+
+ chart->setAxisX(axis,series);
+ chart->legend()->setVisible(true);
+ chart->legend()->setAlignment(Qt::AlignBottom);
+   if(arg1)
+   {ui->graphicsView_2->show();
+
+
+ui->graphicsView_2->setChart(chart);
+ui->graphicsView_2->setRenderHint(QPainter::Antialiasing);
+ui->graphicsView_2->setMinimumSize(350,380);
+   }
+   else
+   {
+       ui->graphicsView_2->hide();
+   }
 
 }

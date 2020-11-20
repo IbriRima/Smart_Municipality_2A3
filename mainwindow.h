@@ -112,6 +112,16 @@ void on_lineEdit_recherche_R_returnPressed();
 
 void on_pushButton_Mail_clicked();
 
+void on_pushButton_StatR_clicked();
+
+void on_pushButton_2_clicked();
+
+
+
+void on_checkBox_stateChanged(int arg1);
+
+void on_checkBox_2_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;

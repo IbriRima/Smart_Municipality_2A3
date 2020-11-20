@@ -1,4 +1,4 @@
-QT       += core gui sql multimedia
+QT       += core gui sql multimedia charts
 CONFIG += console
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,6 +14,7 @@ SOURCES += \
     mainwindow.cpp \
     ramassage.cpp \
     zone_verte.cpp
+
 
 HEADERS += \
     connection.h \
