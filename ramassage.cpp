@@ -26,9 +26,9 @@ query.bindValue(":Matricule",getMatricule());
 query.bindValue(":ID_chauffeur",getIdchauffeur());
 query.bindValue(":ID_empl1",getId_empl1());
 query.bindValue(":ID_empl2",getId_empl2());
-query.bindValue(":date",getDate().toString("dd/MM/yyyy"));
+query.bindValue(":date",getDate());
 query.bindValue(":nb_p",getNbPoubelle());
-query.bindValue(":duree",getDuree().toString());
+query.bindValue(":duree",getDuree().toString("HH:mm"));
 query.bindValue(":cartier",getNom_cartier());
 query.bindValue(":heure", getHdepart().toString());
 
@@ -129,8 +129,8 @@ return model;
 QSqlQueryModel * Ramassage ::afficherSTAT()
 {
     QSqlQueryModel *model= new QSqlQueryModel();
-    model->setQuery("SELECT DUREE,NOMBRE_POUBELLE,DATE_RAMASSAGE FROM RAMASSAGE ");
-model->setHeaderData(0,Qt::Horizontal,QObject::tr("Duree"));
+    model->setQuery("SELECT ID_RAMASSAGE,NOMBRE_POUBELLE,DATE_RAMASSAGE FROM RAMASSAGE ");
+model->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
 model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nombre de poubelle"));
 model->setHeaderData(2,Qt::Horizontal,QObject::tr("Date"));
 return model;

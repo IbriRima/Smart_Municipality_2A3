@@ -59,7 +59,7 @@ ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher");
 ui->lineEdit_Aire_ZV_AJ->setValidator(new QIntValidator(0,99999, this));
  ui->lineEdit_Aire_MAJ_ZV->setValidator(new QIntValidator(0,99999, this));
 
-
+ ui->tableWidget->hide();
 //Affichage des tabView
      ui->tableView_ZV ->setModel(tmpZV.afficher());
      ui->tableView_ZV ->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -156,10 +156,10 @@ R.setIdChauffeur(ui->lineEdit_IDChauffeurAJ->text());
 R.setMatricule(ui->lineEdit_MatriculeAJ->text());
 R.setId_Ramassage(ui->lineEdit_IDRamassage_AJ->text());
 R.setNom_cartier(ui->comboBox_AdresseAJ->currentText());
-R.setDate(ui->dateEditR_AJ->date());
+R.setDate(ui->dateEditR_AJ->date().toString(("dd/MM/yyyy")));
 R.setHdepart(ui->timeEdit_DebAJ->time());
 R.setDuree(ui->timeEdit_DureeAJ->time());
-R.setNb_Poubelle(ui->spinBox_NbPoubelle_AJ->cleanText());
+R.setNb_Poubelle(ui->spinBox_NbPoubelle_AJ->text());
 R.setId_empl1(ui->lineEdit_IDEmpl1_Rama->text());
 R.setId_empl2(ui->lineEdit_IDEmpl2_Rama->text());
 
@@ -668,11 +668,11 @@ void MainWindow::on_pushButton_MAJ_Ramas_clicked()
     ui->lineEdit_IDChauffeurMAJ->setText( ui->lineEdit_IDChauffeur_Aff->text());
     ui->lineEdit_IDEmpl1_MAJRama->setText(ui->lineEdit_IDEmploye1_Aff->text());
     ui->lineEdit_IDEmpl2_MAJRama->setText( ui->lineEdit_IDEmploye2_Aff->text());
-    ui->dateEditR_MAJ->setDate(QDate::fromString(ui->lineEdit_Date_Aff->text(),"dd/MM/yyyy"));
+    ui->dateEditR_MAJ->setDate(QDate::fromString(ui->lineEdit_Date_Aff->text()));
     ui->spinBox_NbPoubelle_MAJ->setValue(ui->lineEdit_NbPoubelle_Aff->text().toInt());
-    ui->timeEdit_DureeMAJ->setTime( QTime::fromString(ui->lineEdit_Duree_Aff->text(),"HH:mm:ss"));
+    ui->timeEdit_DureeMAJ->setTime( QTime::fromString(ui->lineEdit_Duree_Aff->text(),"HH:mm"));
     ui->comboBox_NomCartier_MAJ->setCurrentText(ui->lineEdit_NomCartier_Aff->text());
-    ui->timeEdit_DebMAJ->setTime( QTime::fromString(ui->lineEdit_HeureDebut_Aff->text(),"HH:mm:ss"));
+    ui->timeEdit_DebMAJ->setTime( QTime::fromString(ui->lineEdit_HeureDebut_Aff->text(),"HH:mm"));
     ui->lineEdit_IDRamassage_MAJ->setDisabled(true);
     }
 }
@@ -734,10 +734,8 @@ void MainWindow::on_pushButton_SaveR_MAJ_clicked()
     Nom_Cartier=ui->comboBox_NomCartier_MAJ->currentText();
     Date=ui->dateEditR_MAJ->date().toString("dd/MM/yyyy");
     Heure=ui->timeEdit_DebMAJ->time().toString();
-    Duree=ui->timeEdit_DureeMAJ->time().toString();
-
-
-    Nb_poubelle=ui->spinBox_NbPoubelle_MAJ->cleanText();
+    Duree=ui->timeEdit_DureeMAJ->time().toString("HH:mm");
+    Nb_poubelle=ui->spinBox_NbPoubelle_MAJ->text();
     id_empl1=ui->lineEdit_IDEmpl1_MAJRama->text();
     id_empl2=ui->lineEdit_IDEmpl2_MAJRama->text();
     bool test= tmpR.Modifier(ID,Matricule,Id_chauffeur,id_empl1,id_empl2,Date,Nb_poubelle,Nom_Cartier,Duree,Heure);
@@ -825,153 +823,113 @@ void MainWindow::on_pushButton_StatR_clicked()
 {
 
    ui->stackedWidget_Environnement->setCurrentIndex(7);
-   ui->graphicsView->hide();
-          ui->graphicsView_2->hide();
-}
-
-void MainWindow::on_pushButton_2_clicked()
-{
-
-}
-
-void MainWindow::on_checkBox_stateChanged(int arg1)
-{
-    QBarSet *set0 = new QBarSet("start");
-
-               ui->tableView_StatR->setModel(tmpR.afficherSTAT());
-           ui->tableView_StatR->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
 
 
-                QStringList list, list2;
+          QStringList list1;
+         QStringList list, list2;
+         QVector<Ramassage> tab;
+         Ramassage R;
+
+            ui->tableView_StatR->setModel(tmpR.afficherSTAT());
+
+            QStringList Titres;
+
+                Titres <<"Identifiant du ramassage" <<"Nombre de poubelle"<<"Duree";
+                                 ui->tableWidget->setHorizontalHeaderLabels(Titres);
 
 
-
-                qDebug()<<"Col   "<< ui->tableView_StatR->model()->columnCount();
-                  qDebug()<<"row   "<< ui->tableView_StatR->model()->rowCount();
-
-                  for( int row = 0; row < ui->tableView_StatR->model()->rowCount(); ++row )
-                    {
-
-                       QModelIndex index2 =ui->tableView_StatR->model()->index(row,2);
-                         list.append(index2.data().toString());
-
-                         QModelIndex index =ui->tableView_StatR->model()->index(row,1);
-
-                   qDebug()<<"Index1   "<<index.data().toInt();
-                    qDebug()<<"Index2   "<<index2.data().toString();
-             //ui->aff_trait->insertRow(ui->aff_trait->rowCount());
-               //int ligne=ui->aff_trait->rowCount()-1;
-
-           *set0<<index.data().toInt();
-
-             }
+         for( int row = 0; row < ui->tableView_StatR->model()->rowCount(); ++row )
+                {   ui->tableWidget->setColumnCount(3);
+            ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+          for( int col = 0; col < ui->tableView_StatR->model()->columnCount(); ++col )
+                  {
+                   QModelIndex index =ui->tableView_StatR->model()->index(row,0);
+                    QModelIndex index2 =ui->tableView_StatR->model()->index(row,1);
+                     QModelIndex index3 =ui->tableView_StatR->model()->index(row,2);
+                     list1.append(index.data().toString());
+                    R.setId_Ramassage(index.data().toString());
+                    R.setNb_Poubelle(index2.data().toString());
+                    R.setDate(index3.data().toString());
+         ui->tableWidget->hide();
+        }
+           tab.push_back(R);
+         }
 
 
-
-               ui->stackedWidget_Environnement->setCurrentIndex(7);
-
-
-            QBarSeries *series = new QBarSeries();
-                 series->append(set0);
-
-                QChart *chart = new QChart;
-                 chart->addSeries(series);
-                 chart->setTitle("First essay ");
-            chart->setAnimationOptions(QChart::AllAnimations);
-
-            QBarCategoryAxis *axis= new QBarCategoryAxis();
-            axis->append(list);
-            chart->createDefaultAxes();
-
-            chart->setAxisX(axis,series);
-            chart->legend()->setVisible(true);
-            chart->legend()->setAlignment(Qt::AlignBottom);
-    if(arg1)
-     {
-ui->graphicsView->show();
-
-
-        ui->graphicsView->setChart(chart);
-        ui->graphicsView->setRenderHint(QPainter::Antialiasing);
-        ui->graphicsView->setMinimumSize(460,380);
-    }
-        else
+         for(int k=0;k<tab.size();k++)
         {
+             for(int index=0;index<tab.size();index++)
+
+      {
+        if(tab[index].getDate()==tab[k].getDate()&& k!=index)
+
+        {
+                tab[index].setId_Ramassage("");
+                int x=tab[k].getNbPoubelle().toInt()+tab[index].getNbPoubelle().toInt();
+                QString ch=QVariant(x).toString();
+                   tab[k].setNb_Poubelle(ch);
+          }
 
 
-ui->graphicsView->hide();
+
         }
 
 
+        for(int k=0;k<tab.size();k++)
+
+         list.append(tab[k].getDate());
+
+
+         }
+
+
+
+
+         QBarSet *set0 = new QBarSet("start");
+
+
+
+               for(int k=0;k<tab.size();k++)
+               { if(tab[k].getId_Ramassage()!="")
+
+                *set0<<tab[k].getNbPoubelle().toInt();
+                 }
+
+
+
+           ui->stackedWidget_Environnement->setCurrentIndex(7);
+                 QBarSeries *series = new QBarSeries();
+                      series->append(set0);
+
+                     QChart *chart = new QChart;
+                      chart->addSeries(series);
+                      chart->setTitle("First essay ");
+                 chart->setAnimationOptions(QChart::AllAnimations);
+
+                 QBarCategoryAxis *axis= new QBarCategoryAxis();
+                 axis->append(list);
+
+                 chart->createDefaultAxes();
+
+                 chart->setAxisX(axis,series);
+                 chart->legend()->setVisible(true);
+                 chart->legend()->setAlignment(Qt::AlignBottom);
+
+        ui->graphicsView->show();
+
+
+             ui->graphicsView->setChart(chart);
+             ui->graphicsView->setRenderHint(QPainter::Antialiasing);
+             ui->graphicsView->setMinimumSize(780,480);
+
 
 }
 
 
 
-void MainWindow::on_checkBox_2_stateChanged(int arg1)
-{   QBarSet *set0 = new QBarSet("start");
 
-    ui->tableView_StatR->setModel(tmpR.afficherSTAT());
-   ui->tableView_StatR->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-
-
-
-     QStringList list, list2;
-
-
-
-     qDebug()<<"Col   "<< ui->tableView_StatR->model()->columnCount();
-       qDebug()<<"row   "<< ui->tableView_StatR->model()->rowCount();
-
-       for( int row = 0; row < ui->tableView_StatR->model()->rowCount(); ++row )
-         {
-
-            QModelIndex index2 =ui->tableView_StatR->model()->index(row,0);
-              list.append(index2.data().toString());
-
-              QModelIndex index =ui->tableView_StatR->model()->index(row,1);
-
-        qDebug()<<"Index1   "<<index.data().toInt();
-         qDebug()<<"Index2   "<<index2.data().toString();
-  //ui->aff_trait->insertRow(ui->aff_trait->rowCount());
-    //int ligne=ui->aff_trait->rowCount()-1;
-
-*set0<<index.data().toInt();
-
-  }
-
-
-
-    ui->stackedWidget_Environnement->setCurrentIndex(7);
-
-
- QBarSeries *series = new QBarSeries();
-      series->append(set0);
-
-     QChart *chart = new QChart;
-      chart->addSeries(series);
-      chart->setTitle("First essay ");
- chart->setAnimationOptions(QChart::AllAnimations);
-
- QBarCategoryAxis *axis= new QBarCategoryAxis();
- axis->append(list);
- chart->createDefaultAxes();
-
- chart->setAxisX(axis,series);
- chart->legend()->setVisible(true);
- chart->legend()->setAlignment(Qt::AlignBottom);
-   if(arg1)
-   {ui->graphicsView_2->show();
-
-
-ui->graphicsView_2->setChart(chart);
-ui->graphicsView_2->setRenderHint(QPainter::Antialiasing);
-ui->graphicsView_2->setMinimumSize(350,380);
-   }
-   else
-   {
-       ui->graphicsView_2->hide();
-   }
-
+void MainWindow::on_pushButton_Menu_Environ_Aff_2_clicked()
+{
+        ui->stackedWidget_Environnement->setCurrentIndex(0);
 }

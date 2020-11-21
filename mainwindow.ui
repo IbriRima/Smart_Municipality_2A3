@@ -1403,7 +1403,7 @@ background-repeat: none;
        <set>Qt::AlignCenter</set>
       </property>
       <property name="displayFormat">
-       <string>HH:mm:ss</string>
+       <string>HH:mm</string>
       </property>
       <property name="calendarPopup">
        <bool>true</bool>
@@ -2204,7 +2204,7 @@ background-repeat: none;
        <set>Qt::AlignCenter</set>
       </property>
       <property name="displayFormat">
-       <string>HH:mm:ss</string>
+       <string>HH:mm</string>
       </property>
      </widget>
      <widget class="QSpinBox" name="spinBox_NbPoubelle_AJ">
@@ -3681,8 +3681,8 @@ background-repeat: none;
      <widget class="QChartView" name="graphicsView">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>180</y>
+        <x>330</x>
+        <y>100</y>
         <width>241</width>
         <height>191</height>
        </rect>
@@ -3726,81 +3726,48 @@ background-repeat: none;
        <enum>Qt::NoPen</enum>
       </property>
      </widget>
-     <widget class="QChartView" name="graphicsView_2">
+     <widget class="QPushButton" name="pushButton_Menu_Environ_Aff_2">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>170</y>
-        <width>241</width>
-        <height>191</height>
+        <x>10</x>
+        <y>10</y>
+        <width>41</width>
+        <height>41</height>
        </rect>
       </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>192</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="geometry">
-       <rect>
-        <x>1080</x>
-        <y>580</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_Menu_Environ_Aff_2{
+background-color: transparent;
+border-image: url(:Menu.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
       </property>
       <property name="text">
-       <string>PushButton</string>
+       <string/>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBox">
+     <widget class="QTableWidget" name="tableWidget">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>40</y>
-        <width>211</width>
-        <height>21</height>
+        <x>240</x>
+        <y>400</y>
+        <width>561</width>
+        <height>201</height>
        </rect>
       </property>
-      <property name="text">
-       <string>En fonction de la date du ramassage</string>
+      <property name="editTriggers">
+       <set>QAbstractItemView::AllEditTriggers</set>
+      </property>
+      <property name="rowCount">
+       <number>0</number>
+      </property>
+      <property name="columnCount">
+       <number>0</number>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBox_2">
-      <property name="geometry">
-       <rect>
-        <x>430</x>
-        <y>70</y>
-        <width>211</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>En fonction de la durée du ramassage</string>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>20</y>
-        <width>231</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Nombre de poubelles ramassées</string>
-      </property>
-     </widget>
-     <zorder>groupBox_3</zorder>
-     <zorder>graphicsView</zorder>
-     <zorder>tableView_StatR</zorder>
-     <zorder>graphicsView_2</zorder>
-     <zorder>pushButton_2</zorder>
-     <zorder>checkBox</zorder>
-     <zorder>checkBox_2</zorder>
     </widget>
    </widget>
   </widget>

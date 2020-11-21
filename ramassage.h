@@ -11,7 +11,7 @@ class Ramassage
     QString Nom_cartier;
     QTime H_depart;
     QTime Duree;
-    QDate Date;
+    QString Date;
     QString Nb_Poubelle;
     QString Id_empl1;
     QString Id_empl2;
@@ -37,7 +37,7 @@ QTime getHdepart()
 {return H_depart;}
 QTime getDuree()
 {return Duree;}
-QDate getDate()
+QString getDate()
 {return Date;}
 QString getNbPoubelle()
 {return Nb_Poubelle;}
@@ -55,7 +55,7 @@ void setHdepart(QTime h)
 {H_depart=h; }
 void setDuree(QTime d)
 {Duree=d; }
-void setDate(QDate d)
+void setDate(QString d)
 {Date=d;}
 void setId_Ramassage(QString r)
 {ID_Ramassage=r; }

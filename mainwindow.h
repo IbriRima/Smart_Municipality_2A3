@@ -114,13 +114,8 @@ void on_pushButton_Mail_clicked();
 
 void on_pushButton_StatR_clicked();
 
-void on_pushButton_2_clicked();
 
-
-
-void on_checkBox_stateChanged(int arg1);
-
-void on_checkBox_2_stateChanged(int arg1);
+void on_pushButton_Menu_Environ_Aff_2_clicked();
 
 private:
     Ui::MainWindow *ui;
