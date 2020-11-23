@@ -1,0 +1,43 @@
+<RCC>
+    <qresource prefix="/">
+        <file>champs.png</file>
+        <file>R.png</file>
+        <file>Menu.png</file>
+        <file>background.jpg</file>
+        <file>img1.jpg</file>
+        <file>img2.png</file>
+        <file>Ramassage.png</file>
+        <file>Ramassage.jpg</file>
+        <file>close.png</file>
+        <file>L.jpg</file>
+        <file>List.jpg</file>
+        <file>LL.jpg</file>
+        <file>back2.jpg</file>
+        <file>Annuler2.png</file>
+        <file>Ajouter.png</file>
+        <file>Annuler.png</file>
+        <file>Enregistrer.png</file>
+        <file>edit_R.png</file>
+        <file>envi.png</file>
+        <file>Menu_Principal.png</file>
+        <file>Marche.png</file>
+        <file>Maintenance.png</file>
+        <file>Ress.png</file>
+        <file>Res.png</file>
+        <file>MP.png</file>
+        <file>Ajouter_utilisateur.png</file>
+        <file>Annuler_utilisateur.png</file>
+        <file>b3.jpg</file>
+        <file>ch_utilisateur.jpg</file>
+        <file>ch_utilisateur.png</file>
+        <file>delete.png</file>
+        <file>edit_utilisateur.png</file>
+        <file>Enregistrer_utilisateur.png</file>
+        <file>MP1.png</file>
+        <file>play0003.png</file>
+        <file>utilisateur.jpg</file>
+        <file>utilisateur.png</file>
+        <file>utilisateur1.png</file>
+        <file>utilisateur2.png</file>
+    </qresource>
+</RCC>
