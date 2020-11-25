@@ -64,11 +64,12 @@ void setNb_Poubelle(QString nb)
 
 
 bool ajouter();
+bool affectation(QString);
 QSqlQueryModel* afficher();
 void Remplissage(QString*,QString*,QString*,QString*,QString*,QString*,QString*,QString*,QString*,QString*);
 bool Supprimer(QString ID);
 bool Modifier(QString,QString,QString,QString,QString,QString,QString,QString,QString,QString);
-QSqlQueryModel* Recherche(QString);
+QSqlQueryModel* Recherche(int,QString);
 QSqlQueryModel* afficherSTAT();
 };
 

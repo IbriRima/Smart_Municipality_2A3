@@ -117,6 +117,18 @@ void on_pushButton_StatR_clicked();
 
 void on_pushButton_Menu_Environ_Aff_2_clicked();
 
+
+void on_comboBox_TypeRech_Ramas_currentIndexChanged(int index);
+void on_comboBox_TypeRech_ZV_currentIndexChanged(int index);
+
+
+
+void on_pushButton_MAILR_clicked();
+
+
+
+
+
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;

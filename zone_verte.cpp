@@ -86,18 +86,28 @@ q.exec();
         return   q.exec();
 }
 
-QSqlQueryModel* Zone_Verte::Recherche(QString ch)
-{  QSqlQuery q;
-
-    q.prepare("select * from ZONE_VERTE where IDENTIFIANT= :identifiant");
-
-
+QSqlQueryModel* Zone_Verte::Recherche(int indice,QString ch)
+{
 
     QSqlQueryModel *model= new QSqlQueryModel();
-    model->setQuery("select IDENTIFIANT from ZONE_VERTE where IDENTIFIANT= '"+ch+"' or LIBELLE='"+ch+"'");
+    if(indice==1)
+   {
+        model->setQuery("select IDENTIFIANT from ZONE_VERTE where IDENTIFIANT= '"+ch+"' ");
+   }
+    else if (indice==2)
+    {
+     model->setQuery("select IDENTIFIANT from ZONE_VERTE where LIBELLE='"+ch+"'");
+    }
+    else if (indice==3)
+    {
+     model->setQuery("select IDENTIFIANT from ZONE_VERTE where ADRESSE='"+ch+"'");
+    }
+    else if (indice==4)
+    {
+     model->setQuery("select IDENTIFIANT from ZONE_VERTE where AIRE='"+ch+"'");
+    }
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("IDENTIFIANT"));
-
+      model->setHeaderData(0,Qt::Horizontal,QObject::tr("IDENTIFIANT"));
 return model;
 }
 

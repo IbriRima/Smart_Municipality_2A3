@@ -2,16 +2,31 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1170</width>
-    <height>652</height>
+    <width>1169</width>
+    <height>673</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Javanese Text</family>
+    <pointsize>8</pointsize>
+   </font>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Munifacility Environnement</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
   </property>
   <property name="tabShape">
    <enum>QTabWidget::Triangular</enum>
@@ -32,6 +47,7 @@
     <property name="font">
      <font>
       <family>Jokerman</family>
+      <pointsize>8</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -46,7 +62,7 @@ background-repeat: none;
 </string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="Sous_Menu_Env">
      <property name="styleSheet">
@@ -287,8 +303,8 @@ background-repeat: none;
      <widget class="QLabel" name="label_16">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>20</y>
+        <x>170</x>
+        <y>0</y>
         <width>541</width>
         <height>81</height>
        </rect>
@@ -366,16 +382,16 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_recherche_R">
       <property name="geometry">
        <rect>
-        <x>932</x>
-        <y>20</y>
-        <width>161</width>
-        <height>41</height>
+        <x>790</x>
+        <y>90</y>
+        <width>141</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Javanese Text</family>
-        <pointsize>12</pointsize>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -692,7 +708,7 @@ background-repeat: none;
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du chauffeur &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#09598b;&quot;&gt;CIN du chauffeur &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_41">
@@ -710,7 +726,7 @@ background-repeat: none;
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du 1° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#09598b;&quot;&gt;CIN du 1° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_42">
@@ -728,7 +744,7 @@ background-repeat: none;
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du 2° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#09598b;&quot;&gt;CIN du 2° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_46">
@@ -1118,10 +1134,10 @@ background-repeat: none;
      <widget class="QPushButton" name="pushButton_Icon_serachR">
       <property name="geometry">
        <rect>
-        <x>1050</x>
-        <y>20</y>
-        <width>41</width>
-        <height>41</height>
+        <x>890</x>
+        <y>90</y>
+        <width>31</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1143,7 +1159,7 @@ background-repeat: none;
        <rect>
         <x>110</x>
         <y>160</y>
-        <width>111</width>
+        <width>121</width>
         <height>321</height>
        </rect>
       </property>
@@ -1203,8 +1219,8 @@ background-repeat: none;
      <widget class="QPushButton" name="pushButton_StatR">
       <property name="geometry">
        <rect>
-        <x>970</x>
-        <y>80</y>
+        <x>990</x>
+        <y>30</y>
         <width>75</width>
         <height>61</height>
        </rect>
@@ -1213,6 +1229,62 @@ background-repeat: none;
        <string notr="true">#pushButton_StatR{
 background-color: transparent;
 border-image: url(:LogoStats.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_TypeRech_Ramas">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>51</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Javanese Text</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#comboBox_TypeRech_Ramas{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_MAILR">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>90</y>
+        <width>71</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>47</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_MAILR{
+background-color: transparent;
+border-image:none; 
 background: none;
 border: none;
 background-repeat: none;
@@ -1232,6 +1304,8 @@ background-repeat: none;
      <zorder>pushButton_Icon_serachR</zorder>
      <zorder>tableView_Ramas</zorder>
      <zorder>pushButton_StatR</zorder>
+     <zorder>comboBox_TypeRech_Ramas</zorder>
+     <zorder>pushButton_MAILR</zorder>
     </widget>
     <widget class="QWidget" name="MAJ_Ramas">
      <property name="styleSheet">
@@ -1353,7 +1427,7 @@ background-repeat: none;
        </font>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du chauffeur &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;CIN du chauffeur &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_20">
@@ -1371,7 +1445,7 @@ background-repeat: none;
        </font>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du 1° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;CIN du 1° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QTimeEdit" name="timeEdit_DureeMAJ">
@@ -1563,10 +1637,17 @@ background-repeat: none;
         <hour>0</hour>
         <minute>0</minute>
         <second>0</second>
-        <year>2004</year>
-        <month>9</month>
-        <day>14</day>
+        <year>2000</year>
+        <month>1</month>
+        <day>1</day>
        </datetime>
+      </property>
+      <property name="minimumDate">
+       <date>
+        <year>2000</year>
+        <month>1</month>
+        <day>1</day>
+       </date>
       </property>
       <property name="currentSection">
        <enum>QDateTimeEdit::DaySection</enum>
@@ -1576,7 +1657,7 @@ background-repeat: none;
       </property>
       <property name="date">
        <date>
-        <year>2020</year>
+        <year>2000</year>
         <month>1</month>
         <day>1</day>
        </date>
@@ -1869,7 +1950,7 @@ background-repeat: none;
        </font>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du 2° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;CIN du 2° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_IDChauffeurMAJ">
@@ -2104,10 +2185,17 @@ background-repeat: none;
         <hour>0</hour>
         <minute>0</minute>
         <second>0</second>
-        <year>1970</year>
-        <month>9</month>
-        <day>14</day>
+        <year>2000</year>
+        <month>1</month>
+        <day>1</day>
        </datetime>
+      </property>
+      <property name="minimumDate">
+       <date>
+        <year>2000</year>
+        <month>1</month>
+        <day>1</day>
+       </date>
       </property>
       <property name="calendarPopup">
        <bool>false</bool>
@@ -2149,7 +2237,7 @@ background-repeat: none;
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_AdresseAJ">
+     <widget class="QComboBox" name="comboBox_NomCartier_AJ">
       <property name="geometry">
        <rect>
         <x>310</x>
@@ -2165,7 +2253,7 @@ background-repeat: none;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">#comboBox_AdresseAJ{
+       <string notr="true">#comboBox_NomCartier_AJ{
 background-color: transparent;
 border-image: url(:champs.png);
 background: none;
@@ -2202,6 +2290,23 @@ background-repeat: none;
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+      <property name="maximumTime">
+       <time>
+        <hour>3</hour>
+        <minute>0</minute>
+        <second>0</second>
+       </time>
+      </property>
+      <property name="minimumTime">
+       <time>
+        <hour>0</hour>
+        <minute>10</minute>
+        <second>0</second>
+       </time>
+      </property>
+      <property name="currentSection">
+       <enum>QDateTimeEdit::HourSection</enum>
       </property>
       <property name="displayFormat">
        <string>HH:mm</string>
@@ -2358,7 +2463,7 @@ background-repeat: none;
        </font>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du chauffeur &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;CIN du chauffeur &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_25">
@@ -2412,7 +2517,7 @@ background-repeat: none;
        </font>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du 2° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;CIN du 2° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_28">
@@ -2521,7 +2626,7 @@ background-repeat: none;
        </font>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du 1° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;CIN du 1° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_32">
@@ -2617,8 +2722,8 @@ background-repeat: none;
      <widget class="QLabel" name="label_22">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>40</y>
+        <x>270</x>
+        <y>10</y>
         <width>521</width>
         <height>111</height>
        </rect>
@@ -2705,15 +2810,15 @@ background-repeat: none;
       <property name="geometry">
        <rect>
         <x>930</x>
-        <y>10</y>
-        <width>161</width>
-        <height>41</height>
+        <y>80</y>
+        <width>141</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Javanese Text</family>
-        <pointsize>12</pointsize>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -3091,14 +3196,72 @@ background-repeat: none;
      <widget class="QPushButton" name="pushButton_Icon_serachZV">
       <property name="geometry">
        <rect>
-        <x>1050</x>
-        <y>12</y>
+        <x>1030</x>
+        <y>80</y>
         <width>41</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">#pushButton_Icon_serachZV{
+background-color: transparent;
+border-image: none;
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_TypeRech_ZV">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>40</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Corbel</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#comboBox_TypeRech_ZV{
+background-color: transparent;
+border-image: url(:ch_ZV.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+      <property name="currentText">
+       <string/>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Irrigat">
+      <property name="geometry">
+       <rect>
+        <x>940</x>
+        <y>140</y>
+        <width>111</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_Irrigat {
 background-color: transparent;
 border-image: none;
 background: none;
@@ -3119,6 +3282,8 @@ background-repeat: none;
      <zorder>lineEdit_recherche_ZV</zorder>
      <zorder>tableView_ZV</zorder>
      <zorder>pushButton_Icon_serachZV</zorder>
+     <zorder>comboBox_TypeRech_ZV</zorder>
+     <zorder>pushButton_Irrigat</zorder>
     </widget>
     <widget class="QWidget" name="MAJ_ZV">
      <property name="styleSheet">
@@ -3776,8 +3941,8 @@ background-repeat: none;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1170</width>
-     <height>21</height>
+     <width>1169</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>

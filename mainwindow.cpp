@@ -25,6 +25,9 @@
 #include <QHeaderView>
 #include <QGridLayout>
 #include <QtWidgets/QTableView>
+#include <QSortFilterProxyModel>
+#include <QPrinter>
+#include <QPrintDialog>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -35,15 +38,30 @@ MainWindow::MainWindow(QWidget *parent)
     qDebug() <<this->size();
 
     //Add items to comoBox_AdresseAJ
-ui->comboBox_AdresseAJ->addItem("cartier 1");
-ui->comboBox_AdresseAJ->addItem("cartier 2");
-ui->comboBox_AdresseAJ->addItem("cartier 3");
-ui->comboBox_AdresseAJ->addItem("cartier 4");
 
-ui->comboBox_NomCartier_MAJ->addItem("cartier 1");
-ui->comboBox_NomCartier_MAJ->addItem("cartier 2");
-ui->comboBox_NomCartier_MAJ->addItem("cartier 3");
-ui->comboBox_NomCartier_MAJ->addItem("cartier 4");
+ui->stackedWidget_Environnement->setCurrentIndex(0);
+ui->comboBox_NomCartier_AJ->addItem("EL Menzah 1 ");
+ui->comboBox_NomCartier_AJ->addItem("EL Menzah 4");
+ui->comboBox_NomCartier_AJ->addItem("EL Menzah 5 ");
+ui->comboBox_NomCartier_AJ->addItem("EL Menzah 6");
+ui->comboBox_NomCartier_AJ->addItem("EL Menzah 7");
+ui->comboBox_NomCartier_AJ->addItem("EL Menzah 8");
+ui->comboBox_NomCartier_AJ->addItem("EL Menzah 9");
+ui->comboBox_NomCartier_AJ->addItem("Ennasr 1");
+ui->comboBox_NomCartier_AJ->addItem("Ennasr 2");
+ui->comboBox_NomCartier_AJ->addItem("Riadh andalous");
+
+ui->comboBox_NomCartier_MAJ->addItem("EL Menzah 1 ");
+ui->comboBox_NomCartier_MAJ->addItem("EL Menzah 4");
+ui->comboBox_NomCartier_MAJ->addItem("EL Menzah 5 ");
+ui->comboBox_NomCartier_MAJ->addItem("EL Menzah 6");
+ui->comboBox_NomCartier_MAJ->addItem("EL Menzah 7");
+ui->comboBox_NomCartier_MAJ->addItem("EL Menzah 8");
+ui->comboBox_NomCartier_MAJ->addItem("EL Menzah 9");
+ui->comboBox_NomCartier_MAJ->addItem("Ennasr 1");
+ui->comboBox_NomCartier_MAJ->addItem("Ennasr 2");
+ui->comboBox_NomCartier_MAJ->addItem("Riadh andalous");
+
 ui->comboBox_Adresse_ZV_AJ->addItem("Adresse 1");
 ui->comboBox_Adresse_ZV_AJ->addItem("Adresse 2");
 ui->comboBox_Adresse_ZV_AJ->addItem("Adresse 3");
@@ -53,26 +71,56 @@ ui->comboBox_Adresse_MAJ_ZV->addItem("Adresse 1");
 ui->comboBox_Adresse_MAJ_ZV->addItem("Adresse 2");
 ui->comboBox_Adresse_MAJ_ZV->addItem("Adresse 3");
 ui->comboBox_Adresse_MAJ_ZV->addItem("Adresse 4");
-ui->lineEdit_recherche_R->setPlaceholderText("Chercher");
-ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher");
 
-ui->lineEdit_Aire_ZV_AJ->setValidator(new QIntValidator(0,99999, this));
- ui->lineEdit_Aire_MAJ_ZV->setValidator(new QIntValidator(0,99999, this));
+ui->lineEdit_recherche_R->setPlaceholderText("Chercher ");
+ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher ");
+//Critère Recherche
+ui->comboBox_TypeRech_Ramas->setCurrentIndex(0);
+ui->comboBox_TypeRech_Ramas->addItem("Choississez un critère ");
+ui->comboBox_TypeRech_Ramas->addItem("Identifiant");
+ui->comboBox_TypeRech_Ramas->addItem("Matricule camion");
+ui->comboBox_TypeRech_Ramas->addItem("Date");
+ui->comboBox_TypeRech_Ramas->addItem("Nombre de poubelles");
+ui->comboBox_TypeRech_Ramas->addItem("Duree");
+ui->comboBox_TypeRech_Ramas->addItem("Heure début");
+ui->comboBox_TypeRech_Ramas->addItem("Nom Cartier");
 
- ui->tableWidget->hide();
-//Affichage des tabView
+ui->comboBox_TypeRech_ZV->setCurrentIndex(0);
+ui->comboBox_TypeRech_ZV->addItem("Choississez un critère ");
+ui->comboBox_TypeRech_ZV->addItem("Identifiant");
+ui->comboBox_TypeRech_ZV->addItem("Libellé");
+ui->comboBox_TypeRech_ZV->addItem("Adresse");
+ui->comboBox_TypeRech_ZV->addItem("Aire");
+/******************************/
+
+
+//Contrainte de saisie Aire
+ui->lineEdit_Aire_ZV_AJ->setValidator(new QIntValidator(0,999999, this));
+ui->lineEdit_Aire_MAJ_ZV->setValidator(new QIntValidator(0,999999, this));
+ui->lineEdit_IDChauffeurAJ->setValidator(new QIntValidator(0,99999999, this));
+ui->lineEdit_IDChauffeurMAJ->setValidator(new QIntValidator(0,99999999, this));
+ui->lineEdit_IDEmpl1_MAJRama->setValidator(new QIntValidator(0,99999999, this));
+ui->lineEdit_IDEmpl1_Rama->setValidator(new QIntValidator(0,99999999, this));
+ui->lineEdit_IDEmpl2_MAJRama->setValidator(new QIntValidator(0,99999999, this));
+ui->lineEdit_IDEmpl2_Rama->setValidator(new QIntValidator(0,99999999, this));
+
+
+QRegularExpression rx("[0-9][0-9][0-9]TN[0-9][0-9][0-9][0-9][0-9] ");
+QValidator *validator = new QRegularExpressionValidator(rx, this);
+ui->lineEdit_Matricule_MAJ->setValidator(validator);
+ui->lineEdit_MatriculeAJ->setValidator(validator);
+//Affichage Tab ZV
      ui->tableView_ZV ->setModel(tmpZV.afficher());
      ui->tableView_ZV ->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
 
-
+//Affichage Tab Ramassage
   ui->tableView_Ramas->setModel(tmpR.afficher());
   ui->tableView_Ramas->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
 
-ui->tableView_StatR->setModel(tmpR.afficherSTAT());
-ui->tableView_StatR->adjustSize();
 
+ ui->tableWidget->hide();
 
 //Delete gif
 auto movie = new QMovie(this);
@@ -92,7 +140,6 @@ movie->start();
 movie->setSpeed(200);
 
 
-  /////////////////////////////////
 //Modifier gif
 
   auto movie2 = new QMovie(this);
@@ -113,7 +160,7 @@ movie->setSpeed(200);
     movie2->setSpeed(50);
 
  //Search gif
-    ////////////
+
     auto movie3 = new QMovie(this);
     QSize size2(31,31);
     movie3->setFileName("C:/Users/user/Desktop/Rima/Environnement/loupe_anim.gif");
@@ -131,6 +178,29 @@ movie->setSpeed(200);
     ui->pushButton_Icon_serachR->setIconSize(size2);
     movie3->start();
     movie3->setSpeed(50);
+
+    //Mail gif
+    auto movie4 = new QMovie(this);
+    QSize size3(75,61);
+    movie4->setFileName("C:/Users/user/Desktop/Rima/Environnement/email.gif");
+    connect(movie4, &QMovie::frameChanged, [=]{
+      ui->pushButton_MAILR->setIcon(movie4->currentPixmap());
+
+    });
+    ui->pushButton_MAILR->setIconSize(size3);
+    movie4->start();
+    movie4->setSpeed(190);
+
+    auto movie5 = new QMovie(this);
+    QSize size4(90,71);
+    movie5->setFileName("C:/Users/user/Desktop/Rima/Environnement/irrigation3.gif");
+    connect(movie5, &QMovie::frameChanged, [=]{
+      ui->pushButton_Irrigat->setIcon(movie5->currentPixmap());
+
+    });
+    ui->pushButton_Irrigat->setIconSize(size4);
+    movie5->start();
+    movie5->setSpeed(190);
 
 }
 
@@ -150,12 +220,12 @@ QMediaPlayer *player = new QMediaPlayer;
     player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
     player->setVolume(50);
     player->play();
-
+/*************/
 //Set Values
 R.setIdChauffeur(ui->lineEdit_IDChauffeurAJ->text());
 R.setMatricule(ui->lineEdit_MatriculeAJ->text());
 R.setId_Ramassage(ui->lineEdit_IDRamassage_AJ->text());
-R.setNom_cartier(ui->comboBox_AdresseAJ->currentText());
+R.setNom_cartier(ui->comboBox_NomCartier_AJ->currentText());
 R.setDate(ui->dateEditR_AJ->date().toString(("dd/MM/yyyy")));
 R.setHdepart(ui->timeEdit_DebAJ->time());
 R.setDuree(ui->timeEdit_DureeAJ->time());
@@ -165,32 +235,53 @@ R.setId_empl2(ui->lineEdit_IDEmpl2_Rama->text());
 
 
 if(!(ui->lineEdit_IDChauffeurAJ->text().isEmpty()||ui->lineEdit_MatriculeAJ->text().isEmpty()||ui->lineEdit_IDRamassage_AJ->text().isEmpty()||
-     ui->comboBox_AdresseAJ->currentText().isEmpty()||ui->dateEditR_AJ->date().isNull()||ui->timeEdit_DebAJ->time().isNull()||ui->timeEdit_DureeAJ->time().isNull()||
+     ui->comboBox_NomCartier_AJ->currentText().isEmpty()||ui->dateEditR_AJ->date().isNull()||ui->timeEdit_DebAJ->time().isNull()||ui->timeEdit_DureeAJ->time().isNull()||
     ui->spinBox_NbPoubelle_AJ->cleanText().isEmpty()||ui->lineEdit_IDEmpl1_Rama->text().isEmpty()||ui->lineEdit_IDEmpl2_Rama->text().isEmpty()))
+{   //Ajout
+ bool test= R.ajouter();
+
+ if (test)
 {
-QMessageBox msgB;
-msgB.setText("Le rammasage d'identifiant "+R.getId_Ramassage()+" a bien été enregistré ");
-msgB.exec();
-   //Ajout
-R.ajouter();
+
+ QMessageBox::information(this,"Notification","Le rammasage d'identifiant "+R.getId_Ramassage()+" a bien été enregistré ");
+
+
   //Affichage
  ui->tableView_Ramas->setModel(tmpR.afficher());
+QString ch;
+ bool test1;
+for(int i=0;i<3;i++)
+{if(i==0)
+       { ch=R.getIdchauffeur();
+test1=R.affectation(ch);
+    }
+    else if (i==1)
+    { ch=R.getId_empl1();
+test1=R.affectation(ch);
+ }
+    else if (i==2)
+    { ch=R.getId_empl2();
+test1=R.affectation(ch);
+ }
 
-
-
+}
   //RESET lineEdit
 ui->lineEdit_IDRamassage_AJ->clear();
 ui->lineEdit_IDChauffeurAJ->clear();
 ui->lineEdit_MatriculeAJ->clear();
 ui->dateEditR_AJ->clear();
+
 ui->timeEdit_DureeAJ->clear();
 ui->timeEdit_DebAJ->clear();
+ui->dateEditR_AJ->clear();
 ui->spinBox_NbPoubelle_AJ->clear();
 ui->lineEdit_IDEmpl1_Rama->clear();
 ui->lineEdit_IDEmpl2_Rama->clear();
 
 ui->stackedWidget_Environnement->setCurrentIndex(1);
 
+ }
+else QMessageBox::critical(this,"Alerte","Il ya des données incorrectes! ");
 
 }
 
@@ -396,7 +487,7 @@ void MainWindow::on_pushButton_Environ_pressed()
 
 void MainWindow::on_pushButton_Environ_clicked()
 {
-    ui->stackedWidget_Environnement->setCurrentIndex(1);
+    ui->stackedWidget_Environnement->setCurrentIndex(0);
 }
 
 
@@ -511,7 +602,6 @@ void MainWindow::on_pushButton_RH_pressed()
 
 void MainWindow::on_pushButton_R_clicked()
 {
-
 
 
 
@@ -668,11 +758,13 @@ void MainWindow::on_pushButton_MAJ_Ramas_clicked()
     ui->lineEdit_IDChauffeurMAJ->setText( ui->lineEdit_IDChauffeur_Aff->text());
     ui->lineEdit_IDEmpl1_MAJRama->setText(ui->lineEdit_IDEmploye1_Aff->text());
     ui->lineEdit_IDEmpl2_MAJRama->setText( ui->lineEdit_IDEmploye2_Aff->text());
-    ui->dateEditR_MAJ->setDate(QDate::fromString(ui->lineEdit_Date_Aff->text()));
+
+    qDebug()<<"Date: "<<ui->lineEdit_Date_Aff->text();
+    ui->dateEditR_MAJ->setDate(QDate::fromString(ui->lineEdit_Date_Aff->text(),"dd/MM/yyyy"));
     ui->spinBox_NbPoubelle_MAJ->setValue(ui->lineEdit_NbPoubelle_Aff->text().toInt());
-    ui->timeEdit_DureeMAJ->setTime( QTime::fromString(ui->lineEdit_Duree_Aff->text(),"HH:mm"));
+    ui->timeEdit_DureeMAJ->setTime( QTime::fromString(ui->lineEdit_Duree_Aff->text()));
     ui->comboBox_NomCartier_MAJ->setCurrentText(ui->lineEdit_NomCartier_Aff->text());
-    ui->timeEdit_DebMAJ->setTime( QTime::fromString(ui->lineEdit_HeureDebut_Aff->text(),"HH:mm"));
+    ui->timeEdit_DebMAJ->setTime( QTime::fromString(ui->lineEdit_HeureDebut_Aff->text()));
     ui->lineEdit_IDRamassage_MAJ->setDisabled(true);
     }
 }
@@ -767,33 +859,158 @@ ui->stackedWidget_Environnement->setCurrentIndex(1);
 
 }
 
+void MainWindow::on_comboBox_TypeRech_ZV_currentIndexChanged(int index)
+{
+    if(index==1)
+ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher par Identifiant");
+   else  if(index==2)
+ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher par Libelle");
+    else if (index==3)
+        ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher par Adresse");
+    else if (index==4)
+        ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher par Aire");
+
+}
 
 
 void MainWindow::on_lineEdit_recherche_ZV_returnPressed()
 {
  Zone_Verte z;
-  QString ch;
+  QString ch,ch1;
+    int indice=0;
   ch= ui->lineEdit_recherche_ZV->text();
       ui->lineEdit_ID_Aff_ZV->clear() ;
        ui->lineEdit_Libelle_Aff_ZV->clear();
        ui->lineEdit_Adresse_Aff_ZV->clear();
       ui->lineEdit_Aire_Aff_ZV->clear();
-      if(ch!="")
-       ui->tableView_ZV->setModel(tmpZV.Recherche(ch));
-      else
-         ui->tableView_ZV->setModel(tmpZV.afficher());
+      ui->groupBox->setTitle("");
+ch1=ui->lineEdit_recherche_ZV->placeholderText();
+if(ch1=="Chercher par Identifiant")
+  {
+    indice=1;
+ ui->tableView_ZV->setModel(tmpZV.Recherche(indice,ch));
+ ui->comboBox_TypeRech_ZV->setCurrentIndex(0);
+ ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher ");
 
 }
+else if(ch1=="Chercher par Libelle")
+{
+    indice=2;
+    ui->tableView_ZV->setModel(tmpZV.Recherche(indice,ch));
+    ui->comboBox_TypeRech_ZV->setCurrentIndex(0);
+    ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher ");
+}
+else if(ch1=="Chercher par Adresse")
+{
+    indice=3;
+    ui->tableView_ZV->setModel(tmpZV.Recherche(indice,ch));
+    ui->comboBox_TypeRech_ZV->setCurrentIndex(0);
+    ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher ");
+}
+else if(ch1=="Chercher par Aire")
+{
+    indice=4;
+    ui->tableView_ZV->setModel(tmpZV.Recherche(indice,ch));
+    ui->comboBox_TypeRech_ZV->setCurrentIndex(0);
+    ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher ");
+}
+else if(indice==0 && ch=="")
+{  //
+  ui->tableView_ZV->setModel(tmpZV.afficher());
+}
+else if(indice==0 && ch!="")
+{
+    QMessageBox::critical(this,"Attention","Il faut choisire un critère de recherche");
+}
 
+}
+void MainWindow::on_comboBox_TypeRech_Ramas_currentIndexChanged(int index)
+{
+  if(index==1)
+      ui->lineEdit_recherche_R->setPlaceholderText("Chercher par Identifiant");
+    else if (index==2)
+            ui->lineEdit_recherche_R->setPlaceholderText("Chercher par Matricule");
+       else if (index==3)
+               ui->lineEdit_recherche_R->setPlaceholderText("Chercher par Date");
+          else if (index==4)
+                ui->lineEdit_recherche_R->setPlaceholderText("Chercher par Nombre de poubelle");
+              else if (index==5)
+                  ui->lineEdit_recherche_R->setPlaceholderText("Chercher par Durée");
+                  else if (index==6)
+                       ui->lineEdit_recherche_R->setPlaceholderText("Chercher par Heure Début");
+                          else if (index==7)
+                               ui->lineEdit_recherche_R->setPlaceholderText("Chercher par Nom Cartier");
+}
 void MainWindow::on_lineEdit_recherche_R_returnPressed()
 {
-    QString ch;
+    QString ch,ch1;
+    int indice=0;
   ch= ui->lineEdit_recherche_R->text();
 
-if(ch!="")
- ui->tableView_Ramas->setModel(tmpR.Recherche(ch));
-else
-   ui->tableView_Ramas->setModel(tmpR.afficher());
+ch1=ui->lineEdit_recherche_R->placeholderText();
+if(ch1=="Chercher par Identifiant")
+  {
+    indice=1;
+    ui->tableView_Ramas->setModel(tmpR.Recherche(indice,ch));
+     ui->comboBox_TypeRech_Ramas->setCurrentIndex(0);
+     ui->lineEdit_recherche_R->setPlaceholderText("Chercher ");
+
+}
+else if(ch1=="Chercher par Matricule")
+{
+    indice=2;
+    ui->tableView_Ramas->setModel(tmpR.Recherche(indice,ch));
+     ui->comboBox_TypeRech_Ramas->setCurrentIndex(0);
+     ui->lineEdit_recherche_R->setPlaceholderText("Chercher ");
+}
+else if(ch1=="Chercher par Date")
+{
+    indice=3;
+    ui->tableView_Ramas->setModel(tmpR.Recherche(indice,ch));
+     ui->comboBox_TypeRech_Ramas->setCurrentIndex(0);
+     ui->lineEdit_recherche_R->setPlaceholderText("Chercher ");
+}
+else if(ch1=="Chercher par Nombre de poubelle")
+{
+    indice=4;
+   ui->tableView_Ramas->setModel(tmpR.Recherche(indice,ch));
+    ui->comboBox_TypeRech_Ramas->setCurrentIndex(0);
+    ui->lineEdit_recherche_R->setPlaceholderText("Chercher ");
+}
+else if(ch1=="Chercher par Durée")
+{
+    indice=5;
+    ui->tableView_Ramas->setModel(tmpR.Recherche(indice,ch));
+     ui->comboBox_TypeRech_Ramas->setCurrentIndex(0);
+     ui->lineEdit_recherche_R->setPlaceholderText("Chercher ");
+}
+else if(ch1=="Chercher par Heure Début")
+{
+    indice=6;
+    ui->tableView_Ramas->setModel(tmpR.Recherche(indice,ch));
+     ui->comboBox_TypeRech_Ramas->setCurrentIndex(0);
+     ui->lineEdit_recherche_R->setPlaceholderText("Chercher ");
+}
+else if(ch1=="Chercher par Nom Cartier")
+{
+    indice=7;
+    ui->tableView_Ramas->setModel(tmpR.Recherche(indice,ch));
+     ui->comboBox_TypeRech_Ramas->setCurrentIndex(0);
+     ui->lineEdit_recherche_R->setPlaceholderText("Chercher ");
+}
+else if(indice==0 && ch=="")
+{
+ui->tableView_Ramas->setModel(tmpR.afficher());
+}
+else if(indice==0 && ch!="")
+{
+    QMessageBox::critical(this,"Attention","Il faut choisire un critère de recherche");
+}
+
+
+
+
+
 ui->lineEdit_ID_Ramas_Aff->clear();
 ui->lineEdit_Matricule_Aff->clear();
 ui->lineEdit_IDChauffeur_Aff->clear();
@@ -804,13 +1021,7 @@ ui->lineEdit_NbPoubelle_Aff->clear();
 ui->lineEdit_Duree_Aff->clear();
 ui->lineEdit_NomCartier_Aff->clear();
 ui->lineEdit_HeureDebut_Aff->clear();
-
 ui->groupBox_2->setTitle("");
-
-
-
-
-
 
 }
 
@@ -824,7 +1035,7 @@ void MainWindow::on_pushButton_StatR_clicked()
 
    ui->stackedWidget_Environnement->setCurrentIndex(7);
 
-
+ QBarSet *set0 = new QBarSet("ramassage");
 
           QStringList list1;
          QStringList list, list2;
@@ -832,7 +1043,7 @@ void MainWindow::on_pushButton_StatR_clicked()
          Ramassage R;
 
             ui->tableView_StatR->setModel(tmpR.afficherSTAT());
-
+            ui->tableView_StatR->adjustSize();
             QStringList Titres;
 
                 Titres <<"Identifiant du ramassage" <<"Nombre de poubelle"<<"Duree";
@@ -857,18 +1068,23 @@ void MainWindow::on_pushButton_StatR_clicked()
          }
 
 
-         for(int k=0;k<tab.size();k++)
+         for(int m=0;m<tab.size();m++)
         {
              for(int index=0;index<tab.size();index++)
 
       {
-        if(tab[index].getDate()==tab[k].getDate()&& k!=index)
+        if(tab[index].getDate()==tab[m].getDate()&& m!=index)
 
         {
-                tab[index].setId_Ramassage("");
-                int x=tab[k].getNbPoubelle().toInt()+tab[index].getNbPoubelle().toInt();
+
+               tab[index].setId_Ramassage("");
+               int x=tab[m].getNbPoubelle().toInt()+tab[index].getNbPoubelle().toInt();
                 QString ch=QVariant(x).toString();
-                   tab[k].setNb_Poubelle(ch);
+                tab[m].setNb_Poubelle(ch);
+
+
+
+
           }
 
 
@@ -880,21 +1096,18 @@ void MainWindow::on_pushButton_StatR_clicked()
 
          list.append(tab[k].getDate());
 
+        if(tab[m].getId_Ramassage()!="")
+        {
+   qDebug()<<"id= "<<tab[m].getId_Ramassage();
+      qDebug()<<"date= "<<tab[m].getDate();
+         qDebug()<<"nb= "<<tab[m].getNbPoubelle();
+            qDebug()<<" ";
+            qDebug()<<" ";
+     *set0<<tab[m].getNbPoubelle().toInt();
 
+
+}
          }
-
-
-
-
-         QBarSet *set0 = new QBarSet("start");
-
-
-
-               for(int k=0;k<tab.size();k++)
-               { if(tab[k].getId_Ramassage()!="")
-
-                *set0<<tab[k].getNbPoubelle().toInt();
-                 }
 
 
 
@@ -904,7 +1117,7 @@ void MainWindow::on_pushButton_StatR_clicked()
 
                      QChart *chart = new QChart;
                       chart->addSeries(series);
-                      chart->setTitle("First essay ");
+                      chart->setTitle("Le nombre de ramassages effectués par la municipalité en fonction des années");
                  chart->setAnimationOptions(QChart::AllAnimations);
 
                  QBarCategoryAxis *axis= new QBarCategoryAxis();
@@ -915,10 +1128,13 @@ void MainWindow::on_pushButton_StatR_clicked()
                  chart->setAxisX(axis,series);
                  chart->legend()->setVisible(true);
                  chart->legend()->setAlignment(Qt::AlignBottom);
+                 QPalette pal =  ui->graphicsView->palette();
+                 pal.setColor(QPalette::Window, QRgb(0x121218));
+                 pal.setColor(QPalette::WindowText, QRgb(0xd6d6d6));
 
         ui->graphicsView->show();
 
-
+      ui->graphicsView->setPalette(pal);
              ui->graphicsView->setChart(chart);
              ui->graphicsView->setRenderHint(QPainter::Antialiasing);
              ui->graphicsView->setMinimumSize(780,480);
@@ -932,4 +1148,56 @@ void MainWindow::on_pushButton_StatR_clicked()
 void MainWindow::on_pushButton_Menu_Environ_Aff_2_clicked()
 {
         ui->stackedWidget_Environnement->setCurrentIndex(0);
+
+
 }
+
+
+
+
+
+
+
+void MainWindow::on_pushButton_MAILR_clicked()
+{
+       QPrinter printer(QPrinter::HighResolution);
+
+
+printer.setOrientation(QPrinter::Landscape);
+        QPrintDialog *dialog = new QPrintDialog(&printer, this);
+        dialog->setWindowTitle(tr("Print Document"));
+         dialog->addEnabledOption(QAbstractPrintDialog::PrintSelection);
+
+            printer.setOutputFileName("print.ps");
+            QPainter painter;
+
+ painter.begin(&printer);
+    int    numberOfPages=1;
+            for (int page = 0; page < numberOfPages; ++page) {
+
+                // Utilisez l'imprimante pour dessiner sur la page.
+
+                if (page != numberOfPages)
+                  {painter.setFont(QFont("Arial",14));
+
+                    painter.drawText(width()/2,height()/2, ("some world"));
+                          double xscale = printer.pageRect().width()/double(  ui->stackedWidget_Environnement->width());
+                            double yscale = printer.pageRect().height()/double( ui->stackedWidget_Environnement->height());
+                            double scale = qMin(xscale, yscale);
+                            painter.translate(printer.paperRect().x() + printer.pageRect().width()/2,
+                                               printer.paperRect().y() + printer.pageRect().height()/2);
+                            painter.scale(scale, scale);
+                            painter.translate(-width()/2, -height()/2);
+
+                             ui->stackedWidget_Environnement->render(&painter);
+
+                }
+
+                    //printer.newPage();
+            }
+
+            painter.end();
+}
+
+
+
