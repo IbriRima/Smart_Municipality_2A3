@@ -98,10 +98,9 @@ ui->comboBox_TypeRech_ZV->addItem("Aire");
 ui->lineEdit_Aire_ZV_AJ->setValidator(new QIntValidator(0,999999, this));
 ui->lineEdit_Aire_MAJ_ZV->setValidator(new QIntValidator(0,999999, this));
 ui->lineEdit_IDChauffeurAJ->setValidator(new QIntValidator(0,99999999, this));
-ui->lineEdit_IDChauffeurMAJ->setValidator(new QIntValidator(0,99999999, this));
-ui->lineEdit_IDEmpl1_MAJRama->setValidator(new QIntValidator(0,99999999, this));
+
 ui->lineEdit_IDEmpl1_Rama->setValidator(new QIntValidator(0,99999999, this));
-ui->lineEdit_IDEmpl2_MAJRama->setValidator(new QIntValidator(0,99999999, this));
+
 ui->lineEdit_IDEmpl2_Rama->setValidator(new QIntValidator(0,99999999, this));
 
 
@@ -233,58 +232,67 @@ R.setNb_Poubelle(ui->spinBox_NbPoubelle_AJ->text());
 R.setId_empl1(ui->lineEdit_IDEmpl1_Rama->text());
 R.setId_empl2(ui->lineEdit_IDEmpl2_Rama->text());
 
-
+bool test;
 if(!(ui->lineEdit_IDChauffeurAJ->text().isEmpty()||ui->lineEdit_MatriculeAJ->text().isEmpty()||ui->lineEdit_IDRamassage_AJ->text().isEmpty()||
      ui->comboBox_NomCartier_AJ->currentText().isEmpty()||ui->dateEditR_AJ->date().isNull()||ui->timeEdit_DebAJ->time().isNull()||ui->timeEdit_DureeAJ->time().isNull()||
     ui->spinBox_NbPoubelle_AJ->cleanText().isEmpty()||ui->lineEdit_IDEmpl1_Rama->text().isEmpty()||ui->lineEdit_IDEmpl2_Rama->text().isEmpty()))
-{   //Ajout
- bool test= R.ajouter();
+{
+test= R.ajouter();
+
 
  if (test)
 {
-
+     QString ch;
+      bool test1;
+     for(int i=0;i<3;i++)
+     {if(i==0)
+            { ch=R.getIdchauffeur();
+     test1=R.affectation(ch);
+         }
+         else if (i==1)
+         { ch=R.getId_empl1();
+     test1=R.affectation(ch);
+      }
+         else if (i==2)
+         { ch=R.getId_empl2();
+     test1=R.affectation(ch);
+ }
+     }
+     if(test1)
+     {
  QMessageBox::information(this,"Notification","Le rammasage d'identifiant "+R.getId_Ramassage()+" a bien été enregistré ");
 
 
   //Affichage
  ui->tableView_Ramas->setModel(tmpR.afficher());
-QString ch;
- bool test1;
-for(int i=0;i<3;i++)
-{if(i==0)
-       { ch=R.getIdchauffeur();
-test1=R.affectation(ch);
-    }
-    else if (i==1)
-    { ch=R.getId_empl1();
-test1=R.affectation(ch);
- }
-    else if (i==2)
-    { ch=R.getId_empl2();
-test1=R.affectation(ch);
- }
 
-}
+
   //RESET lineEdit
-ui->lineEdit_IDRamassage_AJ->clear();
-ui->lineEdit_IDChauffeurAJ->clear();
-ui->lineEdit_MatriculeAJ->clear();
-ui->dateEditR_AJ->clear();
 
-ui->timeEdit_DureeAJ->clear();
-ui->timeEdit_DebAJ->clear();
-ui->dateEditR_AJ->clear();
-ui->spinBox_NbPoubelle_AJ->clear();
-ui->lineEdit_IDEmpl1_Rama->clear();
-ui->lineEdit_IDEmpl2_Rama->clear();
 
 ui->stackedWidget_Environnement->setCurrentIndex(1);
 
+
  }
-else QMessageBox::critical(this,"Alerte","Il ya des données incorrectes! ");
+else {QMessageBox::critical(this,"Alerte","Il ya des données incorrectes! ");
+        R.SupprimerEmploye(R.getId_Ramassage());
+         R.Supprimer(R.getId_Ramassage());
+ui->stackedWidget_Environnement->setCurrentIndex(1);
 
 }
+}
+ ui->lineEdit_IDRamassage_AJ->clear();
+ ui->lineEdit_IDChauffeurAJ->clear();
+ ui->lineEdit_MatriculeAJ->clear();
+ ui->dateEditR_AJ->clear();
 
+ ui->timeEdit_DureeAJ->clear();
+ ui->timeEdit_DebAJ->clear();
+ ui->dateEditR_AJ->clear();
+ ui->spinBox_NbPoubelle_AJ->clear();
+ ui->lineEdit_IDEmpl1_Rama->clear();
+ ui->lineEdit_IDEmpl2_Rama->clear();
+}
 else QMessageBox::critical(this,"Alerte","Il faut tout remplire ! ");
 
 
@@ -638,13 +646,18 @@ Ramassage R;
   QString ID=ui->tableView_Ramas->model()->data(index).toString();
 
 QString Matricule,Id_chauffeur,id_empl1,id_empl2,Date,Nb_poubelle,Nom_Cartier,Duree,Heure;
-R.Remplissage(&ID,&Matricule,&Id_chauffeur,&id_empl1,& id_empl2,&Date,&Nb_poubelle,&Nom_Cartier,&Duree,&Heure);
+R.Remplissage(&ID,&Matricule,&Date,&Nb_poubelle,&Nom_Cartier,&Duree,&Heure);
+
+ QVector<QString> tab;
+
+tab= R.afficheremploye(&ID);
+
 
 ui->lineEdit_ID_Ramas_Aff->setText(ID);
 ui->lineEdit_Matricule_Aff->setText(Matricule);
-ui->lineEdit_IDChauffeur_Aff->setText(Id_chauffeur);
-ui->lineEdit_IDEmploye1_Aff->setText(id_empl1);
-ui->lineEdit_IDEmploye2_Aff->setText(id_empl2);
+ui->lineEdit_IDChauffeur_Aff->setText(tab[0]);
+ui->lineEdit_IDEmploye1_Aff->setText(tab[1]);
+ui->lineEdit_IDEmploye2_Aff->setText(tab[2]);
 ui->lineEdit_Date_Aff->setText(Date);
 ui->lineEdit_NbPoubelle_Aff->setText(Nb_poubelle);
 ui->lineEdit_Duree_Aff->setText(Duree);
@@ -667,16 +680,16 @@ void MainWindow::on_pushButton_Delete_Ramas_clicked()
         player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/trash.mp3"));
         player->setVolume(50);
 
-        player->play();
-
+Ramassage R;
 
 
     QString ID;
      ID=ui->lineEdit_ID_Ramas_Aff->text();
-    bool test= tmpR.Supprimer(ID);
-    if  (test && !( ui->groupBox_2->title().isEmpty()) )
-       {
 
+    bool test1=R.SupprimerEmploye(ID);
+    if  (test1 &&!( ui->groupBox_2->title().isEmpty()) )
+       {   player->play();
+   tmpR.Supprimer(ID);
         ui->lineEdit_ID_Ramas_Aff->clear();
         ui->lineEdit_Matricule_Aff->clear();
         ui->lineEdit_IDChauffeur_Aff->clear();
@@ -744,7 +757,8 @@ void MainWindow::on_pushButton_MAJ_ZV_clicked()
     }
 }
 void MainWindow::on_pushButton_MAJ_Ramas_clicked()
-{   if (ui->groupBox_2->title().isEmpty())
+{
+    if (ui->groupBox_2->title().isEmpty())
     {
         QMessageBox::critical(nullptr,QObject::tr("Modifier un ramassage")
                                  ,QObject::tr("Pas de ramassage à modifier!"));
@@ -755,9 +769,6 @@ void MainWindow::on_pushButton_MAJ_Ramas_clicked()
     ui->stackedWidget_Environnement->setCurrentIndex(2);
     ui->lineEdit_IDRamassage_MAJ->setText(ui->lineEdit_ID_Ramas_Aff->text());
     ui->lineEdit_Matricule_MAJ->setText(ui->lineEdit_Matricule_Aff->text());
-    ui->lineEdit_IDChauffeurMAJ->setText( ui->lineEdit_IDChauffeur_Aff->text());
-    ui->lineEdit_IDEmpl1_MAJRama->setText(ui->lineEdit_IDEmploye1_Aff->text());
-    ui->lineEdit_IDEmpl2_MAJRama->setText( ui->lineEdit_IDEmploye2_Aff->text());
 
     qDebug()<<"Date: "<<ui->lineEdit_Date_Aff->text();
     ui->dateEditR_MAJ->setDate(QDate::fromString(ui->lineEdit_Date_Aff->text(),"dd/MM/yyyy"));
@@ -812,7 +823,7 @@ void MainWindow::on_pushButton_SaveR_MAJ_clicked()
         player->play();
 
     //Affichage de l'id à MAJ
-    ui->lineEdit_IDChauffeurMAJ->setText(ui->lineEdit_IDChauffeur_Aff->text());
+ //   ui->lineEdit_IDChauffeurMAJ->setText(ui->lineEdit_IDChauffeur_Aff->text());
 
 
     QString ID,Matricule,Id_chauffeur,id_empl1,id_empl2,Date,Nb_poubelle,Nom_Cartier,Duree,Heure;
@@ -820,7 +831,7 @@ void MainWindow::on_pushButton_SaveR_MAJ_clicked()
 
     //Set des vals à jour
    ID=ui->lineEdit_IDRamassage_MAJ->text();
-   Id_chauffeur=ui->lineEdit_IDChauffeurMAJ->text();
+
    Matricule=ui->lineEdit_Matricule_MAJ->text();
 
     Nom_Cartier=ui->comboBox_NomCartier_MAJ->currentText();
@@ -828,9 +839,10 @@ void MainWindow::on_pushButton_SaveR_MAJ_clicked()
     Heure=ui->timeEdit_DebMAJ->time().toString();
     Duree=ui->timeEdit_DureeMAJ->time().toString("HH:mm");
     Nb_poubelle=ui->spinBox_NbPoubelle_MAJ->text();
-    id_empl1=ui->lineEdit_IDEmpl1_MAJRama->text();
-    id_empl2=ui->lineEdit_IDEmpl2_MAJRama->text();
-    bool test= tmpR.Modifier(ID,Matricule,Id_chauffeur,id_empl1,id_empl2,Date,Nb_poubelle,Nom_Cartier,Duree,Heure);
+
+    bool test= tmpR.Modifier(ID,Matricule,Date,Nb_poubelle,Nom_Cartier,Duree,Heure);
+
+
     if  (test)
        {
 
@@ -839,12 +851,10 @@ void MainWindow::on_pushButton_SaveR_MAJ_clicked()
                                  ,QObject::tr("Le ramassage  a été modifié"));
 
 
-R.Remplissage(&ID,&Matricule,&Id_chauffeur,&id_empl1,& id_empl2,&Date,&Nb_poubelle,&Nom_Cartier,&Duree,&Heure);
+R.Remplissage(&ID,&Matricule,&Date,&Nb_poubelle,&Nom_Cartier,&Duree,&Heure);
 
 ui->lineEdit_Matricule_Aff->setText(Matricule);
-ui->lineEdit_IDChauffeur_Aff->setText(Id_chauffeur);
-ui->lineEdit_IDEmploye1_Aff->setText(id_empl1);
-ui->lineEdit_IDEmploye2_Aff->setText(id_empl2);
+
 ui->lineEdit_Date_Aff->setText(Date);
 ui->lineEdit_NbPoubelle_Aff->setText(Nb_poubelle);
 ui->lineEdit_Duree_Aff->setText(Duree);
@@ -1160,7 +1170,17 @@ void MainWindow::on_pushButton_Menu_Environ_Aff_2_clicked()
 
 void MainWindow::on_pushButton_MAILR_clicked()
 {
-       QPrinter printer(QPrinter::HighResolution);
+
+ui->stackedWidget_Environnement->setCurrentIndex(8);
+
+}
+
+
+
+
+void MainWindow::on_pushButton_Imprimer_clicked()
+{
+    QPrinter printer(QPrinter::HighResolution);
 
 
 printer.setOrientation(QPrinter::Landscape);
@@ -1172,15 +1192,18 @@ printer.setOrientation(QPrinter::Landscape);
             QPainter painter;
 
  painter.begin(&printer);
+
+
     int    numberOfPages=1;
             for (int page = 0; page < numberOfPages; ++page) {
 
                 // Utilisez l'imprimante pour dessiner sur la page.
 
                 if (page != numberOfPages)
-                  {painter.setFont(QFont("Arial",14));
+                  {painter.setFont(QFont("Arial",20));
 
-                    painter.drawText(width()/2,height()/2, ("some world"));
+                    painter.drawText(width()/2,height()/2, ("Municipalité d'Ariana"));
+                   // painter.drawImage()
                           double xscale = printer.pageRect().width()/double(  ui->stackedWidget_Environnement->width());
                             double yscale = printer.pageRect().height()/double( ui->stackedWidget_Environnement->height());
                             double scale = qMin(xscale, yscale);
@@ -1191,13 +1214,13 @@ printer.setOrientation(QPrinter::Landscape);
 
                              ui->stackedWidget_Environnement->render(&painter);
 
+
                 }
 
-                    //printer.newPage();
+
+                //printer.newPage();
             }
 
             painter.end();
+
 }
-
-
-

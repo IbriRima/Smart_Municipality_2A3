@@ -19,19 +19,21 @@ bool Ramassage::ajouter()
       QSqlQuery query;
 
 
-      query.prepare("insert into RAMASSAGE (ID_RAMASSAGE,MATRICULE_CAMION,CIN_CHAUFFEUR,CIN_EMPLOYE1,CIN_EMPLOYE2,DATE_RAMASSAGE,"
-                          "NOMBRE_POUBELLE,DUREE,NOM_CARTIER,HEURE_DEBUT) values(:id,:Matricule,:ID_chauffeur,:ID_empl1,:ID_empl2,:date,:nb_p,:duree,:cartier,:heure)");
+      query.prepare("insert into RAMASSAGE (ID_RAMASSAGE,MATRICULE_CAMION,DATE_RAMASSAGE,"
+                          "NOMBRE_POUBELLE,DUREE,NOM_CARTIER,HEURE_DEBUT) values(:id,:Matricule,:date,:nb_p,:duree,:cartier,:heure)");
 query.bindValue(":id",getId_Ramassage());
 query.bindValue(":Matricule",getMatricule());
-query.bindValue(":ID_chauffeur",getIdchauffeur());
-query.bindValue(":ID_empl1",getId_empl1());
-query.bindValue(":ID_empl2",getId_empl2());
+
 query.bindValue(":date",getDate());
 query.bindValue(":nb_p",getNbPoubelle());
 query.bindValue(":duree",getDuree().toString("HH:mm"));
 query.bindValue(":cartier",getNom_cartier());
 query.bindValue(":heure", getHdepart().toString());
-
+/*
+query.bindValue(":ID_chauffeur",getIdchauffeur());
+query.bindValue(":ID_empl1",getId_empl1());
+query.bindValue(":ID_empl2",getId_empl2());
+ */
 return query.exec();
 
 }
@@ -40,11 +42,11 @@ bool Ramassage::affectation(QString ch)
     QSqlQuery query;
 
 
-query.prepare("insert into EMPLOYE_RAMASSAGE (ID_RAMASSAGE,CIN) values(:id,:ID_chauffeur)");
+query.prepare("insert into EMPLOYE_RAMASSAGE (ID_RAMASSAGE,CIN) values(:id,:CIN)");
 qDebug()<<"id "<<getId_Ramassage();
-qDebug()<<"CIN__chauffeur "<<ch;
+qDebug()<<"CIN "<<ch;
 query.bindValue(":id",getId_Ramassage());
-query.bindValue(":ID_chauffeur",ch);
+query.bindValue(":CIN",ch);
 
 
 
@@ -62,10 +64,32 @@ QSqlQueryModel * Ramassage ::afficher()
 return model;
 }
 
-
-void Ramassage::Remplissage(QString* ID,QString*Matricule,QString*Id_chauffeur,QString* id_empl1,QString* id_empl2,QString*Date,QString*Nb_poubelle,QString*Nom_Cartier,QString*Duree,QString*Heure)
+ QVector<QString> Ramassage::afficheremploye(QString* ID)
 {
-QVector<Ramassage> tabR;
+
+    QSqlQuery q;
+QString ch;
+
+   q.prepare("select * from EMPLOYE_RAMASSAGE where ID_RAMASSAGE='"+*ID+"' ");
+   if(q.exec())
+   {
+       while(q.next())
+       {
+           ch= q.value(0).toString();
+           *ID=q.value(1).toString();
+          tab.push_back(ch);
+       }
+
+   }
+for(int i=0;i<tab.size();i++)
+    qDebug()<<tab[i];
+return tab;
+}
+
+
+void Ramassage::Remplissage(QString* ID,QString*Matricule,QString*Date,QString*Nb_poubelle,QString*Nom_Cartier,QString*Duree,QString*Heure)
+{
+//QVector<Ramassage> tabR;
     QSqlQuery q;
 
    q.prepare("select * from RAMASSAGE where ID_RAMASSAGE='"+*ID+"'");
@@ -76,19 +100,18 @@ QVector<Ramassage> tabR;
         {
 *ID= q.value(0).toString();
 *Matricule=q.value(1).toString();
-*Id_chauffeur=q.value(2).toString();
-*id_empl1=q.value(3).toString();
-*id_empl2=q.value(4).toString();
-*Date   =q.value(5).toString();
-*Nb_poubelle  =q.value(6).toString();
-*Duree  =q.value(7).toString();
-*Nom_Cartier  =q.value(8).toString();
-*Heure=q.value(9).toString();
+*Date   =q.value(2).toString();
+*Nb_poubelle  =q.value(3).toString();
+*Duree  =q.value(4).toString();
+*Nom_Cartier  =q.value(5).toString();
+*Heure=q.value(6).toString();
 
 }
     }
 
-
+/*Id_chauffeur=q.value(2).toString();
+*id_empl1=q.value(3).toString();
+*id_empl2=q.value(4).toString();*/
 
 }
 
@@ -101,31 +124,56 @@ bool Ramassage::Supprimer(QString ID)
     return query.exec();
 }
 
+bool Ramassage::SupprimerEmploye(QString ID)
+{
 
-bool Ramassage::Modifier(QString ID, QString Matricule, QString Id_chauffeur, QString id_empl1, QString id_empl2, QString Date, QString Nb_poubelle, QString Nom_cartier, QString Duree, QString Heure)
+    QSqlQuery query;
+    query.prepare("Delete from EMPLOYE_RAMASSAGE where ID_RAMASSAGE = :ID");
+    query.bindValue(":ID",ID);
+    return query.exec();
+}
+
+bool Ramassage::Modifier(QString ID, QString Matricule, QString Date, QString Nb_poubelle, QString Nom_cartier, QString Duree, QString Heure)
 {
     QSqlQuery query;
 
 
 
-query.prepare("update RAMASSAGE set MATRICULE_CAMION= :Matricule,CIN_CHAUFFEUR= :ID_chauffeur,CIN_EMPLOYE1= :id_empl1,CIN_EMPLOYE2= :id_empl2"
-          ",DATE_RAMASSAGE= :date,NOMBRE_POUBELLE= :nb_p,DUREE= :duree,NOM_CARTIER= :cartier,HEURE_DEBUT= :heure where ID_RAMASSAGE= :ID");
+query.prepare("update RAMASSAGE set MATRICULE_CAMION= :Matricule,DATE_RAMASSAGE= :date,NOMBRE_POUBELLE= :nb_p,DUREE= :duree,NOM_CARTIER= :cartier,HEURE_DEBUT= :heure where ID_RAMASSAGE= :ID");
 
 query.bindValue(":ID",ID);
 query.bindValue(":Matricule",Matricule);
-query.bindValue(":ID_chauffeur",Id_chauffeur);
-query.bindValue(":id_empl1",id_empl1);
-query.bindValue(":id_empl2",id_empl2);
+
 query.bindValue(":date",Date);
 query.bindValue(":nb_p",Nb_poubelle);
 query.bindValue(":duree",Duree);
 query.bindValue(":cartier",Nom_cartier);
 query.bindValue(":heure", Heure);
 
-query.exec();
-       return   query.exec();
+/*
+query.bindValue(":ID_chauffeur",Id_chauffeur);
+query.bindValue(":id_empl1",id_empl1);
+query.bindValue(":id_empl2",id_empl2);
+*/
+
+return   query.exec();
 
 }
+/*QVector<QString> Ramassage::ModifierEmploye(QString ID,QString CIN_Chauffeur)
+{
+
+
+QSqlQuery q;
+qDebug()<<"CIN? "<<CIN_Chauffeur;
+
+q.prepare("update EMPLOYE_RAMASSAGE set CIN= :CIN where ID_RAMASSAGE= :ID");
+q.bindValue(":CIN",CIN_Chauffeur);
+q.bindValue(":ID",ID);
+q.exec();
+//  tab.push_back(CIN_Chauffeur);
+
+return tab;
+}*/
 
 QSqlQueryModel* Ramassage::Recherche(int indice,QString ch)
 {

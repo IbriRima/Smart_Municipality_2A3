@@ -129,6 +129,8 @@ void on_pushButton_MAILR_clicked();
 
 
 
+void on_pushButton_Imprimer_clicked();
+
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;

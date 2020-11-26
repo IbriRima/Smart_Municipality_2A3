@@ -15,7 +15,7 @@ class Ramassage
     QString Nb_Poubelle;
     QString Id_empl1;
     QString Id_empl2;
-
+        QVector<QString> tab;
 
 public:
     Ramassage();
@@ -64,13 +64,19 @@ void setNb_Poubelle(QString nb)
 
 
 bool ajouter();
-bool affectation(QString);
+
 QSqlQueryModel* afficher();
-void Remplissage(QString*,QString*,QString*,QString*,QString*,QString*,QString*,QString*,QString*,QString*);
+void Remplissage(QString*,QString*,QString*,QString*,QString*,QString*,QString*);
 bool Supprimer(QString ID);
-bool Modifier(QString,QString,QString,QString,QString,QString,QString,QString,QString,QString);
+bool Modifier(QString,QString,QString,QString,QString,QString,QString);
 QSqlQueryModel* Recherche(int,QString);
 QSqlQueryModel* afficherSTAT();
+bool affectation(QString);
+QVector<QString> afficheremploye(QString*);
+bool SupprimerEmploye(QString ID);
+//QVector<QString> ModifierEmploye(QString,QString);
+
+bool MAJemploye();
 };
 
 #endif // RAMASSAGE_H
