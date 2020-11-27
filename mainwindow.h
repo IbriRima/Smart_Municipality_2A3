@@ -1,7 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include "citoyen.h"
+#include "evenement.h"
 #include <QMainWindow>
+#include<QIcon>
+#include <QPropertyAnimation>
+#include <QPixmap>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,7 +27,63 @@ private slots:
 
     void on_MenuP_clicked();
 
+    void on_pushButtonajoutcit_clicked();
+
+    void on_pushButton_save_clicked();
+
+    void on_pushButton_cancel_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_maj_event_clicked();
+
+    void on_pushButton_del_event_clicked();
+
+    void on_maj_save_clicked();
+
+    void on_maj_cancel_clicked();
+
+    void on_ajouter_cit_clicked();
+
+    void on_Menu_2_clicked();
+
+    void on_recherche_clicked();
+
+    void on_pushButton_save_2_clicked();
+
+    void on_pushButton_cancel_2_clicked();
+
+    void on_pushButton_impression_clicked();
+
+    void on_pushButton_maj_cit_clicked();
+
+    void on_pushButton_del_cit_clicked();
+
+    void on_majcit_cancel_clicked();
+
+    void on_maj_save_2_clicked();
+
+    void on_maj_cancel_2_clicked();
+
+    void on_Menu_clicked();
+
+
+    void on_tableView_citoyen_activated(const QModelIndex &index);
+
+    void on_tableView_event_activated(const QModelIndex &index);
+
+    void on_exit_clicked();
+
+    void on_pushButton_stat_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    Citoyen Ctmp;
+    Evenement Etmp;
+    QString ID;
+    QPropertyAnimation *animation;
+    int num;
 };
 #endif // MAINWINDOW_H

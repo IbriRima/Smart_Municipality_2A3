@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Ajouter.png</file>
+        <file>Annuler.png</file>
+        <file>champs.png</file>
+        <file>close.png</file>
+        <file>delete.png</file>
+        <file>edit_ZV.png</file>
+        <file>Enregistrer.png</file>
+        <file>envi.png</file>
+        <file>imprimer.png</file>
+        <file>mailing.png</file>
+        <file>Maintenance.png</file>
+        <file>Marche.png</file>
+        <file>Menu Principal.png</file>
+        <file>Menu.png</file>
+        <file>Menu_Principal.png</file>
+        <file>MP.png</file>
+        <file>MP1.png</file>
+        <file>promouvoir.png</file>
+        <file>recherche.png</file>
+        <file>Ress.png</file>
+        <file>statistique.png</file>
+        <file>Ajouter_P.png</file>
+        <file>Annuler_P.png</file>
+    </qresource>
+</RCC>

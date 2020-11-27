@@ -6,51 +6,3009 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>689</width>
-    <height>323</height>
+    <width>1116</width>
+    <height>593</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Gestion Communication</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(255, 255, 255);
+color:rgb(0, 0, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton_event">
+   <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>110</y>
-      <width>221</width>
-      <height>28</height>
+      <x>40</x>
+      <y>20</y>
+      <width>1061</width>
+      <height>521</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Gestion Etat civil</string>
+    <property name="styleSheet">
+     <string notr="true">#input_nom {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
     </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QPushButton" name="pushButton_etat">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>290</y>
+        <width>251</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgb(170, 255, 255), stop:1 rgb(85, 85, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgb(85, 85, 255), stop:1 rgb(170, 255, 255))
+}</string>
+      </property>
+      <property name="text">
+       <string>Gestion Etat civil</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="MenuP">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#MenuP {
+background-color: transparent;
+border-image: url(:Menu_Principal.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_event">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>290</y>
+        <width>251</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgb(170, 255, 255), stop:1 rgb(85, 85, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgb(85, 85, 255), stop:1 rgb(170, 255, 255))
+}</string>
+      </property>
+      <property name="text">
+       <string>gestion evenemnets </string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="envi">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>100</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#envi {
+background-color: transparent;
+border-image: url(:envi.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="res">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>150</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#res {
+background-color: transparent;
+border-image: url(:Ress.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="maintenance">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>200</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maintenance {
+background-color: transparent;
+border-image: url(:Maintenance.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="marche">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>250</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#marche {
+background-color: transparent;
+border-image: url(:Marche.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="com_title">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>60</y>
+        <width>381</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#com_title {
+background-color: transparent;
+border-image:none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline; color:#5500ff;&quot;&gt;Communication&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="icon">
+      <property name="geometry">
+       <rect>
+        <x>-370</x>
+        <y>140</y>
+        <width>391</width>
+        <height>401</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#icon{
+background-color: transparent;
+border-image: none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../../../logo.jpg</pixmap>
+      </property>
+     </widget>
+     <zorder>icon</zorder>
+     <zorder>pushButton_etat</zorder>
+     <zorder>MenuP</zorder>
+     <zorder>pushButton_event</zorder>
+     <zorder>envi</zorder>
+     <zorder>res</zorder>
+     <zorder>maintenance</zorder>
+     <zorder>marche</zorder>
+     <zorder>com_title</zorder>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QPushButton" name="pushButtonajoutcit">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>110</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButtonajoutcit {
+background-color: transparent;
+border-image: url(:Ajouter.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#pushButtonajoutcit:hover{
+background-color: transparent;
+border-image: url(:Ajouter_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Menu">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>71</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#Menu {
+background-color: transparent;
+border-image: url(:Menu.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_stat">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>90</y>
+        <width>61</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_stat {
+background-color: transparent;
+border-image: url(:statistique.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_44">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>60</y>
+        <width>341</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#label_44 {
+background-color: transparent;
+border-image:none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline; color:#5500ff;&quot;&gt;Liste des évènements &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView_event">
+      <property name="geometry">
+       <rect>
+        <x>65</x>
+        <y>171</y>
+        <width>941</width>
+        <height>321</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>880</x>
+        <y>110</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgb(170, 255, 255), stop:1 rgb(85, 85, 255));
+border-radius:15px;
+color:white;
+}
+QPushButton:hover
+{
+background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgb(85, 85, 255), stop:1 rgb(170, 255, 255))
+}</string>
+      </property>
+      <property name="text">
+       <string>Selon Type</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>230</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_empl">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>350</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_empl {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_date">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>260</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_date {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>190</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nom</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>350</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Emplacement</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>390</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Etat</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_id">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>160</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_id {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_save">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>210</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_save{
+background-color: transparent;
+border-image: url(:Ajouter.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#pushButton_save:hover{
+background-color: transparent;
+border-image: url(:Ajouter_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>160</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>270</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Date</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_nom">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>190</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_type">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>230</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_type {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>310</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Horaire</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_hor">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>300</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_hor {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_cancel">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>280</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_cancel {
+background-color: transparent;
+border-image: url(:Annuler.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#pushButton_cancel:hover{
+background-color: transparent;
+border-image: url(:Annuler_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_45">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>30</y>
+        <width>341</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#label_45{
+background-color: transparent;
+border-image:none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline; color:#5500ff;&quot;&gt;Ajout d'un évènement&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="icon_2">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>80</y>
+        <width>691</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#icon{
+background-color: transparent;
+border-image: none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../../../logo.jpg</pixmap>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="input_etat">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>390</y>
+        <width>111</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#comboBox {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>en attente</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>passé</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>annulé</string>
+       </property>
+      </item>
+     </widget>
+     <zorder>icon_2</zorder>
+     <zorder>label_2</zorder>
+     <zorder>input_empl</zorder>
+     <zorder>input_date</zorder>
+     <zorder>label_21</zorder>
+     <zorder>label_5</zorder>
+     <zorder>label_6</zorder>
+     <zorder>input_id</zorder>
+     <zorder>pushButton_save</zorder>
+     <zorder>label</zorder>
+     <zorder>label_3</zorder>
+     <zorder>input_nom</zorder>
+     <zorder>input_type</zorder>
+     <zorder>label_4</zorder>
+     <zorder>input_hor</zorder>
+     <zorder>pushButton_cancel</zorder>
+     <zorder>label_45</zorder>
+     <zorder>input_etat</zorder>
+    </widget>
+    <widget class="QWidget" name="page_4">
+     <widget class="QLineEdit" name="out_type">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>210</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_type{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_etat">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>370</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_etat{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_del_event">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>370</y>
+        <width>61</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_del_event{
+background-color: transparent;
+border-image: url(:delete.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_id">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>140</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_id{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_maj_event">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>270</y>
+        <width>71</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_maj_event{
+background-color: transparent;
+border-image: url(:edit_ZV.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>250</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Date</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_hor">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>290</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_hor{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>140</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_empl">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>330</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_empl{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_mail">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>170</y>
+        <width>101</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_mail{
+background-color: transparent;
+border-image: url(:promouvoir.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>447</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_2{
+background-color: transparent;
+border-image: url(:Annuler.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#pushButton_2:hover{
+background-color: transparent;
+border-image: url(:Annuler_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>180</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nom</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>210</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_date">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>250</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_date{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>340</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Emplacement</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_nom">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>180</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_nom{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>300</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Horaire</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>380</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Etat</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_46">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>20</y>
+        <width>381</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#label_46{
+background-color: transparent;
+border-image:none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline; color:#5500ff;&quot;&gt;Affichage d'un évènement&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="icon_3">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>90</y>
+        <width>691</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#icon{
+background-color: transparent;
+border-image: none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../../../logo.jpg</pixmap>
+      </property>
+     </widget>
+     <zorder>icon_3</zorder>
+     <zorder>out_type</zorder>
+     <zorder>out_etat</zorder>
+     <zorder>pushButton_del_event</zorder>
+     <zorder>out_id</zorder>
+     <zorder>pushButton_maj_event</zorder>
+     <zorder>label_9</zorder>
+     <zorder>out_hor</zorder>
+     <zorder>label_7</zorder>
+     <zorder>out_empl</zorder>
+     <zorder>pushButton_mail</zorder>
+     <zorder>pushButton_2</zorder>
+     <zorder>label_19</zorder>
+     <zorder>label_8</zorder>
+     <zorder>out_date</zorder>
+     <zorder>label_11</zorder>
+     <zorder>out_nom</zorder>
+     <zorder>label_10</zorder>
+     <zorder>label_12</zorder>
+     <zorder>label_46</zorder>
+    </widget>
+    <widget class="QWidget" name="page_5">
+     <widget class="QLineEdit" name="maj_nom">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>190</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_nom{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>200</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nom</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>160</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_hor">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>310</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_hor{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_etat">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>390</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_etat{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>390</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Etat</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_type">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>230</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_type{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_id">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>160</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_id{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>310</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Horaire</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="maj_cancel">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>280</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_cancel{
+background-color: transparent;
+border-image: url(:Annuler.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#maj_cancel:hover{
+background-color: transparent;
+border-image: url(:Annuler_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>270</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Date</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_empl">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>350</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_empl{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>230</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_date">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>270</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_date{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>350</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Emplacement</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="maj_save">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>210</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_save{
+background-color: transparent;
+border-image: url(:Enregistrer.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#maj_save:hover{
+background-color: transparent;
+border-image: url(:Ajouter_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_47">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>30</y>
+        <width>421</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#label_47{
+background-color: transparent;
+border-image:none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline; color:#5500ff;&quot;&gt;Mise à jour d&amp;quot;un évènement&lt;/span&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="icon_4">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>120</y>
+        <width>691</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#icon{
+background-color: transparent;
+border-image: none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../../../logo.jpg</pixmap>
+      </property>
+     </widget>
+     <zorder>icon_4</zorder>
+     <zorder>maj_nom</zorder>
+     <zorder>label_20</zorder>
+     <zorder>label_17</zorder>
+     <zorder>maj_hor</zorder>
+     <zorder>maj_etat</zorder>
+     <zorder>label_13</zorder>
+     <zorder>maj_type</zorder>
+     <zorder>maj_id</zorder>
+     <zorder>label_14</zorder>
+     <zorder>maj_cancel</zorder>
+     <zorder>label_18</zorder>
+     <zorder>maj_empl</zorder>
+     <zorder>label_15</zorder>
+     <zorder>maj_date</zorder>
+     <zorder>label_16</zorder>
+     <zorder>maj_save</zorder>
+     <zorder>label_47</zorder>
+    </widget>
+    <widget class="QWidget" name="page_6">
+     <widget class="QPushButton" name="recherche">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>140</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#recherche{
+background-color: transparent;
+border-image: url(:recherche.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Menu_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>61</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#Menu_2{
+background-color: transparent;
+border-image: url(:Menu.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_recherche">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>140</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_recherche {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ajouter_cit">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>90</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#ajouter_cit{
+background-color: transparent;
+border-image: url(:Ajouter.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#ajouter_cit:hover{
+background-color: transparent;
+border-image: url(:Ajouter_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_48">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>70</y>
+        <width>341</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">c</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline; color:#5500ff;&quot;&gt;Liste des citoyens &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView_citoyen">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>190</y>
+        <width>761</width>
+        <height>301</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_7">
+     <widget class="QLineEdit" name="input_tel">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>390</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_tel{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_lieu">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>310</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_lieu{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>230</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>sexe</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelnom">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>160</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nom</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_save_2">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>190</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_save_2{
+background-color: transparent;
+border-image: url(:Ajouter.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#pushButton_save_2:hover{
+background-color: transparent;
+border-image: url(:Ajouter_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_mail">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>350</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_mail {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>360</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>adresse mail</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_nom_2">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>160</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_nom_2 {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>270</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Date de naisaance</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>130</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Identifiant unique</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_26">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>400</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>téléphone</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_27">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>200</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Prénom</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_naissance">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>270</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_naissance {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_prenom">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>190</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_prenom{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_cancel_2">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>270</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_cancel_2 {
+background-color: transparent;
+border-image: url(:Annuler.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#pushButton_cancel_2:hover{
+background-color: transparent;
+border-image: url(:Annuler_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_28">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>310</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Lieu de naissance</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_id_2">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>130</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_id_2{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_49">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>20</y>
+        <width>341</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#label_49{
+background-color: transparent;
+border-image:none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline; color:#5500ff;&quot;&gt;Ajout d'un citoyen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="icon_5">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>110</y>
+        <width>691</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#icon{
+background-color: transparent;
+border-image: none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../../../logo.jpg</pixmap>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="input_sexe">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>230</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#input_sexe {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Homme</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Femme</string>
+       </property>
+      </item>
+     </widget>
+     <zorder>icon_5</zorder>
+     <zorder>input_tel</zorder>
+     <zorder>input_lieu</zorder>
+     <zorder>label_22</zorder>
+     <zorder>labelnom</zorder>
+     <zorder>pushButton_save_2</zorder>
+     <zorder>input_mail</zorder>
+     <zorder>label_23</zorder>
+     <zorder>input_nom_2</zorder>
+     <zorder>label_24</zorder>
+     <zorder>label_25</zorder>
+     <zorder>label_26</zorder>
+     <zorder>label_27</zorder>
+     <zorder>input_naissance</zorder>
+     <zorder>input_prenom</zorder>
+     <zorder>pushButton_cancel_2</zorder>
+     <zorder>label_28</zorder>
+     <zorder>input_id_2</zorder>
+     <zorder>label_49</zorder>
+     <zorder>input_sexe</zorder>
+    </widget>
+    <widget class="QWidget" name="page_8">
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>370</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>adresse mail</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_nom_2">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>170</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_nom_2 {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>250</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>sexe</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_31">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>410</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>téléphone</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_prenom">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>200</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_prenom{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_sexe">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>240</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_sexe {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_del_cit">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>320</y>
+        <width>61</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_del_cit{
+background-color: transparent;
+border-image: url(:delete.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_maj_cit">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>230</y>
+        <width>71</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_maj_cit{
+background-color: transparent;
+border-image: url(:edit_ZV.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="majcit_cancel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>450</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#majcit_cancel{
+background-color: transparent;
+border-image: url(:Annuler.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#majcit_cancel:hover{
+background-color: transparent;
+border-image: url(:Annuler_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_32">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>140</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>identifiant</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_tel">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>400</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_tel {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_33">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>210</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Prénom</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_34">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>330</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Lieu de naissance</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelnom_2">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>170</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nom</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_lieu">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>320</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_lieu {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_impression">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>150</y>
+        <width>81</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_impression{
+background-color: transparent;
+border-image: url(:imprimer.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_mail">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>360</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_mail {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_35">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>290</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Date de naisaance</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_id_2">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>130</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_id_2{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="out_naissance">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>280</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#out_naissance {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_50">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>30</y>
+        <width>341</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#label_50{
+background-color: transparent;
+border-image:none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline; color:#5500ff;&quot;&gt;Affichage d'un citoyen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="icon_6">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>120</y>
+        <width>691</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#icon{
+background-color: transparent;
+border-image: none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../../../logo.jpg</pixmap>
+      </property>
+     </widget>
+     <zorder>icon_6</zorder>
+     <zorder>label_29</zorder>
+     <zorder>out_nom_2</zorder>
+     <zorder>label_30</zorder>
+     <zorder>label_31</zorder>
+     <zorder>out_prenom</zorder>
+     <zorder>out_sexe</zorder>
+     <zorder>pushButton_del_cit</zorder>
+     <zorder>pushButton_maj_cit</zorder>
+     <zorder>majcit_cancel</zorder>
+     <zorder>label_32</zorder>
+     <zorder>out_tel</zorder>
+     <zorder>label_33</zorder>
+     <zorder>label_34</zorder>
+     <zorder>labelnom_2</zorder>
+     <zorder>out_lieu</zorder>
+     <zorder>pushButton_impression</zorder>
+     <zorder>out_mail</zorder>
+     <zorder>label_35</zorder>
+     <zorder>out_id_2</zorder>
+     <zorder>out_naissance</zorder>
+     <zorder>label_50</zorder>
+    </widget>
+    <widget class="QWidget" name="page_9">
+     <widget class="QPushButton" name="maj_save_2">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>200</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_save_2 {
+background-color: transparent;
+border-image: url(:Enregistrer.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#maj_save_2:hover{
+background-color: transparent;
+border-image: url(:Ajouter_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="maj_cancel_2">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>280</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_cancel_2 {
+background-color: transparent;
+border-image: url(:Annuler.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#maj_cancel_2:hover{
+background-color: transparent;
+border-image: url(:Annuler_P.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_36">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>420</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>téléphone</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_37">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>300</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Date de naisaance</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_38">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>380</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>adresse mail</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelnom_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>180</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nom</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_sexe">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>250</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_sexe{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_nom_2">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>170</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_nom_2 {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_prenom">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>210</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_prenom {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_39">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>340</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Lieu de naissance</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_40">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>260</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>sexe</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_tel">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>410</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_tel{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_lieu">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>330</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_lieu {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_41">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>220</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Prénom</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_mail">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>370</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_mail {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_id_2">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>130</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_id_2 {
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_42">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>140</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>identifiant</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="maj_date_cit">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>290</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#maj_date_cit{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_43">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>40</y>
+        <width>341</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#label_43{
+background-color: transparent;
+border-image:none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline; color:#5500ff;&quot;&gt;Mise à jour d&amp;quot;un citoyen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="icon_7">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>130</y>
+        <width>691</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#icon{
+background-color: transparent;
+border-image: none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../../../logo.jpg</pixmap>
+      </property>
+     </widget>
+     <zorder>icon_7</zorder>
+     <zorder>maj_save_2</zorder>
+     <zorder>maj_cancel_2</zorder>
+     <zorder>label_36</zorder>
+     <zorder>label_37</zorder>
+     <zorder>label_38</zorder>
+     <zorder>labelnom_3</zorder>
+     <zorder>maj_sexe</zorder>
+     <zorder>maj_nom_2</zorder>
+     <zorder>maj_prenom</zorder>
+     <zorder>label_39</zorder>
+     <zorder>label_40</zorder>
+     <zorder>maj_tel</zorder>
+     <zorder>maj_lieu</zorder>
+     <zorder>label_41</zorder>
+     <zorder>maj_mail</zorder>
+     <zorder>maj_id_2</zorder>
+     <zorder>label_42</zorder>
+     <zorder>maj_date_cit</zorder>
+     <zorder>label_43</zorder>
+    </widget>
+    <widget class="QWidget" name="page_10">
+     <widget class="QLabel" name="label_51">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>0</y>
+        <width>341</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#label_51{
+background-color: transparent;
+border-image:none;
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic; text-decoration: underline; color:#5500ff;&quot;&gt;Statistiques&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton_etat">
+   <widget class="QPushButton" name="exit">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>110</y>
-      <width>201</width>
-      <height>28</height>
+      <x>1060</x>
+      <y>0</y>
+      <width>51</width>
+      <height>31</height>
      </rect>
     </property>
-    <property name="text">
-     <string>gestion evenemnets </string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="MenuP">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>220</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
+    <property name="styleSheet">
+     <string notr="true">#exit{
+background-color: transparent;
+border-image:  url(:close.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
     </property>
     <property name="text">
-     <string>Menu principal</string>
+     <string/>
     </property>
    </widget>
   </widget>
@@ -59,8 +3017,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>689</width>
-     <height>26</height>
+     <width>1116</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>

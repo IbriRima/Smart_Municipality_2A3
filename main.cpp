@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
                     QObject::tr("connection failed.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
-   // Dialogevent D;
+
 
     return a.exec();
 }

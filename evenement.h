@@ -8,9 +8,21 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
+#include<QMessageBox>
+#include <QPainter>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
 class Evenement
 {   private :
-    int Id_event;
+    QString Id_event;
     QString Nom_event;
     QString Type_event;
     QString Date_event;
@@ -20,9 +32,9 @@ class Evenement
       public :
      //constructeurs
      Evenement();
-     Evenement(int,QString,QString,QString,QString,QString,QString);
+     Evenement(QString,QString,QString,QString,QString,QString,QString);
      //setters
-     void setId(int id) {Id_event=id;}
+     void setId(QString id) {Id_event=id;}
      void setNom(QString nom) {Nom_event=nom;}
      void setType(QString type) {Type_event=type;}
      void setDate(QString date) {Date_event=date;}
@@ -30,7 +42,7 @@ class Evenement
      void setEmpl(QString empl) {Empl_event=empl;}
      void setEtat(QString etat) {Etat_event=etat;}
      //getters
-     int getId(){return Id_event;}
+     QString getId(){return Id_event;}
      QString getNom(){return Nom_event;}
      QString getType(){return Type_event;}
      QString getDate(){return Date_event;}
@@ -40,8 +52,16 @@ class Evenement
      //fonctionnalités de base
      bool ajouter();
      QSqlQueryModel * afficher();
-     bool supprimer(int);
+     bool controle();
+     bool supprimer(QString ID);
+     bool maj(QString old_id);
+     QSqlQuery select(QString ID);
      //fonctionnalités avancées
+     //double total();
+     //void setData(QVector<double> value, QVector<QColor> color);
+     //void paintEvent(QPaintEvent *);
+     void statistiques();
+     QSqlQueryModel *trier();
 
 };
 

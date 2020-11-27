@@ -16,7 +16,7 @@
   <widget class="QStackedWidget" name="stackedWidge_event">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>70</x>
      <y>60</y>
      <width>891</width>
      <height>431</height>
@@ -29,7 +29,7 @@
     <number>2</number>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page_list">
     <widget class="QPushButton" name="pushButton">
@@ -155,6 +155,19 @@
      </property>
      <property name="text">
       <string>Menu</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>70</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>statistiques</string>
      </property>
     </widget>
    </widget>
