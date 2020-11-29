@@ -1,0 +1,32 @@
+libSSL Library Changelog
+========================
+
+
+Version 0.3.0 Pre-Alpha [10th Feb 2016]
+* [ADD] Added IPV4Socket::Read() that takes buffer parameter of char *buffer as
+        an override.
+* [MOD] Added IPV4Socket::Read() std::string buffer version had a defect in it,
+        if read was error (-1), it would incorrectly use that an an index for
+        the buffer array.  Added protection for edge case.
+* [MOD] Changed iSocketAdaptor::Recv() buffer parameters from std::string & to
+        char *.  The change is to fix issue with corruption when converting to
+        the std::string.
+
+
+Version 0.2.0 Pre-Alpha [31st Dec 2015]
+* [NEW] Added basic SSL support
+* [MOD] iSocketAdaptor::send() 2nd paramater changed from std::string to const
+        char *, this was required to fix issue with writing the encrypted data
+		bufer from the SSL system.
+* [NEW] iSocket::Write() overload added that takes a const char * for the same
+        reason as above.
+* [MOD] Minor code tidy  up.
+* [NEW] Added sample code for ipv4 OpenSSL clients and servers.
+* [NEW] Added Socket Adaptor Factory
+* [NEW] Library now has Initialise() and Shutdown() fuctions that include the
+        OpenSSL init calls.
+ 
+
+Version 0.1.0 Pre-Alpha [9th Oct 2015]
+* [NEW] First (Pre-Alpha) release that contains IPV4 Raw Socket functionality,
+        with 100% unit test coverage.

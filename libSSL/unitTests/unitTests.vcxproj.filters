@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Test_IPV4SocketLayer.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_WinSocketAdaptor.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_IPV4SocketFactory.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_IPV4SocketLayerFactory.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_IPV4Socket.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\libs\libSSLd.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{5991e310-662d-4e45-a542-1963e3c3669c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mocks">
+      <UniqueIdentifier>{41dd4904-fbd3-4756-9acc-a0786da107bd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Mock_SocketAdaptor.h">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Mock_SocketFactory.h">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Mock_Socket.h">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
