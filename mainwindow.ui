@@ -41,7 +41,7 @@
       <x>-1</x>
       <y>-1</y>
       <width>1171</width>
-      <height>621</height>
+      <height>641</height>
      </rect>
     </property>
     <property name="font">
@@ -53,7 +53,7 @@
     <property name="styleSheet">
      <string notr="true">#stackedWidget_Environnement {
 background-color:  trasparent; 
-border-image:transparent; 
+border-image: url(:white.jpg);
 background: none;
 border:none; 
 background-repeat: none;
@@ -62,7 +62,7 @@ background-repeat: none;
 </string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="Sous_Menu_Env">
      <property name="styleSheet">
@@ -1082,7 +1082,7 @@ background-repeat: none;
       <widget class="QPushButton" name="pushButton_MAJ_Ramas">
        <property name="geometry">
         <rect>
-         <x>440</x>
+         <x>520</x>
          <y>320</y>
          <width>121</width>
          <height>121</height>
@@ -1105,7 +1105,7 @@ background-repeat: none;
       <widget class="QPushButton" name="pushButton_Delete_Ramas">
        <property name="geometry">
         <rect>
-         <x>510</x>
+         <x>590</x>
          <y>320</y>
          <width>111</width>
          <height>111</height>
@@ -1118,6 +1118,34 @@ background-repeat: none;
        </property>
        <property name="styleSheet">
         <string notr="true">#pushButton_Delete_Ramas{
+background-color: transparent;
+border-image:none; 
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_Print">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>330</y>
+         <width>121</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>47</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#pushButton_Print{
 background-color: transparent;
 border-image:none; 
 background: none;
@@ -1267,34 +1295,6 @@ background-repeat: none;
 </string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_MAILR">
-      <property name="geometry">
-       <rect>
-        <x>990</x>
-        <y>90</y>
-        <width>71</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>47</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#pushButton_MAILR{
-background-color: transparent;
-border-image:none; 
-background: none;
-border: none;
-background-repeat: none;
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <zorder>groupBox_2</zorder>
      <zorder>label_16</zorder>
      <zorder>pushButton</zorder>
@@ -1305,7 +1305,6 @@ background-repeat: none;
      <zorder>tableView_Ramas</zorder>
      <zorder>pushButton_StatR</zorder>
      <zorder>comboBox_TypeRech_Ramas</zorder>
-     <zorder>pushButton_MAILR</zorder>
     </widget>
     <widget class="QWidget" name="MAJ_Ramas">
      <property name="styleSheet">
@@ -3122,7 +3121,7 @@ background-repeat: none;
       <property name="geometry">
        <rect>
         <x>420</x>
-        <y>410</y>
+        <y>310</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -3195,24 +3194,6 @@ background-repeat: none;
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#67942d;&quot;&gt;Libellé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_36">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>300</y>
-        <width>91</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Segoe Print</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#67942d;&quot;&gt;Adresse&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineEdit_Libelle_MAJ_ZV">
       <property name="geometry">
        <rect>
@@ -3245,43 +3226,11 @@ background-repeat: none;
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_Adresse_MAJ_ZV">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>350</y>
-        <width>191</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Javanese Text</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::CustomContextMenu</enum>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#comboBox_Adresse_MAJ_ZV {
-background-color: transparent;
-border-image: url(:ch_ZV.png);
-background: none;
-border: none;
-background-repeat: none;
-}
-</string>
-      </property>
-      <property name="editable">
-       <bool>false</bool>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineEdit_Aire_MAJ_ZV">
       <property name="geometry">
        <rect>
         <x>420</x>
-        <y>450</y>
+        <y>360</y>
         <width>191</width>
         <height>51</height>
        </rect>
@@ -3669,7 +3618,7 @@ background-repeat: none;
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>100</y>
+        <y>40</y>
         <width>241</width>
         <height>191</height>
        </rect>
@@ -3679,6 +3628,11 @@ background-repeat: none;
         <width>16777215</width>
         <height>192</height>
        </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
       </property>
      </widget>
      <widget class="QTableView" name="tableView_StatR">
@@ -3760,8 +3714,8 @@ background-repeat: none;
      <widget class="QLabel" name="label_56">
       <property name="geometry">
        <rect>
-        <x>560</x>
-        <y>300</y>
+        <x>690</x>
+        <y>460</y>
         <width>151</width>
         <height>31</height>
        </rect>
@@ -3769,7 +3723,10 @@ background-repeat: none;
       <property name="font">
        <font>
         <family>Corbel</family>
-        <pointsize>12</pointsize>
+        <pointsize>16</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
@@ -3780,7 +3737,7 @@ background-repeat: none;
       <property name="geometry">
        <rect>
         <x>190</x>
-        <y>360</y>
+        <y>460</y>
         <width>181</width>
         <height>31</height>
        </rect>
@@ -3788,7 +3745,10 @@ background-repeat: none;
       <property name="font">
        <font>
         <family>Corbel</family>
-        <pointsize>8</pointsize>
+        <pointsize>16</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
@@ -3799,7 +3759,7 @@ background-repeat: none;
       <property name="geometry">
        <rect>
         <x>190</x>
-        <y>300</y>
+        <y>370</y>
         <width>211</width>
         <height>31</height>
        </rect>
@@ -3807,7 +3767,10 @@ background-repeat: none;
       <property name="font">
        <font>
         <family>Corbel</family>
-        <pointsize>8</pointsize>
+        <pointsize>16</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
@@ -3817,22 +3780,22 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_ID_Ramas_Imp">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>120</y>
+        <x>200</x>
+        <y>100</y>
         <width>141</width>
-        <height>31</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Javanese Text</family>
-        <pointsize>12</pointsize>
+        <pointsize>18</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">#lineEdit_ID_Ramas_Aff{
+       <string notr="true">#lineEdit_ID_Ramas_Imp{
 background-color: transparent;
-border-image: url(:champs.png);
+border-image: trasparent;
 background: none;
 border: none;
 background-repeat: none;
@@ -3840,7 +3803,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
       <property name="readOnly">
        <bool>true</bool>
@@ -3852,8 +3815,8 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_IDChauffeur_Imp">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>240</y>
+        <x>420</x>
+        <y>280</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -3865,9 +3828,9 @@ background-repeat: none;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">#lineEdit_IDChauffeur_Aff{
+       <string notr="true">#lineEdit_IDChauffeur_Imp{
 background-color: transparent;
-border-image: url(:champs.png);
+border-image: url(:b1.png);
 background: none;
 border: none;
 background-repeat: none;
@@ -3888,7 +3851,7 @@ background-repeat: none;
       <property name="geometry">
        <rect>
         <x>190</x>
-        <y>180</y>
+        <y>190</y>
         <width>181</width>
         <height>31</height>
        </rect>
@@ -3933,7 +3896,10 @@ background-repeat: none;
       <property name="font">
        <font>
         <family>Corbel</family>
-        <pointsize>8</pointsize>
+        <pointsize>16</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
@@ -3943,8 +3909,8 @@ background-repeat: none;
      <widget class="QLabel" name="label_60">
       <property name="geometry">
        <rect>
-        <x>560</x>
-        <y>360</y>
+        <x>190</x>
+        <y>560</y>
         <width>119</width>
         <height>31</height>
        </rect>
@@ -3952,7 +3918,10 @@ background-repeat: none;
       <property name="font">
        <font>
         <family>Corbel</family>
-        <pointsize>12</pointsize>
+        <pointsize>16</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
@@ -3962,8 +3931,8 @@ background-repeat: none;
      <widget class="QLabel" name="label_57">
       <property name="geometry">
        <rect>
-        <x>560</x>
-        <y>120</y>
+        <x>690</x>
+        <y>190</y>
         <width>171</width>
         <height>31</height>
        </rect>
@@ -3971,7 +3940,10 @@ background-repeat: none;
       <property name="font">
        <font>
         <family>Corbel</family>
-        <pointsize>12</pointsize>
+        <pointsize>16</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
@@ -3981,8 +3953,8 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_NbPoubelle_Imp">
       <property name="geometry">
        <rect>
-        <x>720</x>
-        <y>120</y>
+        <x>880</x>
+        <y>190</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -3994,9 +3966,9 @@ background-repeat: none;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">#lineEdit_NbPoubelle_Aff{
+       <string notr="true">#lineEdit_NbPoubelle_Imp{
 background-color: transparent;
-border-image: url(:champs.png);
+border-image: url(:b1.png);
 background: none;
 border: none;
 background-repeat: none;
@@ -4016,8 +3988,8 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_Date_Imp">
       <property name="geometry">
        <rect>
-        <x>720</x>
-        <y>300</y>
+        <x>880</x>
+        <y>460</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -4032,9 +4004,9 @@ background-repeat: none;
        <enum>Qt::NoContextMenu</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">#lineEdit_Date_Aff{
+       <string notr="true">#lineEdit_Date_Imp{
 background-color: transparent;
-border-image: url(:champs.png);
+border-image: url(:b1.png);
 background: none;
 border: none;
 background-repeat: none;
@@ -4054,16 +4026,19 @@ background-repeat: none;
      <widget class="QLabel" name="label_59">
       <property name="geometry">
        <rect>
-        <x>560</x>
-        <y>240</y>
+        <x>690</x>
+        <y>370</y>
         <width>151</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Corbel</family>
-        <pointsize>12</pointsize>
+        <pointsize>16</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
@@ -4073,8 +4048,8 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_NomCartier_Imp">
       <property name="geometry">
        <rect>
-        <x>720</x>
-        <y>180</y>
+        <x>880</x>
+        <y>280</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -4089,9 +4064,9 @@ background-repeat: none;
        <cursorShape>IBeamCursor</cursorShape>
       </property>
       <property name="styleSheet">
-       <string notr="true">#lineEdit_NomCartier_Aff{
+       <string notr="true">#lineEdit_NomCartier_Imp{
 background-color: transparent;
-border-image: url(:champs.png);
+border-image: url(:b1.png);
 background: none;
 border: none;
 background-repeat: none;
@@ -4111,10 +4086,10 @@ background-repeat: none;
      <widget class="QLabel" name="label_55">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>120</y>
-        <width>181</width>
-        <height>31</height>
+        <x>50</x>
+        <y>100</y>
+        <width>131</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="palette">
@@ -4156,19 +4131,19 @@ background-repeat: none;
       </property>
       <property name="font">
        <font>
-        <family>Corbel</family>
-        <pointsize>12</pointsize>
+        <family>Javanese Text</family>
+        <pointsize>19</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du ramassage&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#ff0000;&quot;&gt;Ramassage&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_HeureDebut_Imp">
       <property name="geometry">
        <rect>
-        <x>720</x>
-        <y>240</y>
+        <x>880</x>
+        <y>370</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -4180,9 +4155,9 @@ background-repeat: none;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">#lineEdit_HeureDebut_Aff{
+       <string notr="true">#lineEdit_HeureDebut_Imp{
 background-color: transparent;
-border-image: url(:champs.png);
+border-image: url(:b1.png);
 background: none;
 border: none;
 background-repeat: none;
@@ -4202,8 +4177,8 @@ background-repeat: none;
      <widget class="QLabel" name="label_58">
       <property name="geometry">
        <rect>
-        <x>560</x>
-        <y>180</y>
+        <x>690</x>
+        <y>280</y>
         <width>221</width>
         <height>31</height>
        </rect>
@@ -4211,7 +4186,10 @@ background-repeat: none;
       <property name="font">
        <font>
         <family>Corbel</family>
-        <pointsize>12</pointsize>
+        <pointsize>16</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
@@ -4221,8 +4199,8 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_Matricule_Imp">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>180</y>
+        <x>420</x>
+        <y>190</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -4234,9 +4212,9 @@ background-repeat: none;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">#lineEdit_Matricule_Aff{
+       <string notr="true">#lineEdit_Matricule_Imp{
 background-color: transparent;
-border-image: url(:champs.png);
+border-image: url(:b1.png);
 background: none;
 border: none;
 background-repeat: none;
@@ -4256,8 +4234,8 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_IDEmploye1_Imp">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>300</y>
+        <x>420</x>
+        <y>370</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -4269,9 +4247,9 @@ background-repeat: none;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">#lineEdit_IDEmploye1_Aff{
+       <string notr="true">#lineEdit_IDEmploye1_Imp{
 background-color: transparent;
-border-image: url(:champs.png);
+border-image: url(:b1.png);
 background: none;
 border: none;
 background-repeat: none;
@@ -4291,8 +4269,8 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_Duree_Imp">
       <property name="geometry">
        <rect>
-        <x>720</x>
-        <y>360</y>
+        <x>420</x>
+        <y>560</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -4304,9 +4282,9 @@ background-repeat: none;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">#lineEdit_Duree_Aff{
+       <string notr="true">#lineEdit_Duree_Imp{
 background-color: transparent;
-border-image: url(:champs.png);
+border-image: url(:b1.png);
 background: none;
 border: none;
 background-repeat: none;
@@ -4327,7 +4305,7 @@ background-repeat: none;
       <property name="geometry">
        <rect>
         <x>190</x>
-        <y>240</y>
+        <y>280</y>
         <width>171</width>
         <height>31</height>
        </rect>
@@ -4372,7 +4350,10 @@ background-repeat: none;
       <property name="font">
        <font>
         <family>Corbel</family>
-        <pointsize>8</pointsize>
+        <pointsize>16</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
@@ -4382,8 +4363,8 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_IDEmploye2_Imp">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>360</y>
+        <x>420</x>
+        <y>460</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -4395,9 +4376,9 @@ background-repeat: none;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">#lineEdit_IDEmploye2_Aff{
+       <string notr="true">#lineEdit_IDEmploye2_Imp{
 background-color: transparent;
-border-image: url(:champs.png);
+border-image: url(:b1.png);
 background: none;
 border: none;
 background-repeat: none;
@@ -4417,14 +4398,66 @@ background-repeat: none;
      <widget class="QPushButton" name="pushButton_Imprimer">
       <property name="geometry">
        <rect>
-        <x>1020</x>
+        <x>994</x>
         <y>20</y>
-        <width>75</width>
-        <height>23</height>
+        <width>101</width>
+        <height>81</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_Imprimer{
+background-color: transparent;
+border-image:none; 
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string/>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="graphicsView_2">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>0</y>
+        <width>91</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#graphicsView_2{
+background-color: transparent;
+border-image: url(:municipal.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Menu_Environ_Aff_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_Menu_Environ_Aff_3{
+background-color: transparent;
+border-image: url(:Menu.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>

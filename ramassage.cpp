@@ -81,8 +81,7 @@ QString ch;
        }
 
    }
-for(int i=0;i<tab.size();i++)
-    qDebug()<<tab[i];
+
 return tab;
 }
 

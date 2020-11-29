@@ -122,14 +122,11 @@ void on_comboBox_TypeRech_Ramas_currentIndexChanged(int index);
 void on_comboBox_TypeRech_ZV_currentIndexChanged(int index);
 
 
-
-void on_pushButton_MAILR_clicked();
-
-
-
-
-
 void on_pushButton_Imprimer_clicked();
+
+void on_pushButton_Print_clicked();
+
+void on_pushButton_Menu_Environ_Aff_3_clicked();
 
 private:
     Ui::MainWindow *ui;

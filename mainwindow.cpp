@@ -3,7 +3,7 @@
 #include <ramassage.h>
 #include<QMessageBox>
 #include<zone_verte.h>
-#include<QListWidgetItem>
+
 #include"connection.h"
 #include<QDebug>
 #include<QSqlDatabase>
@@ -25,9 +25,10 @@
 #include <QHeaderView>
 #include <QGridLayout>
 #include <QtWidgets/QTableView>
-#include <QSortFilterProxyModel>
+
 #include <QPrinter>
 #include <QPrintDialog>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -62,15 +63,13 @@ ui->comboBox_NomCartier_MAJ->addItem("Ennasr 1");
 ui->comboBox_NomCartier_MAJ->addItem("Ennasr 2");
 ui->comboBox_NomCartier_MAJ->addItem("Riadh andalous");
 
-ui->comboBox_Adresse_ZV_AJ->addItem("Adresse 1");
-ui->comboBox_Adresse_ZV_AJ->addItem("Adresse 2");
-ui->comboBox_Adresse_ZV_AJ->addItem("Adresse 3");
-ui->comboBox_Adresse_ZV_AJ->addItem("Adresse 4");
+ui->comboBox_Adresse_ZV_AJ->addItem("Ave Ariana Les Roses");
+ui->comboBox_Adresse_ZV_AJ->addItem("Rue el amine chebbi");
+ui->comboBox_Adresse_ZV_AJ->addItem("Rue Kaboul");
+ui->comboBox_Adresse_ZV_AJ->addItem("Amilcar");
+ui->comboBox_Adresse_ZV_AJ->addItem("Rue Hanoun");
+ui->comboBox_Adresse_ZV_AJ->addItem("Avenue Abdellaziz Thaalbi");
 
-ui->comboBox_Adresse_MAJ_ZV->addItem("Adresse 1");
-ui->comboBox_Adresse_MAJ_ZV->addItem("Adresse 2");
-ui->comboBox_Adresse_MAJ_ZV->addItem("Adresse 3");
-ui->comboBox_Adresse_MAJ_ZV->addItem("Adresse 4");
 
 ui->lineEdit_recherche_R->setPlaceholderText("Chercher ");
 ui->lineEdit_recherche_ZV->setPlaceholderText("Chercher ");
@@ -180,15 +179,16 @@ movie->setSpeed(200);
 
     //Mail gif
     auto movie4 = new QMovie(this);
-    QSize size3(75,61);
-    movie4->setFileName("C:/Users/user/Desktop/Rima/Environnement/email.gif");
+    QSize size3(90,71);
+    movie4->setFileName("C:/Users/user/Desktop/Rima/Environnement/printer2.gif");
     connect(movie4, &QMovie::frameChanged, [=]{
-      ui->pushButton_MAILR->setIcon(movie4->currentPixmap());
-
+      ui->pushButton_Print->setIcon(movie4->currentPixmap());
+ ui->pushButton_Imprimer->setIcon(movie4->currentPixmap());
     });
-    ui->pushButton_MAILR->setIconSize(size3);
+    ui->pushButton_Print->setIconSize(size3);
+        ui->pushButton_Imprimer->setIconSize(size3);
     movie4->start();
-    movie4->setSpeed(190);
+    movie4->setSpeed(230);
 
     auto movie5 = new QMovie(this);
     QSize size4(90,71);
@@ -200,6 +200,16 @@ movie->setSpeed(200);
     ui->pushButton_Irrigat->setIconSize(size4);
     movie5->start();
     movie5->setSpeed(190);
+    int test=1 ;
+    if(test==0)
+     {  ui->pushButton->setDisabled(true);
+        ui->pushButton_Ajout_ZV->setDisabled(true);
+        ui->pushButton_MAJ_ZV->setDisabled(true);
+        ui->pushButton_MAJ_Ramas->setDisabled(true);
+        ui->pushButton_Delete_Ramas->setDisabled(true);
+        ui->pushButton_Sup_ZV->setDisabled(true);
+
+    }
 
 }
 
@@ -225,7 +235,7 @@ R.setIdChauffeur(ui->lineEdit_IDChauffeurAJ->text());
 R.setMatricule(ui->lineEdit_MatriculeAJ->text());
 R.setId_Ramassage(ui->lineEdit_IDRamassage_AJ->text());
 R.setNom_cartier(ui->comboBox_NomCartier_AJ->currentText());
-R.setDate(ui->dateEditR_AJ->date().toString(("dd/MM/yyyy")));
+R.setDate(ui->dateEditR_AJ->date().toString("dd/MM/yyyy"));
 R.setHdepart(ui->timeEdit_DebAJ->time());
 R.setDuree(ui->timeEdit_DureeAJ->time());
 R.setNb_Poubelle(ui->spinBox_NbPoubelle_AJ->text());
@@ -274,7 +284,7 @@ ui->stackedWidget_Environnement->setCurrentIndex(1);
 
 
  }
-else {QMessageBox::critical(this,"Alerte","Il ya des données incorrectes! ");
+else {QMessageBox::critical(this,"Alerte","Les données entrées sont incorrectes ! ");
         R.SupprimerEmploye(R.getId_Ramassage());
          R.Supprimer(R.getId_Ramassage());
 ui->stackedWidget_Environnement->setCurrentIndex(1);
@@ -752,7 +762,7 @@ void MainWindow::on_pushButton_MAJ_ZV_clicked()
      ui->lineEdit_ID_MAJ_ZV->setText(ui->lineEdit_ID_Aff_ZV->text());
      ui->lineEdit_Aire_MAJ_ZV->setText(ui->lineEdit_Aire_Aff_ZV->text());
      ui->lineEdit_Libelle_MAJ_ZV->setText(ui->lineEdit_Libelle_Aff_ZV->text());
- ui->comboBox_Adresse_MAJ_ZV->setCurrentText(ui->lineEdit_Adresse_Aff_ZV->text());
+
  ui->lineEdit_ID_MAJ_ZV->setDisabled(true);
     }
 }
@@ -1049,13 +1059,13 @@ void MainWindow::on_pushButton_StatR_clicked()
 
           QStringList list1;
          QStringList list, list2;
-         QVector<Ramassage> tab;
+
          Ramassage R;
 
             ui->tableView_StatR->setModel(tmpR.afficherSTAT());
             ui->tableView_StatR->adjustSize();
             QStringList Titres;
-
+ QVector<Ramassage> tab;
                 Titres <<"Identifiant du ramassage" <<"Nombre de poubelle"<<"Duree";
                                  ui->tableWidget->setHorizontalHeaderLabels(Titres);
 
@@ -1087,18 +1097,12 @@ void MainWindow::on_pushButton_StatR_clicked()
 
         {
 
-               tab[index].setId_Ramassage("");
+            tab[index].setId_Ramassage("");
                int x=tab[m].getNbPoubelle().toInt()+tab[index].getNbPoubelle().toInt();
                 QString ch=QVariant(x).toString();
                 tab[m].setNb_Poubelle(ch);
 
-
-
-
           }
-
-
-
         }
 
 
@@ -1108,11 +1112,7 @@ void MainWindow::on_pushButton_StatR_clicked()
 
         if(tab[m].getId_Ramassage()!="")
         {
-   qDebug()<<"id= "<<tab[m].getId_Ramassage();
-      qDebug()<<"date= "<<tab[m].getDate();
-         qDebug()<<"nb= "<<tab[m].getNbPoubelle();
-            qDebug()<<" ";
-            qDebug()<<" ";
+
      *set0<<tab[m].getNbPoubelle().toInt();
 
 
@@ -1147,7 +1147,7 @@ void MainWindow::on_pushButton_StatR_clicked()
       ui->graphicsView->setPalette(pal);
              ui->graphicsView->setChart(chart);
              ui->graphicsView->setRenderHint(QPainter::Antialiasing);
-             ui->graphicsView->setMinimumSize(780,480);
+             ui->graphicsView->setMinimumSize(800,550);
 
 
 }
@@ -1164,16 +1164,26 @@ void MainWindow::on_pushButton_Menu_Environ_Aff_2_clicked()
 
 
 
-
-
-
-
-void MainWindow::on_pushButton_MAILR_clicked()
+void MainWindow::on_pushButton_Print_clicked()
 {
-
-ui->stackedWidget_Environnement->setCurrentIndex(8);
-
+    if(!ui->groupBox_2->title().isEmpty())
+    {ui->stackedWidget_Environnement->setCurrentIndex(8);
+            ui->lineEdit_Date_Imp->setText(ui->lineEdit_Date_Aff->text());
+             ui->lineEdit_Duree_Imp->setText(ui->lineEdit_Duree_Aff->text());
+            ui->lineEdit_IDChauffeur_Imp->setText(ui->lineEdit_IDChauffeur_Aff->text());
+            ui->lineEdit_IDEmploye1_Imp->setText(ui->lineEdit_IDEmploye1_Aff->text());
+             ui->lineEdit_IDEmploye2_Imp->setText(ui->lineEdit_IDEmploye2_Aff->text());
+              ui->lineEdit_ID_Ramas_Imp->setText(ui->lineEdit_ID_Ramas_Aff->text());
+               ui->lineEdit_NomCartier_Imp->setText(ui->lineEdit_NomCartier_Aff->text());
+                ui->lineEdit_NbPoubelle_Imp->setText(ui->lineEdit_NbPoubelle_Aff->text());
+                 ui->lineEdit_HeureDebut_Imp->setText(ui->lineEdit_HeureDebut_Aff->text());
+                  ui->lineEdit_Matricule_Imp->setText(ui->lineEdit_Matricule_Aff->text());
+    }
+    else QMessageBox::critical(this,"Attention","Vous devez choisire un ramassage à imprimer");
 }
+
+
+
 
 
 
@@ -1182,28 +1192,32 @@ void MainWindow::on_pushButton_Imprimer_clicked()
 {
     QPrinter printer(QPrinter::HighResolution);
 
-
+    printer.setCopyCount(1);
+    QString ch;
+    ch= ui->lineEdit_ID_Ramas_Imp->text();
+    printer.setDocName(ch);
 printer.setOrientation(QPrinter::Landscape);
+
         QPrintDialog *dialog = new QPrintDialog(&printer, this);
+
         dialog->setWindowTitle(tr("Print Document"));
          dialog->addEnabledOption(QAbstractPrintDialog::PrintSelection);
 
-            printer.setOutputFileName("print.ps");
+
+ui->pushButton_Imprimer->hide();
+ui->pushButton_Menu_Environ_Aff_3->hide();
             QPainter painter;
 
  painter.begin(&printer);
 
 
-    int    numberOfPages=1;
-            for (int page = 0; page < numberOfPages; ++page) {
 
-                // Utilisez l'imprimante pour dessiner sur la page.
+                  painter.setFont(QFont("Corbel",12));
 
-                if (page != numberOfPages)
-                  {painter.setFont(QFont("Arial",20));
 
-                    painter.drawText(width()/2,height()/2, ("Municipalité d'Ariana"));
-                   // painter.drawImage()
+
+                    painter.drawText(width()/2-10,height()/2-10, ("Municipalité d'Ariana"));
+
                           double xscale = printer.pageRect().width()/double(  ui->stackedWidget_Environnement->width());
                             double yscale = printer.pageRect().height()/double( ui->stackedWidget_Environnement->height());
                             double scale = qMin(xscale, yscale);
@@ -1214,13 +1228,15 @@ printer.setOrientation(QPrinter::Landscape);
 
                              ui->stackedWidget_Environnement->render(&painter);
 
-
-                }
-
-
-                //printer.newPage();
-            }
-
             painter.end();
 
+
+            ui->pushButton_Menu_Environ_Aff_3->show();
+}
+
+
+
+void MainWindow::on_pushButton_Menu_Environ_Aff_3_clicked()
+{
+          ui->stackedWidget_Environnement->setCurrentIndex(0);
 }
