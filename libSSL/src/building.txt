@@ -1,6 +1,0 @@
-Building LibSSL
----------------
-
-Environment Variables:
-OPENSSL_DIR - This points at the OpenSSL library
-
