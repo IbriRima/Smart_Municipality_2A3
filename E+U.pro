@@ -10,18 +10,18 @@ CONFIG += c++11
 
 SOURCES += \
     Employe.cpp \
+    compte.cpp \
     connection.cpp \
     dialog.cpp \
     main.cpp \
-    mainwindow.cpp \
-    utilisateur.cpp
+    mainwindow.cpp
 
 HEADERS += \
     Employe.h \
+    compte.h \
     connection.h \
     dialog.h \
-    mainwindow.h \
-    utilisateur.h
+    mainwindow.h
 
 FORMS += \
     dialog.ui \
