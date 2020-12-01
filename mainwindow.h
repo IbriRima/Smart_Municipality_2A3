@@ -6,7 +6,10 @@
 #include<QIcon>
 #include <QPropertyAnimation>
 #include <QPixmap>
-
+#include <QChartView>
+#include<QtCharts>
+#include<QChart>
+#include <QPieSeries>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -78,12 +81,16 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void statistiques();
+
+    void on_stat_cancel_clicked();
+
 private:
     Ui::MainWindow *ui;
     Citoyen Ctmp;
     Evenement Etmp;
     QString ID;
     QPropertyAnimation *animation;
-    int num;
+    int num=0;
 };
 #endif // MAINWINDOW_H

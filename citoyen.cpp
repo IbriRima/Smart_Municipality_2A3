@@ -127,54 +127,47 @@ QSqlQueryModel * Citoyen::afficher()
 
      return model;
  }
- void Citoyen::printPDF(int *num)
+ void Citoyen::printPDF(int num)
  {
-     QPrinter printer;
-     //printer.setOutputFormat(QPrinter::PdfFormat);
-     //printer.setOutputFileName("C:/temp/acte.pdf");
-
-     QPdfWriter pdf("c:/Users/user/Documents/file.pdf");
+     QPdfWriter pdf("c:/Users/user/Documents/file.pdf"); //création du pdf
      QPainter painter(&pdf);
-    /* QImage image(":/Documents/Acte.jpg"); //creation d un acte de naissance
-     if (! painter.begin(&printer)) { // failed to open file
-         qWarning("failed to open file, is it writable?");
-         QMessageBox msgBox;
-         msgBox.setIcon(QMessageBox::Information);
-         msgBox.setText("failed to create the pdf.");
-         msgBox.exec();
-     }*/
-     //else{
-         num++;
+     QImage image("c:/Users/user/Documents/Acte.jpg"); //recupération de l'image
+         QSqlQuery query=date();
+         QString date;
+         while(query.next())
+         {
+             date=query.value(0).toString();
+         }
+         QString nbr= QString::number(num);
          QFont font = painter.font();
-         font.setPointSize(font.pointSize() * 2);
+         font.setPointSize(font.pointSize()*2);
          painter.setFont(font);
-         painter.setPen(Qt::cyan);
-         //painter.drawImage(-20,-40,image);
-         painter.drawText(540, 1520, "Nom: ");
-         painter.drawText(540, 1520, "Nom: ");
-         painter.drawText(620, 1640, "Prenom: ");
-         painter.drawText(545, 1780, "Sexe: ");
-         painter.drawText(840, 1890, "Date de naissance: ");
-         painter.drawText(840, 2000, "Lieu de naissance: ");
-
+         painter.drawImage(0,0,image);
          painter.setPen(Qt::black);
-         painter.drawText(1620, 800, this->Id_cit);
-         painter.drawText(540, 1520, this->Nom_cit);
-         painter.drawText(540, 1520, this->Nom_cit);
-         painter.drawText(620, 1640, this->Prenom_cit);
-         painter.drawText(545, 1780, this->Sexe_cit);
-         painter.drawText(840, 1890, this->Date_cit);
-         painter.drawText(840, 2000, this->Lieu_cit);
+         painter.drawText(6270, 4000, this->Id_cit);
+         painter.drawText(2000, 6000, this->Nom_cit);
+         painter.drawText(2600, 6500, this->Prenom_cit);
+         painter.drawText(2000, 7000, this->Sexe_cit);
+         painter.drawText(3200, 7500, this->Date_cit);
+         painter.drawText(3200, 8000, this->Lieu_cit);
+         painter.drawText(3900, 10600, date);
+         painter.drawText(6270, 4750, nbr);
+         painter.drawText(3900, 10600, "01/12/2020");
          painter.end();
          QMessageBox msgBox;
          msgBox.setIcon(QMessageBox::Information);
          msgBox.setText("A pdf has been created.");
          msgBox.exec();
-     //}
  }
 QSqlQuery Citoyen::select(QString id)
 {
     QSqlQuery query;
     query.prepare("SELECT * FROM CITOYENS WHERE ID_CIT='"+id+"'");
+    return query;
+}
+QSqlQuery Citoyen::date()
+{
+    QSqlQuery query;
+    query.prepare("SELECT TO_CHAR(SYSDATE, 'DD-MON-YYYY HH:MI:SS') FROM dual;");
     return query;
 }

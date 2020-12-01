@@ -57,7 +57,8 @@ public:
     //fonctionnalités avancées
     QSqlQueryModel * recherche(QString id);
     QSqlQueryModel * trier();
-    void printPDF(int* num);
+    void printPDF(int num);
+    QSqlQuery date();
 };
 
 #endif // ETATCIVIL_H

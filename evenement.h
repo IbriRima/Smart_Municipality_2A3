@@ -10,6 +10,11 @@
 #include <QSqlQueryModel>
 #include<QMessageBox>
 #include <QPainter>
+#include <QChartView>
+#include<QtCharts>
+#include<QChart>
+/*#include<QtChartsDepends>
+#include<QtChartsVersion>
 #include <QtCharts/QChartView>
 #include <QtCharts/QBarSeries>
 #include <QtCharts/QBarSet>
@@ -20,6 +25,7 @@
 #include <QtCharts/QCategoryAxis>
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
+*/
 class Evenement
 {   private :
     QString Id_event;
@@ -57,11 +63,11 @@ class Evenement
      bool maj(QString old_id);
      QSqlQuery select(QString ID);
      //fonctionnalités avancées
-     //double total();
-     //void setData(QVector<double> value, QVector<QColor> color);
-     //void paintEvent(QPaintEvent *);
-     void statistiques();
-     QSqlQueryModel *trier();
+     double total();
+     int passe();
+     int attente();
+     int annule();
+     QSqlQueryModel *trier(int tri);
 
 };
 
