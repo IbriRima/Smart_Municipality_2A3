@@ -13,6 +13,7 @@ public:
     QByteArray read_from_capteur_humidite();
     QSerialPort* getserial();
     QString get_capteur_humidite_port_name();
+    /***********************/
 private :
     QSerialPort *serial;
     static const quint16 arduino_uno_vendor_id=9025;
