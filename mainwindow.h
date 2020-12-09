@@ -2,8 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include<ramassage.h>
-#include<zone_verte.h>
+#include"ramassage.h"
+#include"zone_verte.h"
+#include"capteur_humidite.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -110,7 +111,6 @@ void on_lineEdit_recherche_ZV_returnPressed();
 
 void on_lineEdit_recherche_R_returnPressed();
 
-void on_pushButton_Mail_clicked();
 
 void on_pushButton_StatR_clicked();
 
@@ -128,10 +128,18 @@ void on_pushButton_Print_clicked();
 
 void on_pushButton_Menu_Environ_Aff_3_clicked();
 
+void update_label();
+
+void on_comboBox_typeStat_Annee_currentIndexChanged(const QString &arg1);
+
+void on_ON_clicked();
+
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;
     Ramassage tmpR;
+   Capteur_humidite C;
+   QByteArray data;
 
 };
 #endif // MAINWINDOW_H

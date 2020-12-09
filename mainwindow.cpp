@@ -1,10 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <ramassage.h>
-#include<QMessageBox>
-#include<zone_verte.h>
-
+#include "ramassage.h"
+#include"zone_verte.h"
+#include"capteur_humidite.h"
 #include"connection.h"
+#include<QMessageBox>
 #include<QDebug>
 #include<QSqlDatabase>
 #include<QSqlQuery>
@@ -18,14 +18,10 @@
 #include <QSize>
 #include <QSortFilterProxyModel>
 #include <QtCharts>
-#include <QChartView>
 #include <QLineSeries>
-#include <QVXYModelMapper>
 #include <QtCore>
 #include <QHeaderView>
 #include <QGridLayout>
-#include <QtWidgets/QTableView>
-
 #include <QPrinter>
 #include <QPrintDialog>
 
@@ -69,6 +65,28 @@ ui->comboBox_Adresse_ZV_AJ->addItem("Rue Kaboul");
 ui->comboBox_Adresse_ZV_AJ->addItem("Amilcar");
 ui->comboBox_Adresse_ZV_AJ->addItem("Rue Hanoun");
 ui->comboBox_Adresse_ZV_AJ->addItem("Avenue Abdellaziz Thaalbi");
+ui->comboBox_typeStat_Annee->addItem("2000");
+ui->comboBox_typeStat_Annee->addItem("2001");
+ui->comboBox_typeStat_Annee->addItem("2002");
+ui->comboBox_typeStat_Annee->addItem("2003");
+ui->comboBox_typeStat_Annee->addItem("2004");
+ui->comboBox_typeStat_Annee->addItem("2005");
+ui->comboBox_typeStat_Annee->addItem("2006");
+ui->comboBox_typeStat_Annee->addItem("2007");
+ui->comboBox_typeStat_Annee->addItem("2008");
+ui->comboBox_typeStat_Annee->addItem("2009");
+ui->comboBox_typeStat_Annee->addItem("2010");
+ui->comboBox_typeStat_Annee->addItem("2011");
+ui->comboBox_typeStat_Annee->addItem("2012");
+ui->comboBox_typeStat_Annee->addItem("2013");
+ui->comboBox_typeStat_Annee->addItem("2014");
+ui->comboBox_typeStat_Annee->addItem("2015");
+ui->comboBox_typeStat_Annee->addItem("2016");
+ui->comboBox_typeStat_Annee->addItem("2017");
+ui->comboBox_typeStat_Annee->addItem("2018");
+ui->comboBox_typeStat_Annee->addItem("2019");
+ui->comboBox_typeStat_Annee->addItem("2020");
+
 
 
 ui->lineEdit_recherche_R->setPlaceholderText("Chercher ");
@@ -177,7 +195,7 @@ movie->setSpeed(200);
     movie3->start();
     movie3->setSpeed(50);
 
-    //Mail gif
+    //print gif
     auto movie4 = new QMovie(this);
     QSize size3(90,71);
     movie4->setFileName("C:/Users/user/Desktop/Rima/Environnement/printer2.gif");
@@ -210,6 +228,18 @@ movie->setSpeed(200);
         ui->pushButton_Sup_ZV->setDisabled(true);
 
     }
+    //Connection Arduino Capteur Humidité
+    int ret=C.connect_capteur_humidite();
+    switch(ret)
+    {
+    case(0):qDebug()<<"arduino is available and connected to: "<<C.get_capteur_humidite_port_name();
+    break;
+    case(1):qDebug()<<"arduino is available but not connected to:"<<C.get_capteur_humidite_port_name();
+    break;
+    case(-1):qDebug()<<"arduino is not available";
+    break;
+    }
+  //  QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 
 }
 
@@ -277,7 +307,6 @@ test= R.ajouter();
  ui->tableView_Ramas->setModel(tmpR.afficher());
 
 
-  //RESET lineEdit
 
 
 ui->stackedWidget_Environnement->setCurrentIndex(1);
@@ -304,6 +333,7 @@ ui->stackedWidget_Environnement->setCurrentIndex(1);
  ui->lineEdit_IDEmpl2_Rama->clear();
 }
 else QMessageBox::critical(this,"Alerte","Il faut tout remplire ! ");
+
 
 
 }
@@ -781,7 +811,7 @@ void MainWindow::on_pushButton_MAJ_Ramas_clicked()
     ui->lineEdit_Matricule_MAJ->setText(ui->lineEdit_Matricule_Aff->text());
 
     qDebug()<<"Date: "<<ui->lineEdit_Date_Aff->text();
-    ui->dateEditR_MAJ->setDate(QDate::fromString(ui->lineEdit_Date_Aff->text(),"dd/MM/yyyy"));
+    ui->dateEditR_MAJ->setDate(QDate::fromString(ui->lineEdit_Date_Aff->text(),"dd/mm/yyyy"));
     ui->spinBox_NbPoubelle_MAJ->setValue(ui->lineEdit_NbPoubelle_Aff->text().toInt());
     ui->timeEdit_DureeMAJ->setTime( QTime::fromString(ui->lineEdit_Duree_Aff->text()));
     ui->comboBox_NomCartier_MAJ->setCurrentText(ui->lineEdit_NomCartier_Aff->text());
@@ -845,7 +875,7 @@ void MainWindow::on_pushButton_SaveR_MAJ_clicked()
    Matricule=ui->lineEdit_Matricule_MAJ->text();
 
     Nom_Cartier=ui->comboBox_NomCartier_MAJ->currentText();
-    Date=ui->dateEditR_MAJ->date().toString("dd/MM/yyyy");
+    Date=ui->dateEditR_MAJ->date().toString("dd/mm/yyyy");
     Heure=ui->timeEdit_DebMAJ->time().toString();
     Duree=ui->timeEdit_DureeMAJ->time().toString("HH:mm");
     Nb_poubelle=ui->spinBox_NbPoubelle_MAJ->text();
@@ -1045,10 +1075,7 @@ ui->groupBox_2->setTitle("");
 
 }
 
-void MainWindow::on_pushButton_Mail_clicked()
-{
 
-}
 
 void MainWindow::on_pushButton_StatR_clicked()
 {
@@ -1062,12 +1089,16 @@ void MainWindow::on_pushButton_StatR_clicked()
 
          Ramassage R;
 
-            ui->tableView_StatR->setModel(tmpR.afficherSTAT());
-            ui->tableView_StatR->adjustSize();
-            QStringList Titres;
+    /*     QString ch=ui->dateEditR_AJ->date().toString("yyyy");
+         qDebug()<<"Annee "<<ch;
+*/
+      ui->tableView_StatR->setModel(tmpR.afficherSTAT());
+             //  ui->tableView_StatR->show();
+           ui->tableView_StatR->adjustSize();
+            //QStringList Titres;
  QVector<Ramassage> tab;
-                Titres <<"Identifiant du ramassage" <<"Nombre de poubelle"<<"Duree";
-                                 ui->tableWidget->setHorizontalHeaderLabels(Titres);
+            //    Titres <<"Identifiant du ramassage" <<"Nombre de poubelle"<<"Duree";
+                       //          ui->tableWidget->setHorizontalHeaderLabels(Titres);
 
 
          for( int row = 0; row < ui->tableView_StatR->model()->rowCount(); ++row )
@@ -1083,8 +1114,9 @@ void MainWindow::on_pushButton_StatR_clicked()
                     R.setNb_Poubelle(index2.data().toString());
                     R.setDate(index3.data().toString());
          ui->tableWidget->hide();
-        }
+                 }
            tab.push_back(R);
+
          }
 
 
@@ -1103,7 +1135,10 @@ void MainWindow::on_pushButton_StatR_clicked()
                 tab[m].setNb_Poubelle(ch);
 
           }
+
         }
+
+
 
 
         for(int k=0;k<tab.size();k++)
@@ -1116,7 +1151,7 @@ void MainWindow::on_pushButton_StatR_clicked()
      *set0<<tab[m].getNbPoubelle().toInt();
 
 
-}
+         }
          }
 
 
@@ -1239,4 +1274,25 @@ ui->pushButton_Menu_Environ_Aff_3->hide();
 void MainWindow::on_pushButton_Menu_Environ_Aff_3_clicked()
 {
           ui->stackedWidget_Environnement->setCurrentIndex(0);
+}
+
+
+
+void MainWindow::on_comboBox_typeStat_Annee_currentIndexChanged(const QString &arg1)
+{
+    if(arg1=="2020")
+        qDebug()<<"Here";
+}
+void MainWindow::update_label()
+{
+    data=C.read_from_capteur_humidite();
+    if(data=="1")
+        ui->arduino->setText("ON");
+    else if(data=="0")
+        ui->arduino->setText("OFF");
+}
+
+void MainWindow::on_ON_clicked()
+{
+    C.write_to_capteur_humidite("1");
 }

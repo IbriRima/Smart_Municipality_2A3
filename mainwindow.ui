@@ -62,7 +62,7 @@ background-repeat: none;
 </string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Sous_Menu_Env">
      <property name="styleSheet">
@@ -1247,8 +1247,8 @@ background-repeat: none;
      <widget class="QPushButton" name="pushButton_StatR">
       <property name="geometry">
        <rect>
-        <x>990</x>
-        <y>30</y>
+        <x>980</x>
+        <y>50</y>
         <width>75</width>
         <height>61</height>
        </rect>
@@ -3613,7 +3613,7 @@ background-repeat: none;
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page">
+    <widget class="QWidget" name="Stat_ramas">
      <widget class="QChartView" name="graphicsView">
       <property name="geometry">
        <rect>
@@ -3693,9 +3693,9 @@ background-repeat: none;
      <widget class="QTableWidget" name="tableWidget">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>400</y>
-        <width>561</width>
+        <x>60</x>
+        <y>10</y>
+        <width>261</width>
         <height>201</height>
        </rect>
       </property>
@@ -3709,8 +3709,28 @@ background-repeat: none;
        <number>0</number>
       </property>
      </widget>
+     <widget class="QComboBox" name="comboBox_typeStat">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>10</y>
+        <width>69</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_typeStat_Annee">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>10</y>
+        <width>69</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
-    <widget class="QWidget" name="page_2">
+    <widget class="QWidget" name="Impression_Ramas">
      <widget class="QLabel" name="label_56">
       <property name="geometry">
        <rect>
@@ -4458,6 +4478,47 @@ background-repeat: none;
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Arduino_Environnement">
+     <widget class="QPushButton" name="ON">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>On</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>140</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="arduino">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>280</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
       </property>
      </widget>
     </widget>
