@@ -33,7 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     qDebug() <<this->size();
-/*************************************************************/
+
     //Add items to comoBox_AdresseAJ
 
 ui->stackedWidget_Environnement->setCurrentIndex(0);
