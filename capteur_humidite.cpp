@@ -20,7 +20,7 @@ int Capteur_humidite::connect_capteur_humidite()
     }
     qDebug()<<"Arduino port name is: "<<arduino_port_name;
     if(arduino_is_available)
-    {  qDebug()<<  QSerialPort::SerialPortError();
+    {qDebug()<<"...................";
         serial->setPortName(arduino_port_name);
 
         if(serial->open(QSerialPort::ReadWrite))

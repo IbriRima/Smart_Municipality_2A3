@@ -22,7 +22,7 @@ bool Zone_Verte::ajouter()
 
       QSqlQuery query;
 
-query.prepare("insert into ZONE_VERTE (IDENTIFIANT,LIBELLE,ADRESSE,AIRE) values (:id,:libelle,:adresse,:aire) ");
+query.prepare("insert into ZONE_VERTE (ID_ZONEVERTE,LIBELLE,ADRESSE,AIRE) values (:id,:libelle,:adresse,:aire) ");
 query.bindValue(":id",getIdentifiant());
 query.bindValue(":libelle",getLibelle());
 query.bindValue(":adresse",getAdresse());
@@ -34,7 +34,7 @@ query.bindValue(":aire",getAire());
 void Zone_Verte::Remplissage(QString*ID,QString*Libelle,QString*Adresse,QString*Aire)
 {  QSqlQuery q;
 
-    q.prepare("select * from ZONE_VERTE where IDENTIFIANT='"+*ID+"'");
+    q.prepare("select * from ZONE_VERTE where ID_ZONEVERTE='"+*ID+"'");
 
      if(q.exec())
      {
@@ -54,7 +54,7 @@ QSqlQueryModel * Zone_Verte::afficher()
 {
     QSqlQueryModel *model= new QSqlQueryModel();
 
-    model->setQuery("SELECT IDENTIFIANT FROM ZONE_VERTE ");
+    model->setQuery("SELECT ID_ZONEVERTE FROM ZONE_VERTE ");
 
 
 return model;
@@ -64,7 +64,7 @@ bool Zone_Verte::Supprimer(QString ID)
 {
 
     QSqlQuery query;
-    query.prepare("Delete from Zone_Verte where IDENTIFIANT = :ID");
+    query.prepare("Delete from Zone_Verte where ID_ZONEVERTE = :ID");
     query.bindValue(":ID",ID);
     return query.exec();
 
@@ -75,7 +75,7 @@ bool Zone_Verte::Modifier(QString ID,QString Libelle,QString Aire,QString Adress
 {
      QSqlQuery q;
 
-q.prepare("update ZONE_VERTE set LIBELLE= :libelle,ADRESSE= :adresse ,AIRE= :aire where IDENTIFIANT= :id");
+q.prepare("update ZONE_VERTE set LIBELLE= :libelle,ADRESSE= :adresse ,AIRE= :aire where ID_ZONEVERTE= :id");
 
 q.bindValue(":id",ID);
 q.bindValue(":libelle",Libelle);
@@ -92,19 +92,19 @@ QSqlQueryModel* Zone_Verte::Recherche(int indice,QString ch)
     QSqlQueryModel *model= new QSqlQueryModel();
     if(indice==1)
    {
-        model->setQuery("select IDENTIFIANT from ZONE_VERTE where IDENTIFIANT= '"+ch+"' ");
+        model->setQuery("select ID_ZONEVERTE from ZONE_VERTE where ID_ZONEVERTE= '"+ch+"' ");
    }
     else if (indice==2)
     {
-     model->setQuery("select IDENTIFIANT from ZONE_VERTE where LIBELLE='"+ch+"'");
+     model->setQuery("select ID_ZONEVERTE from ZONE_VERTE where LIBELLE='"+ch+"'");
     }
     else if (indice==3)
     {
-     model->setQuery("select IDENTIFIANT from ZONE_VERTE where ADRESSE='"+ch+"'");
+     model->setQuery("select ID_ZONEVERTE from ZONE_VERTE where ADRESSE='"+ch+"'");
     }
     else if (indice==4)
     {
-     model->setQuery("select IDENTIFIANT from ZONE_VERTE where AIRE='"+ch+"'");
+     model->setQuery("select ID_ZONEVERTE from ZONE_VERTE where AIRE='"+ch+"'");
     }
 
       model->setHeaderData(0,Qt::Horizontal,QObject::tr("IDENTIFIANT"));

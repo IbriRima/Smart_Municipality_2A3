@@ -70,7 +70,7 @@ void Remplissage(QString*,QString*,QString*,QString*,QString*,QString*,QString*)
 bool Supprimer(QString ID);
 bool Modifier(QString,QString,QString,QString,QString,QString,QString);
 QSqlQueryModel* Recherche(int,QString);
-QSqlQueryModel* afficherSTAT();
+QSqlQueryModel* afficherSTAT(QString,QString);
 bool affectation(QString);
 QVector<QString> afficheremploye(QString*);
 bool SupprimerEmploye(QString ID);

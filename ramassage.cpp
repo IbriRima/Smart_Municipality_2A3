@@ -19,7 +19,7 @@ bool Ramassage::ajouter()
       QSqlQuery query;
 
 
-      query.prepare("insert into RAMASSAGE (ID_RAMASSAGE,MATRICULE_CAMION,DATE_RAMASSAGE,"
+      query.prepare("insert into RAMASSAGE (ID_RAMASSAGE,MATRICULE,DATE_RAMASSAGE,"
                           "NOMBRE_POUBELLE,DUREE,NOM_CARTIER,HEURE_DEBUT) values(:id,:Matricule,:date,:nb_p,:duree,:cartier,:heure)");
 query.bindValue(":id",getId_Ramassage());
 query.bindValue(":Matricule",getMatricule());
@@ -108,9 +108,7 @@ void Ramassage::Remplissage(QString* ID,QString*Matricule,QString*Date,QString*N
 }
     }
 
-/*Id_chauffeur=q.value(2).toString();
-*id_empl1=q.value(3).toString();
-*id_empl2=q.value(4).toString();*/
+
 
 }
 
@@ -138,7 +136,7 @@ bool Ramassage::Modifier(QString ID, QString Matricule, QString Date, QString Nb
 
 
 
-query.prepare("update RAMASSAGE set MATRICULE_CAMION= :Matricule,DATE_RAMASSAGE= :date,NOMBRE_POUBELLE= :nb_p,DUREE= :duree,NOM_CARTIER= :cartier,HEURE_DEBUT= :heure where ID_RAMASSAGE= :ID");
+query.prepare("update RAMASSAGE set MATRICULE= :Matricule,DATE_RAMASSAGE= :date,NOMBRE_POUBELLE= :nb_p,DUREE= :duree,NOM_CARTIER= :cartier,HEURE_DEBUT= :heure where ID_RAMASSAGE= :ID");
 
 query.bindValue(":ID",ID);
 query.bindValue(":Matricule",Matricule);
@@ -149,30 +147,12 @@ query.bindValue(":duree",Duree);
 query.bindValue(":cartier",Nom_cartier);
 query.bindValue(":heure", Heure);
 
-/*
-query.bindValue(":ID_chauffeur",Id_chauffeur);
-query.bindValue(":id_empl1",id_empl1);
-query.bindValue(":id_empl2",id_empl2);
-*/
+
 
 return   query.exec();
 
 }
-/*QVector<QString> Ramassage::ModifierEmploye(QString ID,QString CIN_Chauffeur)
-{
 
-
-QSqlQuery q;
-qDebug()<<"CIN? "<<CIN_Chauffeur;
-
-q.prepare("update EMPLOYE_RAMASSAGE set CIN= :CIN where ID_RAMASSAGE= :ID");
-q.bindValue(":CIN",CIN_Chauffeur);
-q.bindValue(":ID",ID);
-q.exec();
-//  tab.push_back(CIN_Chauffeur);
-
-return tab;
-}*/
 
 QSqlQueryModel* Ramassage::Recherche(int indice,QString ch)
 {
@@ -186,7 +166,7 @@ if(indice==1)
 }
     else if (indice==2)
 {
-     model->setQuery("select ID_RAMASSAGE from RAMASSAGE where Matricule_Camion= '"+ch+"' ");
+     model->setQuery("select ID_RAMASSAGE from RAMASSAGE where Matricule= '"+ch+"' ");
 }
 else if (indice==3)
 {
@@ -215,15 +195,18 @@ model->setHeaderData(0,Qt::Horizontal,QObject::tr("IDENTIFIANT"));
 return model;
 }
 
-QSqlQueryModel * Ramassage ::afficherSTAT()
-{QString ch;
+QSqlQueryModel * Ramassage ::afficherSTAT(QString ch,QString ch2)
+{
+qDebug()<<"Annee"<<ch;
 
-    ch="2020";
     QSqlQueryModel *model= new QSqlQueryModel();
-    model->setQuery("SELECT ID_RAMASSAGE,NOMBRE_POUBELLE,DATE_RAMASSAGE FROM RAMASSAGE where DATE_RAMASSAGE like'%"+ch+"%' ORDER BY TO_DATE(DATE_RAMASSAGE,'dd/MM/yyyy') ASC");
+    model->setQuery("SELECT ID_RAMASSAGE,NOMBRE_POUBELLE,DATE_RAMASSAGE FROM RAMASSAGE where DATE_RAMASSAGE like'%/"+ch+"' ORDER BY TO_DATE(DATE_RAMASSAGE,'dd/MM/yyyy') ASC");
 
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
 model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nombre de poubelle"));
 model->setHeaderData(2,Qt::Horizontal,QObject::tr("Date"));
+
+
 return model;
 }
+

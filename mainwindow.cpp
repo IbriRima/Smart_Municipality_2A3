@@ -65,27 +65,6 @@ ui->comboBox_Adresse_ZV_AJ->addItem("Rue Kaboul");
 ui->comboBox_Adresse_ZV_AJ->addItem("Amilcar");
 ui->comboBox_Adresse_ZV_AJ->addItem("Rue Hanoun");
 ui->comboBox_Adresse_ZV_AJ->addItem("Avenue Abdellaziz Thaalbi");
-ui->comboBox_typeStat_Annee->addItem("2000");
-ui->comboBox_typeStat_Annee->addItem("2001");
-ui->comboBox_typeStat_Annee->addItem("2002");
-ui->comboBox_typeStat_Annee->addItem("2003");
-ui->comboBox_typeStat_Annee->addItem("2004");
-ui->comboBox_typeStat_Annee->addItem("2005");
-ui->comboBox_typeStat_Annee->addItem("2006");
-ui->comboBox_typeStat_Annee->addItem("2007");
-ui->comboBox_typeStat_Annee->addItem("2008");
-ui->comboBox_typeStat_Annee->addItem("2009");
-ui->comboBox_typeStat_Annee->addItem("2010");
-ui->comboBox_typeStat_Annee->addItem("2011");
-ui->comboBox_typeStat_Annee->addItem("2012");
-ui->comboBox_typeStat_Annee->addItem("2013");
-ui->comboBox_typeStat_Annee->addItem("2014");
-ui->comboBox_typeStat_Annee->addItem("2015");
-ui->comboBox_typeStat_Annee->addItem("2016");
-ui->comboBox_typeStat_Annee->addItem("2017");
-ui->comboBox_typeStat_Annee->addItem("2018");
-ui->comboBox_typeStat_Annee->addItem("2019");
-ui->comboBox_typeStat_Annee->addItem("2020");
 
 
 
@@ -228,7 +207,7 @@ movie->setSpeed(200);
         ui->pushButton_Sup_ZV->setDisabled(true);
 
     }
-    //Connection Arduino Capteur Humidité
+  /*//Connection Arduino Capteur Humidité
     int ret=C.connect_capteur_humidite();
     switch(ret)
     {
@@ -240,7 +219,7 @@ movie->setSpeed(200);
     break;
     }
   //  QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
-
+*/
 }
 
 MainWindow::~MainWindow()
@@ -811,7 +790,7 @@ void MainWindow::on_pushButton_MAJ_Ramas_clicked()
     ui->lineEdit_Matricule_MAJ->setText(ui->lineEdit_Matricule_Aff->text());
 
     qDebug()<<"Date: "<<ui->lineEdit_Date_Aff->text();
-    ui->dateEditR_MAJ->setDate(QDate::fromString(ui->lineEdit_Date_Aff->text(),"dd/mm/yyyy"));
+    ui->dateEditR_MAJ->setDate(QDate::fromString(ui->lineEdit_Date_Aff->text(),"dd/MM/yyyy"));
     ui->spinBox_NbPoubelle_MAJ->setValue(ui->lineEdit_NbPoubelle_Aff->text().toInt());
     ui->timeEdit_DureeMAJ->setTime( QTime::fromString(ui->lineEdit_Duree_Aff->text()));
     ui->comboBox_NomCartier_MAJ->setCurrentText(ui->lineEdit_NomCartier_Aff->text());
@@ -875,7 +854,7 @@ void MainWindow::on_pushButton_SaveR_MAJ_clicked()
    Matricule=ui->lineEdit_Matricule_MAJ->text();
 
     Nom_Cartier=ui->comboBox_NomCartier_MAJ->currentText();
-    Date=ui->dateEditR_MAJ->date().toString("dd/mm/yyyy");
+    Date=ui->dateEditR_MAJ->date().toString("dd/MM/yyyy");
     Heure=ui->timeEdit_DebMAJ->time().toString();
     Duree=ui->timeEdit_DureeMAJ->time().toString("HH:mm");
     Nb_poubelle=ui->spinBox_NbPoubelle_MAJ->text();
@@ -1081,109 +1060,22 @@ void MainWindow::on_pushButton_StatR_clicked()
 {
 
    ui->stackedWidget_Environnement->setCurrentIndex(7);
+   ui->graphicsView->show();
+ ui->tableView_StatR->hide();
 
- QBarSet *set0 = new QBarSet("ramassage");
+ QChart *chart = new QChart;
+   QBarSeries *series = new QBarSeries();
 
-          QStringList list1;
-         QStringList list, list2;
+  chart->addSeries(series);
+  QBarCategoryAxis *axis= new QBarCategoryAxis();
+chart->createDefaultAxes();
 
-         Ramassage R;
+  chart->setAxisX(axis,series);
+    ui->graphicsView->setChart(chart);
+        ui->graphicsView->setRenderHint(QPainter::Antialiasing);
+        ui->graphicsView->setMinimumSize(800,550);
 
-    /*     QString ch=ui->dateEditR_AJ->date().toString("yyyy");
-         qDebug()<<"Annee "<<ch;
-*/
-      ui->tableView_StatR->setModel(tmpR.afficherSTAT());
-             //  ui->tableView_StatR->show();
-           ui->tableView_StatR->adjustSize();
-            //QStringList Titres;
- QVector<Ramassage> tab;
-            //    Titres <<"Identifiant du ramassage" <<"Nombre de poubelle"<<"Duree";
-                       //          ui->tableWidget->setHorizontalHeaderLabels(Titres);
-
-
-         for( int row = 0; row < ui->tableView_StatR->model()->rowCount(); ++row )
-                {   ui->tableWidget->setColumnCount(3);
-            ui->tableWidget->insertRow(ui->tableWidget->rowCount());
-          for( int col = 0; col < ui->tableView_StatR->model()->columnCount(); ++col )
-                  {
-                   QModelIndex index =ui->tableView_StatR->model()->index(row,0);
-                    QModelIndex index2 =ui->tableView_StatR->model()->index(row,1);
-                     QModelIndex index3 =ui->tableView_StatR->model()->index(row,2);
-                     list1.append(index.data().toString());
-                    R.setId_Ramassage(index.data().toString());
-                    R.setNb_Poubelle(index2.data().toString());
-                    R.setDate(index3.data().toString());
-         ui->tableWidget->hide();
-                 }
-           tab.push_back(R);
-
-         }
-
-
-         for(int m=0;m<tab.size();m++)
-        {
-             for(int index=0;index<tab.size();index++)
-
-      {
-        if(tab[index].getDate()==tab[m].getDate()&& m!=index)
-
-        {
-
-            tab[index].setId_Ramassage("");
-               int x=tab[m].getNbPoubelle().toInt()+tab[index].getNbPoubelle().toInt();
-                QString ch=QVariant(x).toString();
-                tab[m].setNb_Poubelle(ch);
-
-          }
-
-        }
-
-
-
-
-        for(int k=0;k<tab.size();k++)
-
-         list.append(tab[k].getDate());
-
-        if(tab[m].getId_Ramassage()!="")
-        {
-
-     *set0<<tab[m].getNbPoubelle().toInt();
-
-
-         }
-         }
-
-
-
-           ui->stackedWidget_Environnement->setCurrentIndex(7);
-                 QBarSeries *series = new QBarSeries();
-                      series->append(set0);
-
-                     QChart *chart = new QChart;
-                      chart->addSeries(series);
-                      chart->setTitle("Le nombre de ramassages effectués par la municipalité en fonction des années");
-                 chart->setAnimationOptions(QChart::AllAnimations);
-
-                 QBarCategoryAxis *axis= new QBarCategoryAxis();
-                 axis->append(list);
-
-                 chart->createDefaultAxes();
-
-                 chart->setAxisX(axis,series);
-                 chart->legend()->setVisible(true);
-                 chart->legend()->setAlignment(Qt::AlignBottom);
-                 QPalette pal =  ui->graphicsView->palette();
-                 pal.setColor(QPalette::Window, QRgb(0x121218));
-                 pal.setColor(QPalette::WindowText, QRgb(0xd6d6d6));
-
-        ui->graphicsView->show();
-
-      ui->graphicsView->setPalette(pal);
-             ui->graphicsView->setChart(chart);
-             ui->graphicsView->setRenderHint(QPainter::Antialiasing);
-             ui->graphicsView->setMinimumSize(800,550);
-
+/*****************************************************************************/
 
 }
 
@@ -1278,11 +1170,7 @@ void MainWindow::on_pushButton_Menu_Environ_Aff_3_clicked()
 
 
 
-void MainWindow::on_comboBox_typeStat_Annee_currentIndexChanged(const QString &arg1)
-{
-    if(arg1=="2020")
-        qDebug()<<"Here";
-}
+
 void MainWindow::update_label()
 {
     data=C.read_from_capteur_humidite();
@@ -1295,4 +1183,120 @@ void MainWindow::update_label()
 void MainWindow::on_ON_clicked()
 {
     C.write_to_capteur_humidite("1");
+}
+
+
+
+
+
+
+
+
+void MainWindow::on_Date_Stat_dateChanged(const QDate &date)
+{
+
+
+QBarSet *set0 = new QBarSet("ramassage");
+
+QString ch1,ch2,ch3;
+QStringList list1;
+ch1=date.toString("MM/yyyy");
+        QStringList list, list2;
+
+        Ramassage R;
+
+ ui->tableView_StatR->show();
+
+     ui->tableView_StatR->setModel(tmpR.afficherSTAT(ch1,ch2));
+
+
+          ui->tableView_StatR->adjustSize();
+
+QVector<Ramassage> tab;
+
+
+        for( int row = 0; row < ui->tableView_StatR->model()->rowCount(); ++row )
+               {   ui->tableWidget->setColumnCount(3);
+           ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+         for( int col = 0; col < ui->tableView_StatR->model()->columnCount(); ++col )
+                 {
+                  QModelIndex index =ui->tableView_StatR->model()->index(row,0);
+                   QModelIndex index2 =ui->tableView_StatR->model()->index(row,1);
+                    QModelIndex index3 =ui->tableView_StatR->model()->index(row,2);
+                    list1.append(index.data().toString());
+                   R.setId_Ramassage(index.data().toString());
+                   R.setNb_Poubelle(index2.data().toString());
+                   R.setDate(index3.data().toString());
+        ui->tableWidget->hide();
+                }
+          tab.push_back(R);
+
+        }
+
+
+        for(int m=0;m<tab.size();m++)
+       {
+            for(int index=0;index<tab.size();index++)
+
+     {
+       if(tab[index].getDate()==tab[m].getDate()&& m!=index)
+
+       {
+
+           tab[index].setId_Ramassage("");
+              int x=tab[m].getNbPoubelle().toInt()+tab[index].getNbPoubelle().toInt();
+               QString ch=QVariant(x).toString();
+               tab[m].setNb_Poubelle(ch);
+
+         }
+
+       }
+
+
+
+
+       for(int k=0;k<tab.size();k++)
+
+        list.append(tab[k].getDate());
+
+       if(tab[m].getId_Ramassage()!="")
+       {
+
+    *set0<<tab[m].getNbPoubelle().toInt();
+
+
+        }
+        }
+
+
+
+          ui->stackedWidget_Environnement->setCurrentIndex(7);
+                QBarSeries *series = new QBarSeries();
+                     series->append(set0);
+
+                    QChart *chart = new QChart;
+                     chart->addSeries(series);
+                     chart->setTitle("Le nombre de ramassages effectués par la municipalité en '"+ch1+"'");
+    QFont serifFont("Segoe Print", 15, QFont::Bold);
+                     chart->setTitleFont(serifFont);
+                chart->setAnimationOptions(QChart::AllAnimations);
+
+                QBarCategoryAxis *axis= new QBarCategoryAxis();
+                axis->append(list);
+
+                chart->createDefaultAxes();
+
+                chart->setAxisX(axis,series);
+                chart->legend()->setVisible(true);
+                chart->legend()->setAlignment(Qt::AlignBottom);
+                QPalette pal =  ui->graphicsView->palette();
+                pal.setColor(QPalette::Window, QRgb(0x121218));
+                pal.setColor(QPalette::WindowText, QRgb(0xd6d6d6));
+
+       ui->graphicsView->show();
+
+     ui->graphicsView->setPalette(pal);
+            ui->graphicsView->setChart(chart);
+            ui->graphicsView->setRenderHint(QPainter::Antialiasing);
+            ui->graphicsView->setMinimumSize(800,550);
 }

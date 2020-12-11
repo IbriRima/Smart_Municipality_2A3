@@ -130,9 +130,10 @@ void on_pushButton_Menu_Environ_Aff_3_clicked();
 
 void update_label();
 
-void on_comboBox_typeStat_Annee_currentIndexChanged(const QString &arg1);
 
 void on_ON_clicked();
+
+void on_Date_Stat_dateChanged(const QDate &date);
 
 private:
     Ui::MainWindow *ui;

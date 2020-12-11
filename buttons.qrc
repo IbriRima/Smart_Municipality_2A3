@@ -44,5 +44,6 @@
         <file>white.jpg</file>
         <file>b1.png</file>
         <file>municipal.png</file>
+        <file>notif.png</file>
     </qresource>
 </RCC>

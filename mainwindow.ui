@@ -35,6 +35,15 @@
    <property name="contextMenuPolicy">
     <enum>Qt::NoContextMenu</enum>
    </property>
+   <property name="styleSheet">
+    <string notr="true">#stackedWidget_Environnement {
+background-color:  trasparent; 
+border-image: url(:white.jpg);
+background: none;
+border:none; 
+background-repeat: none;
+}</string>
+   </property>
    <widget class="QStackedWidget" name="stackedWidget_Environnement">
     <property name="geometry">
      <rect>
@@ -53,7 +62,7 @@
     <property name="styleSheet">
      <string notr="true">#stackedWidget_Environnement {
 background-color:  trasparent; 
-border-image: url(:white.jpg);
+border-image: url(:back2.jpg);
 background: none;
 border:none; 
 background-repeat: none;
@@ -62,7 +71,7 @@ background-repeat: none;
 </string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>7</number>
     </property>
     <widget class="QWidget" name="Sous_Menu_Env">
      <property name="styleSheet">
@@ -3095,6 +3104,26 @@ background-repeat: none;
        <string/>
       </property>
      </widget>
+     <widget class="QGraphicsView" name="Notif_irrigation">
+      <property name="geometry">
+       <rect>
+        <x>1000</x>
+        <y>140</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#Notif_irrigation{
+background-color: transparent;
+border-image: url(:notif.png);;
+background: none;
+border: transparent;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
      <zorder>groupBox</zorder>
      <zorder>label_22</zorder>
      <zorder>pushButton_Ajout_ZV</zorder>
@@ -3105,6 +3134,7 @@ background-repeat: none;
      <zorder>pushButton_Icon_serachZV</zorder>
      <zorder>comboBox_TypeRech_ZV</zorder>
      <zorder>pushButton_Irrigat</zorder>
+     <zorder>Notif_irrigation</zorder>
     </widget>
     <widget class="QWidget" name="MAJ_ZV">
      <property name="styleSheet">
@@ -3617,8 +3647,8 @@ background-repeat: none;
      <widget class="QChartView" name="graphicsView">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>40</y>
+        <x>340</x>
+        <y>50</y>
         <width>241</width>
         <height>191</height>
        </rect>
@@ -3631,15 +3661,22 @@ background-repeat: none;
       </property>
       <property name="font">
        <font>
-        <pointsize>12</pointsize>
+        <pointsize>36</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+        <underline>false</underline>
        </font>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
       </property>
      </widget>
      <widget class="QTableView" name="tableView_StatR">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>220</y>
+        <y>250</y>
         <width>181</width>
         <height>331</height>
        </rect>
@@ -3655,7 +3692,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::AdjustToContents</enum>
+       <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
       </property>
       <property name="selectionMode">
        <enum>QAbstractItemView::ExtendedSelection</enum>
@@ -3693,10 +3730,10 @@ background-repeat: none;
      <widget class="QTableWidget" name="tableWidget">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>10</y>
-        <width>261</width>
-        <height>201</height>
+        <x>1140</x>
+        <y>20</y>
+        <width>21</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="editTriggers">
@@ -3709,26 +3746,64 @@ background-repeat: none;
        <number>0</number>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_typeStat">
+     <widget class="QDateEdit" name="Date_Stat">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>10</y>
-        <width>69</width>
-        <height>22</height>
+        <x>80</x>
+        <y>130</y>
+        <width>111</width>
+        <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Segoe Print</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#Date_Stat{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="displayFormat">
+       <string>MM/yyyy</string>
+      </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_typeStat_Annee">
+     <widget class="QLabel" name="label_StatR_Choix">
       <property name="geometry">
        <rect>
-        <x>410</x>
-        <y>10</y>
-        <width>69</width>
-        <height>22</height>
+        <x>50</x>
+        <y>80</y>
+        <width>201</width>
+        <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Segoe Print</family>
+        <pointsize>18</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Entrer la date &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
      </widget>
+     <zorder>tableView_StatR</zorder>
+     <zorder>pushButton_Menu_Environ_Aff_2</zorder>
+     <zorder>tableWidget</zorder>
+     <zorder>Date_Stat</zorder>
+     <zorder>label_StatR_Choix</zorder>
+     <zorder>graphicsView</zorder>
     </widget>
     <widget class="QWidget" name="Impression_Ramas">
      <widget class="QLabel" name="label_56">
@@ -4482,11 +4557,11 @@ background-repeat: none;
      </widget>
     </widget>
     <widget class="QWidget" name="Arduino_Environnement">
-     <widget class="QPushButton" name="ON">
+     <widget class="QPushButton" name="ON_Irrigation">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>50</y>
+        <x>310</x>
+        <y>170</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -4495,24 +4570,11 @@ background-repeat: none;
        <string>On</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>140</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="arduino">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>280</y>
+        <x>200</x>
+        <y>250</y>
         <width>47</width>
         <height>13</height>
        </rect>
