@@ -1,0 +1,52 @@
+<RCC>
+    <qresource prefix="/">
+        <file>champs.png</file>
+        <file>Menu.png</file>
+        <file>background.jpg</file>
+        <file>close.png</file>
+        <file>L.jpg</file>
+        <file>List.jpg</file>
+        <file>LL.jpg</file>
+        <file>back2.jpg</file>
+        <file>Annuler2.png</file>
+        <file>Ajouter.png</file>
+        <file>Annuler.png</file>
+        <file>Enregistrer.png</file>
+        <file>envi.png</file>
+        <file>Menu_Principal.png</file>
+        <file>Marche.png</file>
+        <file>Maintenance.png</file>
+        <file>Ress.png</file>
+        <file>Res.png</file>
+        <file>MP.png</file>
+        <file>delete.png</file>
+        <file>Enregistrer_utilisateur.png</file>
+        <file>MP1.png</file>
+        <file>compte.jpg</file>
+        <file>view.png</file>
+        <file>employe.png</file>
+        <file>compte.png</file>
+        <file>login.png</file>
+        <file>ch_ZV.png</file>
+        <file>ZV_Pressed.png</file>
+        <file>b3.jpg</file>
+        <file>Zone_Verte.png</file>
+        <file>Ram_Pressed.png</file>
+        <file>Ramassage.png</file>
+        <file>notif.png</file>
+        <file>Ajouter_ZV.png</file>
+        <file>Annuler_ZV.png</file>
+        <file>b1.png</file>
+        <file>municipal.png</file>
+        <file>Save_ZV.png</file>
+        <file>Ajouter_P.png</file>
+        <file>Annuler_P.png</file>
+        <file>edit_ZV.png</file>
+        <file>mailing.png</file>
+        <file>Menu Principal.png</file>
+        <file>promouvoir.png</file>
+        <file>recherche.png</file>
+        <file>statistique.png</file>
+        <file>communication.png</file>
+    </qresource>
+</RCC>
