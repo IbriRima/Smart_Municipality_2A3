@@ -9,7 +9,7 @@ public:
     Capteur_humidite();
     int connect_capteur_humidite();
     int close_Capteur_humidite();
-    int write_to_capteur_humidite(QByteArray);
+
     QByteArray read_from_capteur_humidite();
     QSerialPort* getserial();
     QString get_capteur_humidite_port_name();

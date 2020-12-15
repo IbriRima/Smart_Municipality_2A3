@@ -32,8 +32,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->setupUi(this);
 
-    qDebug() <<this->size();
-
     //Add items to comoBox_AdresseAJ
 
 ui->stackedWidget_Environnement->setCurrentIndex(0);
@@ -207,10 +205,11 @@ movie->setSpeed(200);
         ui->pushButton_Sup_ZV->setDisabled(true);
 
     }
-  /*//Connection Arduino Capteur Humidité
+ //Connection Arduino Capteur Humidité
     int ret=C.connect_capteur_humidite();
-    switch(ret)
-    {
+  qDebug()<<"ret"<<ret;
+  switch(ret)
+   {
     case(0):qDebug()<<"arduino is available and connected to: "<<C.get_capteur_humidite_port_name();
     break;
     case(1):qDebug()<<"arduino is available but not connected to:"<<C.get_capteur_humidite_port_name();
@@ -218,8 +217,8 @@ movie->setSpeed(200);
     case(-1):qDebug()<<"arduino is not available";
     break;
     }
-  //  QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
-*/
+ QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+
 }
 
 MainWindow::~MainWindow()
@@ -1172,17 +1171,27 @@ void MainWindow::on_pushButton_Menu_Environ_Aff_3_clicked()
 
 
 void MainWindow::update_label()
-{
+{int val;
     data=C.read_from_capteur_humidite();
-    if(data=="1")
-        ui->arduino->setText("ON");
-    else if(data=="0")
-        ui->arduino->setText("OFF");
+
+    val=data.toInt();
+
+    if(data.toInt()>600)
+      {
+        qDebug()<<"Sèche";
+          ui->Notif_irrigation->show();
+      }
+        else if(data.toInt()>100&&data.toInt()<550)
+    {
+        qDebug()<<"Humide";
+           ui->Notif_irrigation->hide();
+    }
+
 }
 
 void MainWindow::on_ON_clicked()
 {
-    C.write_to_capteur_humidite("1");
+
 }
 
 
@@ -1300,3 +1309,4 @@ QVector<Ramassage> tab;
             ui->graphicsView->setRenderHint(QPainter::Antialiasing);
             ui->graphicsView->setMinimumSize(800,550);
 }
+

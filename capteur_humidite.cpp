@@ -1,14 +1,15 @@
 #include "capteur_humidite.h"
-
+#include<QSerialPort>
 Capteur_humidite::Capteur_humidite()
 {
 
 }
 int Capteur_humidite::connect_capteur_humidite()
 {
-
+serial = new QSerialPort();
     foreach(const QSerialPortInfo & serial_port_info,QSerialPortInfo::availablePorts())
-    {if(serial_port_info.hasVendorIdentifier() && serial_port_info.hasProductIdentifier())
+    {
+        if(serial_port_info.hasVendorIdentifier() && serial_port_info.hasProductIdentifier())
         {
         if(serial_port_info.vendorIdentifier()==arduino_uno_vendor_id && serial_port_info.productIdentifier()==arduino_uno_producy_id)
         {
@@ -18,12 +19,15 @@ int Capteur_humidite::connect_capteur_humidite()
         }
         }
     }
+
     qDebug()<<"Arduino port name is: "<<arduino_port_name;
     if(arduino_is_available)
-    {qDebug()<<"...................";
+    {
+
         serial->setPortName(arduino_port_name);
 
-        if(serial->open(QSerialPort::ReadWrite))
+
+        if(serial->open(QSerialPort::ReadOnly))
         {
 
            serial-> setBaudRate(QSerialPort::Baud9600); //débit: 9600bits/s
@@ -47,16 +51,7 @@ int Capteur_humidite::close_Capteur_humidite()
     }
     return 1;
 }
-int Capteur_humidite::write_to_capteur_humidite(QByteArray d)
-{
-    if(serial->isWritable())
-    {
-        serial->write(d);
 
-    }
-    else qDebug()<<"Couldn't write to serial";
-
-}
  QByteArray Capteur_humidite:: read_from_capteur_humidite()
 {
      if(serial-> isReadable())
