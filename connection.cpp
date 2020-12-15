@@ -1,21 +1,22 @@
 #include "connection.h"
-#include<QSqlDatabase>
+
 Connection::Connection()
 {
 
 }
-bool Connection::TestConnection()
+
+bool Connection::createconnect()
 {
 
-    bool test=false;
+bool test=false;
+static QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
+db.setDatabaseName("sahraoui");//inserer le nom de la source de données ODBC
+db.setUserName("system");//inserer nom de l'utilisateur
+db.setPassword("0000");//inserer mot de passe de cet utilisateur
 
-QSqlDatabase db=QSqlDatabase ::addDatabase("QODBC");
-db.setDatabaseName("Source_Projet2A");
-db.setUserName("system");
-db.setPassword("0000");
+if (db.open())
+test=true;
 
-if(db.open())
-return true;
-return test;
 
+    return  test;
 }
