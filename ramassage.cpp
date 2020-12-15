@@ -20,8 +20,8 @@ bool Ramassage::ajouter()
 
 
       query.prepare("insert into RAMASSAGE (ID_RAMASSAGE,MATRICULE,DATE_RAMASSAGE,"
-                          "NOMBRE_POUBELLE,DUREE,NOM_CARTIER,HEURE_DEBUT) values(:id,:Matricule,:date,:nb_p,:duree,:cartier,:heure)");
-query.bindValue(":id",getId_Ramassage());
+                          "NOMBRE_POUBELLE,DUREE,NOM_CARTIER,HEURE_DEBUT) values(ID_RAMASSAGE.NEXTVAL,:Matricule,:date,:nb_p,:duree,:cartier,:heure)");
+//query.bindValue(":id",getId_Ramassage());
 query.bindValue(":Matricule",getMatricule());
 
 query.bindValue(":date",getDate());
@@ -29,23 +29,50 @@ query.bindValue(":nb_p",getNbPoubelle());
 query.bindValue(":duree",getDuree().toString("HH:mm"));
 query.bindValue(":cartier",getNom_cartier());
 query.bindValue(":heure", getHdepart().toString());
-/*
-query.bindValue(":ID_chauffeur",getIdchauffeur());
-query.bindValue(":ID_empl1",getId_empl1());
-query.bindValue(":ID_empl2",getId_empl2());
- */
+
 return query.exec();
 
 }
+
 bool Ramassage::affectation(QString ch)
 {
     QSqlQuery query;
+int c=369;
+qDebug()<<"id "<<c;
+query.prepare("insert into EMPLOYE_RAMASSAGE (ID_RAMASSAGE,CIN) values(ID_RAMASSAGE.NEXTVAL-11,:CIN)");
 
-
-query.prepare("insert into EMPLOYE_RAMASSAGE (ID_RAMASSAGE,CIN) values(:id,:CIN)");
-qDebug()<<"id "<<getId_Ramassage();
 qDebug()<<"CIN "<<ch;
-query.bindValue(":id",getId_Ramassage());
+query.bindValue(":id",getId_Ramassage().toInt());
+query.bindValue(":CIN",ch);
+
+
+
+return query.exec();
+}
+bool Ramassage::affectation2(QString ch)
+{
+    QSqlQuery query;
+int c=369;
+qDebug()<<"id "<<c;
+query.prepare("insert into EMPLOYE_RAMASSAGE (ID_RAMASSAGE,CIN) values(ID_RAMASSAGE.NEXTVAL-22,:CIN)");
+
+qDebug()<<"CIN "<<ch;
+query.bindValue(":id",getId_Ramassage().toInt());
+query.bindValue(":CIN",ch);
+
+
+
+return query.exec();
+}
+bool Ramassage::affectation3(QString ch)
+{
+    QSqlQuery query;
+int c=369;
+qDebug()<<"id "<<c;
+query.prepare("insert into EMPLOYE_RAMASSAGE (ID_RAMASSAGE,CIN) values(ID_RAMASSAGE.NEXTVAL-33,:CIN)");
+
+qDebug()<<"CIN "<<ch;
+query.bindValue(":id",getId_Ramassage().toInt());
 query.bindValue(":CIN",ch);
 
 
@@ -70,7 +97,7 @@ return model;
     QSqlQuery q;
 QString ch;
 
-   q.prepare("select * from EMPLOYE_RAMASSAGE where ID_RAMASSAGE='"+*ID+"' ");
+   q.prepare("select * from EMPLOYE_RAMASSAGE where to_char(ID_RAMASSAGE)='"+*ID+"' ");
    if(q.exec())
    {
        while(q.next())
@@ -91,7 +118,7 @@ void Ramassage::Remplissage(QString* ID,QString*Matricule,QString*Date,QString*N
 //QVector<Ramassage> tabR;
     QSqlQuery q;
 
-   q.prepare("select * from RAMASSAGE where ID_RAMASSAGE='"+*ID+"'");
+   q.prepare("select * from RAMASSAGE where to_char(ID_RAMASSAGE)='"+*ID+"'");
 
     if(q.exec())
     {
@@ -116,7 +143,7 @@ bool Ramassage::Supprimer(QString ID)
 {
 
     QSqlQuery query;
-    query.prepare("Delete from RAMASSAGE where ID_RAMASSAGE = :ID");
+    query.prepare("Delete from RAMASSAGE where to_char(ID_RAMASSAGE) = :ID");
     query.bindValue(":ID",ID);
     return query.exec();
 }

@@ -140,7 +140,7 @@ void on_Date_Stat_dateChanged(const QDate &date);
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;
-    Ramassage tmpR;
+    Ramassage tmpR,tmpR2;
    Capteur_humidite C;
    QByteArray data;
 

@@ -66,12 +66,15 @@ void setNb_Poubelle(QString nb)
 bool ajouter();
 
 QSqlQueryModel* afficher();
+
 void Remplissage(QString*,QString*,QString*,QString*,QString*,QString*,QString*);
 bool Supprimer(QString ID);
 bool Modifier(QString,QString,QString,QString,QString,QString,QString);
 QSqlQueryModel* Recherche(int,QString);
 QSqlQueryModel* afficherSTAT(QString,QString);
 bool affectation(QString);
+bool affectation2(QString);
+bool affectation3(QString);
 QVector<QString> afficheremploye(QString*);
 bool SupprimerEmploye(QString ID);
 //QVector<QString> ModifierEmploye(QString,QString);

@@ -241,7 +241,7 @@ QMediaPlayer *player = new QMediaPlayer;
 //Set Values
 R.setIdChauffeur(ui->lineEdit_IDChauffeurAJ->text());
 R.setMatricule(ui->lineEdit_MatriculeAJ->text());
-R.setId_Ramassage(ui->lineEdit_IDRamassage_AJ->text());
+//R.setId_Ramassage(ui->lineEdit_IDRamassage_AJ->text());
 R.setNom_cartier(ui->comboBox_NomCartier_AJ->currentText());
 R.setDate(ui->dateEditR_AJ->date().toString("dd/MM/yyyy"));
 R.setHdepart(ui->timeEdit_DebAJ->time());
@@ -251,13 +251,13 @@ R.setId_empl1(ui->lineEdit_IDEmpl1_Rama->text());
 R.setId_empl2(ui->lineEdit_IDEmpl2_Rama->text());
 
 bool test;
-if(!(ui->lineEdit_IDChauffeurAJ->text().isEmpty()||ui->lineEdit_MatriculeAJ->text().isEmpty()||ui->lineEdit_IDRamassage_AJ->text().isEmpty()||
+if(!(ui->lineEdit_IDChauffeurAJ->text().isEmpty()||ui->lineEdit_MatriculeAJ->text().isEmpty()||
      ui->comboBox_NomCartier_AJ->currentText().isEmpty()||ui->dateEditR_AJ->date().isNull()||ui->timeEdit_DebAJ->time().isNull()||ui->timeEdit_DureeAJ->time().isNull()||
     ui->spinBox_NbPoubelle_AJ->cleanText().isEmpty()||ui->lineEdit_IDEmpl1_Rama->text().isEmpty()||ui->lineEdit_IDEmpl2_Rama->text().isEmpty()))
 {
 test= R.ajouter();
 
-
+qDebug()<<"Test "<<test;
  if (test)
 {
      QString ch;
@@ -265,15 +265,16 @@ test= R.ajouter();
      for(int i=0;i<3;i++)
      {if(i==0)
             { ch=R.getIdchauffeur();
+             qDebug()<<"ch1: "<<ch;
      test1=R.affectation(ch);
          }
          else if (i==1)
          { ch=R.getId_empl1();
-     test1=R.affectation(ch);
+     test1=R.affectation2(ch);
       }
          else if (i==2)
          { ch=R.getId_empl2();
-     test1=R.affectation(ch);
+     test1=R.affectation3(ch);
  }
      }
      if(test1)
@@ -326,9 +327,9 @@ void MainWindow::on_pushButton_Save_ZV_clicked()
         player->setVolume(50);
         player->play();
 
-        /****/
 
-        if(!(ui->lineEdit_Identifiant_ZV_AJ->text().isEmpty()||ui->comboBox_Adresse_ZV_AJ->currentText().isEmpty()||
+
+       if(!(ui->lineEdit_Identifiant_ZV_AJ->text().isEmpty()||ui->comboBox_Adresse_ZV_AJ->currentText().isEmpty()||
              ui->lineEdit_Libelle_ZV_AJ->text().isEmpty()||ui->lineEdit_Aire_ZV_AJ->text().isEmpty()))
         {
     Z.setIdentifiant(ui->lineEdit_Identifiant_ZV_AJ->text());
@@ -347,7 +348,7 @@ void MainWindow::on_pushButton_Save_ZV_clicked()
       ui->lineEdit_Libelle_ZV_AJ->clear();
       ui->lineEdit_Aire_ZV_AJ->clear();
         }
-        else
+       else
 QMessageBox::critical(this,"Alerte","Il faut tout remplire ! ");
 //Ajout
 Z.ajouter();

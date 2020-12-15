@@ -19,10 +19,10 @@ this->Aire=Aire;
 
 bool Zone_Verte::ajouter()
 {
-
+// Alter Sequence ID_ZoneVerte Increment by 23;
       QSqlQuery query;
 
-query.prepare("insert into ZONE_VERTE (ID_ZONEVERTE,LIBELLE,ADRESSE,AIRE) values (:id,:libelle,:adresse,:aire) ");
+query.prepare("insert into ZONE_VERTE (ID_ZONEVERTE,LIBELLE,ADRESSE,AIRE) values (ID_ZoneVerte.NEXTVAL,:libelle,:adresse,:aire) ");
 query.bindValue(":id",getIdentifiant());
 query.bindValue(":libelle",getLibelle());
 query.bindValue(":adresse",getAdresse());
