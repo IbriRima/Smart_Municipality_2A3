@@ -1055,11 +1055,11 @@ void MainWindow::on_pushButton_RH_clicked()
 }
 void MainWindow::on_pushButton_Environ_clicked()
 {
-    ui->stackedWidget_resources_humaines->setCurrentIndex(2);
+    ui->stackedWidget_Main->setCurrentIndex(2);
 }
 void MainWindow::on_pushButton_Maintenance_clicked()
 {
-     ui->stackedWidget_resources_humaines->setCurrentIndex(3);
+     ui->stackedWidget_Main->setCurrentIndex(4);
 }
 /******************** Fin déplacement entre les modules pour le  Module Ressources Humaines*************************************/
 
@@ -2105,7 +2105,7 @@ void MainWindow::on_pushButton_Marche_Envi_pressed()
 
 void MainWindow::on_pushButton_RH_Envi_clicked()
 {
-    ui->stackedWidget_Main->setCurrentIndex(3);
+    ui->stackedWidget_Main->setCurrentIndex(1);
 }
 
 void MainWindow::on_pushButton_RH_Envi_pressed()
@@ -2156,7 +2156,10 @@ void MainWindow::on_pushButton_Maintenance_Envi_pressed()
                        animation->destroyed() ;
 }
 
-
+void MainWindow::on_communication_Envi_clicked()
+{
+        ui->stackedWidget_Main->setCurrentIndex(3);
+}
 /**************** Fin Déplacement entre les modules pour le  Module Environnement *****************************************/
 
 
@@ -3745,11 +3748,11 @@ void MainWindow::on_MenuP_clicked()
 
 void MainWindow::on_envi_clicked()
 {
-     ui->stackedWidget_Main->setCurrentIndex(1);
+     ui->stackedWidget_Main->setCurrentIndex(2);
 }
 void MainWindow::on_res_clicked()
 {
-    ui->stackedWidget_Main->setCurrentIndex(2);
+    ui->stackedWidget_Main->setCurrentIndex(1);
 }
 void MainWindow::on_maintenance_clicked()
 {
@@ -3797,5 +3800,25 @@ void MainWindow::on_marche_2_clicked()
 
 
 
+
+
+
+void MainWindow::on_pushButton_Environnement_clicked()
+{
+     ui->stackedWidget_Main->setCurrentIndex(2);
+          ui->stackedWidget_Environnement->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_RessourcesHumaine_clicked()
+{
+     ui->stackedWidget_Main->setCurrentIndex(1);
+     ui->stackedWidget_resources_humaines->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_Communication_clicked()
+{
+     ui->stackedWidget_Main->setCurrentIndex(3);
+        ui->stackedWidget->setCurrentIndex(0);
+}
 
 

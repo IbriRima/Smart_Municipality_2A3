@@ -295,7 +295,7 @@ void statistiques();
 
 void on_stat_cancel_clicked();
 
-void on_pushButton_3_clicked();
+
 /**********************************************End Nardine***********************************************************/
 
 
@@ -391,6 +391,14 @@ void on_close_clicked();
 void on_pushButton_Ress_BackBTN_clicked();
 
 void on_communication_2_clicked();
+
+void on_pushButton_Environnement_clicked();
+
+void on_pushButton_RessourcesHumaine_clicked();
+
+void on_pushButton_Communication_clicked();
+
+void on_communication_Envi_clicked();
 
 private:
     Ui::MainWindow *ui;

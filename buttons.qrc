@@ -48,5 +48,12 @@
         <file>recherche.png</file>
         <file>statistique.png</file>
         <file>communication.png</file>
+        <file>assest/Ajouter Composant.png</file>
+        <file>assest/Ajouter Composant_hover.png</file>
+        <file>assest/Ajouter Reclamation.png</file>
+        <file>assest/Ajouter Reclamation_hover.png</file>
+        <file>assest/ANNULER.png</file>
+        <file>assest/ANNULER_hover.png</file>
+        <file>LogoStats.png</file>
     </qresource>
 </RCC>

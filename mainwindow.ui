@@ -27,29 +27,16 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="Menu_Principal">
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>30</y>
-        <width>201</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Menu Principal</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton_MaintenanceIN">
       <property name="geometry">
        <rect>
         <x>770</x>
         <y>190</y>
         <width>181</width>
-        <height>111</height>
+        <height>71</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -66,6 +53,81 @@ font: 8pt &quot;MS Sans Serif&quot;;
       </property>
       <property name="text">
        <string>Maintenance</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Environnement">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>160</y>
+        <width>181</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(223, 149, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-left-color: rgb(0, 0, 0);
+border-bottom-color: rgb(0, 0, 0);
+font: 8pt &quot;MS Sans Serif&quot;;
+
+</string>
+      </property>
+      <property name="text">
+       <string>Environnement</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_RessourcesHumaine">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>320</y>
+        <width>181</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(223, 149, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-left-color: rgb(0, 0, 0);
+border-bottom-color: rgb(0, 0, 0);
+font: 8pt &quot;MS Sans Serif&quot;;
+
+</string>
+      </property>
+      <property name="text">
+       <string>Ressources Humaines</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Communication">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>320</y>
+        <width>181</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(223, 149, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-left-color: rgb(0, 0, 0);
+border-bottom-color: rgb(0, 0, 0);
+font: 8pt &quot;MS Sans Serif&quot;;
+
+</string>
+      </property>
+      <property name="text">
+       <string>Communication</string>
       </property>
      </widget>
     </widget>
@@ -380,6 +442,29 @@ background-repeat: none;
          <string notr="true">#pushButton_Maintenance {
 background-color: transparent;
 border-image: url(:Maintenance.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="communication_RH">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>320</y>
+          <width>171</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#communication_RH{
+background-color: transparent;
+border-image: url(:communication.png);
 background: none;
 border: none;
 background-repeat: none;
@@ -2032,7 +2117,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Sous_Menu_Env">
        <property name="styleSheet">
@@ -2230,6 +2315,29 @@ background-repeat: none;
 {
    border-image: url(:Ram_Pressed.png);
 }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="communication_Envi">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>320</y>
+          <width>171</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#communication_Envi{
+background-color: transparent;
+border-image: url(:communication.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
         </property>
         <property name="text">
          <string/>
@@ -7300,7 +7408,7 @@ background-repeat: none;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Desktop/logo.jpg</pixmap>
+         <pixmap>../logo.jpg</pixmap>
         </property>
        </widget>
        <widget class="QComboBox" name="input_etat">
@@ -7738,7 +7846,7 @@ background-repeat: none;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Desktop/logo.jpg</pixmap>
+         <pixmap>../logo.jpg</pixmap>
         </property>
        </widget>
        <zorder>label_85</zorder>
@@ -8101,7 +8209,7 @@ background-repeat: none;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Desktop/logo.jpg</pixmap>
+         <pixmap>../logo.jpg</pixmap>
         </property>
        </widget>
        <zorder>label_93</zorder>
@@ -8608,7 +8716,7 @@ background-repeat: none;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Desktop/logo.jpg</pixmap>
+         <pixmap>../logo.jpg</pixmap>
         </property>
        </widget>
        <widget class="QComboBox" name="input_sexe">
@@ -9102,7 +9210,7 @@ background-repeat: none;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Desktop/logo.jpg</pixmap>
+         <pixmap>../logo.jpg</pixmap>
         </property>
        </widget>
        <zorder>label_110</zorder>
@@ -9495,7 +9603,7 @@ background-repeat: none;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Desktop/logo.jpg</pixmap>
+         <pixmap>../logo.jpg</pixmap>
         </property>
        </widget>
        <zorder>label_118</zorder>
@@ -9613,7 +9721,7 @@ background-repeat: none;
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Desktop/logo.jpg</pixmap>
+       <pixmap>../logo.jpg</pixmap>
       </property>
      </widget>
      <zorder>icon</zorder>
@@ -9633,7 +9741,7 @@ background-repeat: none;
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page_21"/>
       <widget class="QWidget" name="page_22">
@@ -9741,7 +9849,7 @@ QPushButton#envi_2:hover {
         <property name="styleSheet">
          <string notr="true">QPushButton#MenuP_2
  {
-                   border-image: url(assest/MenuPri_BTN.png);
+                   border-image: url(:Menu_Principal.png);
      }
 </string>
         </property>
@@ -10703,7 +10811,7 @@ color:black;</string>
      <x>0</x>
      <y>0</y>
      <width>1170</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
