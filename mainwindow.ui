@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Menu_Principal">
      <widget class="QPushButton" name="pushButton_MaintenanceIN">
@@ -149,7 +149,7 @@ background-repeat: none;
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Authentification">
        <property name="styleSheet">
@@ -261,6 +261,9 @@ background-repeat: none;
 }
 
 </string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
         </property>
        </widget>
       </widget>

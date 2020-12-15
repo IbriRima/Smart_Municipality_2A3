@@ -995,28 +995,29 @@ void MainWindow::on_pushButton_annuler_affe_clicked()
 void MainWindow::on_pushButton_login_clicked()
 {
 
-        QString Identifiant,mdp;
-        compte u;
-        Identifiant=(ui->Login_identifiant->text());
-       mdp=(ui->Login_mdp->text());
-    QSqlQuery qry;
-            if(qry.exec("SELECT ID,MDP FROM compte Where ID=\'" + Identifiant +"\'AND MDP=\'" +mdp+"\'"))
-        {
-                if(qry.next())
-                {
-                    ui->stackedWidget_resources_humaines->setCurrentIndex(1);
+    QString Identifiant,mdp;
+    compte u;
+QSqlQuery test;
+    Identifiant=(ui->Login_identifiant->text());
+   mdp=(ui->Login_mdp->text());
+   test=u.authen(Identifiant,mdp);
+   {
+             if(test.next())
+             {
+                 ui->stackedWidget_resources_humaines->setCurrentIndex(1);
 
-                    QMessageBox::information(this,"login"," Bienvenue");
+                 QMessageBox::information(this,"login"," Bienvenue");
 
 
-        }
-        else
-        {
-        QMessageBox::information(this,"non existe"," information incorrecte");
-        }
+     }
+     else
+     {
+     QMessageBox::information(this,"non existe"," information incorrecte");
+     }
 
-    }
-}
+}}
+
+
 
 
 void MainWindow::on_lineEdit_recherche_compte_textChanged(const QString &arg1)

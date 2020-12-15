@@ -114,3 +114,21 @@ QSqlQueryModel * compte::chercher(QString info)
     model->setQuery(query);
     return model;
 }
+
+QSqlQuery  compte::authen(QString Identifiant,QString mdp)
+
+{
+QSqlQuery qry;
+
+
+        if(qry.exec("SELECT Identifiant,Mot_De_Passe FROM compte Where Identifiant=\'" + Identifiant +"\'AND mot_de_passe=\'" +mdp+"\'"))
+        {
+
+            return qry;
+
+
+        }
+
+
+
+}

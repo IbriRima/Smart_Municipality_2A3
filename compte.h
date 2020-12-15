@@ -42,6 +42,9 @@ public:
     QSqlQueryModel * read(QString);
     QSqlQuery editview(QString);
     QSqlQueryModel * chercher(QString);
+    QSqlQuery authen(QString ,QString );
+
+
 
     bool Delete(QString);
     bool Update();
