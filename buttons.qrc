@@ -55,5 +55,9 @@
         <file>assest/ANNULER.png</file>
         <file>assest/ANNULER_hover.png</file>
         <file>LogoStats.png</file>
+        <file>M.Environnement.png</file>
+        <file>M.Maintenance.png</file>
+        <file>M.Communication.png</file>
+        <file>M.RessourcesH.png</file>
     </qresource>
 </RCC>

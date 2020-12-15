@@ -400,6 +400,8 @@ void on_pushButton_Communication_clicked();
 
 void on_communication_Envi_clicked();
 
+void on_communication_RH_clicked();
+
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;

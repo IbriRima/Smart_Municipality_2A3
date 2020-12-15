@@ -247,9 +247,9 @@ MainWindow::MainWindow(QWidget *parent)
       }
 
    //Connection Arduino Capteur Humidité
-   /*   int ret=C.connect_capteur_humidite();
-    qDebug()<<"ret"<<ret;
-    switch(ret)
+    int ret1=C.connect_capteur_humidite();
+    qDebug()<<"ret"<<ret1;
+    switch(ret1)
      {
       case(0):qDebug()<<"arduino is available and connected to: "<<C.get_capteur_humidite_port_name();
       break;
@@ -258,7 +258,7 @@ MainWindow::MainWindow(QWidget *parent)
       case(-1):qDebug()<<"arduino is not available";
       break;
       }
-   QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));*/
+   QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 
 /************************************* End Rima *************************************************/
  /****************************************************Begin Nardine*********************************************/
@@ -1056,10 +1056,17 @@ void MainWindow::on_pushButton_RH_clicked()
 void MainWindow::on_pushButton_Environ_clicked()
 {
     ui->stackedWidget_Main->setCurrentIndex(2);
+    ui->stackedWidget_Environnement->setCurrentIndex(0);
 }
 void MainWindow::on_pushButton_Maintenance_clicked()
 {
      ui->stackedWidget_Main->setCurrentIndex(4);
+}
+
+void MainWindow::on_communication_RH_clicked()
+{
+    ui->stackedWidget_Main->setCurrentIndex(3);
+       ui->stackedWidget->setCurrentIndex(0);
 }
 /******************** Fin déplacement entre les modules pour le  Module Ressources Humaines*************************************/
 
@@ -3820,5 +3827,6 @@ void MainWindow::on_pushButton_Communication_clicked()
      ui->stackedWidget_Main->setCurrentIndex(3);
         ui->stackedWidget->setCurrentIndex(0);
 }
+
 
 
