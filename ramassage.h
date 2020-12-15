@@ -72,6 +72,8 @@ bool Modifier(QString,QString,QString,QString,QString,QString,QString);
 QSqlQueryModel* Recherche(int,QString);
 QSqlQueryModel* afficherSTAT(QString,QString);
 bool affectation(QString);
+bool affectation2(QString);
+bool affectation3(QString);
 QVector<QString> afficheremploye(QString*);
 bool SupprimerEmploye(QString ID);
 //QVector<QString> ModifierEmploye(QString,QString);

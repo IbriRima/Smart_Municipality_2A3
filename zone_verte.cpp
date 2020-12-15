@@ -22,8 +22,8 @@ bool Zone_Verte::ajouter()
 
       QSqlQuery query;
 
-query.prepare("insert into ZONE_VERTE (ID_ZONEVERTE,LIBELLE,ADRESSE,AIRE) values (:id,:libelle,:adresse,:aire) ");
-query.bindValue(":id",getIdentifiant());
+query.prepare("insert into ZONE_VERTE (ID_ZONEVERTE,LIBELLE,ADRESSE,AIRE) values (ID_ZoneVerte.NEXTVAL,:libelle,:adresse,:aire) ");
+
 query.bindValue(":libelle",getLibelle());
 query.bindValue(":adresse",getAdresse());
 query.bindValue(":aire",getAire());

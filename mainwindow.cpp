@@ -1004,7 +1004,7 @@ QSqlQuery test;
    {
              if(test.next())
              {
-                 ui->stackedWidget_resources_humaines->setCurrentIndex(1);
+                 ui->stackedWidget_Main->setCurrentIndex(0);
 
                  QMessageBox::information(this,"login"," Bienvenue");
 
@@ -1015,7 +1015,8 @@ QSqlQuery test;
      QMessageBox::information(this,"non existe"," information incorrecte");
      }
 
-}}
+}
+}
 
 
 
@@ -1094,7 +1095,6 @@ QMediaPlayer *player = new QMediaPlayer;
 //Set Values
 R.setIdChauffeur(ui->lineEdit_IDChauffeurAJ->text());
 R.setMatricule(ui->lineEdit_MatriculeAJ->text());
-R.setId_Ramassage(ui->lineEdit_IDRamassage_AJ->text());
 R.setNom_cartier(ui->comboBox_NomCartier_AJ->currentText());
 R.setDate(ui->dateEditR_AJ->date().toString("dd/MM/yyyy"));
 R.setHdepart(ui->timeEdit_DebAJ->time());
@@ -1104,7 +1104,7 @@ R.setId_empl1(ui->lineEdit_IDEmpl1_Rama->text());
 R.setId_empl2(ui->lineEdit_IDEmpl2_Rama->text());
 
 bool test;
-if(!(ui->lineEdit_IDChauffeurAJ->text().isEmpty()||ui->lineEdit_MatriculeAJ->text().isEmpty()||ui->lineEdit_IDRamassage_AJ->text().isEmpty()||
+if(!(ui->lineEdit_IDChauffeurAJ->text().isEmpty()||ui->lineEdit_MatriculeAJ->text().isEmpty()||
      ui->comboBox_NomCartier_AJ->currentText().isEmpty()||ui->dateEditR_AJ->date().isNull()||ui->timeEdit_DebAJ->time().isNull()||ui->timeEdit_DureeAJ->time().isNull()||
     ui->spinBox_NbPoubelle_AJ->cleanText().isEmpty()||ui->lineEdit_IDEmpl1_Rama->text().isEmpty()||ui->lineEdit_IDEmpl2_Rama->text().isEmpty()))
 {
@@ -1122,16 +1122,16 @@ test= R.ajouter();
          }
          else if (i==1)
          { ch=R.getId_empl1();
-     test1=R.affectation(ch);
+     test1=R.affectation2(ch);
       }
          else if (i==2)
          { ch=R.getId_empl2();
-     test1=R.affectation(ch);
+     test1=R.affectation3(ch);
  }
      }
      if(test1)
      {
- QMessageBox::information(this,"Notification","Le rammasage d'identifiant "+R.getId_Ramassage()+" a bien été enregistré ");
+ QMessageBox::information(this,"Notification","Le rammasage a bien été enregistré ");
 
 
   //Affichage
@@ -1151,11 +1151,10 @@ ui->stackedWidget_Environnement->setCurrentIndex(1);
 
 }
 }
- ui->lineEdit_IDRamassage_AJ->clear();
+
  ui->lineEdit_IDChauffeurAJ->clear();
  ui->lineEdit_MatriculeAJ->clear();
  ui->dateEditR_AJ->clear();
-
  ui->timeEdit_DureeAJ->clear();
  ui->timeEdit_DebAJ->clear();
  ui->dateEditR_AJ->clear();
@@ -1181,22 +1180,20 @@ void MainWindow::on_pushButton_Save_ZV_clicked()
 
         /****/
 
-        if(!(ui->lineEdit_Identifiant_ZV_AJ->text().isEmpty()||ui->comboBox_Adresse_ZV_AJ->currentText().isEmpty()||
-             ui->lineEdit_Libelle_ZV_AJ->text().isEmpty()||ui->lineEdit_Aire_ZV_AJ->text().isEmpty()))
+        if(!(ui->comboBox_Adresse_ZV_AJ->currentText().isEmpty()||ui->lineEdit_Libelle_ZV_AJ->text().isEmpty()||ui->lineEdit_Aire_ZV_AJ->text().isEmpty()))
         {
-    Z.setIdentifiant(ui->lineEdit_Identifiant_ZV_AJ->text());
+
     Z.setAdresse(ui->comboBox_Adresse_ZV_AJ->currentText());
     Z.setLibelle(ui->lineEdit_Libelle_ZV_AJ->text());
     Z.setAire(ui->lineEdit_Aire_ZV_AJ->text());
     QMessageBox msgB;
 
-    msgB.setText("La zone verte d'identifiant "+Z.getIdentifiant()+" a bien été enregistrée ");
+    msgB.setText("La zone verte a bien été enregistrée ");
     msgB.exec();
       ui->stackedWidget_Environnement->setCurrentIndex(4);
 
 
       //Reset lineEdit
-      ui->lineEdit_Identifiant_ZV_AJ->clear();
       ui->lineEdit_Libelle_ZV_AJ->clear();
       ui->lineEdit_Aire_ZV_AJ->clear();
         }
