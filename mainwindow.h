@@ -232,6 +232,7 @@ void on_pushButton_Maintenance_Envi_pressed();
 void on_pushButton_Environ_Envi_pressed();
 void on_Date_Stat_dateChanged(const QDate &date);
 void on_pushButton_Irrigat_clicked();
+void on_pushButton_Menu_Environ_Aff_ZV_2_clicked();
 /****************************************************** End Rima ************************************************/
 /****************************************************************************************************************/
 /****************************************Begin Nardine**********************************************************/
@@ -373,7 +374,7 @@ private slots:
 
 /****************************************************** End Semah ************************************************/
 /****************************************************************************************************************/
-void on_pushButton_Menu_Environ_Aff_ZV_2_clicked();
+
 
 void on_annuler_clicked();
 
@@ -401,6 +402,8 @@ void on_pushButton_Communication_clicked();
 void on_communication_Envi_clicked();
 
 void on_communication_RH_clicked();
+
+
 
 private:
     Ui::MainWindow *ui;

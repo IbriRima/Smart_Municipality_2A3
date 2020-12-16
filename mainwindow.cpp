@@ -54,7 +54,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
-
+    ui->stackedWidget_Main->setCurrentIndex(1);
+  ui->stackedWidget_resources_humaines->setCurrentIndex(0);
 /********************************************** Begin Wassim *******************************************/
 
   ui->lineEdit_cin_compte_AJ->setValidator(new QIntValidator(0,9999999999, this));
@@ -69,9 +70,9 @@ MainWindow::MainWindow(QWidget *parent)
 /********************************************** End Wassim *******************************************/
 
 /********************************************** Begin Rima *******************************************/
+      ui->Notif_irrigation->hide();
+ ui->pushButton_Irrigat->hide();
       //Add items to comoBox_AdresseAJ
-
-
   ui->comboBox_NomCartier_AJ->addItem("EL Menzah 1 ");
   ui->comboBox_NomCartier_AJ->addItem("EL Menzah 4");
   ui->comboBox_NomCartier_AJ->addItem("EL Menzah 5 ");
@@ -258,7 +259,7 @@ MainWindow::MainWindow(QWidget *parent)
       case(-1):qDebug()<<"arduino is not available";
       break;
       }
-   QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+
 
 /************************************* End Rima *************************************************/
  /****************************************************Begin Nardine*********************************************/
@@ -1355,8 +1356,8 @@ void MainWindow::on_pushButton_R_clicked()
 
 
 void MainWindow::on_tableView_ZV_activated(const QModelIndex &index)
-{
-
+{ ui->Notif_irrigation->show();
+ ui->pushButton_Irrigat->show();
 Zone_Verte Z;
 QString ID=ui->tableView_ZV->model()->data(index).toString();
 QString Aire,Libelle,Adresse;
@@ -1369,6 +1370,7 @@ QString Aire,Libelle,Adresse;
        ui->lineEdit_Aire_Aff_ZV->setText(Aire);
 
  ui->groupBox->setTitle( ui->lineEdit_ID_Aff_ZV->text());
+    QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 
 }
 
@@ -1889,15 +1891,15 @@ void MainWindow::on_pushButton_Menu_Environ_Aff_3_clicked()
 void MainWindow::update_label()
 {int val;
     data=C.read_from_capteur_humidite();
-
+//qDebug()<<"Entrain de mesurer l'humidité de cette zone verte";
     val=data.toInt();
 
-    if(data.toInt()>600)
+    if(data.toInt()>=600)
       {
         qDebug()<<"Sèche";
           ui->Notif_irrigation->show();
       }
-        else if(data.toInt()>100&&data.toInt()<550)
+        else if(data.toInt()>100&&data.toInt()<600)
     {
         qDebug()<<"Humide";
            ui->Notif_irrigation->hide();
@@ -3817,7 +3819,7 @@ void MainWindow::on_pushButton_Environnement_clicked()
 void MainWindow::on_pushButton_RessourcesHumaine_clicked()
 {
      ui->stackedWidget_Main->setCurrentIndex(1);
-     ui->stackedWidget_resources_humaines->setCurrentIndex(0);
+     ui->stackedWidget_resources_humaines->setCurrentIndex(1);
 }
 
 void MainWindow::on_pushButton_Communication_clicked()
@@ -3825,6 +3827,8 @@ void MainWindow::on_pushButton_Communication_clicked()
      ui->stackedWidget_Main->setCurrentIndex(3);
         ui->stackedWidget->setCurrentIndex(0);
 }
+
+
 
 
 
