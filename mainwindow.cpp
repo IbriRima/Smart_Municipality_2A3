@@ -217,7 +217,7 @@ movie->setSpeed(200);
     case(-1):qDebug()<<"arduino is not available";
     break;
     }
- QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+
 
 }
 
@@ -654,6 +654,9 @@ QString Aire,Libelle,Adresse;
        ui->lineEdit_Aire_Aff_ZV->setText(Aire);
 
  ui->groupBox->setTitle( ui->lineEdit_ID_Aff_ZV->text());
+ qDebug()<<"Irrigation";
+
+ QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 
 }
 
@@ -1174,7 +1177,7 @@ void MainWindow::on_pushButton_Menu_Environ_Aff_3_clicked()
 void MainWindow::update_label()
 {int val;
     data=C.read_from_capteur_humidite();
-
+qDebug()<<"Update";
     val=data.toInt();
 
     if(data.toInt()>600)
