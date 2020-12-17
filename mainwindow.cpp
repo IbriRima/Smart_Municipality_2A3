@@ -1834,48 +1834,70 @@ void MainWindow::on_pushButton_Print_clicked()
 
 void MainWindow::on_pushButton_Imprimer_clicked()
 {
-    QPrinter printer(QPrinter::HighResolution);
 
-    printer.setCopyCount(1);
-    QString ch;
-    ch= ui->lineEdit_ID_Ramas_Imp->text();
-    printer.setDocName(ch);
-printer.setOrientation(QPrinter::Landscape);
+    Ramassage R;
+        QString ID=ui->lineEdit_ID_Ramas_Imp->text();
 
-        QPrintDialog *dialog = new QPrintDialog(&printer, this);
+        QPrinter printer(QPrinter::HighResolution);
 
-        dialog->setWindowTitle(tr("Print Document"));
-         dialog->addEnabledOption(QAbstractPrintDialog::PrintSelection);
+        printer.setCopyCount(1);
 
 
-ui->pushButton_Imprimer->hide();
-ui->pushButton_Menu_Environ_Aff_3->hide();
-            QPainter painter;
+            QPrintDialog *dialog = new QPrintDialog(&printer, this);
 
- painter.begin(&printer);
-
+            dialog->setWindowTitle(tr("Print Document"));
+             dialog->addEnabledOption(QAbstractPrintDialog::PrintSelection);
 
 
-                  painter.setFont(QFont("Corbel",12));
+                QPainter painter;
+
+     painter.begin(&printer);
+
+
+    QFile file;
+    QDir::setCurrent("/tmp");
+    file.setFileName("back2.jpg");
+    QDir::setCurrent("C:/Users/user/Desktop/Rima/Smart_Municipality_2A3");
+    file.open(QIODevice::ReadOnly);
+    QImage img(file.fileName());
+    painter.drawImage(0,0,img.scaled(4958,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));
+
+
+    QFile file2;
+    QDir::setCurrent("/tmp");
+    file2.setFileName("municipal.png");
+    QDir::setCurrent("C:/Users/user/Desktop/Rima/Smart_Municipality_2A3");
+    file2.open(QIODevice::ReadOnly);
+    QImage img2(file2.fileName());
+    painter.drawImage(0,0,img2.scaled(900,1000, Qt::IgnoreAspectRatio, Qt::FastTransformation));
 
 
 
-                    painter.drawText(width()/2-10,height()/2-10, ("Municipalité d'Ariana"));
+    QString Matricule,Id_chauffeur,id_empl1,id_empl2,Date,Nb_poubelle,Nom_Cartier,Duree,Heure;
+    Id_chauffeur=ui->lineEdit_IDChauffeur_Imp->text();
+    id_empl1=ui->lineEdit_IDEmploye1_Imp->text();
+    id_empl2=ui->lineEdit_IDEmploye2_Imp->text();
+    R.Remplissage(&ID,&Matricule,&Date,&Nb_poubelle,&Nom_Cartier,&Duree,&Heure);
 
-                          double xscale = printer.pageRect().width()/double(  ui->stackedWidget_Environnement->width());
-                            double yscale = printer.pageRect().height()/double( ui->stackedWidget_Environnement->height());
-                            double scale = qMin(xscale, yscale);
-                            painter.translate(printer.paperRect().x() + printer.pageRect().width()/2,
-                                               printer.paperRect().y() + printer.pageRect().height()/2);
-                            painter.scale(scale, scale);
-                            painter.translate(-width()/2, -height()/2);
+     painter.setFont(QFont("Harlow Solid Italic",30,-1,1));
+      painter.setPen(QColor(0,102,204));
+    painter.drawText(width()+100,height()+600,"Ramassage d'identifiant "+ID+"" );
+     painter.setFont(QFont("Berlin Sans FB Demi Bold",15));
+       painter.setPen(QColor(0,0,0));
+    painter.drawText(width()-500,height()+1600,"Matricule du camion:  "+Matricule+"" );
+    painter.drawText(width()-500,height()+2100,"Nom du cartier:  "+Nom_Cartier+"" );
+    painter.drawText(width()-500,height()+2600,"Date:  "+Date+"" );
+    painter.drawText(width()-500,height()+3100,"Heure début:  "+Heure+"" );
+    painter.drawText(width()-500,height()+3600,"Durée:  "+Duree+"" );
 
-                             ui->stackedWidget_Environnement->render(&painter);
+    painter.drawText(width()-500,height()+4100,"CIN des employés:  "+Id_chauffeur+" , "+id_empl1+" , "+id_empl2+"" );
+    painter.drawText(width()-500,height()+4600,"Nombres de poubelles à ramasser:  "+Nb_poubelle+"" );
 
-            painter.end();
 
 
-            ui->pushButton_Menu_Environ_Aff_3->show();
+
+                painter.end();
+
 }
 
 
