@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="Menu_Principal">
      <widget class="QPushButton" name="pushButton_MaintenanceIN">
@@ -9597,7 +9597,7 @@ background-repeat: none;
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="page_21"/>
       <widget class="QWidget" name="page_22">
@@ -10667,7 +10667,7 @@ color:black;</string>
      <x>0</x>
      <y>0</y>
      <width>1170</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

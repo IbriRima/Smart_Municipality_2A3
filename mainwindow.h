@@ -405,6 +405,8 @@ void on_communication_RH_clicked();
 
 
 
+void on_tableView_Reclamations_2_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;
