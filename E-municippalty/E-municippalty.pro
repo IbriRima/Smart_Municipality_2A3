@@ -1,4 +1,4 @@
-QT       += core gui sql charts
+QT       += core gui sql charts serialport printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,6 +10,7 @@ CONFIG += c++11 console
 
 
 SOURCES += \
+    Capt_Pression.cpp \
     connection.cpp \
     main.cpp \
     maintenance.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
     ressourcemateriel.cpp
 
 HEADERS += \
+    Capt_Pression.h \
     connection.h \
     maintenance.h \
     reclamation.h \

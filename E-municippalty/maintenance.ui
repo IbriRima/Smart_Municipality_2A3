@@ -19,7 +19,7 @@
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QStackedWidget" name="stackedWidget">
+   <widget class="QStackedWidget" name="stackedWidgetMaintennance">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -32,7 +32,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QPushButton" name="pushButton_Maintenance">
@@ -334,6 +334,12 @@ QPushButton#pushButton_Statistique:hover {
         <height>401</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;double cilick to print &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="toolTipDuration">
+       <number>-3</number>
+      </property>
       <attribute name="horizontalHeaderCascadingSectionResizes">
        <bool>false</bool>
       </attribute>
@@ -567,6 +573,11 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
       <item>
        <property name="text">
         <string/>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Nkhilette</string>
        </property>
       </item>
       <item>
@@ -902,6 +913,45 @@ color: rgb(191, 56, 88)
        </property>
       </item>
      </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>370</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(191, 56, 88)
+</string>
+      </property>
+      <property name="text">
+       <string>Nature de Reclamation</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_id_Composant">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>380</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choisir la nature de Reclamation&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(217, 63, 67);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_7">
      <widget class="QComboBox" name="comboBox_stat">
@@ -963,6 +1013,44 @@ color:black;</string>
         <height>401</height>
        </rect>
       </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_8">
+     <widget class="QScrollArea" name="scrollArea_map">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>1161</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1159</width>
+         <height>469</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_maDisplay">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1161</width>
+          <height>391</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
    </widget>

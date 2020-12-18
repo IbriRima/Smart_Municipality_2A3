@@ -7,18 +7,19 @@ Reclamation::Reclamation()
 
 }
 
-Reclamation::Reclamation(QString ROUTE,QString TYPE,QString DATE,int ETAT,QString NATURE){
+Reclamation::Reclamation(QString ROUTE,QString TYPE,QString DATE,QString NATURE,QString ID_COMP){
 
   //  this->id_reclamation=ID;
     this->nom_route=ROUTE;
     this->type_panne=TYPE;
     this->date=DATE;
-    this->etat_reclamatio=ETAT;
+   // this->etat_reclamatio=ETAT;
     this->Nature=NATURE;
+    this->ID_COMP=ID_COMP;
 
 }
 
-
+/*
 int Reclamation::getEtat_reclamatio() const
 {
     return etat_reclamatio;
@@ -28,7 +29,7 @@ void Reclamation::setEtat_reclamatio(int value)
 {
     etat_reclamatio = value;
 }
-
+*/
 QString Reclamation::getType_panne() const
 {
     return type_panne;
@@ -63,15 +64,17 @@ void Reclamation::setId_reclamation(int value)
 bool Reclamation:: AjouterReclamation()
 {
     QSqlQuery query;
-    query.prepare("INSERT INTO RECLAMATION(NOM_ROUTE ,TYPE_PANNE, DATE_RECLAMAT  ,  ETAT_RECL,NATURE)"
-                  "VALUES (:NOM_ROUTE,:TYPE_PANNE, :DATE_RECLAMAT ,  :ETAT_RECL,:NATURE )");
+    query.prepare("INSERT INTO RECLAMATION(NOM_ROUTE ,TYPE_PANNE, DATE_RECLAMAT  ,NATURE,ID_COMP)"
+                  "VALUES (:NOM_ROUTE,:TYPE_PANNE, :DATE_RECLAMAT ,:NATURE,:ID_COMP )");
 
     query.bindValue(":NOM_ROUTE",nom_route);
     query.bindValue(":TYPE_PANNE",type_panne);
     query.bindValue(":DATE_RECLAMAT",date);
-    query.bindValue(":ETAT_RECL",etat_reclamatio);
+   // query.bindValue(":ETAT_RECL",etat_reclamatio);
     query.bindValue(":NATURE",Nature);
   //  query.bindValue(":ID",id_reclamation);
+    query.bindValue(":ID_COMP",ID_COMP);
+
 
 
 
@@ -87,11 +90,11 @@ QSqlQueryModel *Reclamation::AfficherReclamation()
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("TYPE_PANNE"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE_RECLAMAT"));
     //model->setHeaderData(3,Qt::Horizontal,QObject::tr("ETAT_RECL"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("NATURE"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NATURE"));
+    model->insertColumn(4);
     model->insertColumn(5);
-    model->insertColumn(6);
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr(" "));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr(" "));
-    model->setHeaderData(6,Qt::Horizontal,QObject::tr(" "));
 
 
 
@@ -156,12 +159,12 @@ QSqlQueryModel *Reclamation::chercheReclamation(int check,QString Search)
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("NOM_ROUTE"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("TYPE_PANNE"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE_RECLAMAT"));
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("ETAT_RECL"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("NATURE"));
+   // model->setHeaderData(3,Qt::Horizontal,QObject::tr("ETAT_RECL"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NATURE"));
+    model->insertColumn(4);
     model->insertColumn(5);
-    model->insertColumn(6);
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr(" "));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr(" "));
-    model->setHeaderData(6,Qt::Horizontal,QObject::tr(" "));
 
 
 
@@ -205,12 +208,12 @@ QSqlQueryModel *Reclamation::Sort(int check)
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("NOM_ROUTE"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("TYPE_PANNE"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("DATE_RECLAMAT"));
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("ETAT_RECL"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("NATURE"));
+   // model->setHeaderData(3,Qt::Horizontal,QObject::tr("ETAT_RECL"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("NATURE"));
+    model->insertColumn(4);
     model->insertColumn(5);
-    model->insertColumn(6);
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr(" "));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr(" "));
-    model->setHeaderData(6,Qt::Horizontal,QObject::tr(" "));
 
     return model;
 }

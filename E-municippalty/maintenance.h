@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include<QVector>
 #include <QTableWidget>
+#include "Capt_Pression.h"
 #include"reclamation.h"
 #include"ressourcemateriel.h"
 QT_BEGIN_NAMESPACE
@@ -53,6 +54,7 @@ public  slots:
 
 
 
+    void update_btn();
 private slots:
     void on_Ressource_Search_textChanged(const QString &arg1);
 
@@ -79,9 +81,14 @@ private slots:
 
     void on_comboBox_stat_currentIndexChanged(int index);
 
+
+    void on_checkBox_Date_stateChanged(int arg1);
+
+    void on_tableView_Reclamations_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::Maintenance *ui;
-    Reclamation Rec;
-    RessourceMateriel Res;
+    arduino A;
+    QByteArray data;
 };
 #endif // MAINTENANCE_H

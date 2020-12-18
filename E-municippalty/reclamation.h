@@ -9,7 +9,7 @@ class Reclamation
 {
 public:
     Reclamation();
-    Reclamation(QString,QString,QString,int,QString);
+    Reclamation(QString,QString,QString,QString,QString);
 
 
     QSqlQueryModel *AfficherReclamation();
@@ -29,8 +29,9 @@ public:
     QString nom_route;
     QString type_panne;
     QString date;
-    int etat_reclamatio;
+    //int etat_reclamatio;
     QString Nature;
+    QString ID_COMP;
 
 public:
     QString getId_reclamation() const;

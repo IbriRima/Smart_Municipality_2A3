@@ -8,10 +8,16 @@
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QSignalMapper>
+#include <QSizePolicy>
 #include <QTableWidget>
 #include <Qt>
 #include <iostream>
 #include <qdebug.h>
+#include <qsizepolicy.h>
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintDialog>
+#include <QDir>
+
 
 // chart
 
@@ -61,14 +67,83 @@ Maintenance::Maintenance(QWidget *parent)
    ui->tableView_Ressources->setStyleSheet("QHeaderView::section { background-color: white ; color : rgb(192, 128, 129) }");
 
 
+   int ret=A.connect_arduino();
+   switch(ret){
+   case 0 :
+       qDebug()<<"arduino is available on connected to "<<A.getarduino_port_name();
+       break;
+   case 1 :
+       qDebug()<<"arduino is available but not connected to : "<<A.getarduino_port_name();
+       break;
+   case -1 :
+       qDebug()<<"arduino is not available";
+       break;
+   }
+   QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_btn()));
+
 }
-
-
 
 Maintenance::~Maintenance()
 {
     delete ui;
 }
+
+void Maintenance::update_btn()
+{
+    data=A.read_from_arduino();
+
+
+    qDebug()<<"Data ************ :"<<data;
+
+    if(data == "1"){
+        QString TYPE =  "canal d'eau";
+        QString ID_COMP = "12";
+        QString ROUTE = "Ghazela";
+        QString NATURE = "Urgente";
+        QString DATE =QDate::currentDate().toString();
+
+
+        Reclamation R(ROUTE,TYPE,DATE,NATURE,ID_COMP);
+
+        if(1)
+       {
+
+            QMessageBox msgBox;
+            msgBox.setText(tr("ALERT !.\n Type de Composant : %1 \n Nom de route : %2 \n ID_Composant : %3 \n ")
+                           .arg(TYPE)
+                           .arg(ROUTE)
+                           .arg(ID_COMP)
+                           );
+            QAbstractButton* pButtonYes = msgBox.addButton(tr("Reclamer!"), QMessageBox::YesRole);
+            msgBox.exec();
+
+            if (msgBox.clickedButton()==pButtonYes) {
+
+               R.AjouterReclamation();
+            }
+
+
+       }
+         else
+           {  QMessageBox::critical(nullptr, QObject::tr("Ajouter"),
+                         QObject::tr("Erreur !.\n"
+                                     "Click Cancel to exit."), QMessageBox::Cancel);
+
+       }
+
+
+        qDebug("coloooorrr");
+
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -79,7 +154,7 @@ Maintenance::~Maintenance()
 
 void Maintenance::on_pushButton_Maintenance_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidgetMaintennance->setCurrentIndex(1);
 
 }
 
@@ -90,13 +165,13 @@ void Maintenance::on_pushButton_Maintenance_clicked()
 
 void Maintenance::on_pushButton_backMaintenance_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidgetMaintennance->setCurrentIndex(1);
 
 }
 
 void Maintenance::on_pushButton_backMaintenance_2_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidgetMaintennance->setCurrentIndex(1);
 
 }
 
@@ -143,14 +218,14 @@ void Maintenance::on_pushButton_Ressource_Materiel_clicked()
         }
     ////
 
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidgetMaintennance->setCurrentIndex(2);
 
 
 }
 
 void Maintenance::on_pushButton_AnnulerSauvgarderCoomposant_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidgetMaintennance->setCurrentIndex(2);
 
 }
 
@@ -179,7 +254,7 @@ void Maintenance::on_pushButton_SauvgarderComposant_clicked()
                     QObject::tr(" ajouté.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
-  ui->stackedWidget->setCurrentIndex(2);
+  ui->stackedWidgetMaintennance->setCurrentIndex(2);
 
 
   }
@@ -244,7 +319,7 @@ void Maintenance::on_pushButton_SauvgarderComposant_clicked()
 
 void Maintenance::on_pushButton_AjouterComposant_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
+    ui->stackedWidgetMaintennance->setCurrentIndex(4);
 
 }
 
@@ -274,8 +349,8 @@ void Maintenance::on_pushButton_Reclamations_clicked()
 
           EDIT->setStyleSheet("background-color : green;color : white ");
 
-          ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), EDIT);
-           ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 6), DELETE);
+          ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 4), EDIT);
+           ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), DELETE);
 
 
            QSignalMapper *signalMapper = new QSignalMapper(this);
@@ -291,13 +366,20 @@ void Maintenance::on_pushButton_Reclamations_clicked()
 
 }
     ////
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidgetMaintennance->setCurrentIndex(3);
 
 }
 
 void Maintenance::on_pushButton_AjouterReclamation_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(5);
+    RessourceMateriel R;
+    ui->comboBox_id_Composant->addItem("");
+    for(int i=0;i<R.AfficherComposant()->rowCount();i++)
+    {
+        QString id= ui->tableView_Ressources->model()->index(i,7).data().toString();
+        ui->comboBox_id_Composant->addItem(id);
+    }
+    ui->stackedWidgetMaintennance->setCurrentIndex(5);
 
 }
 
@@ -315,8 +397,10 @@ void Maintenance::on_pushButton_Sauvgarder_Reclamation_clicked()
 
     QString DATE =QDate::currentDate().toString();
     QString NATURE = ui->comboBox_NatureRecl->currentText();
+    QString ID_COMP = ui->comboBox_id_Composant->currentText();
 
-    Reclamation R(ROUTE,TYPE,DATE,1,NATURE);
+
+    Reclamation R(ROUTE,TYPE,DATE,NATURE,ID_COMP);
 
     bool test = R.AjouterReclamation();
     if(test)
@@ -326,7 +410,7 @@ void Maintenance::on_pushButton_Sauvgarder_Reclamation_clicked()
                      QObject::tr(" ajouté.\n"
                                  "Click Cancel to exit."), QMessageBox::Cancel);
 
-   ui->stackedWidget->setCurrentIndex(3);
+   ui->stackedWidgetMaintennance->setCurrentIndex(3);
 
 
    }
@@ -352,8 +436,8 @@ void Maintenance::on_pushButton_Sauvgarder_Reclamation_clicked()
 
           EDIT->setStyleSheet("background-color : green;color : white ");
 
-          ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), EDIT);
-           ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 6), DELETE);
+          ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 4), EDIT);
+           ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), DELETE);
 
 
            QSignalMapper *signalMapper = new QSignalMapper(this);
@@ -373,6 +457,8 @@ void Maintenance::on_pushButton_Sauvgarder_Reclamation_clicked()
    ui->comboBox_NatureRecl->setCurrentIndex(0);
    ui->comboBox_TypeRecl->setCurrentIndex(0);
    ui->comboBox_NomRouteRecl->setCurrentIndex(0);
+   ui->comboBox_id_Composant->clear();
+
 
 
     ///
@@ -385,10 +471,11 @@ void Maintenance::on_pushButton_Annuler_Reclamation_clicked()
    ui->comboBox_NatureRecl->setCurrentIndex(0);
    ui->comboBox_TypeRecl->setCurrentIndex(0);
    ui->comboBox_NomRouteRecl->setCurrentIndex(0);
+   ui->comboBox_id_Composant->clear();
 
 
     ///
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidgetMaintennance->setCurrentIndex(3);
 
 }
 
@@ -403,7 +490,7 @@ void Maintenance::DeleteSlotRessource(int i){
     RessourceMateriel R ;
 
 
-   QString id= ui->tableView_Ressources->model()->index(i,7).data().toString();
+   QString id= ui->tableView_Ressources->model()->index(i,6).data().toString();
 
      R.SupprimerComposant(id);
      ui->tableView_Ressources->setModel( R.AfficherComposant());
@@ -448,7 +535,7 @@ void Maintenance::DeleteSlotReclamation(int i){
     Reclamation R ;
 
 
-   QString id= ui->tableView_Reclamations->model()->index(i,7).data().toString();
+   QString id= ui->tableView_Reclamations->model()->index(i,6).data().toString();
 
 
      R.SupprimerReclamation(id);
@@ -468,8 +555,8 @@ void Maintenance::DeleteSlotReclamation(int i){
 
            EDIT->setStyleSheet("background-color : green;color : white ");
 
-           ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), EDIT);
-            ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 6), DELETE);
+           ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 4), EDIT);
+            ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), DELETE);
 
             QSignalMapper *signalMapper = new QSignalMapper(this);
                 connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(DeleteSlotReclamation(int)));
@@ -496,8 +583,8 @@ void Maintenance::ModifierSlotReclamation(int i){
 Reclamation R ;
 
 
-QString id= ui->tableView_Reclamations->model()->index(i,7).data().toString();
-QString NATURE= ui->tableView_Reclamations->model()->index(i,4).data().toString();
+QString id= ui->tableView_Reclamations->model()->index(i,6).data().toString();
+QString NATURE= ui->tableView_Reclamations->model()->index(i,3).data().toString();
 
 
 if( NATURE == "")
@@ -531,8 +618,8 @@ else if(NATURE == "Urgente")
 
         EDIT->setStyleSheet("background-color : green;color : white ");
 
-        ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), EDIT);
-         ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 6), DELETE);
+        ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 4), EDIT);
+         ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), DELETE);
 
          QSignalMapper *signalMapper = new QSignalMapper(this);
              connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(DeleteSlotReclamation(int)));
@@ -784,10 +871,14 @@ void Maintenance::on_Reclamation_Serach_textChanged(const QString &arg1)
         ui->checkBox_Type_REc->setDisabled(false);
         ui->checkBox_Route_REc->setDisabled(false);
         ui->checkBox_nature_REc->setDisabled(false);
+        ui->checkBox_Date->setDisabled(false);
+
 
         ui->checkBox_Type_REc->setChecked(false);
         ui->checkBox_Route_REc->setChecked(false);
         ui->checkBox_nature_REc->setChecked(false);
+        ui->checkBox_Date->setChecked(false);
+
         ui->tableView_Reclamations->setModel( R.AfficherReclamation());
 
 
@@ -807,8 +898,8 @@ void Maintenance::on_Reclamation_Serach_textChanged(const QString &arg1)
 
           EDIT->setStyleSheet("background-color : green;color : white ");
 
-          ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), EDIT);
-           ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 6), DELETE);
+          ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 4), EDIT);
+           ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), DELETE);
 
            QSignalMapper *signalMapper = new QSignalMapper(this);
                connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(DeleteSlotReclamation(int)));
@@ -833,12 +924,16 @@ void Maintenance::on_checkBox_nature_REc_stateChanged(int arg1)
     {
     ui->checkBox_Type_REc->setDisabled(true);
     ui->checkBox_Route_REc->setDisabled(true);
+    ui->checkBox_Date->setDisabled(true);
+
 
     }
     else
     {
         ui->checkBox_Type_REc->setDisabled(false);
         ui->checkBox_Route_REc->setDisabled(false);
+        ui->checkBox_Date->setDisabled(false);
+
     }
 }
 
@@ -848,12 +943,16 @@ void Maintenance::on_checkBox_Type_REc_stateChanged(int arg1)
     {
     ui->checkBox_nature_REc->setDisabled(true);
     ui->checkBox_Route_REc->setDisabled(true);
+    ui->checkBox_Date->setDisabled(true);
+
 
     }
     else
     {
         ui->checkBox_nature_REc->setDisabled(false);
         ui->checkBox_Route_REc->setDisabled(false);
+        ui->checkBox_Date->setDisabled(false);
+
     }
 }
 
@@ -863,12 +962,34 @@ void Maintenance::on_checkBox_Route_REc_stateChanged(int arg1)
     {
     ui->checkBox_nature_REc->setDisabled(true);
     ui->checkBox_Type_REc->setDisabled(true);
+    ui->checkBox_Date->setDisabled(true);
+
 
     }
     else
     {
         ui->checkBox_nature_REc->setDisabled(false);
         ui->checkBox_Type_REc->setDisabled(false);
+        ui->checkBox_Date->setDisabled(false);
+
+    }
+}
+void Maintenance::on_checkBox_Date_stateChanged(int arg1)
+{
+    if(ui->checkBox_Date->isChecked())
+    {
+    ui->checkBox_nature_REc->setDisabled(true);
+    ui->checkBox_Type_REc->setDisabled(true);
+    ui->checkBox_Route_REc->setDisabled(true);
+
+
+    }
+    else
+    {
+        ui->checkBox_nature_REc->setDisabled(false);
+        ui->checkBox_Type_REc->setDisabled(false);
+        ui->checkBox_Route_REc->setDisabled(false);
+
     }
 }
 
@@ -925,8 +1046,8 @@ void Maintenance::on_Order_clicked()
 
           EDIT->setStyleSheet("background-color : green;color : white ");
 
-          ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), EDIT);
-           ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 6), DELETE);
+          ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 4), EDIT);
+           ui->tableView_Reclamations->setIndexWidget(ui->tableView_Reclamations->model()->index(i, 5), DELETE);
 
            QSignalMapper *signalMapper = new QSignalMapper(this);
                connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(DeleteSlotReclamation(int)));
@@ -951,7 +1072,7 @@ void Maintenance::on_Order_clicked()
 
 void Maintenance::on_pushButton_Statistique_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(6);
+    ui->stackedWidgetMaintennance->setCurrentIndex(6);
 
 }
 
@@ -960,7 +1081,7 @@ void Maintenance::on_pushButton_clicked()
     delete ui->Stat->layout();
 
      ui->comboBox_stat->setCurrentIndex(0);
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidgetMaintennance->setCurrentIndex(3);
 
 }
 
@@ -1071,7 +1192,7 @@ void Maintenance::on_comboBox_stat_currentIndexChanged(int index)
             int urg=0,non=0;
             for (int i = 0; i< R.AfficherReclamation()->rowCount(); i++)
               {
-                QString type= ui->tableView_Reclamations->model()->index(i,4).data().toString();
+                QString type= ui->tableView_Reclamations->model()->index(i,3).data().toString();
                 if(type == "Urgente"){urg++;}
                 else{non++;};
 
@@ -1121,3 +1242,84 @@ void Maintenance::on_comboBox_stat_currentIndexChanged(int index)
 
 
 }
+
+
+
+/* print **/
+
+
+void Maintenance::on_tableView_Reclamations_doubleClicked(const QModelIndex &index)
+{
+
+
+    QMessageBox msgBox;
+    msgBox.setText(tr("Vous voulez imprimer la reclamation !? \n "));
+    QAbstractButton* pButtonYes = msgBox.addButton(tr("Imprimer!"), QMessageBox::YesRole);
+    QAbstractButton* pButtonNo = msgBox.addButton(tr("Annuler!"), QMessageBox::NoRole);
+
+    msgBox.exec();
+
+    if (msgBox.clickedButton()==pButtonYes)
+    {
+            QPrinter printer(QPrinter::HighResolution);
+
+            printer.setCopyCount(1);
+
+
+                QPrintDialog *dialog = new QPrintDialog(&printer, this);
+
+                dialog->setWindowTitle(tr("Reclamation Document"));
+                 dialog->addEnabledOption(QAbstractPrintDialog::PrintSelection);
+
+
+                    QPainter painter;
+
+         painter.begin(&printer);
+
+
+        QFile file;
+        QDir::setCurrent("/tmp");
+        file.setFileName("bg.jpg");
+        QDir::setCurrent("C:/Users/Bader Semah/Desktop/2eme/Projet/APP/E-municippalty/assest");
+        file.open(QIODevice::ReadOnly);
+        QImage img(file.fileName());
+        painter.drawImage(0,0,img.scaled(6000,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));
+
+
+        QFile file2;
+        QDir::setCurrent("/tmp");
+        file2.setFileName("logo.png");
+        QDir::setCurrent("C:/Users/Bader Semah/Desktop/2eme/Projet/APP/E-municippalty/assest");
+        file2.open(QIODevice::ReadOnly);
+        QImage img2(file2.fileName());
+        painter.drawImage(0,0,img2.scaled(900,1000, Qt::IgnoreAspectRatio, Qt::FastTransformation));
+
+        QString TYPE = ui->tableView_Reclamations->model()->index(index.row(),1).data().toString() ;
+        QString ID_COMP = ui->tableView_Reclamations->model()->index(index.row(),7).data().toString();
+        QString ID_REC = ui->tableView_Reclamations->model()->index(index.row(),6).data().toString();
+        QString ROUTE = ui->tableView_Reclamations->model()->index(index.row(),0).data().toString();
+        QString NATURE = ui->tableView_Reclamations->model()->index(index.row(),3).data().toString();
+        QString DATE =ui->tableView_Reclamations->model()->index(index.row(),2).data().toString();
+        if(NATURE == ""){NATURE = "N'est pas Urgente";};
+
+
+         painter.setFont(QFont("Harlow Solid Italic",30,-1,1));
+          painter.setPen(QColor(0,102,204));
+        painter.drawText(width()+100,height()+600,"Identifiant de Reclamation : "+ID_REC+"" );
+         painter.setFont(QFont("Berlin Sans FB Demi Bold",15));
+           painter.setPen(QColor(0,0,0));
+        painter.drawText(width()-500,height()+1400,"Identifiant de Composant :  "+ID_COMP+"" );
+        painter.drawText(width()-500,height()+1800,"Nom de Route :  "+ROUTE+"" );
+        painter.drawText(width()-500,height()+2200,"Type de Composant :  "+TYPE+"" );
+        painter.drawText(width()-500,height()+2600,"Date :  "+DATE+"" );
+        painter.drawText(width()-500,height()+3000,"Nature :  "+NATURE+"" );
+
+                    painter.end();
+
+    }
+    else if (msgBox.clickedButton()==pButtonNo)
+    {
+        msgBox.close();
+    }
+}
+
