@@ -230,3 +230,15 @@ model->setHeaderData(2,Qt::Horizontal,QObject::tr("Date"));
 return model;
 }
 
+QSqlQueryModel * Ramassage::Tri(int index)
+{
+    QSqlQueryModel *model= new QSqlQueryModel();
+    if (index==2)
+    model->setQuery("select ID_RAMASSAGE from RAMASSAGE ORDER BY NOM_CARTIER DESC");
+    else if(index==3)
+            model->setQuery("select ID_RAMASSAGE from RAMASSAGE ORDER BY to_number(NOMBRE_POUBELLE) DESC");
+    else if (index==4)
+        model->setQuery("select ID_RAMASSAGE from RAMASSAGE ORDER BY to_date(DATE_RAMASSAGE,'dd/MM/yyyy') DESC");
+   model->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
+   return model;
+}

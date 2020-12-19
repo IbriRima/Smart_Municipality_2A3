@@ -70,7 +70,14 @@ MainWindow::MainWindow(QWidget *parent)
 /********************************************** End Wassim *******************************************/
 
 /********************************************** Begin Rima *******************************************/
-      ui->Notif_irrigation->hide();
+      ui->comboBox_Type_Tri->addItem("Choisisser le critère de tri");
+       ui->comboBox_Type_Tri->addItem("Aucun critère de tri");
+           ui->comboBox_Type_Tri->addItem("Tri selon le nom de cartier");
+            ui->comboBox_Type_Tri->addItem("Tri selon le nombre de poubelle");
+             ui->comboBox_Type_Tri->addItem("Tri selon la date");
+            ui->tri_ramassage->hide();
+
+ ui->Notif_irrigation->hide();
  ui->pushButton_Irrigat->hide();
       //Add items to comoBox_AdresseAJ
   ui->comboBox_NomCartier_AJ->addItem("EL Menzah 1 ");
@@ -553,7 +560,7 @@ void MainWindow::on_pushButton_Close_affe_clicked()
 
 void MainWindow::on_pushButton_Environ_pressed()
 {  QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/Wassim/Desktop/final/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Wassim/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_Environ,"geometry");
@@ -583,7 +590,7 @@ void MainWindow::on_pushButton_Marche_clicked()
 
 void MainWindow::on_pushButton_Marche_pressed()
 { QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/Wassim/Desktop/final/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Wassim/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_Marche,"geometry");
@@ -1084,14 +1091,42 @@ void MainWindow::on_communication_RH_clicked()
 
 /******************************************************************************************************/
 /**********************************************   Begin Rima   *******************************************/
+void MainWindow::INIT()
+{
+    ui->lineEdit_ID_Ramas_Aff->clear();
+    ui->lineEdit_Matricule_Aff->clear();
+    ui->lineEdit_IDChauffeur_Aff->clear();
+    ui->lineEdit_IDEmploye1_Aff->clear();
+    ui->lineEdit_IDEmploye2_Aff->clear();
+    ui->lineEdit_Date_Aff->clear();
+    ui->lineEdit_NbPoubelle_Aff->clear();
+    ui->lineEdit_Duree_Aff->clear();
+    ui->lineEdit_NomCartier_Aff->clear();
+    ui->lineEdit_HeureDebut_Aff->clear();
+    ui->groupBox_2->setTitle("");
+
+}
+
+void MainWindow::INIT_ZV()
+{
+    ui->lineEdit_ID_Aff_ZV->clear();
+    ui->lineEdit_Libelle_Aff_ZV->clear();
+    ui->lineEdit_Adresse_Aff_ZV->clear();
+     ui->lineEdit_Aire_Aff_ZV->clear();
+
+ui->groupBox->setTitle("");
+}
+
 //SaveAJ_Ramassage
 void MainWindow::on_pushButton_Save_AJ_clicked()
-{
+{  INIT();
 Ramassage R;
 QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
+    ui->tableView_Ramas->setModel(tmpR.afficher());
+    ui->tri_ramassage->hide();
 /*************/
 //Set Values
 R.setIdChauffeur(ui->lineEdit_IDChauffeurAJ->text());
@@ -1173,9 +1208,10 @@ else QMessageBox::critical(this,"Alerte","Il faut tout remplire ! ");
 //Ajout_ZV
 void MainWindow::on_pushButton_Save_ZV_clicked()
 { Zone_Verte Z;
-        //sound
+    INIT_ZV();
+    //sound
     QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
         player->setVolume(50);
         player->play();
 
@@ -1216,7 +1252,7 @@ void MainWindow::on_pushButton_Annuler_ZV_MAJ_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     ui->stackedWidget_Environnement->setCurrentIndex(3);
@@ -1225,27 +1261,32 @@ void MainWindow::on_pushButton_clicked()
 
 
 void MainWindow::on_pushButton_Annuler_AJ_R_clicked()
-{
+{    INIT();
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
+    ui->tableView_Ramas->setModel(tmpR.afficher());
+    ui->tri_ramassage->hide();
     ui->stackedWidget_Environnement->setCurrentIndex(1);
 }
 
 void MainWindow::on_pushButton_Annuler_MAJ_R_clicked()
 {
-        QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
+
+    QMediaPlayer *player = new QMediaPlayer;
+        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
         player->setVolume(50);
         player->play();
+        ui->tableView_Ramas->setModel(tmpR.afficher());
+        ui->tri_ramassage->hide();
 
     ui->stackedWidget_Environnement->setCurrentIndex(1);
 }
 
 
 void MainWindow::on_pushButton_ZV_clicked()
-{
+{ INIT_ZV();
      ui->tableView_ZV ->setModel(tmpZV.afficher());
     ui->stackedWidget_Environnement->setCurrentIndex(4);
 }
@@ -1254,8 +1295,9 @@ void MainWindow::on_pushButton_ZV_clicked()
 
 void MainWindow::on_pushButton_Annuler_ZV_clicked()
 {
+    INIT_ZV();
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     ui->stackedWidget_Environnement->setCurrentIndex(4);
@@ -1266,7 +1308,7 @@ void MainWindow::on_pushButton_Annuler_ZV_clicked()
 void MainWindow::on_pushButton_Menu_Environ_Aff_clicked()
 {
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
      ui->stackedWidget_Environnement->setCurrentIndex(0);
@@ -1277,7 +1319,7 @@ void MainWindow::on_pushButton_Menu_Environ_Aff_clicked()
 void MainWindow::on_pushButton_Ajout_ZV_clicked()
 {
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     ui->stackedWidget_Environnement->setCurrentIndex(6);
@@ -1290,7 +1332,7 @@ void MainWindow::on_pushButton_Ajout_ZV_clicked()
 
 void MainWindow::on_pushButton_Menu_Environ_Aff_ZV_clicked()
 {QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
      ui->stackedWidget_Environnement->setCurrentIndex(0);
@@ -1346,7 +1388,7 @@ void MainWindow::on_pushButton_Close_Envir_8_clicked()
 void MainWindow::on_pushButton_R_clicked()
 {
 
-
+INIT();
  ui->tableView_Ramas->setModel(tmpR.afficher());
     ui->stackedWidget_Environnement->setCurrentIndex(1);
 
@@ -1413,7 +1455,7 @@ void MainWindow::on_pushButton_Delete_Ramas_clicked()
 {
 
     QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/trash.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/trash.mp3"));
         player->setVolume(50);
 
 Ramassage R;
@@ -1518,7 +1560,7 @@ void MainWindow::on_pushButton_MAJ_Ramas_clicked()
 void MainWindow::on_pushButton_Save_ZV_MAJ_clicked()
 {
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
 
@@ -1554,10 +1596,11 @@ void MainWindow::on_pushButton_SaveR_MAJ_clicked()
         Ramassage R;
     //Sound
        QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Rima/Environnement/Click2.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
         player->setVolume(50);
         player->play();
-
+        ui->tableView_Ramas->setModel(tmpR.afficher());
+        ui->tri_ramassage->hide();
     //Affichage de l'id à MAJ
  //   ui->lineEdit_IDChauffeurMAJ->setText(ui->lineEdit_IDChauffeur_Aff->text());
 
@@ -1857,7 +1900,7 @@ void MainWindow::on_pushButton_Imprimer_clicked()
     QFile file;
     QDir::setCurrent("/tmp");
     file.setFileName("back2.jpg");
-    QDir::setCurrent("C:/Users/user/Desktop/Rima/Smart_Municipality_2A3");
+    QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
     file.open(QIODevice::ReadOnly);
     QImage img(file.fileName());
     painter.drawImage(0,0,img.scaled(4958,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));
@@ -1866,7 +1909,7 @@ void MainWindow::on_pushButton_Imprimer_clicked()
     QFile file2;
     QDir::setCurrent("/tmp");
     file2.setFileName("municipal.png");
-    QDir::setCurrent("C:/Users/user/Desktop/Rima/Smart_Municipality_2A3");
+    QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
     file2.open(QIODevice::ReadOnly);
     QImage img2(file2.fileName());
     painter.drawImage(0,0,img2.scaled(900,1000, Qt::IgnoreAspectRatio, Qt::FastTransformation));
@@ -1913,18 +1956,21 @@ void MainWindow::on_pushButton_Menu_Environ_Aff_3_clicked()
 void MainWindow::update_label()
 {int val;
     data=C.read_from_capteur_humidite();
-//qDebug()<<"Entrain de mesurer l'humidité de cette zone verte";
+qDebug()<<"Entrain de mesurer l'humidité de cette zone verte";
     val=data.toInt();
 
     if(data.toInt()>=600)
       {
         qDebug()<<"Sèche";
           ui->Notif_irrigation->show();
+            ui->tableView_ZV->setStyleSheet(" selection-background-color: red ");
+
       }
         else if(data.toInt()>100&&data.toInt()<600)
     {
         qDebug()<<"Humide";
            ui->Notif_irrigation->hide();
+            ui->tableView_ZV->setStyleSheet(" selection-background-color: green  ");
     }
 
 }
@@ -2052,6 +2098,40 @@ void MainWindow::on_pushButton_Menu_Environ_Aff_ZV_2_clicked()
 {
     ui->stackedWidget_Environnement->setCurrentIndex(0);
 }
+
+
+void MainWindow::on_comboBox_Type_Tri_activated(int index)
+{
+          ui->tableView_Ramas->setModel(tmpR.Tri(index));
+          if(index==0)
+               {
+           ui->tableView_Ramas->setModel(tmpR.afficher());
+           ui->tri_ramassage->hide();
+          }
+          if(index==1)
+               {
+           ui->tableView_Ramas->setModel(tmpR.afficher());
+           ui->tri_ramassage->hide();
+          }
+          else if(index==2)
+         { ui->tri_ramassage->show();
+              ui->tri_ramassage->setText("Les ramassages triés selon le nom de cartier");
+
+          }
+          else if(index==3)
+          { ui->tri_ramassage->show();
+               ui->tri_ramassage->setText("Les ramassages triés selon le nombre de ramassage");
+
+           }
+          else if(index==4)
+          { ui->tri_ramassage->show();
+               ui->tri_ramassage->setText("Les ramassages triés selon la date");
+
+           }
+           ui->comboBox_Type_Tri->setCurrentIndex(0);
+}
+
+
 /**************** Déplacement entre les modules pour le  Module Environnement *****************************************/
 void MainWindow::on_pushButton_MP_Envi_clicked()
 {
@@ -3885,8 +3965,8 @@ void MainWindow::on_tableView_Reclamations_2_doubleClicked(const QModelIndex &in
 
         QFile file;
         QDir::setCurrent("/tmp");
-        file.setFileName("bg.jpg");
-        QDir::setCurrent("C:/Users/Bader Semah/Desktop/2eme/Projet/APP/E-municippalty/assest");
+        file.setFileName("back2.jpg");
+        QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
         file.open(QIODevice::ReadOnly);
         QImage img(file.fileName());
         painter.drawImage(0,0,img.scaled(6000,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));
@@ -3894,8 +3974,8 @@ void MainWindow::on_tableView_Reclamations_2_doubleClicked(const QModelIndex &in
 
         QFile file2;
         QDir::setCurrent("/tmp");
-        file2.setFileName("logo.png");
-        QDir::setCurrent("C:/Users/Bader Semah/Desktop/2eme/Projet/APP/E-municippalty/assest");
+        file2.setFileName("municipal.png");
+        QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
         file2.open(QIODevice::ReadOnly);
         QImage img2(file2.fileName());
         painter.drawImage(0,0,img2.scaled(900,1000, Qt::IgnoreAspectRatio, Qt::FastTransformation));

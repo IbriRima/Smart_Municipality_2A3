@@ -169,10 +169,6 @@ void on_pushButton_Close_Envir_6_clicked();
 
 void on_pushButton_Close_Envir_8_clicked();
 
-
-
-
-
 void on_pushButton_R_clicked();
 
 void on_tableView_ZV_activated(const QModelIndex &index);
@@ -233,6 +229,9 @@ void on_pushButton_Environ_Envi_pressed();
 void on_Date_Stat_dateChanged(const QDate &date);
 void on_pushButton_Irrigat_clicked();
 void on_pushButton_Menu_Environ_Aff_ZV_2_clicked();
+void on_comboBox_Type_Tri_activated(int index);
+void INIT();
+void INIT_ZV();
 /****************************************************** End Rima ************************************************/
 /****************************************************************************************************************/
 /****************************************Begin Nardine**********************************************************/
