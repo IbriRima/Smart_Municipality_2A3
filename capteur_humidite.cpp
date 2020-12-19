@@ -2,7 +2,6 @@
 #include<QSerialPort>
 Capteur_humidite::Capteur_humidite()
 {
-
 }
 int Capteur_humidite::connect_capteur_humidite()
 {

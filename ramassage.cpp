@@ -9,7 +9,7 @@
 #include <QVector>
 Ramassage::Ramassage()
 {}
-
+/****/
 
 bool Ramassage::ajouter()
 {
