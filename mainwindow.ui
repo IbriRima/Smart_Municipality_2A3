@@ -71,7 +71,7 @@ background-repeat: none;
 </string>
     </property>
     <property name="currentIndex">
-     <number>8</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Sous_Menu_Env">
      <property name="styleSheet">
@@ -391,7 +391,7 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_recherche_R">
       <property name="geometry">
        <rect>
-        <x>790</x>
+        <x>890</x>
         <y>90</y>
         <width>141</width>
         <height>31</height>
@@ -1171,7 +1171,7 @@ background-repeat: none;
      <widget class="QPushButton" name="pushButton_Icon_serachR">
       <property name="geometry">
        <rect>
-        <x>890</x>
+        <x>960</x>
         <y>90</y>
         <width>31</width>
         <height>31</height>
@@ -1194,8 +1194,8 @@ background-repeat: none;
      <widget class="QTableView" name="tableView_Ramas">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>160</y>
+        <x>130</x>
+        <y>200</y>
         <width>121</width>
         <height>321</height>
        </rect>
@@ -1256,7 +1256,7 @@ background-repeat: none;
      <widget class="QPushButton" name="pushButton_StatR">
       <property name="geometry">
        <rect>
-        <x>980</x>
+        <x>1050</x>
         <y>50</y>
         <width>75</width>
         <height>61</height>
@@ -1279,8 +1279,8 @@ background-repeat: none;
      <widget class="QComboBox" name="comboBox_TypeRech_Ramas">
       <property name="geometry">
        <rect>
-        <x>790</x>
-        <y>51</y>
+        <x>890</x>
+        <y>50</y>
         <width>141</width>
         <height>21</height>
        </rect>
@@ -1304,6 +1304,99 @@ background-repeat: none;
 </string>
       </property>
      </widget>
+     <widget class="QComboBox" name="comboBox_Type_Tri">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>50</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Javanese Text</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#comboBox_Type_Tri{
+background-color: transparent;
+border-image: url(:champs.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tri_ramassage">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>160</y>
+        <width>381</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>120</red>
+            <green>120</green>
+            <blue>120</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+     </widget>
      <zorder>groupBox_2</zorder>
      <zorder>label_16</zorder>
      <zorder>pushButton</zorder>
@@ -1314,6 +1407,8 @@ background-repeat: none;
      <zorder>tableView_Ramas</zorder>
      <zorder>pushButton_StatR</zorder>
      <zorder>comboBox_TypeRech_Ramas</zorder>
+     <zorder>comboBox_Type_Tri</zorder>
+     <zorder>tri_ramassage</zorder>
     </widget>
     <widget class="QWidget" name="MAJ_Ramas">
      <property name="styleSheet">
@@ -1847,33 +1942,6 @@ background-repeat: none;
 }
 </string>
      </property>
-     <widget class="QLineEdit" name="lineEdit_IDRamassage_AJ">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>140</y>
-        <width>191</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Javanese Text</family>
-        <pointsize>12</pointsize>
-        <stylestrategy>PreferAntialias</stylestrategy>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#lineEdit_IDRamassage_AJ{
-background-color: transparent;
-border-image: url(:champs.png);
-background: none;
-border: none;
-background-repeat: none;
-}
-</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton_Annuler_AJ">
       <property name="geometry">
        <rect>
@@ -1899,8 +1967,8 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_MatriculeAJ">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>140</y>
+        <x>70</x>
+        <y>150</y>
         <width>191</width>
         <height>41</height>
        </rect>
@@ -1925,8 +1993,8 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_IDChauffeurAJ">
       <property name="geometry">
        <rect>
-        <x>550</x>
-        <y>140</y>
+        <x>310</x>
+        <y>150</y>
         <width>191</width>
         <height>41</height>
        </rect>
@@ -1975,7 +2043,7 @@ background-repeat: none;
      <widget class="QDateEdit" name="dateEditR_AJ">
       <property name="geometry">
        <rect>
-        <x>550</x>
+        <x>560</x>
         <y>280</y>
         <width>191</width>
         <height>41</height>
@@ -2041,8 +2109,8 @@ background-repeat: none;
      <widget class="QTimeEdit" name="timeEdit_DebAJ">
       <property name="geometry">
        <rect>
-        <x>810</x>
-        <y>280</y>
+        <x>70</x>
+        <y>410</y>
         <width>191</width>
         <height>41</height>
        </rect>
@@ -2096,7 +2164,7 @@ background-repeat: none;
      <widget class="QTimeEdit" name="timeEdit_DureeAJ">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>310</x>
         <y>410</y>
         <width>181</width>
         <height>41</height>
@@ -2145,7 +2213,7 @@ background-repeat: none;
      <widget class="QSpinBox" name="spinBox_NbPoubelle_AJ">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>550</x>
         <y>410</y>
         <width>191</width>
         <height>41</height>
@@ -2174,8 +2242,8 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_IDEmpl1_Rama">
       <property name="geometry">
        <rect>
-        <x>800</x>
-        <y>140</y>
+        <x>560</x>
+        <y>150</y>
         <width>191</width>
         <height>41</height>
        </rect>
@@ -2244,8 +2312,8 @@ background-repeat: none;
      <widget class="QLabel" name="label_24">
       <property name="geometry">
        <rect>
-        <x>550</x>
-        <y>100</y>
+        <x>310</x>
+        <y>110</y>
         <width>211</width>
         <height>31</height>
        </rect>
@@ -2299,7 +2367,7 @@ background-repeat: none;
      <widget class="QLabel" name="label_25">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>550</x>
         <y>370</y>
         <width>171</width>
         <height>21</height>
@@ -2317,7 +2385,7 @@ background-repeat: none;
      <widget class="QLabel" name="label_26">
       <property name="geometry">
        <rect>
-        <x>550</x>
+        <x>560</x>
         <y>230</y>
         <width>151</width>
         <height>41</height>
@@ -2353,8 +2421,8 @@ background-repeat: none;
      <widget class="QLabel" name="label_28">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>100</y>
+        <x>70</x>
+        <y>110</y>
         <width>181</width>
         <height>31</height>
        </rect>
@@ -2408,8 +2476,8 @@ background-repeat: none;
      <widget class="QLabel" name="label_29">
       <property name="geometry">
        <rect>
-        <x>810</x>
-        <y>240</y>
+        <x>70</x>
+        <y>380</y>
         <width>151</width>
         <height>21</height>
        </rect>
@@ -2426,7 +2494,7 @@ background-repeat: none;
      <widget class="QLabel" name="label_30">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>310</x>
         <y>370</y>
         <width>119</width>
         <height>21</height>
@@ -2444,8 +2512,8 @@ background-repeat: none;
      <widget class="QLabel" name="label_31">
       <property name="geometry">
        <rect>
-        <x>800</x>
-        <y>100</y>
+        <x>560</x>
+        <y>110</y>
         <width>211</width>
         <height>31</height>
        </rect>
@@ -2457,61 +2525,6 @@ background-repeat: none;
       </property>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;CIN du 1° employé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_32">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>100</y>
-        <width>201</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="palette">
-       <palette>
-        <active>
-         <colorrole role="WindowText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>4</red>
-            <green>7</green>
-            <blue>62</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </active>
-        <inactive>
-         <colorrole role="WindowText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>4</red>
-            <green>7</green>
-            <blue>62</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </inactive>
-        <disabled>
-         <colorrole role="WindowText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>120</red>
-            <green>120</green>
-            <blue>120</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </disabled>
-       </palette>
-      </property>
-      <property name="font">
-       <font>
-        <family>Segoe Print</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du ramassage&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_Close_Envir_4">
@@ -3873,7 +3886,7 @@ background-repeat: none;
      <widget class="QLineEdit" name="lineEdit_ID_Ramas_Imp">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>210</x>
         <y>100</y>
         <width>141</width>
         <height>51</height>
@@ -3887,9 +3900,9 @@ background-repeat: none;
       </property>
       <property name="styleSheet">
        <string notr="true">#lineEdit_ID_Ramas_Imp{
-background-color: transparent;
-border-image: trasparent;
-background: none;
+background-color:none;
+border-image:transparent; 
+background: transparent; 
 border: none;
 background-repeat: none;
 }
@@ -4510,26 +4523,6 @@ background-repeat: none;
        <string/>
       </property>
      </widget>
-     <widget class="QGraphicsView" name="graphicsView_2">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>0</y>
-        <width>91</width>
-        <height>101</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#graphicsView_2{
-background-color: transparent;
-border-image: url(:municipal.png);
-background: none;
-border: none;
-background-repeat: none;
-}
-</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton_Menu_Environ_Aff_3">
       <property name="geometry">
        <rect>
@@ -4554,34 +4547,7 @@ background-repeat: none;
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="Arduino_Environnement">
-     <widget class="QPushButton" name="ON_Irrigation">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>170</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>On</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="arduino">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>250</y>
-        <width>47</width>
-        <height>13</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </widget>
+    <widget class="QWidget" name="Arduino_Environnement"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

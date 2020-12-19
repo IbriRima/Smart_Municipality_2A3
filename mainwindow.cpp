@@ -24,15 +24,25 @@
 #include <QGridLayout>
 #include <QPrinter>
 #include <QPrintDialog>
-
+#include <QAbstractItemView>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
 
+/******* Voir 1216 ******/
     ui->setupUi(this);
+    /*********** Neww ****************/
+  ui->comboBox_Type_Tri->addItem("Choisisser le critère de tri");
+   ui->comboBox_Type_Tri->addItem("Aucun critère de tri");
+       ui->comboBox_Type_Tri->addItem("Tri selon le nom de cartier");
+        ui->comboBox_Type_Tri->addItem("Tri selon le nombre de poubelle");
+         ui->comboBox_Type_Tri->addItem("Tri selon la date");
+        ui->tri_ramassage->hide();
+     /*********** Neww ****************/
 
-    //Add items to comoBox_AdresseAJ
+
+       //Add items to comoBox_AdresseAJ
 
 ui->stackedWidget_Environnement->setCurrentIndex(0);
 ui->comboBox_NomCartier_AJ->addItem("EL Menzah 1 ");
@@ -299,7 +309,7 @@ ui->stackedWidget_Environnement->setCurrentIndex(1);
 
 }
 }
- ui->lineEdit_IDRamassage_AJ->clear();
+
  ui->lineEdit_IDChauffeurAJ->clear();
  ui->lineEdit_MatriculeAJ->clear();
  ui->dateEditR_AJ->clear();
@@ -644,6 +654,7 @@ void MainWindow::on_tableView_ZV_activated(const QModelIndex &index)
 
 Zone_Verte Z;
 QString ID=ui->tableView_ZV->model()->data(index).toString();
+
 QString Aire,Libelle,Adresse;
 
       Z. Remplissage(&ID,&Libelle,&Adresse,&Aire);
@@ -653,10 +664,15 @@ QString Aire,Libelle,Adresse;
       ui->lineEdit_Adresse_Aff_ZV->setText(Adresse);
        ui->lineEdit_Aire_Aff_ZV->setText(Aire);
 
+
+          // background: yellow;
+
  ui->groupBox->setTitle( ui->lineEdit_ID_Aff_ZV->text());
  qDebug()<<"Irrigation";
-
  QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+
+ ui->tableView_ZV->selectRow( index.row());
+//ui->tableView_ZV->setStyleSheet("  alternate-background-color: red;");
 
 }
 
@@ -1194,7 +1210,7 @@ void MainWindow::on_pushButton_Menu_Environ_Aff_3_clicked()
 
 
 void MainWindow::update_label()
-{int val;
+{  int val;
     data=C.read_from_capteur_humidite();
 qDebug()<<"Update";
     val=data.toInt();
@@ -1203,11 +1219,13 @@ qDebug()<<"Update";
       {
         qDebug()<<"Sèche";
           ui->Notif_irrigation->show();
+  ui->tableView_ZV->setStyleSheet(" selection-background-color: red ");
       }
         else if(data.toInt()>100&&data.toInt()<550)
     {
         qDebug()<<"Humide";
            ui->Notif_irrigation->hide();
+           ui->tableView_ZV->setStyleSheet(" selection-background-color: green  ");
     }
 
 }
@@ -1331,3 +1349,40 @@ QVector<Ramassage> tab;
             ui->graphicsView->setMinimumSize(800,550);
 }
 
+
+
+
+
+
+
+
+void MainWindow::on_comboBox_Type_Tri_activated(int index)
+{
+          ui->tableView_Ramas->setModel(tmpR.Tri(index));
+          if(index==0)
+               {
+           ui->tableView_Ramas->setModel(tmpR.afficher());
+           ui->tri_ramassage->hide();
+          }
+          if(index==1)
+               {
+           ui->tableView_Ramas->setModel(tmpR.afficher());
+           ui->tri_ramassage->hide();
+          }
+          else if(index==2)
+         { ui->tri_ramassage->show();
+              ui->tri_ramassage->setText("Les ramassages triés selon le nom de cartier");
+
+          }
+          else if(index==3)
+          { ui->tri_ramassage->show();
+               ui->tri_ramassage->setText("Les ramassages triés selon le nombre de ramassage");
+
+           }
+          else if(index==4)
+          { ui->tri_ramassage->show();
+               ui->tri_ramassage->setText("Les ramassages triés selon la date");
+
+           }
+           ui->comboBox_Type_Tri->setCurrentIndex(0);
+}

@@ -136,6 +136,7 @@ void on_ON_clicked();
 void on_Date_Stat_dateChanged(const QDate &date);
 
 
+void on_comboBox_Type_Tri_activated(int index);
 
 private:
     Ui::MainWindow *ui;
