@@ -274,6 +274,16 @@ background-repeat: none;
        <string/>
       </property>
      </widget>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>860</x>
+        <y>0</y>
+        <width>321</width>
+        <height>281</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Consulter_Ramas">
      <property name="styleSheet">
@@ -1171,7 +1181,7 @@ background-repeat: none;
      <widget class="QPushButton" name="pushButton_Icon_serachR">
       <property name="geometry">
        <rect>
-        <x>960</x>
+        <x>1000</x>
         <y>90</y>
         <width>31</width>
         <height>31</height>
@@ -1321,6 +1331,12 @@ background-repeat: none;
         <bold>false</bold>
        </font>
       </property>
+      <property name="toolTip">
+       <string>Trier vos ramassages</string>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
       <property name="styleSheet">
        <string notr="true">#comboBox_Type_Tri{
 background-color: transparent;
@@ -1397,6 +1413,16 @@ background-repeat: none;
        <bool>false</bool>
       </property>
      </widget>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>131</width>
+        <height>111</height>
+       </rect>
+      </property>
+     </widget>
      <zorder>groupBox_2</zorder>
      <zorder>label_16</zorder>
      <zorder>pushButton</zorder>
@@ -1409,6 +1435,7 @@ background-repeat: none;
      <zorder>comboBox_TypeRech_Ramas</zorder>
      <zorder>comboBox_Type_Tri</zorder>
      <zorder>tri_ramassage</zorder>
+     <zorder>widget_2</zorder>
     </widget>
     <widget class="QWidget" name="MAJ_Ramas">
      <property name="styleSheet">

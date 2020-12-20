@@ -25,21 +25,37 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QAbstractItemView>
+#include "clock.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
 
-/******* Voir 1216 ******/
+
+
+
+
     ui->setupUi(this);
+
     /*********** Neww ****************/
+    Clock* clock=new Clock(ui->widget);
+clock->setDisabled(1);
+clock->resize(200, clock->height());
+clock->resize(200, clock->width());
+clock->show();
+Clock* clock2=new Clock(ui->widget_2);
+
+clock2->setDisabled(1);
+clock2->show();
+
+     /*********** Neww ****************/
   ui->comboBox_Type_Tri->addItem("Choisisser le critère de tri");
    ui->comboBox_Type_Tri->addItem("Aucun critère de tri");
        ui->comboBox_Type_Tri->addItem("Tri selon le nom de cartier");
         ui->comboBox_Type_Tri->addItem("Tri selon le nombre de poubelle");
          ui->comboBox_Type_Tri->addItem("Tri selon la date");
         ui->tri_ramassage->hide();
-     /*********** Neww ****************/
+
 
 
        //Add items to comoBox_AdresseAJ
@@ -1385,4 +1401,10 @@ void MainWindow::on_comboBox_Type_Tri_activated(int index)
 
            }
            ui->comboBox_Type_Tri->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+
+
 }

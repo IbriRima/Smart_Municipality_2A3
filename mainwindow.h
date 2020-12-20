@@ -138,6 +138,8 @@ void on_Date_Stat_dateChanged(const QDate &date);
 
 void on_comboBox_Type_Tri_activated(int index);
 
+void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;
