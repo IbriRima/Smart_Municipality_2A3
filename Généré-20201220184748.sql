@@ -1,0 +1,22 @@
+--------------------------------------------------------
+--  Fichier créé - dimanche-décembre-20-2020   
+--------------------------------------------------------
+@C:\Users\user\Desktop\Rima\Environnement\SEQUENCES.sql
+@C:\Users\user\Desktop\Rima\Environnement\TABLES.sql
+--@C:\Users\user\Desktop\Rima\Environnement\CITOYEN_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\COMPTE_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\EMPLOYE_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\EMPLOYE_MISSION_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\EMPLOYE_RAMASSAGE_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\EVENEMENT_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\MARCHANT_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\MISSION_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\MISSION_MARCHANT_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\RAMASSAGE_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\RECLAMATION_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\RESSOURCE_DATA_TABLE.xls
+--@C:\Users\user\Desktop\Rima\Environnement\ZONE_VERTE_DATA_TABLE.xls
+@C:\Users\user\Desktop\Rima\Environnement\INDEXES.sql
+@C:\Users\user\Desktop\Rima\Environnement\TRIGGERS.sql
+@C:\Users\user\Desktop\Rima\Environnement\CONSTRAINTS.sql
+@C:\Users\user\Desktop\Rima\Environnement\REF_CONSTRAINTS.sql

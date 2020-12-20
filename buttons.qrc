@@ -59,5 +59,27 @@
         <file>M.Maintenance.png</file>
         <file>M.Communication.png</file>
         <file>M.RessourcesH.png</file>
+        <file>Munifacility.png</file>
+        <file>assest/Maintenance.png</file>
+        <file>assest/Maintenance_hover.png</file>
+        <file>assest/Reclamation.png</file>
+        <file>assest/Reclamation_hover.png</file>
+        <file>assest/Ressource Materiels.png</file>
+        <file>assest/Ressource Materiels_hover.png</file>
+        <file>Reclamation.png</file>
+        <file>Reclamation_hover.png</file>
+        <file>Ajouter Composant.png</file>
+        <file>Ajouter Composant_hover.png</file>
+        <file>Ajouter Reclamation.png</file>
+        <file>Ajouter Reclamation_hover.png</file>
+        <file>ANNULER_hover.png</file>
+        <file>Maintenance_hover.png</file>
+        <file>Ressource Materiels.png</file>
+        <file>Ressource Materiels_hover.png</file>
+        <file>Sauvgarder.png</file>
+        <file>Sauvgarder_hover.png</file>
+        <file>Statistique_hover.png</file>
+        <file>MaintenanceR.png</file>
+        <file>MaintenanceR_hover.png</file>
     </qresource>
 </RCC>
