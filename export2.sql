@@ -1,6 +1,22 @@
 --------------------------------------------------------
 --  Fichier créé - dimanche-décembre-20-2020   
 --------------------------------------------------------
+DROP SEQUENCE "RIMA"."ID_RAMASSAGE";
+DROP SEQUENCE "RIMA"."ID_RECLAMATION";
+DROP SEQUENCE "RIMA"."ID_ZONEVERTE";
+DROP TABLE "RIMA"."CITOYEN";
+DROP TABLE "RIMA"."COMPTE";
+DROP TABLE "RIMA"."EMPLOYE";
+DROP TABLE "RIMA"."EMPLOYE_MISSION";
+DROP TABLE "RIMA"."EMPLOYE_RAMASSAGE";
+DROP TABLE "RIMA"."EVENEMENT";
+DROP TABLE "RIMA"."MARCHANT";
+DROP TABLE "RIMA"."MISSION";
+DROP TABLE "RIMA"."MISSION_MARCHANT";
+DROP TABLE "RIMA"."RAMASSAGE";
+DROP TABLE "RIMA"."RECLAMATION";
+DROP TABLE "RIMA"."RESSOURCE";
+DROP TABLE "RIMA"."ZONE_VERTE";
 --------------------------------------------------------
 --  DDL for Sequence ID_RAMASSAGE
 --------------------------------------------------------
