@@ -16,5 +16,6 @@ int main(int argc, char *argv[])
     else msg.setText("Connection impossible");
     msg.exec();
    w.show();
+
     return a.exec();
 }

@@ -55,10 +55,6 @@
         <file>assest/ANNULER.png</file>
         <file>assest/ANNULER_hover.png</file>
         <file>LogoStats.png</file>
-        <file>M.Environnement.png</file>
-        <file>M.Maintenance.png</file>
-        <file>M.Communication.png</file>
-        <file>M.RessourcesH.png</file>
         <file>Munifacility.png</file>
         <file>assest/Maintenance.png</file>
         <file>assest/Maintenance_hover.png</file>
@@ -81,5 +77,17 @@
         <file>Statistique_hover.png</file>
         <file>MaintenanceR.png</file>
         <file>MaintenanceR_hover.png</file>
+        <file>StatistiqueR.png</file>
+        <file>ANNULER_R.png</file>
+        <file>Ordonner.png</file>
+        <file>Ordonner_hover.png</file>
+        <file>Maintenance_grpBox.png</file>
+        <file>Login_Init.png</file>
+        <file>Retour.png</file>
+        <file>Retour_hover.png</file>
+        <file>M.Communication.png</file>
+        <file>M.Maintenance.png</file>
+        <file>M.Environnement.png</file>
+        <file>M.RessourcesH.png</file>
     </qresource>
 </RCC>

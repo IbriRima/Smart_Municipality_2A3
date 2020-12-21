@@ -72,9 +72,7 @@ void on_pushButton_Maintenance_clicked();
 
 void on_pushButton_Maintenance_pressed();
 
-void on_pushButton_RH_clicked();
 
-void on_pushButton_RH_pressed();
 
 void on_pushButton_employe_clicked();
 
@@ -209,10 +207,6 @@ void on_pushButton_MP_Envi_clicked();
 
 void on_pushButton_MP_Envi_pressed();
 
-void on_pushButton_Environ_Envi_clicked();
-
-
-
 void on_pushButton_Marche_Envi_clicked();
 
 void on_pushButton_Marche_Envi_pressed();
@@ -225,7 +219,6 @@ void on_pushButton_Maintenance_Envi_clicked();
 
 void on_pushButton_Maintenance_Envi_pressed();
 
-void on_pushButton_Environ_Envi_pressed();
 void on_Date_Stat_dateChanged(const QDate &date);
 void on_pushButton_Irrigat_clicked();
 void on_pushButton_Menu_Environ_Aff_ZV_2_clicked();

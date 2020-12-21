@@ -54,6 +54,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
+    QIcon m ("C:/Users/user/Desktop/Smart_Municipality_2A3/munifacility_2Nf_3");
+     setWindowIcon(m);
     ui->stackedWidget_Main->setCurrentIndex(1);
   ui->stackedWidget_resources_humaines->setCurrentIndex(0);
 /********************************************** Begin Wassim *******************************************/
@@ -276,7 +278,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
       /**********************************ICON & ANIMATION**********************************/
-      setWindowIcon(QIcon("C:/Users/user/Desktop/logo.jpg"));
+   //  setWindowIcon(QIcon("C:/Users/user/Desktop/logo.jpg"));
       QPixmap pixel ("C:/Users/user/Desktop/logo.jpg");
       ui->icon->setPixmap(pixel.scaled(400,400,Qt::KeepAspectRatio));
       int w= ui->icon->width();
@@ -657,26 +659,7 @@ void MainWindow::on_pushButton_Maintenance_pressed()
 
 
 
-void MainWindow::on_pushButton_RH_pressed()
-{ QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/Wassim/Desktop/final/Click2.mp3"));
-    player->setVolume(50);
-    player->play();
-    QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_RH,"geometry");
-         animation->setDuration(2000);
-         animation->setStartValue(QRect(20,200, 171,41));
-         animation->setEndValue(QRect(60,200,171,41));
 
-         animation->start();
-
-         QPropertyAnimation *animation2= new QPropertyAnimation(ui->pushButton_RH,"geometry");
-              animation2->setDuration(1000);
-              animation2->setStartValue(QRect(60,200, 171,41));
-              animation2->setEndValue(QRect(20,200,171,41));
-                 animation2->start();
-                 animation2->destroyed() ;
-                   animation->destroyed() ;
-}
 
 void MainWindow::on_pushButton_employe_clicked()
 {
@@ -1059,10 +1042,7 @@ void MainWindow::on_pushButton_MP_clicked()
 {
      ui->stackedWidget_Main->setCurrentIndex(0);
 }
-void MainWindow::on_pushButton_RH_clicked()
-{
-     ui->stackedWidget_Main->setCurrentIndex(1);
-}
+
 void MainWindow::on_pushButton_Environ_clicked()
 {
     ui->stackedWidget_Main->setCurrentIndex(2);
@@ -2158,33 +2138,7 @@ void MainWindow::on_pushButton_MP_Envi_pressed()
                      animation2->destroyed() ;
                        animation->destroyed() ;
 }
-void MainWindow::on_pushButton_Environ_Envi_clicked()
-{
-    ui->stackedWidget_Main->setCurrentIndex(2);
-}
 
-
-void MainWindow::on_pushButton_Environ_Envi_pressed()
-{
-    QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
-        player->setVolume(50);
-        player->play();
-        QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_Environ_Envi,"geometry");
-             animation->setDuration(2000);
-             animation->setStartValue(QRect(20,80, 171,41));
-             animation->setEndValue(QRect(60,80,171,41));
-
-             animation->start();
-
-             QPropertyAnimation *animation2= new QPropertyAnimation(ui->pushButton_Environ_Envi,"geometry");
-                  animation2->setDuration(1000);
-                  animation2->setStartValue(QRect(60,80, 171,41));
-                  animation2->setEndValue(QRect(20,80,171,41));
-                     animation2->start();
-      animation->destroyed() ;
-        animation2->destroyed() ;
-}
 void MainWindow::on_pushButton_Marche_Envi_clicked()
 {
     ui->stackedWidget_Main->setCurrentIndex(4);
@@ -2969,7 +2923,7 @@ void MainWindow::on_pushButton_AjouterReclamation_2_clicked()
     ui->comboBox_id_Composant_2->addItem("");
     for(int i=0;i<R.AfficherComposant()->rowCount();i++)
     {
-        QString id= ui->tableView_Ressources_2->model()->index(i,7).data().toString();
+        QString id= "     "+ui->tableView_Ressources_2->model()->index(i,7).data().toString();
         ui->comboBox_id_Composant_2->addItem(id);
     }
     ui->stackedWidgetMaintennance->setCurrentIndex(5);
