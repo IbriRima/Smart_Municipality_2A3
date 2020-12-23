@@ -30,7 +30,7 @@
 #include <QPrintDialog>
 #include "citoyen.h"
 #include "evenement.h"
-
+#include"clock.h"
 #include <QDate>
 #include <QSignalMapper>
 #include <QSizePolicy>
@@ -150,6 +150,18 @@ MainWindow::MainWindow(QWidget *parent)
   ui->lineEdit_Matricule_MAJ->setValidator(validator);
   ui->lineEdit_MatriculeAJ->setValidator(validator);
 
+  Clock* clock=new Clock(ui->widget_clock);
+clock->setDisabled(1);
+clock->resize(200, clock->height());
+clock->resize(200, clock->width());
+clock->show();
+Clock* clock2=new Clock(ui->widget_clock2);
+clock2->setDisabled(1);
+clock2->show();
+
+Clock* clock3=new Clock(ui->widget_clock3);
+clock3->setDisabled(1);
+clock3->show();
   //Affichage Tab ZV
        ui->tableView_ZV ->setModel(tmpZV.afficher());
        ui->tableView_ZV ->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -1235,6 +1247,7 @@ void MainWindow::on_pushButton_clicked()
     player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
+
     ui->stackedWidget_Environnement->setCurrentIndex(3);
 
 }
@@ -1944,6 +1957,10 @@ qDebug()<<"Entrain de mesurer l'humidité de cette zone verte";
         qDebug()<<"Sèche";
           ui->Notif_irrigation->show();
             ui->tableView_ZV->setStyleSheet(" selection-background-color: red ");
+            QMediaPlayer *player = new QMediaPlayer;
+            player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Alarm.mp3"));
+            player->setVolume(30);
+            player->play();
 
       }
         else if(data.toInt()>100&&data.toInt()<600)
@@ -2095,17 +2112,17 @@ void MainWindow::on_comboBox_Type_Tri_activated(int index)
           }
           else if(index==2)
          { ui->tri_ramassage->show();
-              ui->tri_ramassage->setText("Les ramassages triés selon le nom de cartier");
+              ui->tri_ramassage->setText("Les ramassages triés selon \nle nom de cartier");
 
           }
           else if(index==3)
           { ui->tri_ramassage->show();
-               ui->tri_ramassage->setText("Les ramassages triés selon le nombre de ramassage");
+               ui->tri_ramassage->setText("Les ramassages triés selon \nle nombre de ramassage");
 
            }
           else if(index==4)
           { ui->tri_ramassage->show();
-               ui->tri_ramassage->setText("Les ramassages triés selon la date");
+               ui->tri_ramassage->setText("Les ramassages triés selon \nla date");
 
            }
            ui->comboBox_Type_Tri->setCurrentIndex(0);
@@ -2125,15 +2142,15 @@ void MainWindow::on_pushButton_MP_Envi_pressed()
         player->play();
         QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_MP_Envi,"geometry");
              animation->setDuration(2000);
-             animation->setStartValue(QRect(20,20, 171,41));
-             animation->setEndValue(QRect(60,20,171,41));
+             animation->setStartValue(QRect(20,10, 171,41));
+             animation->setEndValue(QRect(60,10,171,41));
 
              animation->start();
 
              QPropertyAnimation *animation2= new QPropertyAnimation(ui->pushButton_MP_Envi,"geometry");
                   animation2->setDuration(1000);
-                  animation2->setStartValue(QRect(60,20, 171,41));
-                  animation2->setEndValue(QRect(20,20,171,41));
+                  animation2->setStartValue(QRect(60,10, 171,41));
+                  animation2->setEndValue(QRect(20,10,171,41));
                      animation2->start();
                      animation2->destroyed() ;
                        animation->destroyed() ;
@@ -2152,15 +2169,15 @@ void MainWindow::on_pushButton_Marche_Envi_pressed()
         player->play();
         QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_Marche_Envi,"geometry");
              animation->setDuration(2000);
-             animation->setStartValue(QRect(20,140, 171,41));
-             animation->setEndValue(QRect(60,140,171,41));
+             animation->setStartValue(QRect(20,90, 171,41));
+             animation->setEndValue(QRect(60,90,171,41));
 
              animation->start();
 
              QPropertyAnimation *animation2= new QPropertyAnimation(ui->pushButton_Marche_Envi,"geometry");
                   animation2->setDuration(1000);
-                  animation2->setStartValue(QRect(60,140, 171,41));
-                  animation2->setEndValue(QRect(20,140,171,41));
+                  animation2->setStartValue(QRect(60,90, 171,41));
+                  animation2->setEndValue(QRect(20,90,171,41));
                      animation2->start();
                      animation->destroyed() ;
                      animation2->destroyed() ;
@@ -2179,15 +2196,15 @@ void MainWindow::on_pushButton_RH_Envi_pressed()
         player->play();
         QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_RH_Envi,"geometry");
              animation->setDuration(2000);
-             animation->setStartValue(QRect(20,200, 171,41));
-             animation->setEndValue(QRect(60,200,171,41));
+             animation->setStartValue(QRect(20,170, 171,41));
+             animation->setEndValue(QRect(60,170,171,41));
 
              animation->start();
 
              QPropertyAnimation *animation2= new QPropertyAnimation(ui->pushButton_RH_Envi,"geometry");
                   animation2->setDuration(1000);
-                  animation2->setStartValue(QRect(60,200, 171,41));
-                  animation2->setEndValue(QRect(20,200,171,41));
+                  animation2->setStartValue(QRect(60,170, 171,41));
+                  animation2->setEndValue(QRect(20,170,171,41));
                      animation2->start();
                      animation2->destroyed() ;
                        animation->destroyed() ;
@@ -2205,15 +2222,15 @@ void MainWindow::on_pushButton_Maintenance_Envi_pressed()
         player->play();
         QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_Maintenance_Envi,"geometry");
              animation->setDuration(2000);
-             animation->setStartValue(QRect(20,260, 171,41));
-             animation->setEndValue(QRect(60,260,171,41));
+             animation->setStartValue(QRect(20,250, 171,41));
+             animation->setEndValue(QRect(60,250,171,41));
 
              animation->start();
 
              QPropertyAnimation *animation2= new QPropertyAnimation(ui->pushButton_Maintenance_Envi,"geometry");
                   animation2->setDuration(1000);
-                  animation2->setStartValue(QRect(60,260, 171,41));
-                  animation2->setEndValue(QRect(20,260,171,41));
+                  animation2->setStartValue(QRect(60,250, 171,41));
+                  animation2->setEndValue(QRect(20,250,171,41));
                      animation2->start();
                      animation2->destroyed() ;
                        animation->destroyed() ;
@@ -2223,6 +2240,28 @@ void MainWindow::on_communication_Envi_clicked()
 {
         ui->stackedWidget_Main->setCurrentIndex(3);
 }
+void MainWindow::on_communication_Envi_pressed()
+{
+    QMediaPlayer *player = new QMediaPlayer;
+        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+        player->setVolume(50);
+        player->play();
+        QPropertyAnimation *animation= new QPropertyAnimation(ui->communication_Envi,"geometry");
+             animation->setDuration(2000);
+             animation->setStartValue(QRect(20,330, 171,41));
+             animation->setEndValue(QRect(60,330,171,41));
+
+             animation->start();
+
+             QPropertyAnimation *animation2= new QPropertyAnimation(ui->communication_Envi,"geometry");
+                  animation2->setDuration(1000);
+                  animation2->setStartValue(QRect(60,330, 171,41));
+                  animation2->setEndValue(QRect(20,330,171,41));
+                     animation2->start();
+                     animation2->destroyed() ;
+                       animation->destroyed() ;
+}
+
 /**************** Fin Déplacement entre les modules pour le  Module Environnement *****************************************/
 
 
@@ -3962,3 +4001,4 @@ void MainWindow::on_tableView_Reclamations_2_doubleClicked(const QModelIndex &in
         msgBox.close();
     }
 }
+

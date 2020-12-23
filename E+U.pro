@@ -7,12 +7,14 @@ CONFIG += c++11
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
-
+target.path = $$[QT_INSTALL_EXAMPLES]/widgets/widgets/shapedclock
+INSTALLS += target
 SOURCES += \
     Capt_Pression.cpp \
     Employe.cpp \
     capteur_humidite.cpp \
     citoyen.cpp \
+    clock.cpp \
     compte.cpp \
     connection.cpp \
     evenement.cpp \
@@ -28,6 +30,7 @@ HEADERS += \
     Employe.h \
     capteur_humidite.h \
     citoyen.h \
+    clock.h \
     compte.h \
     connection.h \
     dialog.h \
