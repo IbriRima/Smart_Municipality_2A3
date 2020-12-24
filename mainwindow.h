@@ -10,6 +10,8 @@
 #include "evenement.h"
 #include "citoyen.h"
 #include"Capt_Pression.h"
+#include <AutoResize.h>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -21,6 +23,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void resizeAllElements(AutoResize *A);
 
 private slots:
 
@@ -414,5 +417,8 @@ private:
    int num=0;
 
     Capt_Pression A;
+
+    AutoResize *m_autoResizeHandler;
+    void resizeEvent(QResizeEvent * event);
 };
 #endif // MAINWINDOW_H

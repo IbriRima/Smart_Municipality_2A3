@@ -43,7 +43,7 @@ background-repeat: none;
 </string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="Menu_Principal">
      <widget class="QPushButton" name="pushButton_MaintenanceIN">
@@ -2380,7 +2380,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="Sous_Menu_Env">
        <property name="styleSheet">
@@ -12034,7 +12034,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_21"/>
       <widget class="QWidget" name="page_22">
@@ -12193,12 +12193,25 @@ background-repeat: none;
          <string/>
         </property>
        </widget>
+       <widget class="QWidget" name="maintenance_clock1" native="true">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>810</x>
+          <y>150</y>
+          <width>241</width>
+          <height>221</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_23">
        <widget class="QPushButton" name="pushButton_AjouterComposant_2">
         <property name="geometry">
          <rect>
-          <x>100</x>
+          <x>210</x>
           <y>50</y>
           <width>131</width>
           <height>41</height>
@@ -12266,8 +12279,8 @@ background-repeat: none;
          <rect>
           <x>830</x>
           <y>80</y>
-          <width>81</width>
-          <height>20</height>
+          <width>71</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
@@ -12286,7 +12299,7 @@ background-repeat: none;
           <x>720</x>
           <y>80</y>
           <width>91</width>
-          <height>16</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
@@ -12305,7 +12318,7 @@ background-repeat: none;
           <x>920</x>
           <y>80</y>
           <width>81</width>
-          <height>20</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
@@ -12340,7 +12353,10 @@ background-repeat: none;
          <bool>false</bool>
         </attribute>
         <attribute name="horizontalHeaderDefaultSectionSize">
-         <number>200</number>
+         <number>238</number>
+        </attribute>
+        <attribute name="verticalHeaderDefaultSectionSize">
+         <number>50</number>
         </attribute>
        </widget>
        <widget class="QPushButton" name="pushButton_Ress_BackBTN">
@@ -12365,6 +12381,16 @@ background-repeat: none;
         </property>
         <property name="text">
          <string/>
+        </property>
+       </widget>
+       <widget class="QWidget" name="maintenance_clock2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>10</y>
+          <width>111</width>
+          <height>101</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -12460,7 +12486,10 @@ background-repeat: none;
          <bool>false</bool>
         </attribute>
         <attribute name="horizontalHeaderDefaultSectionSize">
-         <number>200</number>
+         <number>238</number>
+        </attribute>
+        <attribute name="verticalHeaderDefaultSectionSize">
+         <number>50</number>
         </attribute>
        </widget>
        <widget class="QLineEdit" name="Reclamation_Serach_2">
@@ -12503,7 +12532,7 @@ background-repeat: none;
           <x>660</x>
           <y>90</y>
           <width>373</width>
-          <height>32</height>
+          <height>39</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -12597,6 +12626,16 @@ background-repeat: none;
         </property>
         <property name="text">
          <string/>
+        </property>
+       </widget>
+       <widget class="QWidget" name="maintenance_clock3" native="true">
+        <property name="geometry">
+         <rect>
+          <x>1030</x>
+          <y>0</y>
+          <width>91</width>
+          <height>71</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -13384,7 +13423,7 @@ background-repeat: none;
      <x>0</x>
      <y>0</y>
      <width>1162</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

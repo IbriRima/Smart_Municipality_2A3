@@ -10,6 +10,7 @@ CONFIG += c++11
 target.path = $$[QT_INSTALL_EXAMPLES]/widgets/widgets/shapedclock
 INSTALLS += target
 SOURCES += \
+    AutoResize.cpp \
     Capt_Pression.cpp \
     Employe.cpp \
     capteur_humidite.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
     zone_verte.cpp
 
 HEADERS += \
+    AutoResize.h \
     Capt_Pression.h \
     Employe.h \
     capteur_humidite.h \

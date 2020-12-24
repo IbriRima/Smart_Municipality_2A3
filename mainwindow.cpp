@@ -58,6 +58,21 @@ MainWindow::MainWindow(QWidget *parent)
      setWindowIcon(m);
     ui->stackedWidget_Main->setCurrentIndex(1);
   ui->stackedWidget_resources_humaines->setCurrentIndex(0);
+
+  /* Resize ***/
+
+  m_autoResizeHandler=new AutoResize(this,this->rect().width(),this->rect().height());
+  m_autoResizeHandler->setAutoResizeFlag(
+          AutoResize::INCLUDE_BUTTON|AutoResize::INCLUDE_COMBOBOX|
+          AutoResize::INCLUDE_EDITOR|AutoResize::INCLUDE_LABEL
+
+
+          );
+  //add widget* manualy
+
+  resizeAllElements(m_autoResizeHandler);
+  m_autoResizeHandler->pushAllResizeItem();
+
 /********************************************** Begin Wassim *******************************************/
 
   ui->lineEdit_cin_compte_AJ->setValidator(new QIntValidator(0,9999999999, this));
@@ -311,6 +326,24 @@ clock3->show();
      ui->tableView_Reclamations_2->setStyleSheet("QHeaderView::section { background-color: white ; color :  rgb(192, 128, 129) }");
      ui->tableView_Ressources_2->setStyleSheet("QHeaderView::section { background-color: white ; color : rgb(192, 128, 129) }");
 
+     Clock* maintenance_clock1=new Clock(ui->maintenance_clock1);
+   maintenance_clock1->setDisabled(1);
+   maintenance_clock1->resize(200, clock->height());
+   maintenance_clock1->resize(200, clock->width());
+   maintenance_clock1->show();
+   Clock* maintenance_clock2=new Clock(ui->maintenance_clock2);
+   maintenance_clock2->setDisabled(1);
+  // maintenance_clock2->resize(10, clock->height());
+   maintenance_clock2->setBaseSize(100,100);
+   //maintenance_clock2->resize(30, clock->width());
+   maintenance_clock2->show();
+
+   Clock* maintenance_clock3=new Clock(ui->maintenance_clock3);
+   maintenance_clock3->setDisabled(1);
+  // maintenance_clock3->resize(60, clock->height());
+  // maintenance_clock3->resize(30, clock->width());
+   maintenance_clock3->setBaseSize(10,10);
+   maintenance_clock3->show();
 
      int ret=A.connect_arduino();
      switch(ret){
@@ -334,6 +367,89 @@ MainWindow::~MainWindow()
     delete ui;
 
 }
+
+/***RESIZE*/
+void MainWindow::resizeAllElements(AutoResize *A){
+
+    A->addOtherItem(ui->stackedWidget_Main);
+    A->addOtherItem(ui->graphicsView_Munifacility);
+    A->addOtherItem(ui->graphicsView_Munivipalit_LOGO);
+    A->addOtherItem(ui->widget_clock);
+    A->addOtherItem(ui->widget_clock2);
+    A->addOtherItem(ui->widget_clock3);
+
+    //widgets
+    A->addOtherItem(ui->stackedWidgetMaintennance);
+    A->addOtherItem(ui->stackedWidget_Environnement);
+    A->addOtherItem(ui->stackedWidget);
+    A->addOtherItem(ui->stackedWidget_resources_humaines);
+
+    //tables
+    A->addOtherItem(ui->tableView_Ressources_2);
+    A->addOtherItem(ui->tableView_Reclamations_2);
+    A->addOtherItem(ui->tableView_Ramas);
+    A->addOtherItem(ui->tableView_ZV);
+    A->addOtherItem(ui->tableView_citoyen);
+    A->addOtherItem(ui->tableView_event);
+    A->addOtherItem(ui->tableView_compte);
+    A->addOtherItem(ui->tableView_employe);
+    A->addOtherItem(ui->tableView_StatR);
+    A->addOtherItem(ui->listView_compte);
+    A->addOtherItem(ui->listView_employe);
+
+
+
+
+    //Maintenance
+    A->addOtherItem(ui->Ressource_Search_2);
+    A->addOtherItem(ui->Reclamation_Serach_2);
+    A->addOtherItem(ui->checkBox_ETAT_RESS_2);
+    A->addOtherItem(ui->checkBox_NOM_RESS_2);
+    A->addOtherItem(ui->checkBox_Route_REc_2);
+    A->addOtherItem(ui->checkBox_TYPE_RESS_2);
+    A->addOtherItem(ui->checkBox_Date_2);
+    A->addOtherItem(ui->checkBox_Route_REc_2);
+    A->addOtherItem(ui->checkBox_Type_REc_2);
+    A->addOtherItem(ui->checkBox_nature_REc_2);
+    A->addOtherItem(ui->Stat_2);
+    A->addOtherItem(ui->maintenance_clock1);
+    A->addOtherItem(ui->maintenance_clock2);
+    A->addOtherItem(ui->maintenance_clock3);
+
+    //Env
+    A->addOtherItem(ui->groupBox);
+    A->addOtherItem(ui->groupBox_2);
+    A->addOtherItem(ui->graphicsView);
+    A->addOtherItem(ui->Date_Stat);
+    A->addOtherItem(ui->dateEditR_AJ);
+    A->addOtherItem(ui->dateEditR_MAJ);
+    A->addOtherItem(ui->timeEdit_DebAJ);
+    A->addOtherItem(ui->timeEdit_DebMAJ);
+    A->addOtherItem(ui->timeEdit_DureeAJ);
+    A->addOtherItem(ui->timeEdit_DureeMAJ);
+    A->addOtherItem(ui->spinBox_NbPoubelle_AJ);
+    A->addOtherItem(ui->spinBox_NbPoubelle_MAJ);
+
+//Com
+    A->addOtherItem(ui->frame);
+
+//RH
+    A->addOtherItem(ui->spinBox_NbPoubelle_AJ);
+    A->addOtherItem(ui->spinBox_NbPoubelle_AJ);
+    A->addOtherItem(ui->spinBox_NbPoubelle_AJ);
+    A->addOtherItem(ui->spinBox_NbPoubelle_AJ);
+
+
+
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    m_autoResizeHandler->doAutoResize();
+}
+
+
+/****/
 
 
 
@@ -2766,7 +2882,10 @@ void MainWindow::on_pushButton_Ressource_Materiel_2_clicked()
 {
     RessourceMateriel R ;
 
-
+    QMediaPlayer *Maintenancesound = new QMediaPlayer;
+        Maintenancesound->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/2eme/Nouveau dossier/Smart_Municipality_2A3/Maintenance_click_soundd.mp3"));
+        Maintenancesound->setVolume(100);
+        Maintenancesound->play();
 
     ui->tableView_Ressources_2->setModel( R.AfficherComposant());
 
@@ -2919,6 +3038,12 @@ void MainWindow::on_pushButton_AjouterComposant_2_clicked()
 void MainWindow::on_pushButton_Reclamations_2_clicked()
 {
     Reclamation R ;
+
+
+    QMediaPlayer *Maintenancesound = new QMediaPlayer;
+        Maintenancesound->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/2eme/Nouveau dossier/Smart_Municipality_2A3/Maintenance_click_soundd.mp3"));
+        Maintenancesound->setVolume(100);
+        Maintenancesound->play();
 
     ui->tableView_Reclamations_2->setModel( R.AfficherReclamation());
 
@@ -3840,6 +3965,81 @@ void MainWindow::on_comboBox_stat_2_currentIndexChanged(int index)
 
 }
 
+void MainWindow::on_tableView_Reclamations_2_doubleClicked(const QModelIndex &index)
+{
+
+    QMessageBox msgBox;
+    msgBox.setText(tr("Vous voulez imprimer la reclamation !? \n "));
+    QAbstractButton* pButtonYes = msgBox.addButton(tr("Imprimer!"), QMessageBox::YesRole);
+    QAbstractButton* pButtonNo = msgBox.addButton(tr("Annuler!"), QMessageBox::NoRole);
+
+    msgBox.exec();
+
+    if (msgBox.clickedButton()==pButtonYes)
+    {
+            QPrinter printer(QPrinter::HighResolution);
+
+            printer.setCopyCount(1);
+
+
+                QPrintDialog *dialog = new QPrintDialog(&printer, this);
+
+                dialog->setWindowTitle(tr("Reclamation Document"));
+                 dialog->addEnabledOption(QAbstractPrintDialog::PrintSelection);
+
+
+                    QPainter painter;
+
+         painter.begin(&printer);
+
+
+        QFile file;
+        QDir::setCurrent("/tmp");
+        file.setFileName("back2.jpg");
+        QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
+        file.open(QIODevice::ReadOnly);
+        QImage img(file.fileName());
+        painter.drawImage(0,0,img.scaled(6000,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));
+
+
+        QFile file2;
+        QDir::setCurrent("/tmp");
+        file2.setFileName("municipal.png");
+        QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
+        file2.open(QIODevice::ReadOnly);
+        QImage img2(file2.fileName());
+        painter.drawImage(0,0,img2.scaled(900,1000, Qt::IgnoreAspectRatio, Qt::FastTransformation));
+
+        QString TYPE = ui->tableView_Reclamations_2->model()->index(index.row(),1).data().toString() ;
+        QString ID_COMP = ui->tableView_Reclamations_2->model()->index(index.row(),7).data().toString();
+        QString ID_REC = ui->tableView_Reclamations_2->model()->index(index.row(),6).data().toString();
+        QString ROUTE = ui->tableView_Reclamations_2->model()->index(index.row(),0).data().toString();
+        QString NATURE = ui->tableView_Reclamations_2->model()->index(index.row(),3).data().toString();
+        QString DATE =ui->tableView_Reclamations_2->model()->index(index.row(),2).data().toString();
+        if(NATURE == ""){NATURE = "N'est pas Urgente";};
+
+
+         painter.setFont(QFont("Harlow Solid Italic",30,-1,1));
+          painter.setPen(QColor(0,102,204));
+        painter.drawText(width()+100,height()+600,"Identifiant de Reclamation : "+ID_REC+"" );
+         painter.setFont(QFont("Berlin Sans FB Demi Bold",15));
+           painter.setPen(QColor(0,0,0));
+        painter.drawText(width()-500,height()+1400,"Identifiant de Composant :  "+ID_COMP+"" );
+        painter.drawText(width()-500,height()+1800,"Nom de Route :  "+ROUTE+"" );
+        painter.drawText(width()-500,height()+2200,"Type de Composant :  "+TYPE+"" );
+        painter.drawText(width()-500,height()+2600,"Date :  "+DATE+"" );
+        painter.drawText(width()-500,height()+3000,"Nature :  "+NATURE+"" );
+
+                    painter.end();
+
+    }
+    else if (msgBox.clickedButton()==pButtonNo)
+    {
+        msgBox.close();
+    }
+}
+
+
 
 /****************************** fin deplacement entre module:: module Maintenance ****************************/
 /************************************** End Semah **************************************************************/
@@ -3928,77 +4128,4 @@ void MainWindow::on_pushButton_Communication_clicked()
 
 
 
-void MainWindow::on_tableView_Reclamations_2_doubleClicked(const QModelIndex &index)
-{
-
-    QMessageBox msgBox;
-    msgBox.setText(tr("Vous voulez imprimer la reclamation !? \n "));
-    QAbstractButton* pButtonYes = msgBox.addButton(tr("Imprimer!"), QMessageBox::YesRole);
-    QAbstractButton* pButtonNo = msgBox.addButton(tr("Annuler!"), QMessageBox::NoRole);
-
-    msgBox.exec();
-
-    if (msgBox.clickedButton()==pButtonYes)
-    {
-            QPrinter printer(QPrinter::HighResolution);
-
-            printer.setCopyCount(1);
-
-
-                QPrintDialog *dialog = new QPrintDialog(&printer, this);
-
-                dialog->setWindowTitle(tr("Reclamation Document"));
-                 dialog->addEnabledOption(QAbstractPrintDialog::PrintSelection);
-
-
-                    QPainter painter;
-
-         painter.begin(&printer);
-
-
-        QFile file;
-        QDir::setCurrent("/tmp");
-        file.setFileName("back2.jpg");
-        QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
-        file.open(QIODevice::ReadOnly);
-        QImage img(file.fileName());
-        painter.drawImage(0,0,img.scaled(6000,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));
-
-
-        QFile file2;
-        QDir::setCurrent("/tmp");
-        file2.setFileName("municipal.png");
-        QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
-        file2.open(QIODevice::ReadOnly);
-        QImage img2(file2.fileName());
-        painter.drawImage(0,0,img2.scaled(900,1000, Qt::IgnoreAspectRatio, Qt::FastTransformation));
-
-        QString TYPE = ui->tableView_Reclamations_2->model()->index(index.row(),1).data().toString() ;
-        QString ID_COMP = ui->tableView_Reclamations_2->model()->index(index.row(),7).data().toString();
-        QString ID_REC = ui->tableView_Reclamations_2->model()->index(index.row(),6).data().toString();
-        QString ROUTE = ui->tableView_Reclamations_2->model()->index(index.row(),0).data().toString();
-        QString NATURE = ui->tableView_Reclamations_2->model()->index(index.row(),3).data().toString();
-        QString DATE =ui->tableView_Reclamations_2->model()->index(index.row(),2).data().toString();
-        if(NATURE == ""){NATURE = "N'est pas Urgente";};
-
-
-         painter.setFont(QFont("Harlow Solid Italic",30,-1,1));
-          painter.setPen(QColor(0,102,204));
-        painter.drawText(width()+100,height()+600,"Identifiant de Reclamation : "+ID_REC+"" );
-         painter.setFont(QFont("Berlin Sans FB Demi Bold",15));
-           painter.setPen(QColor(0,0,0));
-        painter.drawText(width()-500,height()+1400,"Identifiant de Composant :  "+ID_COMP+"" );
-        painter.drawText(width()-500,height()+1800,"Nom de Route :  "+ROUTE+"" );
-        painter.drawText(width()-500,height()+2200,"Type de Composant :  "+TYPE+"" );
-        painter.drawText(width()-500,height()+2600,"Date :  "+DATE+"" );
-        painter.drawText(width()-500,height()+3000,"Nature :  "+NATURE+"" );
-
-                    painter.end();
-
-    }
-    else if (msgBox.clickedButton()==pButtonNo)
-    {
-        msgBox.close();
-    }
-}
 
