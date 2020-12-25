@@ -89,6 +89,9 @@
         <file>M.Maintenance.png</file>
         <file>M.Environnement.png</file>
         <file>M.RessourcesH.png</file>
+        <file>EnregistrerR_hover.png</file>
         <file>Enregistrer_ZV_hover.png</file>
+        <file>AnnulerZV_hover.png</file>
+        <file>AnuulerRamas_hover.png</file>
     </qresource>
 </RCC>

@@ -108,6 +108,7 @@ void AutoResize::pushAllResizeItem()
 			m_resizeMap[item]=resizeData;
 		}
 	}
+
 	for(auto it=m_ignoreItem.begin();it!=m_ignoreItem.end();it++)
 	{
 		if(m_resizeMap.contains(*it))

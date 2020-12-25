@@ -157,7 +157,7 @@ background-repeat: none;
       <property name="geometry">
        <rect>
         <x>390</x>
-        <y>200</y>
+        <y>240</y>
         <width>331</width>
         <height>131</height>
        </rect>
@@ -192,7 +192,7 @@ background-repeat: none;
        </rect>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Authentification">
        <property name="styleSheet">
@@ -368,6 +368,16 @@ background-repeat: none;
 </string>
         </property>
        </widget>
+       <widget class="QWidget" name="widget_clock_4" native="true">
+        <property name="geometry">
+         <rect>
+          <x>870</x>
+          <y>0</y>
+          <width>321</width>
+          <height>281</height>
+         </rect>
+        </property>
+       </widget>
        <zorder>label_51</zorder>
        <zorder>label_52</zorder>
        <zorder>Login_identifiant</zorder>
@@ -375,6 +385,7 @@ background-repeat: none;
        <zorder>pushButton_login</zorder>
        <zorder>graphicsView_Munifacility</zorder>
        <zorder>graphicsView_Munivipalit_LOGO</zorder>
+       <zorder>widget_clock_4</zorder>
       </widget>
       <widget class="QWidget" name="Sous_Menu_RH">
        <property name="styleSheet">
@@ -2380,7 +2391,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Sous_Menu_Env">
        <property name="styleSheet">
@@ -2586,7 +2597,7 @@ background-repeat: none;
        <widget class="QWidget" name="widget_clock" native="true">
         <property name="geometry">
          <rect>
-          <x>860</x>
+          <x>800</x>
           <y>10</y>
           <width>321</width>
           <height>281</height>
@@ -2610,8 +2621,8 @@ background-repeat: none;
          <rect>
           <x>20</x>
           <y>530</y>
-          <width>141</width>
-          <height>41</height>
+          <width>151</width>
+          <height>51</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -2631,8 +2642,8 @@ background-repeat: none;
        <widget class="QLabel" name="label_17">
         <property name="geometry">
          <rect>
-          <x>160</x>
-          <y>0</y>
+          <x>170</x>
+          <y>-10</y>
           <width>541</width>
           <height>81</height>
          </rect>
@@ -2711,7 +2722,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>900</x>
-          <y>70</y>
+          <y>60</y>
           <width>191</width>
           <height>31</height>
          </rect>
@@ -3575,7 +3586,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>760</x>
-          <y>60</y>
+          <y>50</y>
           <width>75</width>
           <height>61</height>
          </rect>
@@ -3598,7 +3609,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>900</x>
-          <y>30</y>
+          <y>20</y>
           <width>191</width>
           <height>31</height>
          </rect>
@@ -3626,7 +3637,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>700</x>
-          <y>30</y>
+          <y>20</y>
           <width>181</width>
           <height>31</height>
          </rect>
@@ -3753,10 +3764,10 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_Annuler_MAJ_R">
         <property name="geometry">
          <rect>
-          <x>930</x>
-          <y>480</y>
-          <width>151</width>
-          <height>41</height>
+          <x>920</x>
+          <y>440</y>
+          <width>161</width>
+          <height>51</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3768,7 +3779,10 @@ border: none;
 background-repeat: none;
 }
 
-</string>
+#pushButton_Annuler_MAJ_R:hover
+{
+border-image: url(:AnuulerRamas_hover.png);
+}</string>
         </property>
         <property name="text">
          <string/>
@@ -3786,10 +3800,10 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_SaveR_MAJ">
         <property name="geometry">
          <rect>
-          <x>930</x>
-          <y>530</y>
-          <width>151</width>
-          <height>41</height>
+          <x>920</x>
+          <y>500</y>
+          <width>161</width>
+          <height>51</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3801,6 +3815,12 @@ border: none;
 background-repeat: none;
 }
 
+#pushButton_SaveR_MAJ:hover
+ {
+
+border-image: url(:EnregistrerR_hover.png);
+
+}
 </string>
         </property>
         <property name="text">
@@ -4280,10 +4300,10 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_Annuler_AJ_R">
         <property name="geometry">
          <rect>
-          <x>930</x>
-          <y>480</y>
-          <width>151</width>
-          <height>41</height>
+          <x>920</x>
+          <y>430</y>
+          <width>161</width>
+          <height>51</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4293,6 +4313,10 @@ border-image: url(:Annuler.png);
 background: none;
 border: none;
 background-repeat: none;
+}
+#pushButton_Annuler_AJ_R:hover
+{
+border-image: url(:AnuulerRamas_hover.png);
 }</string>
         </property>
         <property name="text">
@@ -4354,10 +4378,10 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_Save_AJ">
         <property name="geometry">
          <rect>
-          <x>930</x>
-          <y>530</y>
-          <width>151</width>
-          <height>41</height>
+          <x>920</x>
+          <y>490</y>
+          <width>161</width>
+          <height>51</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4367,6 +4391,12 @@ border-image: url(:Enregistrer.png);
 background: none;
 border: none;
 background-repeat: none;
+}
+#pushButton_Save_AJ:hover
+ {
+
+border-image: url(:EnregistrerR_hover.png);
+
 }
 
 </string>
@@ -5612,9 +5642,9 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_Annuler_ZV_MAJ">
         <property name="geometry">
          <rect>
-          <x>880</x>
+          <x>890</x>
           <y>510</y>
-          <width>171</width>
+          <width>161</width>
           <height>51</height>
          </rect>
         </property>
@@ -5625,6 +5655,12 @@ border-image: url(:Annuler_ZV.png);
 background: none;
 border: none;
 background-repeat: none;
+}
+#pushButton_Annuler_ZV_MAJ:hover
+{
+
+border-image: url(:AnnulerZV_hover.png);
+
 }</string>
         </property>
         <property name="text">
@@ -5657,9 +5693,9 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_Save_ZV_MAJ">
         <property name="geometry">
          <rect>
-          <x>880</x>
+          <x>890</x>
           <y>450</y>
-          <width>171</width>
+          <width>161</width>
           <height>51</height>
          </rect>
         </property>
@@ -5674,11 +5710,9 @@ background-repeat: none;
 
 #pushButton_Save_ZV_MAJ:hover
 {
-background-color: transparent;
+
 border-image: url(:Enregistrer_ZV_hover.png);
-background: none;
-border: none;
-background-repeat: none;
+
 }
 </string>
         </property>
@@ -5862,6 +5896,12 @@ border-image: url(:Annuler_ZV.png);
 background: none;
 border: none;
 background-repeat: none;
+}
+#pushButton_Annuler_ZV:hover
+{
+
+border-image: url(:AnnulerZV_hover.png);
+
 }</string>
         </property>
         <property name="text">
@@ -5907,6 +5947,13 @@ border-image: url(:Save_ZV.png);
 background: none;
 border: none;
 background-repeat: none;
+}
+
+#pushButton_Save_ZV:hover
+{
+
+border-image: url(:Enregistrer_ZV_hover.png);
+
 }</string>
         </property>
         <property name="text">
@@ -6422,7 +6469,7 @@ background-repeat: none;
         </property>
         <property name="font">
          <font>
-          <family>Javanese Text</family>
+          <family>Corbel</family>
           <pointsize>19</pointsize>
          </font>
         </property>
@@ -6862,7 +6909,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QPushButton" name="pushButton_etat">
@@ -12034,7 +12081,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="page_21"/>
       <widget class="QWidget" name="page_22">
@@ -12199,8 +12246,8 @@ background-repeat: none;
         </property>
         <property name="geometry">
          <rect>
-          <x>810</x>
-          <y>150</y>
+          <x>890</x>
+          <y>10</y>
           <width>241</width>
           <height>221</height>
          </rect>
@@ -12398,8 +12445,8 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_AjouterReclamation_2">
         <property name="geometry">
          <rect>
-          <x>120</x>
-          <y>70</y>
+          <x>220</x>
+          <y>10</y>
           <width>151</width>
           <height>41</height>
          </rect>
@@ -12446,8 +12493,8 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_Statistique_2">
         <property name="geometry">
          <rect>
-          <x>120</x>
-          <y>20</y>
+          <x>210</x>
+          <y>60</y>
           <width>151</width>
           <height>41</height>
          </rect>
@@ -12605,9 +12652,9 @@ background-repeat: none;
        <widget class="QPushButton" name="Order_2">
         <property name="geometry">
          <rect>
-          <x>422</x>
-          <y>87</y>
-          <width>101</width>
+          <x>410</x>
+          <y>90</y>
+          <width>111</width>
           <height>31</height>
          </rect>
         </property>
@@ -12631,10 +12678,10 @@ background-repeat: none;
        <widget class="QWidget" name="maintenance_clock3" native="true">
         <property name="geometry">
          <rect>
-          <x>1030</x>
-          <y>0</y>
-          <width>91</width>
-          <height>71</height>
+          <x>80</x>
+          <y>10</y>
+          <width>101</width>
+          <height>101</height>
          </rect>
         </property>
        </widget>
@@ -13423,7 +13470,7 @@ background-repeat: none;
      <x>0</x>
      <y>0</y>
      <width>1162</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

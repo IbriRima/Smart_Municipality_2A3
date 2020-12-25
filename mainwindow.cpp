@@ -177,6 +177,12 @@ clock2->show();
 Clock* clock3=new Clock(ui->widget_clock3);
 clock3->setDisabled(1);
 clock3->show();
+
+Clock* clock4=new Clock(ui->widget_clock_4);
+clock4->setDisabled(1);
+clock4->resize(200, clock4->height());
+clock4->resize(200, clock4->width());
+clock4->show();
   //Affichage Tab ZV
        ui->tableView_ZV ->setModel(tmpZV.afficher());
        ui->tableView_ZV ->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -429,6 +435,7 @@ void MainWindow::resizeAllElements(AutoResize *A){
     A->addOtherItem(ui->timeEdit_DureeMAJ);
     A->addOtherItem(ui->spinBox_NbPoubelle_AJ);
     A->addOtherItem(ui->spinBox_NbPoubelle_MAJ);
+    A->addOtherItem(ui->Notif_irrigation);
 
 //Com
     A->addOtherItem(ui->frame);
@@ -2302,6 +2309,7 @@ void MainWindow::on_pushButton_Marche_Envi_pressed()
 void MainWindow::on_pushButton_RH_Envi_clicked()
 {
     ui->stackedWidget_Main->setCurrentIndex(1);
+    ui->stackedWidget_resources_humaines->setCurrentIndex(1);
 }
 
 void MainWindow::on_pushButton_RH_Envi_pressed()
@@ -2327,7 +2335,8 @@ void MainWindow::on_pushButton_RH_Envi_pressed()
 }
 void MainWindow::on_pushButton_Maintenance_Envi_clicked()
 {
-ui->stackedWidget_Main->setCurrentIndex(5);
+ui->stackedWidget_Main->setCurrentIndex(4);
+ui->stackedWidgetMaintennance->setCurrentIndex(1);
 }
 
 void MainWindow::on_pushButton_Maintenance_Envi_pressed()
@@ -2355,6 +2364,7 @@ void MainWindow::on_pushButton_Maintenance_Envi_pressed()
 void MainWindow::on_communication_Envi_clicked()
 {
         ui->stackedWidget_Main->setCurrentIndex(3);
+         ui->stackedWidget->setCurrentIndex(0);
 }
 void MainWindow::on_communication_Envi_pressed()
 {
