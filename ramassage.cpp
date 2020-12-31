@@ -222,7 +222,7 @@ qDebug()<<"Annee"<<ch;
     QSqlQueryModel *model= new QSqlQueryModel();
     model->setQuery("SELECT ID_RAMASSAGE,NOMBRE_POUBELLE,DATE_RAMASSAGE FROM RAMASSAGE where DATE_RAMASSAGE like'%/"+ch+"' ORDER BY TO_DATE(DATE_RAMASSAGE,'dd/MM/yyyy') ASC");
 
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
+model->setHeaderData(0,Qt::Horizontal,QObject::tr("Identifiant"));
 model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nombre de poubelle"));
 model->setHeaderData(2,Qt::Horizontal,QObject::tr("Date"));
 

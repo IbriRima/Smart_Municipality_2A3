@@ -30,13 +30,34 @@ bool Citoyen::ajouter()
     return query.exec();
 
 }
+
+
+bool Citoyen::controle_date()
+{
+    if((Date_cit[2]=="/") &&(Date_cit[5]=="/")&&(Date_cit.length()==10))
+        {
+            return true;
+        }
+        else return false;
+}
+bool Citoyen:: controle_mail()
+{
+    if (Mail_cit.length()>9)
+    {return true;
+     }
+    else return false;
+}
 bool Citoyen::controle()
 {
-   if(Id_cit=="")  return false;
+   if((Id_cit=="") or (Nom_cit=="") or (Prenom_cit=="") or (!controle_date()) or (!controle_mail())  )
+   {
+       return false;
+   }
    else            return true;
 
 
 }
+
 bool Citoyen::supprimer(QString Id_cit)
 {
    QSqlQuery query;

@@ -1,4 +1,5 @@
-QT       += core gui sql multimedia charts  printsupport serialport
+QT       += core gui sql multimedia charts  printsupport serialport \
+    quick
 CONFIG += console
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,6 +25,7 @@ SOURCES += \
     ramassage.cpp \
     reclamation.cpp \
     ressourcemateriel.cpp \
+    smtp.cpp \
     zone_verte.cpp
 
 HEADERS += \
@@ -41,6 +43,7 @@ HEADERS += \
     ramassage.h \
     reclamation.h \
     ressourcemateriel.h \
+    smtp.h \
     zone_verte.h
 
 FORMS += \

@@ -43,7 +43,7 @@ background-repeat: none;
 </string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="Menu_Principal">
      <widget class="QPushButton" name="pushButton_MaintenanceIN">
@@ -6909,7 +6909,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QPushButton" name="pushButton_etat">
@@ -8302,7 +8302,7 @@ background-repeat: none;
          <rect>
           <x>250</x>
           <y>10</y>
-          <width>681</width>
+          <width>831</width>
           <height>81</height>
          </rect>
         </property>
@@ -9011,7 +9011,7 @@ background-repeat: none;
          <rect>
           <x>210</x>
           <y>20</y>
-          <width>681</width>
+          <width>871</width>
           <height>81</height>
          </rect>
         </property>
@@ -9887,7 +9887,7 @@ background-repeat: none;
           <x>300</x>
           <y>10</y>
           <width>681</width>
-          <height>81</height>
+          <height>111</height>
          </rect>
         </property>
         <property name="font">
@@ -9919,7 +9919,7 @@ background-repeat: none;
          <rect>
           <x>70</x>
           <y>160</y>
-          <width>191</width>
+          <width>241</width>
           <height>31</height>
          </rect>
         </property>
@@ -10695,7 +10695,7 @@ background-repeat: none;
           <x>280</x>
           <y>20</y>
           <width>681</width>
-          <height>81</height>
+          <height>111</height>
          </rect>
         </property>
         <property name="font">
@@ -11409,7 +11409,7 @@ background-repeat: none;
           <x>320</x>
           <y>30</y>
           <width>681</width>
-          <height>81</height>
+          <height>101</height>
          </rect>
         </property>
         <property name="font">
@@ -13470,7 +13470,7 @@ background-repeat: none;
      <x>0</x>
      <y>0</y>
      <width>1162</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

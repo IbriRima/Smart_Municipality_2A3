@@ -58,6 +58,8 @@ class Evenement
      //fonctionnalités de base
      bool ajouter();
      QSqlQueryModel * afficher();
+     bool controle_date();
+     bool controle_hor();
      bool controle();
      bool supprimer(QString ID);
      bool maj(QString old_id);

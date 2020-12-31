@@ -49,6 +49,8 @@ public:
     QString getTel(){return Tel_cit;}
     //fonctionnalités de base
     bool ajouter();
+    bool controle_date();
+    bool controle_mail();
     bool controle();
     bool supprimer(QString id);
     QSqlQueryModel * afficher();

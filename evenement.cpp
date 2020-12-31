@@ -33,10 +33,27 @@ bool Evenement::ajouter()
     return query.exec();
 
 }
-
+bool Evenement::controle_hor()
+{ if(((Horaire_event[2]=="H")||(Horaire_event[2]=="h"))&&(Horaire_event.length()==5))
+    {
+        return true;
+    }
+    else return false;
+}
+bool Evenement::controle_date()
+{
+    if((Date_event[2]=="/") &&(Date_event[5]=="/")&&(Date_event.length()==10))
+        {
+            return true;
+        }
+        else return false;
+}
 bool Evenement::controle()
 {
-   if(Id_event=="")  return false;
+   if((Id_event=="") or (Nom_event=="") or (Type_event=="") or (!controle_date()) or(!controle_hor()) )
+   {
+       return false;
+   }
    else            return true;
 
 
