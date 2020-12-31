@@ -110,7 +110,7 @@ QSqlQueryModel * Citoyen::afficher()
       }
   }
 
- QSqlQueryModel * Citoyen::recherche(QString nom)
+ QSqlQueryModel * Citoyen::recherche_id(QString nom)
  {
 
      QSqlQueryModel * model= new QSqlQueryModel();
@@ -118,7 +118,48 @@ QSqlQueryModel * Citoyen::afficher()
          {
 
          }
-         model->setQuery("SELECT * FROM CITOYENS WHERE (NOM_CIT =  '"+nom+"' OR PRENOM_CIT = '"+nom+"' OR ID_CIT='"+nom+"') ;");
+         model->setQuery("SELECT * FROM CITOYENS WHERE (ID_CIT='"+nom+"') ;");
+         model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CIT"));
+         model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM_CIT"));
+         model->setHeaderData(2,Qt::Horizontal,QObject::tr("PRENOM_CIT"));
+         model->setHeaderData(3,Qt::Horizontal,QObject::tr("SEXE_CIT"));
+         model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_CIT"));
+         model->setHeaderData(5,Qt::Horizontal,QObject::tr("LIEU_CIT"));
+         model->setHeaderData(6,Qt::Horizontal,QObject::tr("MAIL_CIT"));
+         model->setHeaderData(7,Qt::Horizontal,QObject::tr("TEL_CIT"));
+
+     return model ;
+ }
+ QSqlQueryModel * Citoyen::recherche_nom(QString nom)
+ {
+
+     QSqlQueryModel * model= new QSqlQueryModel();
+         if(nom=="")
+         {
+
+         }
+         model->setQuery("SELECT * FROM CITOYENS WHERE (NOM_CIT =  '"+nom+"') ;");
+         model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CIT"));
+         model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM_CIT"));
+         model->setHeaderData(2,Qt::Horizontal,QObject::tr("PRENOM_CIT"));
+         model->setHeaderData(3,Qt::Horizontal,QObject::tr("SEXE_CIT"));
+         model->setHeaderData(4,Qt::Horizontal,QObject::tr("DATE_CIT"));
+         model->setHeaderData(5,Qt::Horizontal,QObject::tr("LIEU_CIT"));
+         model->setHeaderData(6,Qt::Horizontal,QObject::tr("MAIL_CIT"));
+         model->setHeaderData(7,Qt::Horizontal,QObject::tr("TEL_CIT"));
+
+     return model ;
+ }
+
+ QSqlQueryModel * Citoyen::recherche_prenom(QString nom)
+ {
+
+     QSqlQueryModel * model= new QSqlQueryModel();
+         if(nom=="")
+         {
+
+         }
+         model->setQuery("SELECT * FROM CITOYENS WHERE (PRENOM_CIT = '"+nom+"') ;");
          model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_CIT"));
          model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM_CIT"));
          model->setHeaderData(2,Qt::Horizontal,QObject::tr("PRENOM_CIT"));
@@ -153,12 +194,8 @@ QSqlQueryModel * Citoyen::afficher()
      QPdfWriter pdf("c:/Users/user/Documents/file.pdf"); //création du pdf
      QPainter painter(&pdf);
      QImage image("c:/Users/user/Documents/Acte.jpg"); //recupération de l'image
-         QSqlQuery query=date();
-         QString date;
-         while(query.next())
-         {
-             date=query.value(0).toString();
-         }
+         //QDate date;
+         //date.currentDate();
          QString nbr= QString::number(num);
          QFont font = painter.font();
          font.setPointSize(font.pointSize()*2);
@@ -171,7 +208,7 @@ QSqlQueryModel * Citoyen::afficher()
          painter.drawText(2000, 7000, this->Sexe_cit);
          painter.drawText(3200, 7500, this->Date_cit);
          painter.drawText(3200, 8000, this->Lieu_cit);
-         painter.drawText(3900, 10600, date);
+         //painter.drawText(3900, 10600, date.toString());
          painter.drawText(6270, 4750, nbr);
          painter.drawText(3900, 10600, "01/12/2020");
          painter.end();

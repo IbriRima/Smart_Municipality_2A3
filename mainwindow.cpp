@@ -2534,10 +2534,71 @@ void MainWindow::on_recherche_clicked() /*******************************RECHERCH
     {
         ui->tableView_citoyen->setModel(Ctmp.afficher());
     }
-    else ui->tableView_citoyen->setModel(Ctmp.recherche(nom));
+    else
+    {
+        if( ui->rech_id->isChecked())
+        {
+            ui->tableView_citoyen->setModel(Ctmp.recherche_id(nom));
+        }
+        if( ui->rech_nom->isChecked())
+        {
+            ui->tableView_citoyen->setModel(Ctmp.recherche_nom(nom));
+        }
+        if( ui->rech_prenom->isChecked())
+        {
+            ui->tableView_citoyen->setModel(Ctmp.recherche_prenom(nom));
+        }
+    }
+    //ui->tableView_citoyen->setModel(Ctmp.recherche(nom));
     // ui->tableView_citoyen->setModel(Ctmp.trier());
 }
 
+void MainWindow::on_rech_nom_stateChanged(int arg1)
+{
+    if(ui->rech_nom->isChecked())
+    {
+    ui->rech_id->setDisabled(true);
+    ui->rech_prenom->setDisabled(true);
+    }
+    else
+    {
+        ui->rech_id->setDisabled(false);
+        ui->rech_prenom->setDisabled(false);
+
+    }
+}
+
+
+void MainWindow::on_rech_prenom_stateChanged(int arg1)
+{
+    if(ui->rech_prenom->isChecked())
+    {
+    ui->rech_id->setDisabled(true);
+    ui->rech_nom->setDisabled(true);
+    }
+    else
+    {
+        ui->rech_id->setDisabled(false);
+        ui->rech_nom->setDisabled(false);
+
+    }
+}
+
+
+void MainWindow::on_rech_id_stateChanged(int arg1)
+{
+    if(ui->rech_id->isChecked())
+    {
+    ui->rech_nom->setDisabled(true);
+    ui->rech_prenom->setDisabled(true);
+    }
+    else
+    {
+        ui->rech_nom->setDisabled(false);
+        ui->rech_prenom->setDisabled(false);
+
+    }
+}
 void MainWindow::on_pushButton_save_2_clicked()/********************************SAVE AJOUT CITOYEN***************************************/
 {
     //recupération des information saisies
@@ -2790,6 +2851,36 @@ void MainWindow::on_close_clicked()
 }
 
 /*****************deplacement entre les modules:: module communication*************************************/
+void MainWindow::on_MenuP_clicked()
+{
+    ui->stackedWidget_Main->setCurrentIndex(0);
+}
+
+void MainWindow::on_envi_clicked()
+{
+     ui->stackedWidget_Main->setCurrentIndex(2);
+}
+void MainWindow::on_res_clicked()
+{
+    ui->stackedWidget_Main->setCurrentIndex(1);
+}
+void MainWindow::on_maintenance_clicked()
+{
+    ui->stackedWidget_Main->setCurrentIndex(4);
+}
+
+void MainWindow::on_marche_clicked()
+{
+    ui->stackedWidget_Main->setCurrentIndex(5);
+}
+
+
+
+
+/******************************fin deplacement entre module:: module communication****************************/
+/**************************************End Nardine**************************************************************/
+
+
 
 
 /********************************************** Begin Semah *******************************************/
@@ -4050,34 +4141,6 @@ void MainWindow::on_tableView_Reclamations_2_doubleClicked(const QModelIndex &in
 }
 
 
-
-/****************************** fin deplacement entre module:: module Maintenance ****************************/
-/************************************** End Semah **************************************************************/
-void MainWindow::on_MenuP_clicked()
-{
-    ui->stackedWidget_Main->setCurrentIndex(0);
-}
-
-void MainWindow::on_envi_clicked()
-{
-     ui->stackedWidget_Main->setCurrentIndex(2);
-}
-void MainWindow::on_res_clicked()
-{
-    ui->stackedWidget_Main->setCurrentIndex(1);
-}
-void MainWindow::on_maintenance_clicked()
-{
-    ui->stackedWidget_Main->setCurrentIndex(4);
-}
-
-void MainWindow::on_marche_clicked()
-{
-    ui->stackedWidget_Main->setCurrentIndex(5);
-}
-
-
-
 void MainWindow::on_MenuP_2_clicked()
 {
     ui->stackedWidget_Main->setCurrentIndex(0);
@@ -4104,10 +4167,8 @@ void MainWindow::on_marche_2_clicked()
     ui->stackedWidget_Main->setCurrentIndex(5);
 }
 
-/******************************fin deplacement entre module:: module communication****************************/
-/**************************************End Nardine**************************************************************/
-
-
+/****************************** fin deplacement entre module:: module Maintenance ****************************/
+/************************************** End Semah **************************************************************/
 
 
 
@@ -4132,10 +4193,6 @@ void MainWindow::on_pushButton_Communication_clicked()
      ui->stackedWidget_Main->setCurrentIndex(3);
         ui->stackedWidget->setCurrentIndex(0);
 }
-
-
-
-
 
 
 

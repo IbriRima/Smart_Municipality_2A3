@@ -13,6 +13,7 @@
 #include <QPainter>
 #include<QPrintDialog>
 #include<QPdfWriter>
+#include <QImage>
 
 class Citoyen
 {
@@ -57,7 +58,9 @@ public:
     bool maj(QString old_id);
     QSqlQuery select(QString ID);
     //fonctionnalités avancées
-    QSqlQueryModel * recherche(QString id);
+    QSqlQueryModel * recherche_id(QString id);
+    QSqlQueryModel * recherche_nom(QString nom);
+    QSqlQueryModel * recherche_prenom(QString prenom);
     QSqlQueryModel * trier();
     void printPDF(int num);
     QSqlQuery date();

@@ -93,5 +93,7 @@
         <file>Enregistrer_ZV_hover.png</file>
         <file>AnnulerZV_hover.png</file>
         <file>AnuulerRamas_hover.png</file>
+        <file>assest/imprimer.png</file>
+        <file>imprimer.png</file>
     </qresource>
 </RCC>

@@ -6891,7 +6891,7 @@ background-repeat: none;
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>-20</x>
         <y>10</y>
         <width>1171</width>
         <height>591</height>
@@ -6909,7 +6909,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QPushButton" name="pushButton_etat">
@@ -8715,6 +8715,29 @@ background-repeat: none;
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#3a00af;&quot;&gt;Etat&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="mailing">
+        <property name="geometry">
+         <rect>
+          <x>960</x>
+          <y>340</y>
+          <width>81</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#mailing{
+background-color: transparent;
+border-image: url(:mailing.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
        <zorder>annuler</zorder>
        <zorder>out_type</zorder>
        <zorder>out_etat</zorder>
@@ -8733,6 +8756,7 @@ background-repeat: none;
        <zorder>label_175</zorder>
        <zorder>label_176</zorder>
        <zorder>label_177</zorder>
+       <zorder>mailing</zorder>
       </widget>
       <widget class="QWidget" name="page_6">
        <widget class="QLineEdit" name="maj_nom">
@@ -9573,10 +9597,10 @@ background-repeat: none;
        <widget class="QLabel" name="label_34">
         <property name="geometry">
          <rect>
-          <x>130</x>
-          <y>80</y>
+          <x>110</x>
+          <y>30</y>
           <width>681</width>
-          <height>81</height>
+          <height>101</height>
          </rect>
         </property>
         <property name="font">
@@ -9601,6 +9625,63 @@ background-repeat: none;
         </property>
         <property name="scaledContents">
          <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="rech_id">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>140</y>
+          <width>141</width>
+          <height>37</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Corbel</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Identifiant</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="rech_prenom">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>140</y>
+          <width>121</width>
+          <height>37</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Corbel</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Prénom</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="rech_nom">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>140</y>
+          <width>92</width>
+          <height>37</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Corbel</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Nom</string>
         </property>
        </widget>
       </widget>
@@ -10579,8 +10660,8 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_impression">
         <property name="geometry">
          <rect>
-          <x>430</x>
-          <y>150</y>
+          <x>900</x>
+          <y>510</y>
           <width>81</width>
           <height>61</height>
          </rect>
@@ -11372,37 +11453,6 @@ background-repeat: none;
 </string>
         </property>
        </widget>
-       <widget class="QLabel" name="icon_7">
-        <property name="geometry">
-         <rect>
-          <x>370</x>
-          <y>350</y>
-          <width>691</width>
-          <height>371</height>
-         </rect>
-        </property>
-        <property name="mouseTracking">
-         <bool>false</bool>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">#icon{
-background-color: transparent;
-border-image: none;
-background: none;
-border: none;
-background-repeat: none;
-}</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../logo.jpg</pixmap>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_48">
         <property name="geometry">
          <rect>
@@ -11928,26 +11978,6 @@ background-repeat: none;
          <string/>
         </property>
        </widget>
-       <zorder>icon_7</zorder>
-       <zorder>maj_sexe</zorder>
-       <zorder>maj_nom_2</zorder>
-       <zorder>maj_prenom</zorder>
-       <zorder>maj_tel</zorder>
-       <zorder>maj_lieu</zorder>
-       <zorder>maj_mail</zorder>
-       <zorder>maj_id_2</zorder>
-       <zorder>maj_date_cit</zorder>
-       <zorder>label_48</zorder>
-       <zorder>label_201</zorder>
-       <zorder>label_202</zorder>
-       <zorder>label_203</zorder>
-       <zorder>label_204</zorder>
-       <zorder>label_205</zorder>
-       <zorder>label_206</zorder>
-       <zorder>label_207</zorder>
-       <zorder>label_208</zorder>
-       <zorder>maj_save_2</zorder>
-       <zorder>maj_cancel_2</zorder>
       </widget>
       <widget class="QWidget" name="page_11">
        <widget class="QPushButton" name="stat_cancel">

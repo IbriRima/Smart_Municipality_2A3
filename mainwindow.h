@@ -404,6 +404,14 @@ void on_tableView_Reclamations_2_doubleClicked(const QModelIndex &index);
 
 void on_communication_Envi_pressed();
 
+void on_Ressource_Search_2_cursorPositionChanged(int arg1, int arg2);
+
+void on_rech_nom_stateChanged(int arg1);
+
+void on_rech_prenom_stateChanged(int arg1);
+
+void on_rech_id_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;
