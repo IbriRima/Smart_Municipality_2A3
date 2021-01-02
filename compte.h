@@ -33,7 +33,6 @@ public:
     void setcin(QString c)
     {cin=c; }
 
-
     compte();
     compte(QString,QString,QString,QString);
 
@@ -44,10 +43,11 @@ public:
     QSqlQueryModel * chercher(QString);
     QSqlQuery authen(QString ,QString );
 
-
-
     bool Delete(QString);
     bool Update();
+
+    bool search(QString info);
+    QSqlQuery readid(QString);
 
 };
 

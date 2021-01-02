@@ -26,10 +26,10 @@ bool compte::ajouter()
 
 
 
-      query.prepare("insert into compte (Identifiant,Mot_de_passe,TYPE_AUTHENT,CIN)" "values (:Identifiant,:Mot_de_passe,:TYPE_AUTHENT,:CIN)");
+      query.prepare("insert into compte (Identifiant,Mot_de_passe,TYPE_AUTHEN,CIN)" "values (:Identifiant,:Mot_de_passe,:TYPE_AUTHEN,:CIN)");
       query.bindValue(":Identifiant",Identifiant);
       query.bindValue(":Mot_de_passe",mdp);
-      query.bindValue(":TYPE_AUTHENT",Type);
+      query.bindValue(":TYPE_AUTHEN",Type);
       query.bindValue(":CIN",cin);
 
       return query.exec();
@@ -73,13 +73,13 @@ bool compte::Update()
 
     QSqlQuery query;
 
-    query.prepare("update compte set Identifiant='"+Identifiant+"',Mot_de_passe='"+mdp+"',TYPE_AUTHENT='"+Type+"',CIN='"+cin+"' where Identifiant='"+ Identifiant+"'");
+    query.prepare("update compte set Identifiant='"+Identifiant+"',Mot_de_passe='"+mdp+"',TYPE_AUTHEN='"+Type+"',CIN='"+cin+"' where Identifiant='"+ Identifiant+"'");
 
 
     //Creation des variables liées
     query.bindValue(":Identifiant",Identifiant);
     query.bindValue(":Mot_de_passe",mdp);
-    query.bindValue(":TYPE_AUTHENT",Type);
+    query.bindValue(":TYPE_AUTHEN",Type);
     query.bindValue(":CIN",cin);
 
     //exec() envoie la requete pour l'executer
@@ -132,3 +132,47 @@ QSqlQuery qry;
 
 
 }
+
+
+bool compte::search(QString info)
+
+{
+
+    QSqlQuery query;
+
+    query.prepare("select * from compte where identifiant='"+info+"'");
+
+    query.exec();
+
+    if(query.next())
+
+    {
+
+        return true;
+
+    }
+
+
+    return false;
+
+}
+
+QSqlQuery compte::readid(QString info)
+{
+    QSqlQuery query;
+
+    query.prepare("select * from compte where identifiant='"+info+"'");
+
+    query.exec();
+
+    query.next();
+
+
+    return query;
+
+
+
+}
+
+
+
