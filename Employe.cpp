@@ -77,7 +77,7 @@ bool Employe::Delete(QString info)
 bool Employe::Update()
 {
     QSqlQuery query;
-    query.prepare("update Employe set NOM='"+Nom+"',PRENOM='"+Prenom+"',MAIL='"+mail+"',TYPE='"+Type+"',CIN='"+cin+"' where Nom='"+Nom+"'");
+    query.prepare("update Employe set NOM='"+Nom+"',PRENOM='"+Prenom+"',MAIL='"+mail+"',TYPE='"+Type+"',CIN='"+cin+"',etat='"+etat+"' where Nom='"+Nom+"'");
 
     //Creation des variables liées
 
@@ -123,3 +123,96 @@ QSqlQueryModel * Employe::chercher(QString info)
     model->setQuery(query);
     return model;
 }
+QSqlQuery Employe::readmail(QString info)
+{
+    QSqlQuery query;
+
+    query.prepare("select * from Employe where nom='"+info+"'");
+
+    query.exec();
+
+    query.next();
+
+
+    return query;
+
+
+
+}
+QSqlQueryModel * Employe :: sort()
+
+{
+
+    QSqlQueryModel * model=new QSqlQueryModel();
+
+    QSqlQuery query ;
+
+    query.prepare("SELECT nom FROM EMPLOYE ORDER BY nom ASC");
+
+    query.exec();
+
+    query.next();
+
+    model->setQuery(query);
+
+
+    return model;
+
+}
+
+QChart * Employe::statistic()
+
+{
+
+    int secretaire=0, agent=0;
+
+
+    QSqlQuery query;
+
+    query.prepare("select type from Employe");
+
+    query.exec();
+
+
+    while(query.next())
+
+    {
+
+        if(query.value(0).toString() == "Secretaire")
+
+        {
+
+            secretaire++;
+
+        }
+
+        else if(query.value(0).toString() == "Agent")
+
+        {
+
+            agent++;
+
+        }
+
+    }
+
+
+    QPieSeries *series = new QPieSeries();
+
+    series->append("Secretaire",secretaire);
+
+    series->append("Agent",agent);
+
+    QChart * chart=new  QChart();
+
+    chart->addSeries(series);
+
+    chart->setTitle("type statisque");
+
+
+    return   chart;
+
+
+}
+
+

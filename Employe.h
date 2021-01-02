@@ -2,6 +2,9 @@
 #define Employe_H
 #include<QString>
 #include<QSqlQueryModel>
+#include <QChartView>
+#include<QtCharts>
+#include<QChart>
 
 class Employe
 {
@@ -51,9 +54,12 @@ public:
     QSqlQueryModel * read(QString);
     QSqlQuery editview(QString);
     QSqlQueryModel * chercher(QString);
-
+    QSqlQuery readmail(QString);
+    QSqlQueryModel *sort();
+    QChart *statistic();
     bool Delete(QString);
     bool Update();
+
 
 };
 
