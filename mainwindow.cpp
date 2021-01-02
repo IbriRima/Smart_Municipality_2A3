@@ -1,3 +1,4 @@
+#include "capteur_mouvement.h"
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -84,6 +85,24 @@ MainWindow::MainWindow(QWidget *parent)
   ui->listView_employe->setContextMenuPolicy(Qt::CustomContextMenu);
       connect(ui->listView_compte, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenu(QPoint)));
       connect(ui->listView_employe, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenue(QPoint)));
+      int ret3=M.connect_capteur_mouvement();
+         qDebug()<<"ret"<<ret3;
+         switch(ret3)
+          {
+           case(0):qDebug()<<"arduino is available and connected to: "<<M.get_capteur_mouvement_port_name();
+           break;
+           case(1):qDebug()<<"arduino is available but not connected to:"<<M.get_capteur_mouvement_port_name();
+           break;
+           case(-1):qDebug()<<"arduino is not available";
+           break;
+           }
+         QObject::connect(M.getserial(),SIGNAL(readyRead()),this,SLOT(updateemp()));
+
+void updateemp();
+{
+
+}
+
 /********************************************** End Wassim *******************************************/
 
 /********************************************** Begin Rima *******************************************/
@@ -512,7 +531,7 @@ Prenom= ui->lineEdit_prenom_employe_MAJ->text();
 
 mail = ui->lineEdit_mail_employe_MAJ->text();
 
-Type = ui->comboBox_Type_MAJ_compte->currentText();
+Type = ui->comboBox_Type_employe_MAJ->currentText();
 
 cin = ui->lineEdit_cin_employe_MAJ->text();
 
@@ -573,8 +592,15 @@ void MainWindow::on_pushButton_Annuler_compte_clicked()
 void MainWindow::on_pushButton_Ajout_compte_clicked()
 {
     load();
-
+if (aud==0)
+    {
     ui->stackedWidget_resources_humaines->setCurrentIndex(6);
+    }
+else
+{
+    QMessageBox::information(this, tr("accees limité"),tr("tu n'est pas un admin"), QMessageBox::Ok);
+}
+
 }
 
 
@@ -851,6 +877,8 @@ void MainWindow::viewcompte()
 
 void MainWindow::deletecompte()
 {
+    if (aud==0)
+    {
     compte u;
     QModelIndex index = ui->listView_compte->currentIndex();
 
@@ -864,11 +892,18 @@ void MainWindow::deletecompte()
             {
                  load();
                  QMessageBox::information(this, tr("compte supprimé"),tr("OK"), QMessageBox::Ok);
+            }  }
+            else
+            {
+                QMessageBox::information(this, tr("accees limité"),tr("tu n'est pas un admin"), QMessageBox::Ok);
             }
+
 }
 
 void MainWindow::editcompte()
 {
+    if (aud==0)
+    {
     QModelIndex index = ui->listView_compte->currentIndex();
 
         QString info = index.data(Qt::DisplayRole).toString();
@@ -886,7 +921,7 @@ void MainWindow::editcompte()
               ui->lineEdit_ID_MAJ_compte->setText(view.value(0).toString());
 
               ui->lineEdit_mdp_MAJ_compte->setText(view.value(1).toString());
-             // ui->comboBox_Type_MAJ_compte->setText(view.value(2).toString());
+              ui->comboBox_Type_MAJ_compte->setCurrentText(view.value(2).toString());
 
 
               ui->lineEdit_cin_MAJ_compte->setText(view.value(3).toString());
@@ -894,6 +929,10 @@ void MainWindow::editcompte()
     ui->stackedWidget_resources_humaines->setCurrentIndex(7);
 
 
+        }}
+        else
+        {
+            QMessageBox::information(this, tr("accees limité"),tr("tu n'est pas un admin"), QMessageBox::Ok);
         }
 
 
@@ -1030,7 +1069,7 @@ void MainWindow::showContextMenue(const QPoint &pos2)
     myMenu2.addAction("Afficher", this, SLOT(viewemploye()));
     myMenu2.addAction("Modifier",  this, SLOT(editemploye()));
     myMenu2.addAction("Supprimer", this, SLOT(deleteemploye()));
-
+    myMenu2.addAction("Email", this, SLOT(emailemploye()));
     // Show context menu at handling position
     myMenu2.exec(globalPos2);
 }
@@ -1048,53 +1087,70 @@ void MainWindow::viewemploye()
 
 void MainWindow::deleteemploye()
 {
-    Employe e;
-    QModelIndex index = ui->listView_employe->currentIndex();
+    if( aud == 0)
+    {
+        Employe e;
+        QModelIndex index = ui->listView_employe->currentIndex();
 
-    QString info = index.data(Qt::DisplayRole).toString();
+        QString info = index.data(Qt::DisplayRole).toString();
 
 
 
-            bool test=e.Delete(info);
+                bool test=e.Delete(info);
 
-            if(test)
-            {
-                 loade();
-                 QMessageBox::information(this, tr("employe supprimé"),tr("OK"), QMessageBox::Ok);
-            }
+                if(test)
+                {
+                     loade();
+                     QMessageBox::information(this, tr("employe supprimé"),tr("OK"), QMessageBox::Ok);
+                }
+
+    }
+    else
+    {
+        QMessageBox::information(this, tr("accees limité"),tr("tu n'est pas un admin"), QMessageBox::Ok);
+    }
 }
 
 void MainWindow::editemploye()
 {
-    QModelIndex index = ui->listView_employe->currentIndex();
+    if(aud == 0)
+    {
+        QModelIndex index = ui->listView_employe->currentIndex();
 
-        QString info = index.data(Qt::DisplayRole).toString();
+            QString info = index.data(Qt::DisplayRole).toString();
 
-        QSqlQuery view;
+            QSqlQuery view;
 
-        Employe e;
+            Employe e;
 
-        view=e.editview(info);
+            view=e.editview(info);
 
-        while(view.next())
+            while(view.next())
 
-        {
+            {
 
-              ui->lineEdit_nom_employe_MAJ->setText(view.value(0).toString());
+                ui->lineEdit_nom_employe_MAJ->setText(view.value(0).toString());
 
-              ui->lineEdit_prenom_employe_MAJ->setText(view.value(1).toString());
+                            ui->lineEdit_prenom_employe_MAJ->setText(view.value(1).toString());
 
-              ui->lineEdit_mail_employe_MAJ->setText(view.value(2).toString());
-              //ui->comboBox_Type_MAJ_compte->currentText(view.value(2).toString());
-
-
-              ui->lineEdit_cin_employe_MAJ->setText(view.value(4).toString());
-
-
-              ui->stackedWidget_resources_humaines->setCurrentIndex(4);
+                            ui->lineEdit_mail_employe_MAJ->setText(view.value(2).toString());
+                            ui->comboBox_Type_employe_MAJ->setCurrentText(view.value(3).toString());
 
 
-        }
+                            ui->lineEdit_cin_employe_MAJ->setText(view.value(4).toString());
+                            ui->comboBox_etat_employe_MAJ->setCurrentText(view.value(5).toString());
+
+
+                  ui->stackedWidget_resources_humaines->setCurrentIndex(4);
+
+
+            }
+
+    }
+    else
+    {
+        QMessageBox::information(this, tr("accees limité"),tr("tu n'est pas un admin"), QMessageBox::Ok);
+    }
 
 
 
@@ -1121,15 +1177,19 @@ void MainWindow::on_pushButton_annuler_affe_clicked()
 void MainWindow::on_pushButton_login_clicked()
 {
 
-    QString Identifiant,mdp;
+    /*QString Identifiant,mdp;
     compte u;
 QSqlQuery test;
     Identifiant=(ui->Login_identifiant->text());
    mdp=(ui->Login_mdp->text());
    test=u.authen(Identifiant,mdp);
    {
-             if(test.next())
-             {
+       if(test.next())
+       {
+                 if()
+                 {
+
+                 }
                  ui->stackedWidget_Main->setCurrentIndex(0);
 
                  QMessageBox::information(this,"login"," Bienvenue");
@@ -1139,13 +1199,45 @@ QSqlQuery test;
      else
      {
      QMessageBox::information(this,"non existe"," information incorrecte");
-     }
+     }*/
+
+    QString id = ui->Login_identifiant->text();
+
+    compte c;
+
+    bool test = c.search(id);
+
+    if(test == true)
+    {
+        QSqlQuery view = c.readid(id);
+        if(view.value(1).toString() == ui->Login_mdp->text())
+        {
+            if(view.value(2).toString() == "Administrateur")
+            {
+                aud=0;
+            }
+            else
+            {
+                aud=1;
+            }
+
+            ui->stackedWidget_Main->setCurrentIndex(0);
+
+            QMessageBox::information(this,"login"," Bienvenue");
+
+        }
+        else
+        {
+            QMessageBox::information(this,"Password incorrecte"," information incorrecte");
+        }
+    }
+    else
+    {
+        QMessageBox::information(this,"id non existe"," information incorrecte");
+    }
+
 
 }
-}
-
-
-
 
 void MainWindow::on_lineEdit_recherche_compte_textChanged(const QString &arg1)
 {
@@ -1193,6 +1285,132 @@ void MainWindow::on_communication_RH_clicked()
     ui->stackedWidget_Main->setCurrentIndex(3);
        ui->stackedWidget->setCurrentIndex(0);
 }
+void MainWindow::emailemploye()
+{
+    if(aud == 0)
+    {
+        QModelIndex index = ui->listView_employe->currentIndex();
+
+        QString info = index.data(Qt::DisplayRole).toString();
+
+        QSqlQuery view;
+
+        Employe E;
+
+        view=E.readmail(info);
+
+
+        mail=view.value(2).toString();
+
+
+        ui->stackedWidget_resources_humaines->setCurrentIndex(10);
+
+    }
+else
+    {
+        QMessageBox::information(this, tr("accees limité"),tr("tu n'est pas un admin"), QMessageBox::Ok);
+    }
+}
+void MainWindow::on_pushButton_RessourcesHumaine_clicked()
+{
+     ui->stackedWidget_Main->setCurrentIndex(1);
+     ui->stackedWidget_resources_humaines->setCurrentIndex(1);
+}
+
+
+
+void MainWindow::on_pushButton_cancelm_clicked()
+{
+    ui->stackedWidget_resources_humaines->setCurrentIndex(2);
+
+}
+
+void MainWindow::on_pushButton_send_clicked()
+{
+    smtp = new Smtp("projetqt2021@gmail.com" , "projet123456", "smtp.gmail.com",465);
+
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+    msg=ui->plainTextEdit->toPlainText();
+
+    qDebug()<<mail;
+
+    smtp->sendMail("projetqt2021@gmail.com",mail,ui->lineEdit->text(),msg);
+}
+
+void MainWindow::on_pushButton_tri_em_clicked()
+{
+    Employe E;
+
+    QSqlQueryModel *model=new QSqlQueryModel();
+
+    model=E.sort();
+
+    ui->listView_employe->setModel(model);
+}
+
+void MainWindow::on_pushButton_imprimer_em_clicked()
+{
+    QModelIndex index = ui->listView_employe->currentIndex();
+
+        QString info = index.data(Qt::DisplayRole).toString();
+
+        QSqlQuery view;
+
+        Employe e;
+
+        view=e.editview(info);
+    view.next();
+    QPlainTextEdit text;
+        text.setStyleSheet("QPlainTextEdit{color: #ffff00; background-color: #303030;");
+        QTextDocument *doc = text.document();
+        QFont font = doc->defaultFont();
+        font.setBold(true);
+        font.setFamily("Arial");
+        font.setPixelSize(20);
+        doc->setDefaultFont(font);
+        text.appendPlainText("municipalité");
+        text.appendPlainText("");
+        text.appendPlainText("");
+        text.appendPlainText("nom: "+view.value(0).toString()+"");
+
+        text.appendPlainText("prenom: "+view.value(1).toString()+"");
+
+        text.appendPlainText("mail: "+view.value(2).toString()+"");
+             qDebug()<< view.value(2).toString();
+        text.appendPlainText("type: "+view.value(3).toString()+"");
+
+        text.appendPlainText("cin: "+view.value(4).toString()+"");
+
+        text.appendPlainText("etat: "+view.value(5).toString()+"");
+
+        QPrinter printer;
+            printer.setPrinterName("Print");
+            QPrintDialog dlg(&printer,this);
+            if (dlg.exec() == QDialog::Rejected)
+            {
+                return;
+            }
+            text.print(&printer);
+}
+
+void MainWindow::on_pushButton_retour_em_clicked()
+{
+    ui->stackedWidget_resources_humaines->setCurrentIndex(2);
+
+}
+
+void MainWindow::on_pushButton_statistique_em_clicked()
+{
+    Employe E;
+        QChartView * chartView=new QChartView(E.statistic());
+        chartView ->setParent(ui->statisticFrame);
+        chartView->setFixedSize(ui->statisticFrame->size());
+        ui->stackedWidget_resources_humaines->setCurrentIndex(11);
+}
+
+
+
 /******************** Fin déplacement entre les modules pour le  Module Ressources Humaines*************************************/
 
 
@@ -4182,17 +4400,12 @@ void MainWindow::on_pushButton_Environnement_clicked()
           ui->stackedWidget_Environnement->setCurrentIndex(0);
 }
 
-void MainWindow::on_pushButton_RessourcesHumaine_clicked()
-{
-     ui->stackedWidget_Main->setCurrentIndex(1);
-     ui->stackedWidget_resources_humaines->setCurrentIndex(1);
-}
+
 
 void MainWindow::on_pushButton_Communication_clicked()
 {
      ui->stackedWidget_Main->setCurrentIndex(3);
         ui->stackedWidget->setCurrentIndex(0);
 }
-
 
 

@@ -10,7 +10,15 @@
 #include "evenement.h"
 #include "citoyen.h"
 #include"Capt_Pression.h"
+#include"capteur_mouvement.h"
+
 #include <AutoResize.h>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QPlainTextEdit>
+
+
+#include <smtp.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -412,6 +420,27 @@ void on_rech_prenom_stateChanged(int arg1);
 
 void on_rech_id_stateChanged(int arg1);
 
+void on_pushButton_cancelm_clicked();
+
+void emailemploye();
+
+void on_pushButton_send_clicked();
+
+
+void mailSent(QString)
+{
+
+}
+
+void on_pushButton_tri_em_clicked();
+
+void on_pushButton_imprimer_em_clicked();
+
+void on_pushButton_retour_em_clicked();
+
+void on_pushButton_statistique_em_clicked();
+
+
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;
@@ -421,8 +450,14 @@ private:
    Citoyen Ctmp;
    Evenement Etmp;
    QString ID;
+   QString mail;
+   QString msg;
+   Smtp *smtp;
    QPropertyAnimation *animation;
    int num=0;
+
+   int aud;
+   capteur_mouvement M;
 
     Capt_Pression A;
 

@@ -43,7 +43,7 @@ background-repeat: none;
 </string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Menu_Principal">
      <widget class="QPushButton" name="pushButton_MaintenanceIN">
@@ -192,7 +192,7 @@ background-repeat: none;
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="Authentification">
        <property name="styleSheet">
@@ -731,12 +731,58 @@ background-repeat: none;
          </font>
         </property>
        </widget>
+       <widget class="QPushButton" name="pushButton_tri_em">
+        <property name="geometry">
+         <rect>
+          <x>970</x>
+          <y>90</y>
+          <width>121</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_tri_em{
+background-color: transparent;
+border-image: url(:tri.jpg);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_statistique_em">
+        <property name="geometry">
+         <rect>
+          <x>970</x>
+          <y>310</y>
+          <width>141</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_statistique_em{
+background-color: transparent;
+border-image: url(:statistique.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
        <zorder>label_16</zorder>
        <zorder>pushButton_aj</zorder>
        <zorder>pushButton_Menu_RH</zorder>
        <zorder>pushButton_Close_em</zorder>
        <zorder>lineEdit_recherche_employe</zorder>
        <zorder>listView_employe</zorder>
+       <zorder>pushButton_tri_em</zorder>
+       <zorder>pushButton_statistique_em</zorder>
       </widget>
       <widget class="QWidget" name="AJ_employe">
        <property name="styleSheet">
@@ -2030,7 +2076,7 @@ background-repeat: none;
         </item>
         <item>
          <property name="text">
-          <string>Moderateur</string>
+          <string>Agent</string>
          </property>
         </item>
        </widget>
@@ -2360,6 +2406,166 @@ background-repeat: none;
          <string/>
         </property>
        </widget>
+       <widget class="QPushButton" name="pushButton_imprimer_em">
+        <property name="geometry">
+         <rect>
+          <x>1010</x>
+          <y>190</y>
+          <width>75</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_imprimer_em{
+background-color: transparent;
+border-image: url(:imprimer.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_13">
+       <property name="styleSheet">
+        <string notr="true">#page_13{
+background-color: transparent;
+border-image: url(:background.jpg);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+       </property>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>80</y>
+          <width>791</width>
+          <height>51</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="plainTextEdit">
+        <property name="geometry">
+         <rect>
+          <x>203</x>
+          <y>160</y>
+          <width>791</width>
+          <height>351</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_send">
+        <property name="geometry">
+         <rect>
+          <x>1050</x>
+          <y>540</y>
+          <width>75</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_send{
+background-color: transparent;
+border-image: url(:mailing.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_cancelm">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>550</y>
+          <width>91</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_cancelm {
+background-color: transparent;
+border-image: url(:Annuler.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>90</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#2d80d9;&quot;&gt;Identifiant&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#2d80d9;&quot;&gt;Objet&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_14">
+       <property name="styleSheet">
+        <string notr="true">#page_14 {
+background-color: transparent;
+border-image: url(:background.jpg);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+       </property>
+       <widget class="QFrame" name="statisticFrame">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>20</y>
+          <width>981</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout"/>
+       </widget>
+       <widget class="QPushButton" name="pushButton_retour_em">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>530</y>
+          <width>231</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_retour_em{
+background-color: transparent;
+border-image: url(:Annuler.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
       </widget>
      </widget>
     </widget>
@@ -2391,7 +2597,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="Sous_Menu_Env">
        <property name="styleSheet">
@@ -6909,7 +7115,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>6</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QPushButton" name="pushButton_etat">
@@ -13500,7 +13706,7 @@ background-repeat: none;
      <x>0</x>
      <y>0</y>
      <width>1162</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
