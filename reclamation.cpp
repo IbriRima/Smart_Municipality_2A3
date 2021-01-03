@@ -1,7 +1,7 @@
 #include "reclamation.h"
 #include<QString>
 #include <QtSql/qsqlquery.h>
-
+#include<QDebug>
 Reclamation::Reclamation()
 {
 
@@ -63,9 +63,10 @@ void Reclamation::setId_reclamation(int value)
 
 bool Reclamation:: AjouterReclamation()
 {
+
     QSqlQuery query;
-    query.prepare("INSERT INTO RECLAMATION(NOM_ROUTE ,TYPE_PANNE, DATE_RECLAMAT  ,NATURE,ID_COMP)"
-                  "VALUES (:NOM_ROUTE,:TYPE_PANNE, :DATE_RECLAMAT ,:NATURE,:ID_COMP)");
+    query.prepare("INSERT INTO RECLAMATION(NOM_ROUTE ,TYPE_PANNE, DATE_RECLAMAT  ,NATURE,ID_COMP,ID)"
+                  "VALUES (:NOM_ROUTE,:TYPE_PANNE, :DATE_RECLAMAT ,:NATURE,:ID_COMP,ID.NEXTVAL)");
 
     query.bindValue(":NOM_ROUTE",nom_route);
     query.bindValue(":TYPE_PANNE",type_panne);
@@ -113,7 +114,8 @@ bool Reclamation::SupprimerReclamation(QString id){
 }
 
 bool Reclamation::ModifierReclamation(QString id,QString Nature)
-{
+{ qDebug()<<"ID:"<<id;
+    qDebug()<<"Nature:"<<Nature;
     QSqlQuery query;
     qDebug("modifier ");
  //   QString res=QString::number(Ref);

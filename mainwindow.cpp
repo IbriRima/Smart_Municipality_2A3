@@ -3437,7 +3437,7 @@ void MainWindow::on_pushButton_AjouterReclamation_2_clicked()
     ui->comboBox_id_Composant_2->addItem("");
     for(int i=0;i<R.AfficherComposant()->rowCount();i++)
     {
-        QString id= "     "+ui->tableView_Ressources_2->model()->index(i,7).data().toString();
+        QString id=ui->tableView_Ressources_2->model()->index(i,7).data().toString();
         ui->comboBox_id_Composant_2->addItem(id);
     }
     ui->stackedWidgetMaintennance->setCurrentIndex(5);
