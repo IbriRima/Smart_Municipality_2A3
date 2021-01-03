@@ -43,7 +43,7 @@ background-repeat: none;
 </string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="Menu_Principal">
      <widget class="QPushButton" name="pushButton_MaintenanceIN">
@@ -12407,7 +12407,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="page_21"/>
       <widget class="QWidget" name="page_22">
@@ -13122,12 +13122,12 @@ background-repeat: none;
         </item>
         <item>
          <property name="text">
-          <string>  Nkhilette</string>
+          <string>Nkhilette</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>  Ghazela</string>
+          <string>Ghazela</string>
          </property>
         </item>
        </widget>
@@ -13172,12 +13172,12 @@ background-repeat: none;
         </item>
         <item>
          <property name="text">
-          <string>  Poteau Electrique</string>
+          <string>Poteau Electrique</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>  Canal d'Eau</string>
+          <string>Canal d'Eau</string>
          </property>
         </item>
        </widget>
@@ -13268,12 +13268,12 @@ background-repeat: none;
         </property>
         <item>
          <property name="text">
-          <string>  Fonctionne</string>
+          <string>Fonctionne</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>  En Panne</string>
+          <string>En Panne</string>
          </property>
         </item>
        </widget>
@@ -13463,12 +13463,12 @@ background-repeat: none;
         </item>
         <item>
          <property name="text">
-          <string>   Ghazela</string>
+          <string>Ghazela</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>   Nkhilette</string>
+          <string>Nkhilette</string>
          </property>
         </item>
        </widget>
@@ -13533,7 +13533,7 @@ background-repeat: none;
         </item>
         <item>
          <property name="text">
-          <string>   Urgente</string>
+          <string>Urgente</string>
          </property>
         </item>
        </widget>
@@ -13559,8 +13559,12 @@ border-image: url(:Maintenance_grpBox.png);
 background: none;
 border: none;
 background-repeat: none;
+Display:center;
 }
 </string>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
         </property>
         <item>
          <property name="text">
@@ -13569,12 +13573,12 @@ background-repeat: none;
         </item>
         <item>
          <property name="text">
-          <string>   potraux electrique</string>
+          <string>potraux electrique</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>   canal d'eau</string>
+          <string>canal d'eau</string>
          </property>
         </item>
        </widget>

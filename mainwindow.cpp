@@ -3374,6 +3374,16 @@ void MainWindow::on_pushButton_SauvgarderComposant_2_clicked()
 
 void MainWindow::on_pushButton_AjouterComposant_2_clicked()
 {
+    for (int i = 0 ; i < ui->comboBox_EtatComp_2->count() ; ++i) {
+    ui->comboBox_EtatComp_2->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
+    }
+    for (int i = 0 ; i < ui->comboBox_NomrouteComp_2->count() ; ++i) {
+        ui->comboBox_NomrouteComp_2->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
+        }
+    for (int i = 0 ; i < ui->comboBox_typeComp_2->count() ; ++i) {
+        ui->comboBox_typeComp_2->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
+        }
+
     ui->stackedWidgetMaintennance->setCurrentIndex(4);
 
 }
@@ -3440,6 +3450,19 @@ void MainWindow::on_pushButton_AjouterReclamation_2_clicked()
         QString id=ui->tableView_Ressources_2->model()->index(i,7).data().toString();
         ui->comboBox_id_Composant_2->addItem(id);
     }
+
+    for (int i = 0 ; i < ui->comboBox_TypeRecl_2->count() ; ++i) {
+    ui->comboBox_TypeRecl_2->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
+    }
+    for (int i = 0 ; i < ui->comboBox_id_Composant_2->count() ; ++i) {
+    ui->comboBox_id_Composant_2->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
+    }
+    for (int i = 0 ; i < ui->comboBox_NatureRecl_2->count() ; ++i) {
+        ui->comboBox_NatureRecl_2->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
+        }
+    for (int i = 0 ; i < ui->comboBox_NomRouteRecl_2->count() ; ++i) {
+        ui->comboBox_NomRouteRecl_2->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
+        }
     ui->stackedWidgetMaintennance->setCurrentIndex(5);
 
 }
@@ -3648,6 +3671,7 @@ Reclamation R ;
 QString id= ui->tableView_Reclamations_2->model()->index(i,6).data().toString();
 QString NATURE= ui->tableView_Reclamations_2->model()->index(i,3).data().toString();
 
+qDebug()<<"Nature:"<<NATURE;
 
 if( NATURE == "")
 {
