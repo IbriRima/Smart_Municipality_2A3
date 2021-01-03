@@ -92,8 +92,8 @@ bool RessourceMateriel:: AjouterComposant()
 
 
     QSqlQuery query;
-    query.prepare("INSERT INTO RESSOURCE(TYPE_COMPOSANT ,ETAT_COMPOSANT, NOM_ROUTE  ,  POSX,POSY)"
-                  "VALUES (:TYPE_COMPOSANT,:ETAT_COMPOSANT, :NOM_ROUTE ,  :POSX,:POSY )");
+    query.prepare("INSERT INTO RESSOURCE(TYPE_COMPOSANT ,ETAT_COMPOSANT, NOM_ROUTE  ,  POSX,POSY,ID)"
+                  "VALUES (:TYPE_COMPOSANT,:ETAT_COMPOSANT, :NOM_ROUTE ,  :POSX,:POSY,ID.NEXTVAL )");
 
     query.bindValue(":TYPE_COMPOSANT",type_composant);
     query.bindValue(":ETAT_COMPOSANT",etat_composant);

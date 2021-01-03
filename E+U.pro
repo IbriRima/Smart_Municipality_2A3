@@ -23,6 +23,8 @@ SOURCES += \
     evenement.cpp \
     main.cpp \
     mainwindow.cpp \
+    marchand.cpp \
+    mission.cpp \
     ramassage.cpp \
     reclamation.cpp \
     ressourcemateriel.cpp \
@@ -42,6 +44,8 @@ HEADERS += \
     dialog.h \
     evenement.h \
     mainwindow.h \
+    marchand.h \
+    mission.h \
     ramassage.h \
     reclamation.h \
     ressourcemateriel.h \

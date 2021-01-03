@@ -193,6 +193,7 @@ QSqlQuery Evenement::select(QString ID)
     query.prepare("SELECT * FROM EVENEMENT WHERE ID_EVENT='"+ID+"'");
     return query;
 }
+
 QSqlQuery Evenement::detail_mail(QString id)
 {
     QSqlQuery query;
@@ -209,3 +210,66 @@ QSqlQuery Evenement::detail_mail(QString id)
 
 
 }
+QChart * Evenement::stat()
+
+{
+
+    int annule=0, passe=0, cours=0;
+
+
+    QSqlQuery query;
+
+    query.prepare("select Etat_event from Evenement");
+
+    query.exec();
+
+
+    while(query.next())
+
+    {
+
+        if(query.value(0).toString() == "passe")
+
+        {
+
+            passe++;
+
+        }
+
+        else if(query.value(0).toString() == "annule")
+
+        {
+
+            annule++;
+
+        }
+        else if(query.value(0).toString() == "en cours")
+
+        {
+
+            cours++;
+
+        }
+
+    }
+
+
+    QPieSeries *series = new QPieSeries();
+
+    series->append("annule",annule);
+    series->append("en cours",cours);
+    series->append("passe",passe);
+
+    QChart * chart=new  QChart();
+
+    chart->addSeries(series);
+
+    chart->setTitle("repartition par état");
+
+
+    return   chart;
+
+
+}
+
+

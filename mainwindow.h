@@ -11,7 +11,8 @@
 #include "citoyen.h"
 #include"Capt_Pression.h"
 #include"capteur_mouvement.h"
-
+#include "marchand.h"
+#include "mission.h"
 #include <AutoResize.h>
 #include <QPrinter>
 #include <QPrintDialog>
@@ -444,6 +445,53 @@ void on_send_clicked();
 
 void on_back_mail_clicked();
 
+void on_ajouter_marchant_clicked();
+
+void on_modifier_marchand_clicked();
+
+void on_supprimer_marchand_clicked();
+
+void on_pushButton_5_clicked();
+
+void on_ajouter_mission_clicked();
+
+void on_modifier_mission_clicked();
+
+void on_supprimer_mission_clicked();
+
+void on_pushButton_6_clicked();
+
+void on_pushButton_7_clicked();
+
+void on_pushButton_2_clicked();
+
+void on_pushButton_3_clicked();
+
+void on_pushButton_4_clicked();
+
+void on_recherche_2_textChanged(const QString &arg1);
+
+void on_recherche_mission_textChanged(const QString &arg1);
+void stat();
+
+void on_afficher_marchand_activated(const QModelIndex &index);
+
+void on_afficher_mission_activated(const QModelIndex &index);
+
+void on_pushButton_MP_2_clicked();
+
+void on_pushButton_Environ_2_clicked();
+
+void on_pushButton_Marche_2_clicked();
+
+void on_pushButton_Maintenance_2_clicked();
+
+void on_pushButton_8_clicked();
+
+void on_pushButton_backMaintenance_5_clicked();
+
+void on_pushButton_RessourcesHumaine_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;
@@ -458,7 +506,8 @@ private:
    Smtp *smtp;
    QPropertyAnimation *animation;
    int num=0;
-
+   marchand tmp1;
+   mission tmp2;
    int aud;
    capteur_mouvement M;
 

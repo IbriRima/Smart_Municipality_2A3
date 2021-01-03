@@ -1,116 +1,80 @@
-#include "marchant.h"
-#include <QSqlDatabase>
-#include <QSql>
-#include <QVector>
-#include<QVariant>
-#include <memory>
+#include "marchand.h"
+marchand::marchand(){
 
-marchant::marchant(){}
- marchant::marchant(int id,QString nom,QString prenom,QString empl,QString num){
-     this->id=id;
-     this->nom=nom;
-     this->prenom=prenom;
-     this->empl=empl;
-     this->num=num;
- }
- int marchant::getId(){
-     return this->id;
- }
- QString marchant::getNom(){
-     return this->nom;
- }
- QString marchant::getPrenom(){
-     return this->prenom;
- }
- QString marchant::getEmpl(){
-     return this->empl;
- }
- QString marchant::getNum(){
-     return this->num;
- }
+}
 
- void marchant::setId(int id){
-     this->id=id;
- }
- void marchant::setNom(QString nom){
-     this->nom=nom;
- }
- void marchant::setPrenom(QString prenom){
-     this->prenom=prenom;
- }
- void marchant::setEmpl(QString empl){
-     this->empl=empl;
- }
- void marchant::setNum(QString num){
-     this->num=num;
- }
+marchand::marchand(QString nom ,QString prenom,QString emplacement,int numero)
+{ this->nom=nom;
+    this->prenom=prenom;
+    this->emplacement=emplacement;
+    this->numero=numero;
 
- bool marchant::ajouter_marchant(marchant marchant){
-     QSqlQuery query;
-         query.prepare("INSERT INTO MARCHANT (ID, NOM, PRENOM ,EMPL ,NUM) "
-                       "VALUES (:ID, :NOM, :PRENOM, :EMPL, :NUM)");
+}
+bool marchand::ajouter() {
+    QSqlQuery query;
+    QString n= QString::number(numero);
 
-         query.bindValue(":ID", marchant.getId());
-         query.bindValue(":NOM", marchant.getNom());
-         query.bindValue(":PRENOM", marchant.getPrenom());
-         query.bindValue(":EMPL", marchant.getEmpl());
-         query.bindValue(":NUM", marchant.getPrenom());
 
-         query.exec();
+ query.prepare("INSERT INTO marchand (id,nom,prenom,emplacement,numero) VALUES (null,:nom, :prenom,:emplacement,:numero)");
+    query.bindValue(":nom",nom);
+    query.bindValue(":prenom",prenom);
+    query.bindValue(":emplacement",emplacement);
+    query.bindValue(":numero",n);
+
+
+    return    query.exec();
  }
+bool marchand::supprimer(int id)
+{
+    QSqlQuery query;
+    QString i=QString::number(id);
 
- bool marchant::trouverMarchant(int id){
-     QSqlQuery query;
-     query.prepare("SELECT * FROM MARCHANT WHERE ID = :ID ");
-     query.bindValue(":ID",id);
-     query.exec();
-     if(query.exec())
-         while(query.next()){
-                        return true;
-                }
-                return false;
- }
+query.prepare("Delete from marchand where id = :id ");
+query.bindValue(":id", i);
+return    query.exec();
+}
 
- bool marchant::supprimerMarchant(int id){
-     QSqlQuery  query;
-    query.prepare("DELETE FROM MARCHANT WHERE ID = '" + QString::number(id) + "'");
+QSqlQueryModel * marchand::afficher(){
+    QSqlQueryModel *model = new QSqlQueryModel;
+  model->setQuery("SELECT * FROM marchand ");
 
-     query.exec();
- }
+  model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
+  model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
+  model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
+  model->setHeaderData(3, Qt::Horizontal, QObject::tr("numero"));
+  model->setHeaderData(4, Qt::Horizontal, QObject::tr("emplacement"));
 
- QSqlQueryModel * marchant::afficherAll(){
-     QSqlQueryModel * model= new QSqlQueryModel();
+  return  model;
+  }
 
-     model->setQuery("select * from marchant");
-     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
-     model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
-     model->setHeaderData(3, Qt::Horizontal, QObject::tr("EMPL"));
-     model->setHeaderData(4, Qt::Horizontal, QObject::tr("NUM"));
-         return model;
- }
- bool marchant::modifierMarchant(int id , QString nom , QString prenom , QString empl , QString num){
-     QSqlQuery query;
-     query.prepare("update marchant set nom =:nom,prenom=:prenom,empl=:empl"
-                       " where ID=:ID");
 
-         query.bindValue(":nom",nom);
-         query.bindValue(":prenom",prenom);
-         query.bindValue(":empl",empl);
-         query.bindValue(":num",num);
-         query.bindValue(":ID",id);
 
-        return query.exec();
- }
- int marchant::creat_ID(){
-     QSqlQuery query;
-     query.prepare("select max(ID) from MARCHANT");
-     query.exec();
-     int i;
-     while(query.next())
-         {
-             i=query.value(0).toInt()+1;
-         }
+bool marchand::modifier(int id){
+    QSqlQuery query;
+    QString n= QString::number(numero);
+    QString i= QString::number(id);
 
-     return i;
- }
+
+
+    query.prepare("update marchand set nom=:nom,prenom=:prenom,emplacement=:emplacement,numero=:numero where id=:id ");
+    query.bindValue(":id",i);
+    query.bindValue(":nom",nom);
+    query.bindValue(":prenom",prenom);
+    query.bindValue(":emplacement",emplacement);
+    query.bindValue(":numero",n);
+
+   return query.exec();
+}
+
+
+QSqlQueryModel * marchand::rechercheDynamic(QString SearchName){
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT * FROM marchand WHERE nom LIKE '"+SearchName+"%'");
+
+                  model->setHeaderData(4, Qt::Horizontal, QObject::tr("numero"));
+                  model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
+                  model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
+                  model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
+                  model->setHeaderData(3, Qt::Horizontal, QObject::tr("emplacement"));
+  return  model;
+  }

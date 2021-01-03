@@ -1,41 +1,24 @@
-#ifndef marchant_H
-#define marchant_H
-#include<QString>
+#ifndef MARCHAND_H
+#define MARCHAND_H
+#include <QString>
 #include <QSqlQuery>
-#include <memory>
 #include <QSqlQueryModel>
-#include <QDate>
 
-class marchant
+class marchand
 {
-private:
-    int id;
-    QString nom;
-    QString prenom;
-    QString empl;
-    QString num;
+   QString nom,prenom,emplacement;
+   int numero;
 public:
-    marchant();
-    marchant(int,QString,QString,QString,QString);
+    marchand();
 
-    int getId();
-    QString getNom();
-    QString getPrenom();
-    QString getEmpl();
-    QString getNum();
+    marchand(QString ,QString,QString,int);
 
-    void setId(int);
-    void setNom(QString);
-    void setPrenom(QString);
-    void setEmpl(QString);
-    void setNum(QString);
 
-    bool ajouter_marchant(marchant);
-    int creat_ID();
-    QSqlQueryModel *afficherAll();
-    bool supprimerMarchant(int id);
-    bool modifierMarchant(int id , QString nom , QString prenom , QString empl , QString num);
-    bool trouverMarchant(int id);
+    bool ajouter();
+    QSqlQueryModel * afficher();
+    bool supprimer(int);
+    bool modifier(int);
+    QSqlQueryModel * rechercheDynamic(QString);
 };
 
-#endif // marchant_H
+#endif // MARCHAND_H

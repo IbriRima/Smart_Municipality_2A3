@@ -71,6 +71,7 @@ class Evenement
      int annule();
      QSqlQueryModel *trier(int tri);
      QSqlQuery detail_mail(QString mail);
+     QChart *stat();
 
 };
 
