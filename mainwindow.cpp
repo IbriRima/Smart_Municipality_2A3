@@ -2292,7 +2292,6 @@ void MainWindow::update_label()
     data=C.read_from_capteur_humidite();
 qDebug()<<"Entrain de mesurer l'humidité de cette zone verte";
     val=data.toInt();
-
     if(data.toInt()>=600)
       {
         qDebug()<<"Sèche";
@@ -2302,6 +2301,7 @@ qDebug()<<"Entrain de mesurer l'humidité de cette zone verte";
             player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Alarm.mp3"));
             player->setVolume(30);
             player->play();
+            C.write_to_arduino(data);
 
       }
         else if(data.toInt()>100&&data.toInt()<600)

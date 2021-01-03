@@ -69,3 +69,13 @@ int Capteur_humidite::close_Capteur_humidite()
     {
         return serial;
     }
+    int Capteur_humidite::write_to_arduino(QByteArray data)
+    {
+        if(serial->isWritable())
+        {
+            serial->write(data);
+            return 0;
+        }
+        else qDebug() << "couldn't write to serial !!";
+        return 1;
+    }

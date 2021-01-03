@@ -13,6 +13,7 @@ public:
     QByteArray read_from_capteur_humidite();
     QSerialPort* getserial();
     QString get_capteur_humidite_port_name();
+    int write_to_arduino(QByteArray); //envoie des données à arduino
     /***********************/
 private :
     QSerialPort *serial;
