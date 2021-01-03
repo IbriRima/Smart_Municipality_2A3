@@ -27,7 +27,7 @@ serial = new QSerialPort();
         serial->setPortName(arduino_port_name);
 
 
-        if(serial->open(QSerialPort::ReadOnly))
+        if(serial->open(QSerialPort::ReadWrite))
         {
 
            serial-> setBaudRate(QSerialPort::Baud9600); //débit: 9600bits/s

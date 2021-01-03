@@ -193,3 +193,19 @@ QSqlQuery Evenement::select(QString ID)
     query.prepare("SELECT * FROM EVENEMENT WHERE ID_EVENT='"+ID+"'");
     return query;
 }
+QSqlQuery Evenement::detail_mail(QString id)
+{
+    QSqlQuery query;
+
+    query.prepare("select * from EVENEMENT where ID_EVENT='"+id+"'");
+
+    query.exec();
+
+    query.next();
+
+
+    return query;
+
+
+
+}

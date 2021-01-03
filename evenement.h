@@ -70,6 +70,7 @@ class Evenement
      int attente();
      int annule();
      QSqlQueryModel *trier(int tri);
+     QSqlQuery detail_mail(QString mail);
 
 };
 

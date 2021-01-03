@@ -411,9 +411,6 @@ void on_communication_RH_clicked();
 void on_tableView_Reclamations_2_doubleClicked(const QModelIndex &index);
 
 void on_communication_Envi_pressed();
-
-void on_Ressource_Search_2_cursorPositionChanged(int arg1, int arg2);
-
 void on_rech_nom_stateChanged(int arg1);
 
 void on_rech_prenom_stateChanged(int arg1);
@@ -440,6 +437,12 @@ void on_pushButton_retour_em_clicked();
 
 void on_pushButton_statistique_em_clicked();
 
+
+void on_mailing_clicked();
+
+void on_send_clicked();
+
+void on_back_mail_clicked();
 
 private:
     Ui::MainWindow *ui;

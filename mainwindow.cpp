@@ -85,7 +85,7 @@ MainWindow::MainWindow(QWidget *parent)
   ui->listView_employe->setContextMenuPolicy(Qt::CustomContextMenu);
       connect(ui->listView_compte, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenu(QPoint)));
       connect(ui->listView_employe, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenue(QPoint)));
-      int ret3=M.connect_capteur_mouvement();
+    /*  int ret3=M.connect_capteur_mouvement();
          qDebug()<<"ret"<<ret3;
          switch(ret3)
           {
@@ -96,7 +96,7 @@ MainWindow::MainWindow(QWidget *parent)
            case(-1):qDebug()<<"arduino is not available";
            break;
            }
-         QObject::connect(M.getserial(),SIGNAL(readyRead()),this,SLOT(updateemp()));
+         QObject::connect(M.getserial(),SIGNAL(readyRead()),this,SLOT(updateemp())); */
 
 void updateemp();
 {
@@ -370,7 +370,7 @@ clock4->show();
    maintenance_clock3->setBaseSize(10,10);
    maintenance_clock3->show();
 
-     int ret=A.connect_arduino();
+ /*  int ret=A.connect_arduino();
      switch(ret){
      case 0 :
          qDebug()<<"arduino is available on connected to "<<A.getarduino_port_name();
@@ -382,7 +382,7 @@ clock4->show();
          qDebug()<<"arduino is not available";
          break;
      }
-     QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_btn()));
+     QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_btn()));*/
  /********************************************** End Semah *******************************************/
 
 }
@@ -2292,6 +2292,7 @@ void MainWindow::update_label()
     data=C.read_from_capteur_humidite();
 qDebug()<<"Entrain de mesurer l'humidité de cette zone verte";
     val=data.toInt();
+     qDebug()<<data.toInt();
     if(data.toInt()>=600)
       {
         qDebug()<<"Sèche";
@@ -4409,3 +4410,25 @@ void MainWindow::on_pushButton_Communication_clicked()
 }
 
 
+
+void MainWindow::on_mailing_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+}
+
+void MainWindow::on_send_clicked()
+{
+    smtp = new Smtp("projetqt2021@gmail.com" , "projet123456", "smtp.gmail.com",465);
+
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+    msg=ui->corps->toPlainText();
+   QString mail="nardine.hanfi@esprit.tn" ;
+    qDebug()<<mail;
+    smtp->sendMail("projetqt2021@gmail.com",mail,ui->objet->text(),msg);
+}
+
+void MainWindow::on_back_mail_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}

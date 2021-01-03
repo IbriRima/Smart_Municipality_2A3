@@ -15,6 +15,7 @@ SOURCES += \
     Capt_Pression.cpp \
     Employe.cpp \
     capteur_humidite.cpp \
+    capteur_mouvement.cpp \
     citoyen.cpp \
     clock.cpp \
     compte.cpp \
@@ -33,6 +34,7 @@ HEADERS += \
     Capt_Pression.h \
     Employe.h \
     capteur_humidite.h \
+    capteur_mouvement.h \
     citoyen.h \
     clock.h \
     compte.h \
