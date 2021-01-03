@@ -49,10 +49,10 @@ background-repeat: none;
      <widget class="QPushButton" name="pushButton_MaintenanceIN">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>390</y>
+        <x>700</x>
+        <y>410</y>
         <width>331</width>
-        <height>111</height>
+        <height>131</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -76,9 +76,9 @@ background-repeat: none;
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>80</y>
+        <y>60</y>
         <width>331</width>
-        <height>111</height>
+        <height>131</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -102,9 +102,9 @@ background-repeat: none;
       <property name="geometry">
        <rect>
         <x>670</x>
-        <y>80</y>
+        <y>60</y>
         <width>331</width>
-        <height>111</height>
+        <height>131</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -129,9 +129,9 @@ background-repeat: none;
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>390</y>
+        <y>410</y>
         <width>331</width>
-        <height>111</height>
+        <height>131</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -156,7 +156,7 @@ background-repeat: none;
      <widget class="QPushButton" name="pushButton_RessourcesHumaine_2">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>400</x>
         <y>240</y>
         <width>331</width>
         <height>131</height>
@@ -166,9 +166,9 @@ background-repeat: none;
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">#pushButton_RessourcesHumain_2{
+       <string notr="true">#pushButton_RessourcesHumaine_2{
 background-color: transparent;
-border-image: url(:M.RessourcesH.png);
+border-image: url(:Marche_m.png);
 background: none;
 border: none;
 background-repeat: none;
@@ -192,7 +192,7 @@ background-repeat: none;
        </rect>
       </property>
       <property name="currentIndex">
-       <number>11</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Authentification">
        <property name="styleSheet">
@@ -2597,7 +2597,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Sous_Menu_Env">
        <property name="styleSheet">
@@ -2803,10 +2803,10 @@ background-repeat: none;
        <widget class="QWidget" name="widget_clock" native="true">
         <property name="geometry">
          <rect>
-          <x>800</x>
+          <x>850</x>
           <y>10</y>
-          <width>321</width>
-          <height>281</height>
+          <width>271</width>
+          <height>251</height>
          </rect>
         </property>
        </widget>
@@ -7097,10 +7097,10 @@ background-repeat: none;
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>30</y>
-        <width>1121</width>
-        <height>551</height>
+        <x>0</x>
+        <y>10</y>
+        <width>1171</width>
+        <height>581</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -7115,7 +7115,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>9</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QPushButton" name="pushButton_etat">
@@ -7152,7 +7152,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>0</y>
+          <y>10</y>
           <width>171</width>
           <height>41</height>
          </rect>
@@ -7205,7 +7205,7 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>80</y>
+          <y>90</y>
           <width>171</width>
           <height>41</height>
          </rect>
@@ -7228,7 +7228,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>160</y>
+          <y>180</y>
           <width>171</width>
           <height>41</height>
          </rect>
@@ -7251,7 +7251,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>240</y>
+          <y>260</y>
           <width>171</width>
           <height>41</height>
          </rect>
@@ -7274,7 +7274,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>320</y>
+          <y>350</y>
           <width>171</width>
           <height>41</height>
          </rect>
@@ -7296,8 +7296,8 @@ background-repeat: none;
        <widget class="QPushButton" name="close">
         <property name="geometry">
          <rect>
-          <x>1120</x>
-          <y>10</y>
+          <x>1110</x>
+          <y>20</y>
           <width>31</width>
           <height>31</height>
          </rect>
@@ -12407,16 +12407,16 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_21"/>
       <widget class="QWidget" name="page_22">
        <widget class="QPushButton" name="pushButton_Reclamations_2">
         <property name="geometry">
          <rect>
-          <x>490</x>
+          <x>470</x>
           <y>150</y>
-          <width>191</width>
+          <width>251</width>
           <height>71</height>
          </rect>
         </property>
@@ -12441,9 +12441,9 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_Ressource_Materiel_2">
         <property name="geometry">
          <rect>
-          <x>490</x>
+          <x>470</x>
           <y>320</y>
-          <width>191</width>
+          <width>241</width>
           <height>71</height>
          </rect>
         </property>
@@ -13796,10 +13796,10 @@ background-repeat: none;
      <widget class="QStackedWidget" name="stackedWidget_2">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>30</y>
-        <width>1031</width>
-        <height>511</height>
+        <x>10</x>
+        <y>10</y>
+        <width>1161</width>
+        <height>591</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -13809,8 +13809,8 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_2">
         <property name="geometry">
          <rect>
-          <x>360</x>
-          <y>80</y>
+          <x>390</x>
+          <y>160</y>
           <width>341</width>
           <height>81</height>
          </rect>
@@ -13822,8 +13822,8 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_3">
         <property name="geometry">
          <rect>
-          <x>360</x>
-          <y>210</y>
+          <x>390</x>
+          <y>290</y>
           <width>341</width>
           <height>81</height>
          </rect>
@@ -13839,7 +13839,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>810</x>
-          <y>130</y>
+          <y>210</y>
           <width>141</width>
           <height>111</height>
          </rect>
@@ -14549,28 +14549,6 @@ background-repeat: none;
        </widget>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton_backMaintenance_5">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>40</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#pushButton_backMaintenance_5 {
-
-                   border-image: url(:Menu.png);
-
-                   }
-
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
     </widget>
    </widget>
   </widget>
@@ -14580,7 +14558,7 @@ background-repeat: none;
      <x>0</x>
      <y>0</y>
      <width>1162</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

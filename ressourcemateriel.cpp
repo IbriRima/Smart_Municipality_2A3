@@ -139,7 +139,7 @@ bool RessourceMateriel::SupprimerComposant(QString id){
 }
 
 bool RessourceMateriel::ModifierComposant(QString id,QString ETAT_COMPOSANT)
-{
+{qDebug()<<"Etat"<<ETAT_COMPOSANT;
     QSqlQuery query;
     query.prepare(" UPDATE RESSOURCE set  ETAT_COMPOSANT=:ETAT_COMPOSANT  where ID=:ID  ");
     query.bindValue(":ID",id);
