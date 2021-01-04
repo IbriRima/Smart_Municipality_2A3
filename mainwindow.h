@@ -492,6 +492,8 @@ void on_pushButton_backMaintenance_5_clicked();
 
 void on_pushButton_RessourcesHumaine_2_clicked();
 
+void on_pushButton_Scnario_Pression_clicked();
+
 private:
     Ui::MainWindow *ui;
     Zone_Verte tmpZV;

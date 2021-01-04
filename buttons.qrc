@@ -99,5 +99,8 @@
         <file>Ressource Materiels.png</file>
         <file>Ressource Materiels_hover.png</file>
         <file>Disabled_Envi.png</file>
+        <file>G.Marchand.png</file>
+        <file>G.Mission.png</file>
+        <file>Capt_Pression.png</file>
     </qresource>
 </RCC>

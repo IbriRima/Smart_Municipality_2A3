@@ -863,13 +863,20 @@ void MainWindow::showContextMenu(const QPoint &pos)
 
 void MainWindow::viewcompte()
 {
+    if (aud==0)
+    {
    compte u;
            QModelIndex index = ui->listView_compte->currentIndex();
 
                QString info = index.data(Qt::DisplayRole).toString();
                ui->tableView_compte->setModel(u.read(info));
 
-               ui->stackedWidget_resources_humaines->setCurrentIndex(8);
+               ui->stackedWidget_resources_humaines->setCurrentIndex(8);  }
+               else
+               {
+                   QMessageBox::information(this, tr("accees limité"),tr("tu n'est pas un admin"), QMessageBox::Ok);
+               }
+
 }
 
 void MainWindow::deletecompte()
@@ -3161,7 +3168,7 @@ void MainWindow::on_marche_clicked()
 
 void MainWindow::update_btn()
 { qDebug()<<"semah !";
-    data=A.read_from_arduino();
+    data=C.read_from_capteur_humidite();
 
 
     qDebug()<<"Data ************ :"<<data;
@@ -3691,7 +3698,7 @@ void MainWindow::DeleteSlotReclamation(int i){
 
    QString id= ui->tableView_Reclamations_2->model()->index(i,6).data().toString();
 
-      if(id=="12"){A.write_to_arduino("2");};
+      if(id=="12"){C.write_to_arduino("2");};
 
      R.SupprimerReclamation(id);
 
@@ -4531,6 +4538,12 @@ void MainWindow::on_tableView_Reclamations_2_doubleClicked(const QModelIndex &in
 }
 
 
+void MainWindow::on_pushButton_Scnario_Pression_clicked()
+{
+    C.write_to_arduino("1");
+}
+
+
 void MainWindow::on_MenuP_2_clicked()
 {
     ui->stackedWidget_Main->setCurrentIndex(0);
@@ -4837,3 +4850,4 @@ void MainWindow::on_pushButton_RessourcesHumaine_2_clicked()
 }
 //***********************fin deplacement entre modules**********************************
 //*****************************END SAHRAOUI**************************************************
+

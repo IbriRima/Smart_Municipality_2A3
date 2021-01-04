@@ -191,13 +191,22 @@ QSqlQueryModel * Citoyen::afficher()
  }
  void Citoyen::printPDF(int num)
  {
-     QPdfWriter pdf("c:/Users/user/Documents/file.pdf"); //création du pdf
+     QPdfWriter pdf("c:/Users/Bader Semah/Documents/file.pdf"); //création du pdf
      QPainter painter(&pdf);
-     QImage image("c:/Users/user/Documents/Acte.jpg"); //recupération de l'image
+    // QImage image("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Acte.png"); //recupération de l'image
          //QDate date;
          //date.currentDate();
+
+        QFile file;
+        QDir::setCurrent("/tmp");
+        file.setFileName("back2.jpg");
+        QDir::setCurrent("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3");
+        file.open(QIODevice::ReadOnly);
+        QImage image(file.fileName());
+        painter.drawImage(0,0,image.scaled(4958,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));
          QString nbr= QString::number(num);
          QFont font = painter.font();
+
          font.setPointSize(font.pointSize()*2);
          painter.setFont(font);
          painter.drawImage(0,0,image);
