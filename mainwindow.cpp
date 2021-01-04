@@ -2631,12 +2631,22 @@ void MainWindow::on_pushButton_event_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
     ui->tableView_event->setModel(Etmp.afficher());
+    if(aud==1)
+     {
+        ui->pushButtonajoutcit->setDisabled(true);
+    }
 }
 
 void MainWindow::on_pushButton_etat_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
     ui->tableView_citoyen->setModel(Ctmp.afficher());
+    if(aud==1)
+     {
+        ui->ajouter_cit->setDisabled(true);
+        ui->pushButton_maj_cit->setDisabled(true);
+        ui->pushButton_del_cit->setDisabled(true);
+    }
 }
 
 
@@ -2997,6 +3007,11 @@ void MainWindow::on_tableView_event_activated(const QModelIndex &index)/********
 {
     QString id=ui->tableView_event->model()->data(index).toString();
     ID=id;
+    if(aud==1)
+     {
+        ui->pushButton_del_event->setDisabled(true);
+        ui->pushButton_maj_event->setDisabled(true);
+    }
     QSqlQuery query=Etmp.select(ID);
     if(query.exec())
     {
