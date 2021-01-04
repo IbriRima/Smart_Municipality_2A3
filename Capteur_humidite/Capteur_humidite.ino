@@ -5,14 +5,15 @@ char data;
 void setup() {
 Serial.begin(9600);
 pinMode(13,OUTPUT);
+pinMode(11,OUTPUT);
 digitalWrite(13,LOW);
-
+digitalWrite(11,LOW);
 }
 
 void loop() {
 int humidite=analogRead(0); 
 Serial.println(humidite); 
-delay(2000);
+delay(1000);
 if(Serial.available())
  {
 
@@ -22,17 +23,22 @@ if(Serial.available())
         if (digitalRead(13)==LOW)
         {
           digitalWrite(13,HIGH);
-          Serial.write('1');    
-          lcd.print("l'irrigation est términée");
-          delay(1000);
         }
+        if(digitalRead(11)==HIGH)
+        {
+          digitalWrite(11,LOW);
+        }
+         Serial.write('1');    
+          //lcd.print("l'irrigation est términée");
+          delay(2000);
       }
-      else 
+      else if (humidite < 600)
       {
         digitalWrite(13,LOW);
+        digitalWrite(11,HIGH);
         Serial.write('0');
-        lcd.print("l'irrigation est en cours");
-        delay(10000);
+        //lcd.print("l'irrigation est en cours");
+        delay(2000);
       }
  }
 

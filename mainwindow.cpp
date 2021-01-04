@@ -374,8 +374,7 @@ clock4->show();
      case -1 :
          qDebug()<<"arduino is not available";
          break;
-     }
-     QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_btn()));*/
+     }*/
  /********************************************** End Semah *******************************************/
    //*************************begin sahraoui*******************************************
    ui->afficher_marchand->setModel(tmp1.afficher());
@@ -3146,7 +3145,7 @@ void MainWindow::on_marche_clicked()
 
 
 void MainWindow::update_btn()
-{
+{ qDebug()<<"semah !";
     data=A.read_from_arduino();
 
 
@@ -3426,7 +3425,7 @@ void MainWindow::on_pushButton_AjouterComposant_2_clicked()
 void MainWindow::on_pushButton_Reclamations_2_clicked()
 {
     Reclamation R ;
-
+    QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_btn()));
 
     QMediaPlayer *Maintenancesound = new QMediaPlayer;
         Maintenancesound->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/2eme/Nouveau dossier/Smart_Municipality_2A3/Maintenance_click_soundd.mp3"));

@@ -12,7 +12,7 @@ bool Connection::TestConnection()
 QSqlDatabase db=QSqlDatabase ::addDatabase("QODBC");
 db.setDatabaseName("Source_Projet2A");
 db.setUserName("system");
-db.setPassword("191jMT1036");
+db.setPassword("0000");
 if(db.open())
 return true;
 return test;
