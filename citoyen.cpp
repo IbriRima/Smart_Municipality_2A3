@@ -191,12 +191,12 @@ QSqlQueryModel * Citoyen::afficher()
  }
  void Citoyen::printPDF(int num)
  {
-     QPdfWriter pdf("c:/Users/Bader Semah/Documents/file.pdf"); //création du pdf
-     //QPdfWriter pdf("c:/Users/user/Documents/file.pdf");
+     //QPdfWriter pdf("c:/Users/Bader Semah/Documents/file.pdf"); //création du pdf
+     QPdfWriter pdf("c:/Users/user/Documents/file.pdf");
      QPainter painter(&pdf);
      QImage image("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Actee.jpg"); //recupération de l'image
-         //QDate date;
-         //date.currentDate();
+
+        QString DATE =QDate::currentDate().toString();
 
        /* QFile file;
         QDir::setCurrent("/tmp");
@@ -219,9 +219,9 @@ QSqlQueryModel * Citoyen::afficher()
          painter.drawText(2000, 4900, this->Sexe_cit);
          painter.drawText(2500, 5350, this->Date_cit);
          painter.drawText(2500, 5700, this->Lieu_cit);
-         //painter.drawText(3900, 10600, date.toString());
+         painter.drawText(2900, 7700, DATE);
          painter.drawText(4700, 3250, nbr);
-         painter.drawText(2700, 7700, "05/01/2021");
+         //painter.drawText(2700, 7700, "05/01/2021");
          painter.end();
          QMessageBox msgBox;
          msgBox.setIcon(QMessageBox::Information);
