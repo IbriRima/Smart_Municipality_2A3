@@ -3447,7 +3447,7 @@ void MainWindow::on_pushButton_AjouterComposant_2_clicked()
 void MainWindow::on_pushButton_Reclamations_2_clicked()
 {
     Reclamation R ;
-    QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_btn()));
+    QObject::connect(C.getserial(),SIGNAL(readyRead()),this,SLOT(update_btn()));
 
     QMediaPlayer *Maintenancesound = new QMediaPlayer;
         Maintenancesound->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/2eme/Nouveau dossier/Smart_Municipality_2A3/Maintenance_click_soundd.mp3"));
@@ -4540,7 +4540,7 @@ void MainWindow::on_tableView_Reclamations_2_doubleClicked(const QModelIndex &in
 
 void MainWindow::on_pushButton_Scnario_Pression_clicked()
 {
-    C.write_to_arduino("1");
+    C.write_to_arduino("0");
 }
 
 

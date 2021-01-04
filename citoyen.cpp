@@ -192,34 +192,36 @@ QSqlQueryModel * Citoyen::afficher()
  void Citoyen::printPDF(int num)
  {
      QPdfWriter pdf("c:/Users/Bader Semah/Documents/file.pdf"); //création du pdf
+     //QPdfWriter pdf("c:/Users/user/Documents/file.pdf");
      QPainter painter(&pdf);
-    // QImage image("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Acte.png"); //recupération de l'image
+     QImage image("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Actee.jpg"); //recupération de l'image
          //QDate date;
          //date.currentDate();
 
-        QFile file;
+       /* QFile file;
         QDir::setCurrent("/tmp");
-        file.setFileName("back2.jpg");
-        QDir::setCurrent("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3");
+        file.setFileName("ActeF.pdf");
+        //QDir::setCurrent("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3");
+        QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
         file.open(QIODevice::ReadOnly);
         QImage image(file.fileName());
-        painter.drawImage(0,0,image.scaled(4958,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));
+        painter.drawImage(0,0,image.scaled(4958,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));*/
          QString nbr= QString::number(num);
          QFont font = painter.font();
 
-         font.setPointSize(font.pointSize()*2);
+         font.setPointSize(font.pointSize());
          painter.setFont(font);
-         painter.drawImage(0,0,image);
+         painter.drawImage(0,0,image.scaled(7000,10000,Qt::IgnoreAspectRatio, Qt::FastTransformation));
          painter.setPen(Qt::black);
-         painter.drawText(6270, 4000, this->Id_cit);
-         painter.drawText(2000, 6000, this->Nom_cit);
-         painter.drawText(2600, 6500, this->Prenom_cit);
-         painter.drawText(2000, 7000, this->Sexe_cit);
-         painter.drawText(3200, 7500, this->Date_cit);
-         painter.drawText(3200, 8000, this->Lieu_cit);
+         painter.drawText(4700, 2900, this->Id_cit);
+         painter.drawText(2000, 4300, this->Nom_cit);
+         painter.drawText(2000, 4600, this->Prenom_cit);
+         painter.drawText(2000, 4900, this->Sexe_cit);
+         painter.drawText(2500, 5350, this->Date_cit);
+         painter.drawText(2500, 5700, this->Lieu_cit);
          //painter.drawText(3900, 10600, date.toString());
-         painter.drawText(6270, 4750, nbr);
-         painter.drawText(3900, 10600, "01/12/2020");
+         painter.drawText(4700, 3250, nbr);
+         painter.drawText(2700, 7700, "05/01/2021");
          painter.end();
          QMessageBox msgBox;
          msgBox.setIcon(QMessageBox::Information);
