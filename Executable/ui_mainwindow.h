@@ -28,6 +28,7 @@
 #include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
@@ -35,6 +36,7 @@
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTimeEdit>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "QtCharts"
 
@@ -78,6 +80,8 @@ public:
     QPushButton *pushButton_Close_em;
     QLineEdit *lineEdit_recherche_employe;
     QListView *listView_employe;
+    QPushButton *pushButton_tri_em;
+    QPushButton *pushButton_statistique_em;
     QWidget *AJ_employe;
     QPushButton *pushButton_Annuler_AJ;
     QPushButton *pushButton_Close_Em_AJ;
@@ -149,6 +153,17 @@ public:
     QTableView *tableView_employe;
     QPushButton *pushButton_Close_affe;
     QPushButton *pushButton_annuler_affe;
+    QPushButton *pushButton_imprimer_em;
+    QWidget *page_13;
+    QLineEdit *lineEdit;
+    QPlainTextEdit *plainTextEdit;
+    QPushButton *pushButton_send;
+    QPushButton *pushButton_cancelm;
+    QLabel *label;
+    QWidget *page_14;
+    QFrame *statisticFrame;
+    QVBoxLayout *verticalLayout;
+    QPushButton *pushButton_retour_em;
     QWidget *Environnement;
     QStackedWidget *stackedWidget_Environnement;
     QWidget *Sous_Menu_Env;
@@ -198,6 +213,7 @@ public:
     QComboBox *comboBox_Type_Tri;
     QLabel *tri_ramassage;
     QWidget *widget_clock2;
+    QPushButton *pushButton_Disab;
     QWidget *MAJ_Ramas;
     QPushButton *pushButton_Annuler_MAJ_R;
     QPushButton *pushButton_SaveR_MAJ;
@@ -261,6 +277,7 @@ public:
     QPushButton *pushButton_Icon_serachZV;
     QComboBox *comboBox_TypeRech_ZV;
     QWidget *widget_clock3;
+    QPushButton *pushButton_Ajout_ZV_Disab;
     QWidget *MAJ_ZV;
     QLineEdit *lineEdit_ID_MAJ_ZV;
     QLineEdit *lineEdit_Libelle_MAJ_ZV;
@@ -369,6 +386,7 @@ public:
     QLabel *label_175;
     QLabel *label_176;
     QLabel *label_177;
+    QPushButton *mailing;
     QWidget *page_6;
     QLineEdit *maj_nom;
     QLineEdit *maj_hor;
@@ -395,6 +413,9 @@ public:
     QPushButton *ajouter_cit;
     QTableView *tableView_citoyen;
     QLabel *label_34;
+    QCheckBox *rech_id;
+    QCheckBox *rech_prenom;
+    QCheckBox *rech_nom;
     QWidget *page_8;
     QLineEdit *input_tel;
     QLineEdit *input_lieu;
@@ -446,7 +467,6 @@ public:
     QLineEdit *maj_mail;
     QLineEdit *maj_id_2;
     QLineEdit *maj_date_cit;
-    QLabel *icon_7;
     QLabel *label_48;
     QLabel *label_201;
     QLabel *label_202;
@@ -464,6 +484,11 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label_47;
     QWidget *page_12;
+    QPushButton *send;
+    QLabel *label_2;
+    QPushButton *back_mail;
+    QPlainTextEdit *corps;
+    QLineEdit *objet;
     QLabel *icon;
     QWidget *Maintenance;
     QStackedWidget *stackedWidgetMaintennance;
@@ -477,6 +502,7 @@ public:
     QPushButton *marche_2;
     QPushButton *communication_2;
     QWidget *maintenance_clock1;
+    QPushButton *pushButton_Scnario_Pression;
     QWidget *page_23;
     QPushButton *pushButton_AjouterComposant_2;
     QLineEdit *Ressource_Search_2;
@@ -528,6 +554,59 @@ public:
     QComboBox *comboBox_stat_2;
     QWidget *Stat_2;
     QPushButton *pushButton_StatMaint_Retour;
+    QWidget *page_15;
+    QStackedWidget *stackedWidget_2;
+    QWidget *page_16;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_Marche_2;
+    QPushButton *pushButton_Maintenance_2;
+    QPushButton *pushButton_MP_2;
+    QPushButton *pushButton_8;
+    QPushButton *pushButton_Environ_2;
+    QWidget *page_17;
+    QTableView *afficher_marchand;
+    QPushButton *modifier_marchand;
+    QPushButton *supprimer_marchand;
+    QPushButton *ajouter_marchant;
+    QLabel *label_3;
+    QLineEdit *numero_marchand;
+    QLineEdit *nom_marchand;
+    QLineEdit *prenom_marchand;
+    QLabel *label_4;
+    QLabel *label_5;
+    QLabel *label_6;
+    QLabel *label_20;
+    QLineEdit *emplacement_marchand;
+    QLabel *id_marchand;
+    QPushButton *pushButton_5;
+    QLabel *label_21;
+    QLineEdit *recherche_2;
+    QLabel *label_37;
+    QWidget *page_18;
+    QLineEdit *horaire_mission;
+    QLabel *label_49;
+    QPushButton *supprimer_mission;
+    QTableView *afficher_mission;
+    QLabel *label_50;
+    QPushButton *modifier_mission;
+    QLineEdit *cin_mission;
+    QPushButton *ajouter_mission;
+    QLineEdit *date_mission;
+    QLabel *label_53;
+    QLineEdit *type_mission;
+    QLabel *label_72;
+    QLabel *label_83;
+    QLineEdit *emplacement_mission;
+    QLabel *label_84;
+    QPushButton *pushButton_6;
+    QLineEdit *recherche_mission;
+    QLabel *label_85;
+    QWidget *page_19;
+    QPushButton *pushButton_7;
+    QFrame *horizontalFrame;
+    QHBoxLayout *horizontalLayout_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -559,7 +638,7 @@ public:
         Menu_Principal->setObjectName(QStringLiteral("Menu_Principal"));
         pushButton_MaintenanceIN = new QPushButton(Menu_Principal);
         pushButton_MaintenanceIN->setObjectName(QStringLiteral("pushButton_MaintenanceIN"));
-        pushButton_MaintenanceIN->setGeometry(QRect(670, 390, 331, 111));
+        pushButton_MaintenanceIN->setGeometry(QRect(700, 410, 331, 131));
         pushButton_MaintenanceIN->setAutoFillBackground(false);
         pushButton_MaintenanceIN->setStyleSheet(QLatin1String("#pushButton_MaintenanceIN {\n"
 "background-color: transparent;\n"
@@ -571,7 +650,7 @@ public:
 ""));
         pushButton_Environnement = new QPushButton(Menu_Principal);
         pushButton_Environnement->setObjectName(QStringLiteral("pushButton_Environnement"));
-        pushButton_Environnement->setGeometry(QRect(100, 80, 331, 111));
+        pushButton_Environnement->setGeometry(QRect(100, 60, 331, 131));
         pushButton_Environnement->setAutoFillBackground(false);
         pushButton_Environnement->setStyleSheet(QLatin1String("#pushButton_Environnement{\n"
 "background-color: transparent;\n"
@@ -583,7 +662,7 @@ public:
 ""));
         pushButton_RessourcesHumaine = new QPushButton(Menu_Principal);
         pushButton_RessourcesHumaine->setObjectName(QStringLiteral("pushButton_RessourcesHumaine"));
-        pushButton_RessourcesHumaine->setGeometry(QRect(670, 80, 331, 111));
+        pushButton_RessourcesHumaine->setGeometry(QRect(670, 60, 331, 131));
         pushButton_RessourcesHumaine->setAutoFillBackground(false);
         pushButton_RessourcesHumaine->setStyleSheet(QLatin1String("#pushButton_RessourcesHumaine {\n"
 "background-color: transparent;\n"
@@ -596,7 +675,7 @@ public:
 ""));
         pushButton_Communication = new QPushButton(Menu_Principal);
         pushButton_Communication->setObjectName(QStringLiteral("pushButton_Communication"));
-        pushButton_Communication->setGeometry(QRect(100, 390, 331, 111));
+        pushButton_Communication->setGeometry(QRect(100, 410, 331, 131));
         pushButton_Communication->setAutoFillBackground(false);
         pushButton_Communication->setStyleSheet(QLatin1String("#pushButton_Communication{\n"
 "background-color: transparent;\n"
@@ -610,11 +689,11 @@ public:
 ""));
         pushButton_RessourcesHumaine_2 = new QPushButton(Menu_Principal);
         pushButton_RessourcesHumaine_2->setObjectName(QStringLiteral("pushButton_RessourcesHumaine_2"));
-        pushButton_RessourcesHumaine_2->setGeometry(QRect(390, 240, 331, 131));
+        pushButton_RessourcesHumaine_2->setGeometry(QRect(400, 240, 331, 131));
         pushButton_RessourcesHumaine_2->setAutoFillBackground(false);
-        pushButton_RessourcesHumaine_2->setStyleSheet(QLatin1String("#pushButton_RessourcesHumain_2{\n"
+        pushButton_RessourcesHumaine_2->setStyleSheet(QLatin1String("#pushButton_RessourcesHumaine_2{\n"
 "background-color: transparent;\n"
-"border-image: url(:M.RessourcesH.png);\n"
+"border-image: url(:Marche_m.png);\n"
 "background: none;\n"
 "border: none;\n"
 "background-repeat: none;\n"
@@ -893,6 +972,26 @@ public:
         font3.setFamily(QStringLiteral("Javanese Text"));
         font3.setPointSize(14);
         listView_employe->setFont(font3);
+        pushButton_tri_em = new QPushButton(Consulter_employe);
+        pushButton_tri_em->setObjectName(QStringLiteral("pushButton_tri_em"));
+        pushButton_tri_em->setGeometry(QRect(970, 90, 121, 81));
+        pushButton_tri_em->setStyleSheet(QLatin1String("#pushButton_tri_em{\n"
+"background-color: transparent;\n"
+"border-image: url(:tri.jpg);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
+        pushButton_statistique_em = new QPushButton(Consulter_employe);
+        pushButton_statistique_em->setObjectName(QStringLiteral("pushButton_statistique_em"));
+        pushButton_statistique_em->setGeometry(QRect(970, 310, 141, 91));
+        pushButton_statistique_em->setStyleSheet(QLatin1String("#pushButton_statistique_em{\n"
+"background-color: transparent;\n"
+"border-image: url(:LogoStats.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
         stackedWidget_resources_humaines->addWidget(Consulter_employe);
         label_16->raise();
         pushButton_aj->raise();
@@ -900,6 +999,8 @@ public:
         pushButton_Close_em->raise();
         lineEdit_recherche_employe->raise();
         listView_employe->raise();
+        pushButton_tri_em->raise();
+        pushButton_statistique_em->raise();
         AJ_employe = new QWidget();
         AJ_employe->setObjectName(QStringLiteral("AJ_employe"));
         AJ_employe->setStyleSheet(QLatin1String("#AJ_employe {\n"
@@ -1559,7 +1660,85 @@ public:
 "border: none;\n"
 "background-repeat: none;\n"
 "}"));
+        pushButton_imprimer_em = new QPushButton(afficher_employe);
+        pushButton_imprimer_em->setObjectName(QStringLiteral("pushButton_imprimer_em"));
+        pushButton_imprimer_em->setGeometry(QRect(1010, 190, 75, 61));
+        pushButton_imprimer_em->setStyleSheet(QLatin1String("#pushButton_imprimer_em{\n"
+"background-color: transparent;\n"
+"border-image: url(:imprimer.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
         stackedWidget_resources_humaines->addWidget(afficher_employe);
+        page_13 = new QWidget();
+        page_13->setObjectName(QStringLiteral("page_13"));
+        page_13->setStyleSheet(QLatin1String("#page_13{\n"
+"background-color: transparent;\n"
+"border-image: url(:background.jpg);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        lineEdit = new QLineEdit(page_13);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(200, 80, 791, 51));
+        plainTextEdit = new QPlainTextEdit(page_13);
+        plainTextEdit->setObjectName(QStringLiteral("plainTextEdit"));
+        plainTextEdit->setGeometry(QRect(203, 160, 791, 351));
+        pushButton_send = new QPushButton(page_13);
+        pushButton_send->setObjectName(QStringLiteral("pushButton_send"));
+        pushButton_send->setGeometry(QRect(1050, 540, 75, 41));
+        pushButton_send->setStyleSheet(QLatin1String("#pushButton_send{\n"
+"background-color: transparent;\n"
+"border-image: url(:mailing.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        pushButton_cancelm = new QPushButton(page_13);
+        pushButton_cancelm->setObjectName(QStringLiteral("pushButton_cancelm"));
+        pushButton_cancelm->setGeometry(QRect(50, 550, 91, 41));
+        pushButton_cancelm->setStyleSheet(QLatin1String("#pushButton_cancelm {\n"
+"background-color: transparent;\n"
+"border-image: url(:Annuler.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
+        label = new QLabel(page_13);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(110, 90, 141, 31));
+        label->setStyleSheet(QStringLiteral("<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#2d80d9;\">Identifiant</span></p></body></html>"));
+        stackedWidget_resources_humaines->addWidget(page_13);
+        page_14 = new QWidget();
+        page_14->setObjectName(QStringLiteral("page_14"));
+        page_14->setStyleSheet(QLatin1String("#page_14 {\n"
+"background-color: transparent;\n"
+"border-image: url(:background.jpg);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        statisticFrame = new QFrame(page_14);
+        statisticFrame->setObjectName(QStringLiteral("statisticFrame"));
+        statisticFrame->setGeometry(QRect(110, 20, 981, 471));
+        verticalLayout = new QVBoxLayout(statisticFrame);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        pushButton_retour_em = new QPushButton(page_14);
+        pushButton_retour_em->setObjectName(QStringLiteral("pushButton_retour_em"));
+        pushButton_retour_em->setGeometry(QRect(490, 530, 231, 41));
+        pushButton_retour_em->setStyleSheet(QLatin1String("#pushButton_retour_em{\n"
+"background-color: transparent;\n"
+"border-image: url(:Annuler.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
+        stackedWidget_resources_humaines->addWidget(page_14);
         stackedWidget_Main->addWidget(Ressource_Humaine);
         Environnement = new QWidget();
         Environnement->setObjectName(QStringLiteral("Environnement"));
@@ -1685,7 +1864,7 @@ public:
 ""));
         widget_clock = new QWidget(Sous_Menu_Env);
         widget_clock->setObjectName(QStringLiteral("widget_clock"));
-        widget_clock->setGeometry(QRect(800, 10, 321, 281));
+        widget_clock->setGeometry(QRect(850, 10, 271, 251));
         stackedWidget_Environnement->addWidget(Sous_Menu_Env);
         Consulter_Ramas = new QWidget();
         Consulter_Ramas->setObjectName(QStringLiteral("Consulter_Ramas"));
@@ -2110,6 +2289,16 @@ public:
         widget_clock2 = new QWidget(Consulter_Ramas);
         widget_clock2->setObjectName(QStringLiteral("widget_clock2"));
         widget_clock2->setGeometry(QRect(30, 40, 121, 101));
+        pushButton_Disab = new QPushButton(Consulter_Ramas);
+        pushButton_Disab->setObjectName(QStringLiteral("pushButton_Disab"));
+        pushButton_Disab->setGeometry(QRect(20, 530, 151, 51));
+        pushButton_Disab->setStyleSheet(QLatin1String("#pushButton_Disab{\n"
+"background-color: transparent;\n"
+"border-image: url(:Disabled_Envi.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
         stackedWidget_Environnement->addWidget(Consulter_Ramas);
         tableView_Ramas->raise();
         label_17->raise();
@@ -2124,6 +2313,7 @@ public:
         comboBox_Type_Tri->raise();
         tri_ramassage->raise();
         widget_clock2->raise();
+        pushButton_Disab->raise();
         MAJ_Ramas = new QWidget();
         MAJ_Ramas->setObjectName(QStringLiteral("MAJ_Ramas"));
         MAJ_Ramas->setStyleSheet(QLatin1String("#MAJ_Ramas {\n"
@@ -2774,6 +2964,16 @@ public:
         widget_clock3 = new QWidget(Consulter_ZV);
         widget_clock3->setObjectName(QStringLiteral("widget_clock3"));
         widget_clock3->setGeometry(QRect(100, 10, 121, 101));
+        pushButton_Ajout_ZV_Disab = new QPushButton(Consulter_ZV);
+        pushButton_Ajout_ZV_Disab->setObjectName(QStringLiteral("pushButton_Ajout_ZV_Disab"));
+        pushButton_Ajout_ZV_Disab->setGeometry(QRect(970, 510, 161, 51));
+        pushButton_Ajout_ZV_Disab->setStyleSheet(QLatin1String("#pushButton_Ajout_ZV_Disab{\n"
+"background-color: transparent;\n"
+"border-image: url(:Disabled_Envi.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
         stackedWidget_Environnement->addWidget(Consulter_ZV);
         label_61->raise();
         groupBox->raise();
@@ -2785,6 +2985,7 @@ public:
         pushButton_Icon_serachZV->raise();
         comboBox_TypeRech_ZV->raise();
         widget_clock3->raise();
+        pushButton_Ajout_ZV_Disab->raise();
         MAJ_ZV = new QWidget();
         MAJ_ZV->setObjectName(QStringLiteral("MAJ_ZV"));
         MAJ_ZV->setStyleSheet(QLatin1String("#MAJ_ZV{\n"
@@ -3327,7 +3528,7 @@ public:
         page_4->setObjectName(QStringLiteral("page_4"));
         stackedWidget = new QStackedWidget(page_4);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(0, 10, 1171, 591));
+        stackedWidget->setGeometry(QRect(0, 10, 1171, 581));
         stackedWidget->setStyleSheet(QLatin1String("#stackedWidget {\n"
 "background-color:  trasparent; \n"
 "border-image: url(:back2.jpg);\n"
@@ -3357,7 +3558,7 @@ public:
 "}"));
         MenuP = new QPushButton(page);
         MenuP->setObjectName(QStringLiteral("MenuP"));
-        MenuP->setGeometry(QRect(20, 0, 171, 41));
+        MenuP->setGeometry(QRect(20, 10, 171, 41));
         MenuP->setStyleSheet(QLatin1String("#MenuP {\n"
 "background-color: transparent;\n"
 "border-image: url(:Menu_Principal.png);\n"
@@ -3382,7 +3583,7 @@ public:
 "}"));
         envi = new QPushButton(page);
         envi->setObjectName(QStringLiteral("envi"));
-        envi->setGeometry(QRect(20, 80, 171, 41));
+        envi->setGeometry(QRect(20, 90, 171, 41));
         envi->setStyleSheet(QLatin1String("#envi {\n"
 "background-color: transparent;\n"
 "border-image: url(:envi.png);\n"
@@ -3393,7 +3594,7 @@ public:
 ""));
         res = new QPushButton(page);
         res->setObjectName(QStringLiteral("res"));
-        res->setGeometry(QRect(20, 160, 171, 41));
+        res->setGeometry(QRect(20, 180, 171, 41));
         res->setStyleSheet(QLatin1String("#res {\n"
 "background-color: transparent;\n"
 "border-image: url(:Ress.png);\n"
@@ -3404,7 +3605,7 @@ public:
 ""));
         maintenance = new QPushButton(page);
         maintenance->setObjectName(QStringLiteral("maintenance"));
-        maintenance->setGeometry(QRect(20, 240, 171, 41));
+        maintenance->setGeometry(QRect(20, 260, 171, 41));
         maintenance->setStyleSheet(QLatin1String("#maintenance {\n"
 "background-color: transparent;\n"
 "border-image: url(:Maintenance.png);\n"
@@ -3415,7 +3616,7 @@ public:
 ""));
         marche = new QPushButton(page);
         marche->setObjectName(QStringLiteral("marche"));
-        marche->setGeometry(QRect(20, 320, 171, 41));
+        marche->setGeometry(QRect(20, 350, 171, 41));
         marche->setStyleSheet(QLatin1String("#marche {\n"
 "background-color: transparent;\n"
 "border-image: url(:Marche.png);\n"
@@ -3426,7 +3627,7 @@ public:
 ""));
         close = new QPushButton(page);
         close->setObjectName(QStringLiteral("close"));
-        close->setGeometry(QRect(1120, 10, 31, 31));
+        close->setGeometry(QRect(1110, 20, 31, 31));
         close->setStyleSheet(QLatin1String("#close {\n"
 "background-color: transparent;\n"
 "border-image: url(:close.png);\n"
@@ -3468,9 +3669,9 @@ public:
 ""));
         pushButton_stat = new QPushButton(page_2);
         pushButton_stat->setObjectName(QStringLiteral("pushButton_stat"));
-        pushButton_stat->setGeometry(QRect(830, 70, 111, 31));
+        pushButton_stat->setGeometry(QRect(820, 60, 71, 51));
         pushButton_stat->setStyleSheet(QLatin1String("\n"
-"QPushButton\n"
+"/*QPushButton\n"
 "{\n"
 "background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgb(170, 255, 255), stop:1 rgb(85, 85, 255));\n"
 "border-radius:15px;\n"
@@ -3479,14 +3680,22 @@ public:
 "QPushButton:hover\n"
 "{\n"
 "background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, stop:0 rgb(85, 85, 255), stop:1 rgb(170, 255, 255))\n"
-"}"));
+"}*/ \n"
+"#pushButton_stat{\n"
+"background-color: transparent;\n"
+"border-image: url(:LogoStats.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
         tableView_event = new QTableView(page_2);
         tableView_event->setObjectName(QStringLiteral("tableView_event"));
         tableView_event->setGeometry(QRect(65, 171, 941, 321));
         tableView_event->setFont(font3);
         tri = new QPushButton(page_2);
         tri->setObjectName(QStringLiteral("tri"));
-        tri->setGeometry(QRect(960, 70, 111, 31));
+        tri->setGeometry(QRect(910, 70, 111, 31));
         tri->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
 "background : qlineargradient(spread:pad, x1:0.467, y1:0, x2:0.482, y2:1, stop:0 rgb(170, 255, 255), stop:1 rgb(85, 85, 255));\n"
@@ -3499,7 +3708,7 @@ public:
 "}"));
         input_tri = new QComboBox(page_2);
         input_tri->setObjectName(QStringLiteral("input_tri"));
-        input_tri->setGeometry(QRect(1090, 80, 73, 22));
+        input_tri->setGeometry(QRect(1040, 70, 73, 22));
         label_46 = new QLabel(page_2);
         label_46->setObjectName(QStringLiteral("label_46"));
         label_46->setGeometry(QRect(70, 80, 681, 81));
@@ -3874,7 +4083,7 @@ public:
 ""));
         label_32 = new QLabel(page_5);
         label_32->setObjectName(QStringLiteral("label_32"));
-        label_32->setGeometry(QRect(250, 10, 681, 81));
+        label_32->setGeometry(QRect(250, 10, 831, 81));
         label_32->setFont(font2);
         label_32->setStyleSheet(QLatin1String("#label_16 {\n"
 "background-color: transparent;\n"
@@ -3948,6 +4157,17 @@ public:
         palette25.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
         label_177->setPalette(palette25);
         label_177->setFont(font);
+        mailing = new QPushButton(page_5);
+        mailing->setObjectName(QStringLiteral("mailing"));
+        mailing->setGeometry(QRect(960, 340, 81, 51));
+        mailing->setStyleSheet(QLatin1String("#mailing{\n"
+"background-color: transparent;\n"
+"border-image: url(:mailing.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
         stackedWidget->addWidget(page_5);
         annuler->raise();
         out_type->raise();
@@ -3967,6 +4187,7 @@ public:
         label_175->raise();
         label_176->raise();
         label_177->raise();
+        mailing->raise();
         page_6 = new QWidget();
         page_6->setObjectName(QStringLiteral("page_6"));
         maj_nom = new QLineEdit(page_6);
@@ -4102,7 +4323,7 @@ public:
         icon_4->setPixmap(QPixmap(QString::fromUtf8("../logo.jpg")));
         label_33 = new QLabel(page_6);
         label_33->setObjectName(QStringLiteral("label_33"));
-        label_33->setGeometry(QRect(210, 20, 681, 81));
+        label_33->setGeometry(QRect(210, 20, 871, 81));
         label_33->setFont(font2);
         label_33->setStyleSheet(QLatin1String("#label_16 {\n"
 "background-color: transparent;\n"
@@ -4257,7 +4478,7 @@ public:
         tableView_citoyen->setFont(font3);
         label_34 = new QLabel(page_7);
         label_34->setObjectName(QStringLiteral("label_34"));
-        label_34->setGeometry(QRect(130, 80, 681, 81));
+        label_34->setGeometry(QRect(110, 30, 681, 101));
         label_34->setFont(font2);
         label_34->setStyleSheet(QLatin1String("#label_16 {\n"
 "background-color: transparent;\n"
@@ -4268,6 +4489,18 @@ public:
 ""));
         label_34->setTextFormat(Qt::AutoText);
         label_34->setScaledContents(false);
+        rech_id = new QCheckBox(page_7);
+        rech_id->setObjectName(QStringLiteral("rech_id"));
+        rech_id->setGeometry(QRect(620, 140, 141, 37));
+        rech_id->setFont(font4);
+        rech_prenom = new QCheckBox(page_7);
+        rech_prenom->setObjectName(QStringLiteral("rech_prenom"));
+        rech_prenom->setGeometry(QRect(490, 140, 121, 37));
+        rech_prenom->setFont(font4);
+        rech_nom = new QCheckBox(page_7);
+        rech_nom->setObjectName(QStringLiteral("rech_nom"));
+        rech_nom->setGeometry(QRect(380, 140, 92, 37));
+        rech_nom->setFont(font4);
         stackedWidget->addWidget(page_7);
         page_8 = new QWidget();
         page_8->setObjectName(QStringLiteral("page_8"));
@@ -4403,7 +4636,7 @@ public:
 ""));
         label_35 = new QLabel(page_8);
         label_35->setObjectName(QStringLiteral("label_35"));
-        label_35->setGeometry(QRect(300, 10, 681, 81));
+        label_35->setGeometry(QRect(300, 10, 681, 111));
         label_35->setFont(font2);
         label_35->setStyleSheet(QLatin1String("#label_16 {\n"
 "background-color: transparent;\n"
@@ -4416,7 +4649,7 @@ public:
         label_35->setScaledContents(false);
         label_185 = new QLabel(page_8);
         label_185->setObjectName(QStringLiteral("label_185"));
-        label_185->setGeometry(QRect(70, 160, 191, 31));
+        label_185->setGeometry(QRect(70, 160, 241, 31));
         QPalette palette33;
         palette33.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette33.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
@@ -4595,7 +4828,7 @@ public:
         out_lieu->setReadOnly(true);
         pushButton_impression = new QPushButton(page_9);
         pushButton_impression->setObjectName(QStringLiteral("pushButton_impression"));
-        pushButton_impression->setGeometry(QRect(430, 150, 81, 61));
+        pushButton_impression->setGeometry(QRect(900, 510, 81, 61));
         pushButton_impression->setStyleSheet(QLatin1String("#pushButton_impression{\n"
 "background-color: transparent;\n"
 "border-image: url(:imprimer.png);\n"
@@ -4645,7 +4878,7 @@ public:
         out_naissance->setReadOnly(true);
         label_36 = new QLabel(page_9);
         label_36->setObjectName(QStringLiteral("label_36"));
-        label_36->setGeometry(QRect(280, 20, 681, 81));
+        label_36->setGeometry(QRect(280, 20, 681, 111));
         label_36->setFont(font2);
         label_36->setStyleSheet(QLatin1String("#label_16 {\n"
 "background-color: transparent;\n"
@@ -4827,22 +5060,9 @@ public:
 "background-repeat: none;\n"
 "}\n"
 ""));
-        icon_7 = new QLabel(page_10);
-        icon_7->setObjectName(QStringLiteral("icon_7"));
-        icon_7->setGeometry(QRect(370, 350, 691, 371));
-        icon_7->setMouseTracking(false);
-        icon_7->setStyleSheet(QLatin1String("#icon{\n"
-"background-color: transparent;\n"
-"border-image: none;\n"
-"background: none;\n"
-"border: none;\n"
-"background-repeat: none;\n"
-"}"));
-        icon_7->setFrameShape(QFrame::NoFrame);
-        icon_7->setPixmap(QPixmap(QString::fromUtf8("../logo.jpg")));
         label_48 = new QLabel(page_10);
         label_48->setObjectName(QStringLiteral("label_48"));
-        label_48->setGeometry(QRect(320, 30, 681, 81));
+        label_48->setGeometry(QRect(320, 30, 681, 101));
         label_48->setFont(font2);
         label_48->setStyleSheet(QLatin1String("#label_16 {\n"
 "background-color: transparent;\n"
@@ -4954,26 +5174,6 @@ public:
 "background-repeat: none;\n"
 "}"));
         stackedWidget->addWidget(page_10);
-        icon_7->raise();
-        maj_sexe->raise();
-        maj_nom_2->raise();
-        maj_prenom->raise();
-        maj_tel->raise();
-        maj_lieu->raise();
-        maj_mail->raise();
-        maj_id_2->raise();
-        maj_date_cit->raise();
-        label_48->raise();
-        label_201->raise();
-        label_202->raise();
-        label_203->raise();
-        label_204->raise();
-        label_205->raise();
-        label_206->raise();
-        label_207->raise();
-        label_208->raise();
-        maj_save_2->raise();
-        maj_cancel_2->raise();
         page_11 = new QWidget();
         page_11->setObjectName(QStringLiteral("page_11"));
         stat_cancel = new QPushButton(page_11);
@@ -5014,6 +5214,37 @@ public:
         stackedWidget->addWidget(page_11);
         page_12 = new QWidget();
         page_12->setObjectName(QStringLiteral("page_12"));
+        send = new QPushButton(page_12);
+        send->setObjectName(QStringLiteral("send"));
+        send->setGeometry(QRect(1100, 500, 75, 41));
+        send->setStyleSheet(QLatin1String("#send{\n"
+"background-color: transparent;\n"
+"border-image: url(:mailing.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        label_2 = new QLabel(page_12);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(160, 50, 141, 31));
+        label_2->setStyleSheet(QStringLiteral("<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#2d80d9;\">Identifiant</span></p></body></html>"));
+        back_mail = new QPushButton(page_12);
+        back_mail->setObjectName(QStringLiteral("back_mail"));
+        back_mail->setGeometry(QRect(100, 510, 91, 41));
+        back_mail->setStyleSheet(QLatin1String("#back_mail {\n"
+"background-color: transparent;\n"
+"border-image: url(:Annuler.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
+        corps = new QPlainTextEdit(page_12);
+        corps->setObjectName(QStringLiteral("corps"));
+        corps->setGeometry(QRect(253, 120, 791, 351));
+        objet = new QLineEdit(page_12);
+        objet->setObjectName(QStringLiteral("objet"));
+        objet->setGeometry(QRect(250, 40, 791, 51));
         stackedWidget->addWidget(page_12);
         icon = new QLabel(page_4);
         icon->setObjectName(QStringLiteral("icon"));
@@ -5051,7 +5282,7 @@ public:
         page_22->setObjectName(QStringLiteral("page_22"));
         pushButton_Reclamations_2 = new QPushButton(page_22);
         pushButton_Reclamations_2->setObjectName(QStringLiteral("pushButton_Reclamations_2"));
-        pushButton_Reclamations_2->setGeometry(QRect(490, 150, 191, 71));
+        pushButton_Reclamations_2->setGeometry(QRect(470, 150, 251, 71));
         pushButton_Reclamations_2->setStyleSheet(QLatin1String("\n"
 "#pushButton_Reclamations_2 {\n"
 "background-color: transparent;\n"
@@ -5066,7 +5297,7 @@ public:
 "}"));
         pushButton_Ressource_Materiel_2 = new QPushButton(page_22);
         pushButton_Ressource_Materiel_2->setObjectName(QStringLiteral("pushButton_Ressource_Materiel_2"));
-        pushButton_Ressource_Materiel_2->setGeometry(QRect(490, 320, 191, 71));
+        pushButton_Ressource_Materiel_2->setGeometry(QRect(470, 320, 241, 71));
         pushButton_Ressource_Materiel_2->setStyleSheet(QLatin1String("\n"
 "#pushButton_Ressource_Materiel_2  {\n"
 "background-color: transparent;\n"
@@ -5124,6 +5355,19 @@ public:
         maintenance_clock1->setObjectName(QStringLiteral("maintenance_clock1"));
         maintenance_clock1->setEnabled(true);
         maintenance_clock1->setGeometry(QRect(890, 10, 241, 221));
+        pushButton_Scnario_Pression = new QPushButton(page_22);
+        pushButton_Scnario_Pression->setObjectName(QStringLiteral("pushButton_Scnario_Pression"));
+        pushButton_Scnario_Pression->setGeometry(QRect(1060, 470, 81, 81));
+        pushButton_Scnario_Pression->setStyleSheet(QLatin1String("\n"
+"\n"
+"\n"
+"#pushButton_Scnario_Pression {\n"
+"background-color: transparent;\n"
+"border-image: url(:Capt_Pression.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
         stackedWidgetMaintennance->addWidget(page_22);
         page_23 = new QWidget();
         page_23->setObjectName(QStringLiteral("page_23"));
@@ -5476,8 +5720,10 @@ public:
 "background: none;\n"
 "border: none;\n"
 "background-repeat: none;\n"
+"Display:center;\n"
 "}\n"
 ""));
+        comboBox_TypeRecl_2->setEditable(false);
         comboBox_id_Composant_2 = new QComboBox(page_26);
         comboBox_id_Composant_2->setObjectName(QStringLiteral("comboBox_id_Composant_2"));
         comboBox_id_Composant_2->setGeometry(QRect(520, 350, 231, 31));
@@ -5543,10 +5789,457 @@ public:
 "                   }"));
         stackedWidgetMaintennance->addWidget(page_27);
         stackedWidget_Main->addWidget(Maintenance);
+        page_15 = new QWidget();
+        page_15->setObjectName(QStringLiteral("page_15"));
+        stackedWidget_2 = new QStackedWidget(page_15);
+        stackedWidget_2->setObjectName(QStringLiteral("stackedWidget_2"));
+        stackedWidget_2->setGeometry(QRect(10, 10, 1161, 591));
+        QPalette palette57;
+        QBrush brush3(QColor(0, 101, 152, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette57.setBrush(QPalette::Active, QPalette::WindowText, brush3);
+        palette57.setBrush(QPalette::Inactive, QPalette::WindowText, brush3);
+        palette57.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        stackedWidget_2->setPalette(palette57);
+        page_16 = new QWidget();
+        page_16->setObjectName(QStringLiteral("page_16"));
+        pushButton_2 = new QPushButton(page_16);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(390, 160, 341, 81));
+        pushButton_2->setStyleSheet(QLatin1String("\n"
+"#pushButton_2 {\n"
+"background-color: transparent;\n"
+"border-image: url(:G.Marchand.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
+        pushButton_3 = new QPushButton(page_16);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(390, 290, 341, 81));
+        pushButton_3->setStyleSheet(QLatin1String("\n"
+"\n"
+"#pushButton_3 {\n"
+"background-color: transparent;\n"
+"border-image: url(:G.Mission.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
+        pushButton_4 = new QPushButton(page_16);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(810, 210, 141, 111));
+        pushButton_4->setStyleSheet(QLatin1String("#pushButton_4{\n"
+"background-color: transparent;\n"
+"border-image: url(:LogoStats.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        pushButton_Marche_2 = new QPushButton(page_16);
+        pushButton_Marche_2->setObjectName(QStringLiteral("pushButton_Marche_2"));
+        pushButton_Marche_2->setGeometry(QRect(20, 210, 171, 41));
+        pushButton_Marche_2->setStyleSheet(QLatin1String("#pushButton_Marche_2 {\n"
+"background-color: transparent;\n"
+"border-image: url(:Res.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        pushButton_Maintenance_2 = new QPushButton(page_16);
+        pushButton_Maintenance_2->setObjectName(QStringLiteral("pushButton_Maintenance_2"));
+        pushButton_Maintenance_2->setGeometry(QRect(20, 290, 171, 41));
+        pushButton_Maintenance_2->setStyleSheet(QLatin1String("#pushButton_Maintenance_2{\n"
+"background-color: transparent;\n"
+"border-image: url(:Maintenance.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        pushButton_MP_2 = new QPushButton(page_16);
+        pushButton_MP_2->setObjectName(QStringLiteral("pushButton_MP_2"));
+        pushButton_MP_2->setGeometry(QRect(20, 50, 171, 41));
+        pushButton_MP_2->setStyleSheet(QLatin1String("#pushButton_MP_2 {\n"
+"background-color: transparent;\n"
+"border-image: url(:Menu_Principal.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        pushButton_8 = new QPushButton(page_16);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        pushButton_8->setGeometry(QRect(20, 370, 171, 41));
+        pushButton_8->setStyleSheet(QLatin1String("#pushButton_8{\n"
+"background-color: transparent;\n"
+"border-image: url(:communication.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        pushButton_Environ_2 = new QPushButton(page_16);
+        pushButton_Environ_2->setObjectName(QStringLiteral("pushButton_Environ_2"));
+        pushButton_Environ_2->setGeometry(QRect(20, 130, 171, 41));
+        pushButton_Environ_2->setStyleSheet(QLatin1String("#pushButton_Environ_2{\n"
+"background-color: transparent;\n"
+"border-image: url(:envi.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        stackedWidget_2->addWidget(page_16);
+        page_17 = new QWidget();
+        page_17->setObjectName(QStringLiteral("page_17"));
+        page_17->setStyleSheet(QLatin1String("#page_17{\n"
+"background-color: transparent;\n"
+"border-image: url(:background.jpg);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        afficher_marchand = new QTableView(page_17);
+        afficher_marchand->setObjectName(QStringLiteral("afficher_marchand"));
+        afficher_marchand->setGeometry(QRect(360, 70, 431, 321));
+        modifier_marchand = new QPushButton(page_17);
+        modifier_marchand->setObjectName(QStringLiteral("modifier_marchand"));
+        modifier_marchand->setGeometry(QRect(910, 150, 61, 61));
+        modifier_marchand->setStyleSheet(QLatin1String("#modifier_marchand{\n"
+"background-color: transparent;\n"
+"border-image: url(:edit_ZV.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        supprimer_marchand = new QPushButton(page_17);
+        supprimer_marchand->setObjectName(QStringLiteral("supprimer_marchand"));
+        supprimer_marchand->setGeometry(QRect(910, 230, 51, 51));
+        supprimer_marchand->setStyleSheet(QLatin1String("#supprimer_marchand{\n"
+"background-color: transparent;\n"
+"border-image: url(:delete.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        ajouter_marchant = new QPushButton(page_17);
+        ajouter_marchant->setObjectName(QStringLiteral("ajouter_marchant"));
+        ajouter_marchant->setGeometry(QRect(908, 407, 101, 41));
+        ajouter_marchant->setStyleSheet(QLatin1String("#ajouter_marchant {\n"
+"background-color: transparent;\n"
+"border-image: url(:Ajouter.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
+        label_3 = new QLabel(page_17);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(60, 0, 231, 71));
+        QPalette palette58;
+        palette58.setBrush(QPalette::Active, QPalette::WindowText, brush3);
+        palette58.setBrush(QPalette::Inactive, QPalette::WindowText, brush3);
+        palette58.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_3->setPalette(palette58);
+        label_3->setFont(font20);
+        label_3->setStyleSheet(QStringLiteral(""));
+        numero_marchand = new QLineEdit(page_17);
+        numero_marchand->setObjectName(QStringLiteral("numero_marchand"));
+        numero_marchand->setGeometry(QRect(20, 270, 221, 31));
+        numero_marchand->setFont(font4);
+        nom_marchand = new QLineEdit(page_17);
+        nom_marchand->setObjectName(QStringLiteral("nom_marchand"));
+        nom_marchand->setGeometry(QRect(20, 130, 221, 31));
+        nom_marchand->setFont(font4);
+        prenom_marchand = new QLineEdit(page_17);
+        prenom_marchand->setObjectName(QStringLiteral("prenom_marchand"));
+        prenom_marchand->setGeometry(QRect(20, 200, 221, 31));
+        prenom_marchand->setFont(font4);
+        label_4 = new QLabel(page_17);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(20, 170, 101, 21));
+        QPalette palette59;
+        QBrush brush4(QColor(0, 170, 255, 255));
+        brush4.setStyle(Qt::SolidPattern);
+        palette59.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette59.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette59.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_4->setPalette(palette59);
+        label_4->setFont(font4);
+        label_5 = new QLabel(page_17);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(20, 100, 71, 21));
+        QPalette palette60;
+        palette60.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        QBrush brush5(QColor(85, 170, 255, 255));
+        brush5.setStyle(Qt::SolidPattern);
+        palette60.setBrush(QPalette::Active, QPalette::Text, brush5);
+        palette60.setBrush(QPalette::Active, QPalette::ButtonText, brush5);
+        QBrush brush6(QColor(85, 170, 255, 128));
+        brush6.setStyle(Qt::NoBrush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette60.setBrush(QPalette::Active, QPalette::PlaceholderText, brush6);
+#endif
+        palette60.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette60.setBrush(QPalette::Inactive, QPalette::Text, brush5);
+        palette60.setBrush(QPalette::Inactive, QPalette::ButtonText, brush5);
+        QBrush brush7(QColor(85, 170, 255, 128));
+        brush7.setStyle(Qt::NoBrush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette60.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush7);
+#endif
+        palette60.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        palette60.setBrush(QPalette::Disabled, QPalette::Text, brush5);
+        palette60.setBrush(QPalette::Disabled, QPalette::ButtonText, brush5);
+        QBrush brush8(QColor(85, 170, 255, 128));
+        brush8.setStyle(Qt::NoBrush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette60.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush8);
+#endif
+        label_5->setPalette(palette60);
+        label_5->setFont(font4);
+        label_5->setStyleSheet(QLatin1String("color:rgb(85, 170, 255);\n"
+""));
+        label_6 = new QLabel(page_17);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(20, 230, 261, 31));
+        QPalette palette61;
+        palette61.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette61.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette61.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_6->setPalette(palette61);
+        label_6->setFont(font4);
+        label_20 = new QLabel(page_17);
+        label_20->setObjectName(QStringLiteral("label_20"));
+        label_20->setGeometry(QRect(20, 310, 161, 21));
+        QPalette palette62;
+        palette62.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette62.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette62.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_20->setPalette(palette62);
+        label_20->setFont(font4);
+        emplacement_marchand = new QLineEdit(page_17);
+        emplacement_marchand->setObjectName(QStringLiteral("emplacement_marchand"));
+        emplacement_marchand->setGeometry(QRect(20, 340, 221, 31));
+        emplacement_marchand->setFont(font4);
+        id_marchand = new QLabel(page_17);
+        id_marchand->setObjectName(QStringLiteral("id_marchand"));
+        id_marchand->setGeometry(QRect(70, 380, 161, 31));
+        pushButton_5 = new QPushButton(page_17);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(900, 460, 101, 41));
+        pushButton_5->setStyleSheet(QLatin1String("#pushButton_5{\n"
+"background-color: transparent;\n"
+"border-image: url(:Annuler.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
+        label_21 = new QLabel(page_17);
+        label_21->setObjectName(QStringLiteral("label_21"));
+        label_21->setGeometry(QRect(360, 20, 121, 21));
+        QPalette palette63;
+        palette63.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette63.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette63.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_21->setPalette(palette63);
+        label_21->setFont(font4);
+        recherche_2 = new QLineEdit(page_17);
+        recherche_2->setObjectName(QStringLiteral("recherche_2"));
+        recherche_2->setGeometry(QRect(490, 20, 181, 31));
+        recherche_2->setFont(font4);
+        recherche_2->setStyleSheet(QStringLiteral("border-color: rgb(85, 170, 255);"));
+        label_37 = new QLabel(page_17);
+        label_37->setObjectName(QStringLiteral("label_37"));
+        label_37->setGeometry(QRect(30, 380, 56, 21));
+        QPalette palette64;
+        palette64.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette64.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette64.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_37->setPalette(palette64);
+        label_37->setFont(font4);
+        stackedWidget_2->addWidget(page_17);
+        page_18 = new QWidget();
+        page_18->setObjectName(QStringLiteral("page_18"));
+        page_18->setStyleSheet(QLatin1String("#page_18{\n"
+"background-color: transparent;\n"
+"border-image: url(:background.jpg);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        horaire_mission = new QLineEdit(page_18);
+        horaire_mission->setObjectName(QStringLiteral("horaire_mission"));
+        horaire_mission->setGeometry(QRect(30, 190, 211, 31));
+        horaire_mission->setFont(font4);
+        label_49 = new QLabel(page_18);
+        label_49->setObjectName(QStringLiteral("label_49"));
+        label_49->setGeometry(QRect(30, 220, 191, 31));
+        QPalette palette65;
+        palette65.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette65.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette65.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_49->setPalette(palette65);
+        label_49->setFont(font4);
+        supprimer_mission = new QPushButton(page_18);
+        supprimer_mission->setObjectName(QStringLiteral("supprimer_mission"));
+        supprimer_mission->setGeometry(QRect(900, 260, 61, 51));
+        supprimer_mission->setStyleSheet(QLatin1String("#supprimer_mission{\n"
+"background-color: transparent;\n"
+"border-image: url(:delete.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        afficher_mission = new QTableView(page_18);
+        afficher_mission->setObjectName(QStringLiteral("afficher_mission"));
+        afficher_mission->setGeometry(QRect(320, 70, 461, 321));
+        label_50 = new QLabel(page_18);
+        label_50->setObjectName(QStringLiteral("label_50"));
+        label_50->setGeometry(QRect(80, 0, 181, 61));
+        QPalette palette66;
+        QBrush brush9(QColor(0, 42, 125, 255));
+        brush9.setStyle(Qt::SolidPattern);
+        palette66.setBrush(QPalette::Active, QPalette::WindowText, brush9);
+        palette66.setBrush(QPalette::Inactive, QPalette::WindowText, brush9);
+        palette66.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_50->setPalette(palette66);
+        label_50->setFont(font4);
+        modifier_mission = new QPushButton(page_18);
+        modifier_mission->setObjectName(QStringLiteral("modifier_mission"));
+        modifier_mission->setGeometry(QRect(900, 180, 61, 61));
+        modifier_mission->setStyleSheet(QLatin1String("#modifier_mission{\n"
+"background-color: transparent;\n"
+"border-image: url(:edit_ZV.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        cin_mission = new QLineEdit(page_18);
+        cin_mission->setObjectName(QStringLiteral("cin_mission"));
+        cin_mission->setGeometry(QRect(30, 120, 211, 31));
+        cin_mission->setFont(font4);
+        ajouter_mission = new QPushButton(page_18);
+        ajouter_mission->setObjectName(QStringLiteral("ajouter_mission"));
+        ajouter_mission->setGeometry(QRect(910, 397, 91, 41));
+        ajouter_mission->setStyleSheet(QLatin1String("#ajouter_mission {\n"
+"background-color: transparent;\n"
+"border-image: url(:Ajouter.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
+        date_mission = new QLineEdit(page_18);
+        date_mission->setObjectName(QStringLiteral("date_mission"));
+        date_mission->setGeometry(QRect(30, 250, 211, 31));
+        date_mission->setFont(font4);
+        label_53 = new QLabel(page_18);
+        label_53->setObjectName(QStringLiteral("label_53"));
+        label_53->setGeometry(QRect(30, 90, 121, 21));
+        QPalette palette67;
+        palette67.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette67.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette67.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_53->setPalette(palette67);
+        label_53->setFont(font4);
+        type_mission = new QLineEdit(page_18);
+        type_mission->setObjectName(QStringLiteral("type_mission"));
+        type_mission->setGeometry(QRect(30, 330, 211, 31));
+        type_mission->setFont(font4);
+        label_72 = new QLabel(page_18);
+        label_72->setObjectName(QStringLiteral("label_72"));
+        label_72->setGeometry(QRect(30, 160, 201, 31));
+        QPalette palette68;
+        palette68.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette68.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette68.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_72->setPalette(palette68);
+        label_72->setFont(font4);
+        label_83 = new QLabel(page_18);
+        label_83->setObjectName(QStringLiteral("label_83"));
+        label_83->setGeometry(QRect(30, 290, 181, 31));
+        QPalette palette69;
+        palette69.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette69.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette69.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_83->setPalette(palette69);
+        label_83->setFont(font4);
+        emplacement_mission = new QLineEdit(page_18);
+        emplacement_mission->setObjectName(QStringLiteral("emplacement_mission"));
+        emplacement_mission->setGeometry(QRect(30, 400, 211, 31));
+        emplacement_mission->setFont(font4);
+        label_84 = new QLabel(page_18);
+        label_84->setObjectName(QStringLiteral("label_84"));
+        label_84->setGeometry(QRect(30, 360, 161, 31));
+        QPalette palette70;
+        palette70.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette70.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette70.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_84->setPalette(palette70);
+        label_84->setFont(font4);
+        pushButton_6 = new QPushButton(page_18);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(912, 450, 91, 41));
+        pushButton_6->setStyleSheet(QLatin1String("#pushButton_6{\n"
+"background-color: transparent;\n"
+"border-image: url(:Annuler.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
+        recherche_mission = new QLineEdit(page_18);
+        recherche_mission->setObjectName(QStringLiteral("recherche_mission"));
+        recherche_mission->setGeometry(QRect(490, 20, 191, 31));
+        recherche_mission->setFont(font4);
+        label_85 = new QLabel(page_18);
+        label_85->setObjectName(QStringLiteral("label_85"));
+        label_85->setGeometry(QRect(370, 20, 121, 31));
+        QPalette palette71;
+        palette71.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette71.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette71.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        label_85->setPalette(palette71);
+        label_85->setFont(font4);
+        stackedWidget_2->addWidget(page_18);
+        page_19 = new QWidget();
+        page_19->setObjectName(QStringLiteral("page_19"));
+        page_19->setStyleSheet(QLatin1String("#page_19{\n"
+"background-color: transparent;\n"
+"border-image: url(:background.jpg);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+""));
+        pushButton_7 = new QPushButton(page_19);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+        pushButton_7->setGeometry(QRect(690, 10, 93, 28));
+        pushButton_7->setStyleSheet(QLatin1String("#pushButton_7{\n"
+"background-color: transparent;\n"
+"border-image: url(:Annuler.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
+        horizontalFrame = new QFrame(page_19);
+        horizontalFrame->setObjectName(QStringLiteral("horizontalFrame"));
+        horizontalFrame->setGeometry(QRect(20, 50, 781, 601));
+        horizontalLayout_2 = new QHBoxLayout(horizontalFrame);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        stackedWidget_2->addWidget(page_19);
+        stackedWidget_Main->addWidget(page_15);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1162, 21));
+        menubar->setGeometry(QRect(0, 0, 1162, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -5555,13 +6248,14 @@ public:
         retranslateUi(MainWindow);
 
         stackedWidget_Main->setCurrentIndex(4);
-        stackedWidget_resources_humaines->setCurrentIndex(0);
+        stackedWidget_resources_humaines->setCurrentIndex(8);
         pushButton_Annuler_MAJ->setDefault(false);
-        stackedWidget_Environnement->setCurrentIndex(0);
+        stackedWidget_Environnement->setCurrentIndex(9);
         pushButton_Annuler_MAJ_R->setDefault(false);
         comboBox_TypeRech_ZV->setCurrentIndex(-1);
         stackedWidget->setCurrentIndex(0);
-        stackedWidgetMaintennance->setCurrentIndex(3);
+        stackedWidgetMaintennance->setCurrentIndex(1);
+        stackedWidget_2->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -5591,6 +6285,8 @@ public:
         pushButton_Menu_RH->setText(QString());
         pushButton_Close_em->setText(QString());
         lineEdit_recherche_employe->setText(QApplication::translate("MainWindow", "chercher", Q_NULLPTR));
+        pushButton_tri_em->setText(QString());
+        pushButton_statistique_em->setText(QString());
         pushButton_Annuler_AJ->setText(QString());
         pushButton_Close_Em_AJ->setText(QString());
         label_41->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; color:#2d80d9;\">Pr\303\251nom</span></p></body></html>", Q_NULLPTR));
@@ -5652,7 +6348,7 @@ public:
         comboBox_Type_MAJ_compte->clear();
         comboBox_Type_MAJ_compte->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Administrateur", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "Moderateur", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Agent", Q_NULLPTR)
         );
         lineEdit_cin_MAJ_compte->setText(QString());
         pushButton_Save_compte_MAJ->setText(QString());
@@ -5666,6 +6362,11 @@ public:
         pushButton_Close_affu->setText(QString());
         pushButton_Close_affe->setText(QString());
         pushButton_annuler_affe->setText(QString());
+        pushButton_imprimer_em->setText(QString());
+        pushButton_send->setText(QString());
+        pushButton_cancelm->setText(QString());
+        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#2d80d9;\">Objet</span></p></body></html>", Q_NULLPTR));
+        pushButton_retour_em->setText(QString());
         pushButton_ZV->setText(QString());
         pushButton_Close_Envir->setText(QString());
         pushButton_MP_Envi->setText(QString());
@@ -5696,6 +6397,7 @@ public:
         pushButton_Icon_serachR->setText(QString());
         pushButton_StatR->setText(QString());
         tri_ramassage->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#ff0000;\">Text Label</span></p></body></html>", Q_NULLPTR));
+        pushButton_Disab->setText(QString());
         pushButton_Annuler_MAJ_R->setText(QString());
         pushButton_SaveR_MAJ->setText(QString());
         timeEdit_DureeMAJ->setDisplayFormat(QApplication::translate("MainWindow", "HH:mm", Q_NULLPTR));
@@ -5740,6 +6442,7 @@ public:
         pushButton_Irrigat->setText(QString());
         pushButton_Icon_serachZV->setText(QString());
         comboBox_TypeRech_ZV->setCurrentText(QString());
+        pushButton_Ajout_ZV_Disab->setText(QString());
         lineEdit_ID_MAJ_ZV->setText(QString());
         lineEdit_Libelle_MAJ_ZV->setText(QString());
         lineEdit_Aire_MAJ_ZV->setText(QString());
@@ -5780,7 +6483,7 @@ public:
         close->setText(QString());
         pushButtonajoutcit->setText(QString());
         Menu->setText(QString());
-        pushButton_stat->setText(QApplication::translate("MainWindow", "statistique", Q_NULLPTR));
+        pushButton_stat->setText(QString());
         tri->setText(QApplication::translate("MainWindow", "TRIER", Q_NULLPTR));
         input_tri->clear();
         input_tri->insertItems(0, QStringList()
@@ -5794,9 +6497,9 @@ public:
         icon_2->setText(QString());
         input_etat->clear();
         input_etat->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "en attente", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "pass\303\251", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "annul\303\251", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "en cours", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "passe", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "annule", Q_NULLPTR)
         );
         label_40->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:36pt; font-weight:600; color:#5500ff;\">Ajout d'un \303\251v\303\251nement</span></p></body></html>", Q_NULLPTR));
         label_209->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#3a00af;\">Nom</span></p></body></html>", Q_NULLPTR));
@@ -5821,6 +6524,7 @@ public:
         label_175->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#3a00af;\">Horaire</span></p></body></html>", Q_NULLPTR));
         label_176->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#3a00af;\">Emplacement</span></p></body></html>", Q_NULLPTR));
         label_177->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#3a00af;\">Etat</span></p></body></html>", Q_NULLPTR));
+        mailing->setText(QString());
         maj_cancel->setText(QString());
         maj_save->setText(QString());
         icon_4->setText(QString());
@@ -5836,6 +6540,9 @@ public:
         Menu_2->setText(QString());
         ajouter_cit->setText(QString());
         label_34->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:36pt; font-weight:600; color:#5500ff;\">Liste des citoyens</span></p></body></html>", Q_NULLPTR));
+        rech_id->setText(QApplication::translate("MainWindow", "Identifiant", Q_NULLPTR));
+        rech_prenom->setText(QApplication::translate("MainWindow", "Pr\303\251nom", Q_NULLPTR));
+        rech_nom->setText(QApplication::translate("MainWindow", "Nom", Q_NULLPTR));
         pushButton_save_2->setText(QString());
         pushButton_cancel_2->setText(QString());
         input_sexe->clear();
@@ -5866,7 +6573,6 @@ public:
         label_198->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#3a00af;\">Adresse mail</span></p></body></html>", Q_NULLPTR));
         label_199->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#3a00af;\">Date de naissance</span></p></body></html>", Q_NULLPTR));
         label_200->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#3a00af;\">T\303\251l\303\251phone</span></p></body></html>", Q_NULLPTR));
-        icon_7->setText(QString());
         label_48->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:36pt; font-weight:600; color:#5500ff;\">Mise \303\240 jour d'un citoyen</span></p></body></html>", Q_NULLPTR));
         label_201->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#3a00af;\">Pr\303\251nom</span></p></body></html>", Q_NULLPTR));
         label_202->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#3a00af;\">Nom</span></p></body></html>", Q_NULLPTR));
@@ -5880,6 +6586,9 @@ public:
         maj_cancel_2->setText(QString());
         stat_cancel->setText(QString());
         label_47->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:36pt; font-weight:600; color:#5500ff;\">Statistiques</span></p></body></html>", Q_NULLPTR));
+        send->setText(QString());
+        label_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#2d80d9;\">Objet</span></p></body></html>", Q_NULLPTR));
+        back_mail->setText(QString());
         icon->setText(QString());
         pushButton_Reclamations_2->setText(QString());
         pushButton_Ressource_Materiel_2->setText(QString());
@@ -5888,6 +6597,7 @@ public:
         MenuP_2->setText(QString());
         marche_2->setText(QString());
         communication_2->setText(QString());
+        pushButton_Scnario_Pression->setText(QString());
 #ifndef QT_NO_TOOLTIP
         pushButton_AjouterComposant_2->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Ajouter Un Comlposant</p></body></html>", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
@@ -5925,8 +6635,8 @@ public:
         comboBox_NomrouteComp_2->clear();
         comboBox_NomrouteComp_2->insertItems(0, QStringList()
          << QString()
-         << QApplication::translate("MainWindow", "  Nkhilette", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "  Ghazela", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Nkhilette", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Ghazela", Q_NULLPTR)
         );
 #ifndef QT_NO_TOOLTIP
         comboBox_NomrouteComp_2->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Choisir le nom de route</p></body></html>", Q_NULLPTR));
@@ -5934,8 +6644,8 @@ public:
         comboBox_typeComp_2->clear();
         comboBox_typeComp_2->insertItems(0, QStringList()
          << QString()
-         << QApplication::translate("MainWindow", "  Poteau Electrique", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "  Canal d'Eau", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Poteau Electrique", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Canal d'Eau", Q_NULLPTR)
         );
 #ifndef QT_NO_TOOLTIP
         comboBox_typeComp_2->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Choisir le type de composant !</p></body></html>", Q_NULLPTR));
@@ -5947,8 +6657,8 @@ public:
         pushButton_AnnulerSauvgarderCoomposant_2->setText(QString());
         comboBox_EtatComp_2->clear();
         comboBox_EtatComp_2->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "  Fonctionne", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "  En Panne", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Fonctionne", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "En Panne", Q_NULLPTR)
         );
 #ifndef QT_NO_TOOLTIP
         comboBox_EtatComp_2->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Choisir le type de composant !</p></body></html>", Q_NULLPTR));
@@ -5965,8 +6675,8 @@ public:
         comboBox_NomRouteRecl_2->clear();
         comboBox_NomRouteRecl_2->insertItems(0, QStringList()
          << QString()
-         << QApplication::translate("MainWindow", "   Ghazela", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "   Nkhilette", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Ghazela", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Nkhilette", Q_NULLPTR)
         );
 #ifndef QT_NO_TOOLTIP
         comboBox_NomRouteRecl_2->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Choisir le nom de route</p></body></html>", Q_NULLPTR));
@@ -5975,7 +6685,7 @@ public:
         comboBox_NatureRecl_2->clear();
         comboBox_NatureRecl_2->insertItems(0, QStringList()
          << QString()
-         << QApplication::translate("MainWindow", "   Urgente", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Urgente", Q_NULLPTR)
         );
 #ifndef QT_NO_TOOLTIP
         comboBox_NatureRecl_2->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Choisir la nature de Reclamation</p></body></html>", Q_NULLPTR));
@@ -5983,8 +6693,8 @@ public:
         comboBox_TypeRecl_2->clear();
         comboBox_TypeRecl_2->insertItems(0, QStringList()
          << QString()
-         << QApplication::translate("MainWindow", "   potraux electrique", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "   canal d'eau", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "potraux electrique", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "canal d'eau", Q_NULLPTR)
         );
 #ifndef QT_NO_TOOLTIP
         comboBox_id_Composant_2->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Choisir la nature de Reclamation</p></body></html>", Q_NULLPTR));
@@ -6001,6 +6711,38 @@ public:
          << QApplication::translate("MainWindow", "    Type", Q_NULLPTR)
         );
         pushButton_StatMaint_Retour->setText(QString());
+        pushButton_2->setText(QString());
+        pushButton_3->setText(QString());
+        pushButton_4->setText(QString());
+        pushButton_Marche_2->setText(QString());
+        pushButton_Maintenance_2->setText(QString());
+        pushButton_MP_2->setText(QString());
+        pushButton_8->setText(QString());
+        pushButton_Environ_2->setText(QString());
+        modifier_marchand->setText(QString());
+        supprimer_marchand->setText(QString());
+        ajouter_marchant->setText(QString());
+        label_3->setText(QApplication::translate("MainWindow", "Gestion marchand", Q_NULLPTR));
+        label_4->setText(QApplication::translate("MainWindow", "Prenom", Q_NULLPTR));
+        label_5->setText(QApplication::translate("MainWindow", "Nom", Q_NULLPTR));
+        label_6->setText(QApplication::translate("MainWindow", "Numero d'autorisation", Q_NULLPTR));
+        label_20->setText(QApplication::translate("MainWindow", "Emplacement", Q_NULLPTR));
+        id_marchand->setText(QString());
+        pushButton_5->setText(QString());
+        label_21->setText(QApplication::translate("MainWindow", "recherche", Q_NULLPTR));
+        label_37->setText(QApplication::translate("MainWindow", "ID:", Q_NULLPTR));
+        label_49->setText(QApplication::translate("MainWindow", "Date d'execution", Q_NULLPTR));
+        supprimer_mission->setText(QString());
+        label_50->setText(QApplication::translate("MainWindow", "Gestion mission", Q_NULLPTR));
+        modifier_mission->setText(QString());
+        ajouter_mission->setText(QString());
+        label_53->setText(QApplication::translate("MainWindow", "CIN agent", Q_NULLPTR));
+        label_72->setText(QApplication::translate("MainWindow", "Horaire de depart", Q_NULLPTR));
+        label_83->setText(QApplication::translate("MainWindow", "Type de mission", Q_NULLPTR));
+        label_84->setText(QApplication::translate("MainWindow", "Emplacement", Q_NULLPTR));
+        pushButton_6->setText(QString());
+        label_85->setText(QApplication::translate("MainWindow", "recherche", Q_NULLPTR));
+        pushButton_7->setText(QString());
     } // retranslateUi
 
 };

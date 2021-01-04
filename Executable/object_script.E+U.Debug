@@ -3,6 +3,7 @@ INPUT(
 ./debug/Capt_Pression.o
 ./debug/Employe.o
 ./debug/capteur_humidite.o
+./debug/capteur_mouvement.o
 ./debug/citoyen.o
 ./debug/clock.o
 ./debug/compte.o
@@ -10,10 +11,14 @@ INPUT(
 ./debug/evenement.o
 ./debug/main.o
 ./debug/mainwindow.o
+./debug/marchand.o
+./debug/mission.o
 ./debug/ramassage.o
 ./debug/reclamation.o
 ./debug/ressourcemateriel.o
+./debug/smtp.o
 ./debug/zone_verte.o
 ./debug/qrc_buttons.o
 ./debug/moc_mainwindow.o
+./debug/moc_smtp.o
 );

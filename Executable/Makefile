@@ -236,8 +236,10 @@ Makefile: ../E+U.pro C:/Qt/5.9.9/mingw53_32/mkspecs/win32-g++/qmake.conf C:/Qt/5
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5Charts.prl \
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl \
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5Widgets.prl \
+		C:/Qt/5.9.9/mingw53_32/lib/Qt5Quick.prl \
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5Gui.prl \
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5Sql.prl \
+		C:/Qt/5.9.9/mingw53_32/lib/Qt5Qml.prl \
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5Network.prl \
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5SerialPort.prl \
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5Core.prl
@@ -417,8 +419,10 @@ C:/Qt/5.9.9/mingw53_32/lib/Qt5Multimedia.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5Charts.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5Widgets.prl:
+C:/Qt/5.9.9/mingw53_32/lib/Qt5Quick.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5Gui.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5Sql.prl:
+C:/Qt/5.9.9/mingw53_32/lib/Qt5Qml.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5Network.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5SerialPort.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5Core.prl:
