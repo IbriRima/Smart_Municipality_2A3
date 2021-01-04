@@ -98,5 +98,6 @@
         <file>Reclamation_hover.png</file>
         <file>Ressource Materiels.png</file>
         <file>Ressource Materiels_hover.png</file>
+        <file>Disabled_Envi.png</file>
     </qresource>
 </RCC>

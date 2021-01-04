@@ -55,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
-    QIcon m ("C:/Users/user/Desktop/Smart_Municipality_2A3/munifacility_2Nf_3");
+    QIcon m ("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/munifacility_2Nf_3");
      setWindowIcon(m);
     ui->stackedWidget_Main->setCurrentIndex(1);
   ui->stackedWidget_resources_humaines->setCurrentIndex(0);
@@ -217,7 +217,7 @@ clock4->show();
   //Delete gif
   auto movie = new QMovie(this);
 
-  movie->setFileName("C:/Users/user/Desktop/Smart_Municipality_2A3/gifs2.gif");
+  movie->setFileName("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/gifs2.gif");
   QSize size(100,100);
     connect(movie, &QMovie::frameChanged, [=]{
       ui->pushButton_Delete_Ramas->setIcon(movie->currentPixmap());
@@ -237,7 +237,7 @@ clock4->show();
 
     auto movie2 = new QMovie(this);
 
-    movie2->setFileName("C:/Users/user/Desktop/Smart_Municipality_2A3/crayons.gif");
+    movie2->setFileName("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/crayons.gif");
       connect(movie2, &QMovie::frameChanged, [=]{
         ui->pushButton_MAJ_Ramas->setIcon(movie2->currentPixmap());
       });
@@ -256,14 +256,14 @@ clock4->show();
 
       auto movie3 = new QMovie(this);
       QSize size2(31,31);
-      movie3->setFileName("C:/Users/user/Desktop/Smart_Municipality_2A3/loupe_anim.gif");
+      movie3->setFileName("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/loupe_anim.gif");
       connect(movie3, &QMovie::frameChanged, [=]{
         ui->pushButton_Icon_serachZV->setIcon(movie3->currentPixmap());
 
       });
       ui->pushButton_Icon_serachZV->setIconSize(size2);
 
-      movie3->setFileName("C:/Users/user/Desktop/Smart_Municipality_2A3/loupe_anim.gif");
+      movie3->setFileName("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/loupe_anim.gif");
       connect(movie3, &QMovie::frameChanged, [=]{
         ui->pushButton_Icon_serachR->setIcon(movie3->currentPixmap());
 
@@ -275,7 +275,7 @@ clock4->show();
       //print gif
       auto movie4 = new QMovie(this);
       QSize size3(90,71);
-      movie4->setFileName("C:/Users/user/Desktop/Smart_Municipality_2A3/printer2.gif");
+      movie4->setFileName("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/printer2.gif");
       connect(movie4, &QMovie::frameChanged, [=]{
         ui->pushButton_Print->setIcon(movie4->currentPixmap());
    ui->pushButton_Imprimer->setIcon(movie4->currentPixmap());
@@ -287,7 +287,7 @@ clock4->show();
 
       auto movie5 = new QMovie(this);
       QSize size4(90,71);
-      movie5->setFileName("C:/Users/user/Desktop/Smart_Municipality_2A3/irrigation3.gif");
+      movie5->setFileName("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/irrigation3.gif");
       connect(movie5, &QMovie::frameChanged, [=]{
         ui->pushButton_Irrigat->setIcon(movie5->currentPixmap());
 
@@ -297,16 +297,7 @@ clock4->show();
       movie5->setSpeed(190);
 
       //Type d'employe
-      int test=1 ;
-      if(test==0)
-       {  ui->pushButton->setDisabled(true);
-          ui->pushButton_Ajout_ZV->setDisabled(true);
-          ui->pushButton_MAJ_ZV->setDisabled(true);
-          ui->pushButton_MAJ_Ramas->setDisabled(true);
-          ui->pushButton_Delete_Ramas->setDisabled(true);
-          ui->pushButton_Sup_ZV->setDisabled(true);
 
-      }
 
    //Connection Arduino Capteur Humidité
     int ret1=C.connect_capteur_humidite();
@@ -321,6 +312,8 @@ clock4->show();
       break;
       }
 
+  ui->pushButton_Ajout_ZV_Disab->hide();
+  ui->pushButton_Disab->hide();
 
 /************************************* End Rima *************************************************/
  /****************************************************Begin Nardine*********************************************/
@@ -727,7 +720,7 @@ void MainWindow::on_pushButton_Close_affe_clicked()
 
 void MainWindow::on_pushButton_Environ_pressed()
 {  QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/Wassim/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_Environ,"geometry");
@@ -758,7 +751,7 @@ void MainWindow::on_pushButton_Marche_clicked()
 
 void MainWindow::on_pushButton_Marche_pressed()
 { QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/Wassim/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_Marche,"geometry");
@@ -779,7 +772,7 @@ void MainWindow::on_pushButton_Marche_pressed()
 
 void MainWindow::on_pushButton_MP_pressed()
 { QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/Wassim/Desktop/final/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_MP,"geometry");
@@ -804,7 +797,7 @@ void MainWindow::on_pushButton_MP_pressed()
 
 void MainWindow::on_pushButton_Maintenance_pressed()
 { QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/Wassim/Desktop/final/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_Maintenance,"geometry");
@@ -1242,6 +1235,21 @@ QSqlQuery test;
     }
 
 
+    if(aud==1)
+       {
+          ui->pushButton->setDisabled(true);
+          ui->pushButton_Ajout_ZV->setDisabled(true);
+          ui->pushButton_MAJ_ZV->setDisabled(true);
+          ui->pushButton_MAJ_Ramas->setDisabled(true);
+          ui->pushButton_Delete_Ramas->setDisabled(true);
+          ui->pushButton_Sup_ZV->setDisabled(true);
+          ui->pushButton_Ajout_ZV_Disab->show();
+          ui->pushButton_Ajout_ZV->hide();
+          ui->pushButton_Disab->show();
+          ui->pushButton->hide();
+      }
+
+
 }
 
 void MainWindow::on_lineEdit_recherche_compte_textChanged(const QString &arg1)
@@ -1460,7 +1468,7 @@ void MainWindow::on_pushButton_Save_AJ_clicked()
 {  INIT();
 Ramassage R;
 QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     ui->tableView_Ramas->setModel(tmpR.afficher());
@@ -1549,7 +1557,7 @@ void MainWindow::on_pushButton_Save_ZV_clicked()
     INIT_ZV();
     //sound
     QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
         player->setVolume(50);
         player->play();
 
@@ -1590,7 +1598,7 @@ void MainWindow::on_pushButton_Annuler_ZV_MAJ_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
 
@@ -1602,7 +1610,7 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_Annuler_AJ_R_clicked()
 {    INIT();
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     ui->tableView_Ramas->setModel(tmpR.afficher());
@@ -1614,7 +1622,7 @@ void MainWindow::on_pushButton_Annuler_MAJ_R_clicked()
 {
 
     QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
         player->setVolume(50);
         player->play();
         ui->tableView_Ramas->setModel(tmpR.afficher());
@@ -1636,7 +1644,7 @@ void MainWindow::on_pushButton_Annuler_ZV_clicked()
 {
     INIT_ZV();
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     ui->stackedWidget_Environnement->setCurrentIndex(4);
@@ -1647,7 +1655,7 @@ void MainWindow::on_pushButton_Annuler_ZV_clicked()
 void MainWindow::on_pushButton_Menu_Environ_Aff_clicked()
 {
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
      ui->stackedWidget_Environnement->setCurrentIndex(0);
@@ -1658,7 +1666,7 @@ void MainWindow::on_pushButton_Menu_Environ_Aff_clicked()
 void MainWindow::on_pushButton_Ajout_ZV_clicked()
 {
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
     ui->stackedWidget_Environnement->setCurrentIndex(6);
@@ -1671,7 +1679,7 @@ void MainWindow::on_pushButton_Ajout_ZV_clicked()
 
 void MainWindow::on_pushButton_Menu_Environ_Aff_ZV_clicked()
 {QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
      ui->stackedWidget_Environnement->setCurrentIndex(0);
@@ -1794,9 +1802,8 @@ void MainWindow::on_pushButton_Delete_Ramas_clicked()
 {
 
     QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/trash.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/trash.mp3"));
         player->setVolume(50);
-
 Ramassage R;
 
 
@@ -1899,7 +1906,7 @@ void MainWindow::on_pushButton_MAJ_Ramas_clicked()
 void MainWindow::on_pushButton_Save_ZV_MAJ_clicked()
 {
     QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
     player->setVolume(50);
     player->play();
 
@@ -1935,7 +1942,7 @@ void MainWindow::on_pushButton_SaveR_MAJ_clicked()
         Ramassage R;
     //Sound
        QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
         player->setVolume(50);
         player->play();
         ui->tableView_Ramas->setModel(tmpR.afficher());
@@ -2239,7 +2246,7 @@ void MainWindow::on_pushButton_Imprimer_clicked()
     QFile file;
     QDir::setCurrent("/tmp");
     file.setFileName("back2.jpg");
-    QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
+    QDir::setCurrent("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3");
     file.open(QIODevice::ReadOnly);
     QImage img(file.fileName());
     painter.drawImage(0,0,img.scaled(4958,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));
@@ -2248,7 +2255,7 @@ void MainWindow::on_pushButton_Imprimer_clicked()
     QFile file2;
     QDir::setCurrent("/tmp");
     file2.setFileName("municipal.png");
-    QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
+    QDir::setCurrent("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3");
     file2.open(QIODevice::ReadOnly);
     QImage img2(file2.fileName());
     painter.drawImage(0,0,img2.scaled(900,1000, Qt::IgnoreAspectRatio, Qt::FastTransformation));
@@ -2304,7 +2311,7 @@ qDebug()<<"Entrain de mesurer l'humidité de cette zone verte";
           ui->Notif_irrigation->show();
             ui->tableView_ZV->setStyleSheet(" selection-background-color: red ");
             QMediaPlayer *player = new QMediaPlayer;
-            player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Alarm.mp3"));
+            player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Alarm.mp3"));
             player->setVolume(30);
             player->play();
             C.write_to_arduino(data);
@@ -2484,7 +2491,7 @@ ui->stackedWidget_Main->setCurrentIndex(0);
 void MainWindow::on_pushButton_MP_Envi_pressed()
 {
     QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
         player->setVolume(50);
         player->play();
         QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_MP_Envi,"geometry");
@@ -2512,7 +2519,7 @@ void MainWindow::on_pushButton_Marche_Envi_clicked()
 void MainWindow::on_pushButton_Marche_Envi_pressed()
 {
     QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
         player->setVolume(50);
         player->play();
         QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_Marche_Envi,"geometry");
@@ -2540,7 +2547,7 @@ void MainWindow::on_pushButton_RH_Envi_clicked()
 void MainWindow::on_pushButton_RH_Envi_pressed()
 {
     QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
         player->setVolume(50);
         player->play();
         QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_RH_Envi,"geometry");
@@ -2567,7 +2574,7 @@ ui->stackedWidgetMaintennance->setCurrentIndex(1);
 void MainWindow::on_pushButton_Maintenance_Envi_pressed()
 {
     QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
         player->setVolume(50);
         player->play();
         QPropertyAnimation *animation= new QPropertyAnimation(ui->pushButton_Maintenance_Envi,"geometry");
@@ -2594,7 +2601,7 @@ void MainWindow::on_communication_Envi_clicked()
 void MainWindow::on_communication_Envi_pressed()
 {
     QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/user/Desktop/Smart_Municipality_2A3/Click2.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Click2.mp3"));
         player->setVolume(50);
         player->play();
         QPropertyAnimation *animation= new QPropertyAnimation(ui->communication_Envi,"geometry");
@@ -3242,6 +3249,10 @@ void MainWindow::on_pushButton_Ressource_Materiel_2_clicked()
 
     ui->tableView_Ressources_2->setModel( R.AfficherComposant());
 
+    if(aud==1)
+     {
+        ui->pushButton_AjouterComposant_2->setDisabled(true);
+    }
     ////// edit delete buttons
     ///
     ///
@@ -3272,7 +3283,14 @@ void MainWindow::on_pushButton_Ressource_Materiel_2_clicked()
                            connect(EDIT, SIGNAL(clicked()), signalMapper1, SLOT(map()));
                            signalMapper1->setMapping(EDIT, i);
 
+                           if(aud==1)
+                            {
+                               DELT->setDisabled(true);
+                               EDIT->setDisabled(true);
+                               DELT->setStyleSheet("background-color : gray;color : white ");
 
+                               EDIT->setStyleSheet("background-color : gray;color : white ");
+                           }
         }
     ////
 
@@ -3354,7 +3372,14 @@ void MainWindow::on_pushButton_SauvgarderComposant_2_clicked()
                           connect(EDIT, SIGNAL(clicked()), signalMapper1, SLOT(map()));
                           signalMapper1->setMapping(EDIT, i);
 
+                          if(aud==1)
+                           {
+                              DELT->setDisabled(true);
+                              EDIT->setDisabled(true);
+                              DELT->setStyleSheet("background-color : gray;color : white ");
 
+                              EDIT->setStyleSheet("background-color : gray;color : white ");
+                          }
 
 
 }
@@ -3410,6 +3435,10 @@ void MainWindow::on_pushButton_Reclamations_2_clicked()
 
     ui->tableView_Reclamations_2->setModel( R.AfficherReclamation());
 
+    if(aud==1)
+    {
+        ui->pushButton_AjouterReclamation_2->setDisabled(true);
+    }
 
     ////// edit delete buttons
     ///
@@ -3437,6 +3466,14 @@ void MainWindow::on_pushButton_Reclamations_2_clicked()
                            connect(EDIT, SIGNAL(clicked()), signalMapper1, SLOT(map()));
                            signalMapper1->setMapping(EDIT, i);
 
+                           if(aud==1)
+                            {
+                               DELT->setDisabled(true);
+                               EDIT->setDisabled(true);
+                               DELT->setStyleSheet("background-color : gray;color : white ");
+
+                               EDIT->setStyleSheet("background-color : gray;color : white ");
+                           }
 
 }
     ////
@@ -3537,6 +3574,14 @@ void MainWindow::on_pushButton_Sauvgarder_Reclamation_2_clicked()
                            connect(EDIT, SIGNAL(clicked()), signalMapper1, SLOT(map()));
                            signalMapper1->setMapping(EDIT, i);
 
+                           if(aud==1)
+                            {
+                               DELT->setDisabled(true);
+                               EDIT->setDisabled(true);
+                               DELT->setStyleSheet("background-color : gray;color : white ");
+
+                               EDIT->setStyleSheet("background-color : gray;color : white ");
+                           }
 }
     ////
 
@@ -3608,6 +3653,14 @@ void MainWindow::DeleteSlotRessource(int i){
                             connect(EDIT, SIGNAL(clicked()), signalMapper1, SLOT(map()));
                             signalMapper1->setMapping(EDIT, i);
 
+                            if(aud==1)
+                             {
+                                DELT->setDisabled(true);
+                                EDIT->setDisabled(true);
+                                DELT->setStyleSheet("background-color : gray;color : white ");
+
+                                EDIT->setStyleSheet("background-color : gray;color : white ");
+                            }
 
   }
 
@@ -3624,7 +3677,7 @@ void MainWindow::DeleteSlotReclamation(int i){
 
    QString id= ui->tableView_Reclamations_2->model()->index(i,6).data().toString();
 
-      if(id=="12"){A.write_to_arduino("1");};
+      if(id=="12"){A.write_to_arduino("2");};
 
      R.SupprimerReclamation(id);
 
@@ -3655,7 +3708,14 @@ void MainWindow::DeleteSlotReclamation(int i){
                             connect(EDIT, SIGNAL(clicked()), signalMapper1, SLOT(map()));
                             signalMapper1->setMapping(EDIT, i);
 
+                            if(aud==1)
+                             {
+                                DELT->setDisabled(true);
+                                EDIT->setDisabled(true);
+                                DELT->setStyleSheet("background-color : gray;color : white ");
 
+                                EDIT->setStyleSheet("background-color : gray;color : white ");
+                            }
   }
 
      ////
@@ -3720,6 +3780,14 @@ else if(NATURE == "Urgente")
                          connect(EDIT, SIGNAL(clicked()), signalMapper1, SLOT(map()));
                          signalMapper1->setMapping(EDIT, i);
 
+                         if(aud==1)
+                          {
+                             DELT->setDisabled(true);
+                             EDIT->setDisabled(true);
+                             DELT->setStyleSheet("background-color : gray;color : white ");
+
+                             EDIT->setStyleSheet("background-color : gray;color : white ");
+                         }
 
 }
 
@@ -3783,6 +3851,14 @@ void MainWindow:: ModifierSlotRessource(int i){
                           connect(EDIT, SIGNAL(clicked()), signalMapper1, SLOT(map()));
                           signalMapper1->setMapping(EDIT, i);
 
+                          if(aud==1)
+                           {
+                              DELT->setDisabled(true);
+                              EDIT->setDisabled(true);
+                              DELT->setStyleSheet("background-color : gray;color : white ");
+
+                              EDIT->setStyleSheet("background-color : gray;color : white ");
+                          }
 
  }
 
@@ -3862,6 +3938,14 @@ void MainWindow::on_Ressource_Search_2_textChanged(const QString &arg1)
                            connect(EDIT, SIGNAL(clicked()), signalMapper1, SLOT(map()));
                            signalMapper1->setMapping(EDIT, i);
 
+                           if(aud==1)
+                            {
+                               DELT->setDisabled(true);
+                               EDIT->setDisabled(true);
+                               DELT->setStyleSheet("background-color : gray;color : white ");
+
+                               EDIT->setStyleSheet("background-color : gray;color : white ");
+                           }
 
  }
 
@@ -4000,6 +4084,14 @@ void MainWindow::on_Reclamation_Serach_2_textChanged(const QString &arg1)
                            connect(EDIT, SIGNAL(clicked()), signalMapper1, SLOT(map()));
                            signalMapper1->setMapping(EDIT, i);
 
+                           if(aud==1)
+                            {
+                               DELT->setDisabled(true);
+                               EDIT->setDisabled(true);
+                               DELT->setStyleSheet("background-color : gray;color : white ");
+
+                               EDIT->setStyleSheet("background-color : gray;color : white ");
+                           }
 
  }
 
@@ -4148,6 +4240,14 @@ void MainWindow::on_Order_2_clicked()
                            connect(EDIT, SIGNAL(clicked()), signalMapper1, SLOT(map()));
                            signalMapper1->setMapping(EDIT, i);
 
+                           if(aud==1)
+                            {
+                               DELT->setDisabled(true);
+                               EDIT->setDisabled(true);
+                               DELT->setStyleSheet("background-color : gray;color : white ");
+
+                               EDIT->setStyleSheet("background-color : gray;color : white ");
+                           }
 
  }
 
@@ -4373,7 +4473,7 @@ void MainWindow::on_tableView_Reclamations_2_doubleClicked(const QModelIndex &in
         QFile file;
         QDir::setCurrent("/tmp");
         file.setFileName("back2.jpg");
-        QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
+        QDir::setCurrent("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3");
         file.open(QIODevice::ReadOnly);
         QImage img(file.fileName());
         painter.drawImage(0,0,img.scaled(6000,7017, Qt::IgnoreAspectRatio, Qt::FastTransformation));
@@ -4382,7 +4482,7 @@ void MainWindow::on_tableView_Reclamations_2_doubleClicked(const QModelIndex &in
         QFile file2;
         QDir::setCurrent("/tmp");
         file2.setFileName("municipal.png");
-        QDir::setCurrent("C:/Users/user/Desktop/Smart_Municipality_2A3");
+        QDir::setCurrent("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3");
         file2.open(QIODevice::ReadOnly);
         QImage img2(file2.fileName());
         painter.drawImage(0,0,img2.scaled(900,1000, Qt::IgnoreAspectRatio, Qt::FastTransformation));

@@ -66,3 +66,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES +=\
 buttons.qrc
 
+RC_ICONS = munifacility_cm9_3.ico

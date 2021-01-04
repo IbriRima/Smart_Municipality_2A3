@@ -43,7 +43,7 @@ background-repeat: none;
 </string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="Menu_Principal">
      <widget class="QPushButton" name="pushButton_MaintenanceIN">
@@ -192,7 +192,7 @@ background-repeat: none;
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Authentification">
        <property name="styleSheet">
@@ -2597,7 +2597,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="Sous_Menu_Env">
        <property name="styleSheet">
@@ -3942,6 +3942,28 @@ background-repeat: none;
          </rect>
         </property>
        </widget>
+       <widget class="QPushButton" name="pushButton_Disab">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>530</y>
+          <width>151</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_Disab{
+background-color: transparent;
+border-image: url(:Disabled_Envi.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
        <zorder>tableView_Ramas</zorder>
        <zorder>label_17</zorder>
        <zorder>groupBox_2</zorder>
@@ -3955,6 +3977,7 @@ background-repeat: none;
        <zorder>comboBox_Type_Tri</zorder>
        <zorder>tri_ramassage</zorder>
        <zorder>widget_clock2</zorder>
+       <zorder>pushButton_Disab</zorder>
       </widget>
       <widget class="QWidget" name="MAJ_Ramas">
        <property name="styleSheet">
@@ -5718,6 +5741,28 @@ background-repeat: none;
          </rect>
         </property>
        </widget>
+       <widget class="QPushButton" name="pushButton_Ajout_ZV_Disab">
+        <property name="geometry">
+         <rect>
+          <x>970</x>
+          <y>510</y>
+          <width>161</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#pushButton_Ajout_ZV_Disab{
+background-color: transparent;
+border-image: url(:Disabled_Envi.png);
+background: none;
+border: none;
+background-repeat: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
        <zorder>label_61</zorder>
        <zorder>groupBox</zorder>
        <zorder>pushButton_Ajout_ZV</zorder>
@@ -5728,6 +5773,7 @@ background-repeat: none;
        <zorder>pushButton_Icon_serachZV</zorder>
        <zorder>comboBox_TypeRech_ZV</zorder>
        <zorder>widget_clock3</zorder>
+       <zorder>pushButton_Ajout_ZV_Disab</zorder>
       </widget>
       <widget class="QWidget" name="MAJ_ZV">
        <property name="styleSheet">
@@ -14558,7 +14604,7 @@ background-repeat: none;
      <x>0</x>
      <y>0</y>
      <width>1162</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
