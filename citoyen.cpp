@@ -191,8 +191,8 @@ QSqlQueryModel * Citoyen::afficher()
  }
  void Citoyen::printPDF(int num)
  {
-     //QPdfWriter pdf("c:/Users/Bader Semah/Documents/file.pdf"); //création du pdf
-     QPdfWriter pdf("c:/Users/user/Documents/file.pdf");
+     QPdfWriter pdf("c:/Users/Bader Semah/Documents/file.pdf"); //création du pdf
+     //QPdfWriter pdf("c:/Users/user/Documents/file.pdf");
      QPainter painter(&pdf);
      QImage image("C:/Users/Bader Semah/Desktop/Smart_Municipality_2A3/Actee.jpg"); //recupération de l'image
 
