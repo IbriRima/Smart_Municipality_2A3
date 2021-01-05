@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1162</width>
-    <height>637</height>
+    <width>1187</width>
+    <height>628</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,9 +25,9 @@
     <property name="geometry">
      <rect>
       <x>-10</x>
-      <y>0</y>
+      <y>-10</y>
       <width>1171</width>
-      <height>601</height>
+      <height>611</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -43,7 +43,7 @@ background-repeat: none;
 </string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="Menu_Principal">
      <widget class="QPushButton" name="pushButton_MaintenanceIN">
@@ -192,7 +192,7 @@ background-repeat: none;
        </rect>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>11</number>
       </property>
       <widget class="QWidget" name="Authentification">
        <property name="styleSheet">
@@ -231,9 +231,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_51">
         <property name="geometry">
          <rect>
-          <x>380</x>
+          <x>370</x>
           <y>210</y>
-          <width>111</width>
+          <width>131</width>
           <height>51</height>
          </rect>
         </property>
@@ -249,9 +249,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_52">
         <property name="geometry">
          <rect>
-          <x>680</x>
+          <x>670</x>
           <y>210</y>
-          <width>131</width>
+          <width>161</width>
           <height>51</height>
          </rect>
         </property>
@@ -331,7 +331,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>1000</x>
-          <y>450</y>
+          <y>430</y>
           <width>161</width>
           <height>171</height>
          </rect>
@@ -598,7 +598,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>990</x>
-          <y>520</y>
+          <y>510</y>
           <width>141</width>
           <height>41</height>
          </rect>
@@ -620,10 +620,10 @@ background-repeat: none;
        <widget class="QLabel" name="label_16">
         <property name="geometry">
          <rect>
-          <x>300</x>
-          <y>50</y>
-          <width>541</width>
-          <height>81</height>
+          <x>270</x>
+          <y>40</y>
+          <width>611</width>
+          <height>101</height>
          </rect>
         </property>
         <property name="font">
@@ -799,7 +799,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>910</x>
-          <y>530</y>
+          <y>510</y>
           <width>151</width>
           <height>41</height>
          </rect>
@@ -1040,7 +1040,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>910</x>
-          <y>480</y>
+          <y>460</y>
           <width>151</width>
           <height>41</height>
          </rect>
@@ -1175,7 +1175,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>930</x>
-          <y>520</y>
+          <y>500</y>
           <width>151</width>
           <height>41</height>
          </rect>
@@ -1208,7 +1208,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>930</x>
-          <y>470</y>
+          <y>450</y>
           <width>151</width>
           <height>41</height>
          </rect>
@@ -1566,7 +1566,7 @@ background-repeat: none;
          <rect>
           <x>290</x>
           <y>40</y>
-          <width>521</width>
+          <width>571</width>
           <height>111</height>
          </rect>
         </property>
@@ -1583,7 +1583,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>970</x>
-          <y>550</y>
+          <y>500</y>
           <width>161</width>
           <height>51</height>
          </rect>
@@ -1823,7 +1823,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>900</x>
-          <y>530</y>
+          <y>500</y>
           <width>161</width>
           <height>51</height>
          </rect>
@@ -1845,7 +1845,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>900</x>
-          <y>470</y>
+          <y>440</y>
           <width>161</width>
           <height>51</height>
          </rect>
@@ -2116,7 +2116,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>880</x>
-          <y>450</y>
+          <y>440</y>
           <width>171</width>
           <height>51</height>
          </rect>
@@ -2140,7 +2140,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>880</x>
-          <y>510</y>
+          <y>500</y>
           <width>171</width>
           <height>51</height>
          </rect>
@@ -2464,7 +2464,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>1050</x>
-          <y>540</y>
+          <y>510</y>
           <width>75</width>
           <height>41</height>
          </rect>
@@ -2487,7 +2487,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>50</x>
-          <y>550</y>
+          <y>510</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -2548,7 +2548,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>490</x>
-          <y>530</y>
+          <y>510</y>
           <width>231</width>
           <height>41</height>
          </rect>
@@ -2597,7 +2597,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>9</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Sous_Menu_Env">
        <property name="styleSheet">
@@ -2826,7 +2826,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>530</y>
+          <y>510</y>
           <width>151</width>
           <height>51</height>
          </rect>
@@ -2848,7 +2848,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_17">
         <property name="geometry">
          <rect>
-          <x>170</x>
+          <x>190</x>
           <y>-10</y>
           <width>541</width>
           <height>81</height>
@@ -2869,7 +2869,7 @@ background-repeat: none;
 </string>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt; font-weight:600; color:#2d80d9;&quot;&gt;Liste des ramassages&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt; font-weight:600; color:#2d80d9;&quot;&gt;Liste des ramassages&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="textFormat">
          <enum>Qt::AutoText</enum>
@@ -2927,16 +2927,16 @@ background-repeat: none;
        <widget class="QLineEdit" name="lineEdit_recherche_R">
         <property name="geometry">
          <rect>
-          <x>900</x>
+          <x>920</x>
           <y>60</y>
-          <width>191</width>
+          <width>201</width>
           <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Javanese Text</family>
-          <pointsize>12</pointsize>
+          <pointsize>9</pointsize>
          </font>
         </property>
         <property name="styleSheet">
@@ -2958,7 +2958,7 @@ background-repeat: none;
          <rect>
           <x>330</x>
           <y>130</y>
-          <width>821</width>
+          <width>861</width>
           <height>441</height>
          </rect>
         </property>
@@ -2974,7 +2974,7 @@ background-repeat: none;
         <widget class="QLineEdit" name="lineEdit_ID_Ramas_Aff">
          <property name="geometry">
           <rect>
-           <x>250</x>
+           <x>270</x>
            <y>40</y>
            <width>141</width>
            <height>31</height>
@@ -3009,7 +3009,7 @@ background-repeat: none;
         <widget class="QLineEdit" name="lineEdit_Matricule_Aff">
          <property name="geometry">
           <rect>
-           <x>250</x>
+           <x>270</x>
            <y>100</y>
            <width>141</width>
            <height>31</height>
@@ -3044,7 +3044,7 @@ background-repeat: none;
         <widget class="QLineEdit" name="lineEdit_IDChauffeur_Aff">
          <property name="geometry">
           <rect>
-           <x>250</x>
+           <x>270</x>
            <y>160</y>
            <width>141</width>
            <height>31</height>
@@ -3079,7 +3079,7 @@ background-repeat: none;
         <widget class="QLineEdit" name="lineEdit_IDEmploye1_Aff">
          <property name="geometry">
           <rect>
-           <x>250</x>
+           <x>270</x>
            <y>220</y>
            <width>141</width>
            <height>31</height>
@@ -3114,7 +3114,7 @@ background-repeat: none;
         <widget class="QLineEdit" name="lineEdit_IDEmploye2_Aff">
          <property name="geometry">
           <rect>
-           <x>250</x>
+           <x>270</x>
            <y>280</y>
            <width>141</width>
            <height>31</height>
@@ -3151,7 +3151,7 @@ background-repeat: none;
           <rect>
            <x>10</x>
            <y>100</y>
-           <width>181</width>
+           <width>241</width>
            <height>31</height>
           </rect>
          </property>
@@ -3261,7 +3261,7 @@ background-repeat: none;
           <rect>
            <x>10</x>
            <y>220</y>
-           <width>211</width>
+           <width>231</width>
            <height>31</height>
           </rect>
          </property>
@@ -3279,7 +3279,7 @@ background-repeat: none;
           <rect>
            <x>10</x>
            <y>280</y>
-           <width>181</width>
+           <width>231</width>
            <height>31</height>
           </rect>
          </property>
@@ -3295,7 +3295,7 @@ background-repeat: none;
         <widget class="QLabel" name="label_59">
          <property name="geometry">
           <rect>
-           <x>420</x>
+           <x>440</x>
            <y>220</y>
            <width>151</width>
            <height>31</height>
@@ -3314,9 +3314,9 @@ background-repeat: none;
         <widget class="QLabel" name="label_18">
          <property name="geometry">
           <rect>
-           <x>420</x>
+           <x>440</x>
            <y>40</y>
-           <width>191</width>
+           <width>241</width>
            <height>31</height>
           </rect>
          </property>
@@ -3333,7 +3333,7 @@ background-repeat: none;
         <widget class="QLabel" name="label_19">
          <property name="geometry">
           <rect>
-           <x>420</x>
+           <x>440</x>
            <y>100</y>
            <width>221</width>
            <height>31</height>
@@ -3352,7 +3352,7 @@ background-repeat: none;
         <widget class="QLineEdit" name="lineEdit_Date_Aff">
          <property name="geometry">
           <rect>
-           <x>630</x>
+           <x>700</x>
            <y>220</y>
            <width>141</width>
            <height>31</height>
@@ -3390,7 +3390,7 @@ background-repeat: none;
         <widget class="QLineEdit" name="lineEdit_NomCartier_Aff">
          <property name="geometry">
           <rect>
-           <x>630</x>
+           <x>700</x>
            <y>100</y>
            <width>141</width>
            <height>31</height>
@@ -3428,7 +3428,7 @@ background-repeat: none;
         <widget class="QLineEdit" name="lineEdit_HeureDebut_Aff">
          <property name="geometry">
           <rect>
-           <x>630</x>
+           <x>700</x>
            <y>160</y>
            <width>141</width>
            <height>31</height>
@@ -3463,7 +3463,7 @@ background-repeat: none;
         <widget class="QLineEdit" name="lineEdit_NbPoubelle_Aff">
          <property name="geometry">
           <rect>
-           <x>630</x>
+           <x>700</x>
            <y>40</y>
            <width>141</width>
            <height>31</height>
@@ -3498,10 +3498,10 @@ background-repeat: none;
         <widget class="QLabel" name="label_12">
          <property name="geometry">
           <rect>
-           <x>420</x>
+           <x>440</x>
            <y>160</y>
-           <width>151</width>
-           <height>21</height>
+           <width>161</width>
+           <height>31</height>
           </rect>
          </property>
          <property name="font">
@@ -3517,7 +3517,7 @@ background-repeat: none;
         <widget class="QLabel" name="label_60">
          <property name="geometry">
           <rect>
-           <x>420</x>
+           <x>440</x>
            <y>280</y>
            <width>119</width>
            <height>31</height>
@@ -3536,7 +3536,7 @@ background-repeat: none;
         <widget class="QLineEdit" name="lineEdit_Duree_Aff">
          <property name="geometry">
           <rect>
-           <x>630</x>
+           <x>700</x>
            <y>280</y>
            <width>141</width>
            <height>31</height>
@@ -3652,7 +3652,7 @@ background-repeat: none;
           <rect>
            <x>10</x>
            <y>40</y>
-           <width>231</width>
+           <width>131</width>
            <height>31</height>
           </rect>
          </property>
@@ -3699,14 +3699,14 @@ background-repeat: none;
           </font>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant du ramassage&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#09598b;&quot;&gt;Identifiant&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </widget>
        <widget class="QPushButton" name="pushButton_Icon_serachR">
         <property name="geometry">
          <rect>
-          <x>1060</x>
+          <x>1090</x>
           <y>70</y>
           <width>31</width>
           <height>31</height>
@@ -3730,7 +3730,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>130</x>
-          <y>200</y>
+          <y>180</y>
           <width>121</width>
           <height>321</height>
          </rect>
@@ -3814,16 +3814,16 @@ background-repeat: none;
        <widget class="QComboBox" name="comboBox_TypeRech_Ramas">
         <property name="geometry">
          <rect>
-          <x>900</x>
+          <x>920</x>
           <y>20</y>
-          <width>191</width>
+          <width>201</width>
           <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Javanese Text</family>
-          <pointsize>12</pointsize>
+          <pointsize>9</pointsize>
           <weight>50</weight>
           <bold>false</bold>
          </font>
@@ -3842,16 +3842,16 @@ background-repeat: none;
        <widget class="QComboBox" name="comboBox_Type_Tri">
         <property name="geometry">
          <rect>
-          <x>700</x>
+          <x>690</x>
           <y>20</y>
-          <width>181</width>
+          <width>211</width>
           <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Javanese Text</family>
-          <pointsize>12</pointsize>
+          <pointsize>9</pointsize>
           <weight>50</weight>
           <bold>false</bold>
          </font>
@@ -3870,9 +3870,9 @@ background-repeat: none;
        <widget class="QLabel" name="tri_ramassage">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>140</y>
-          <width>211</width>
+          <x>60</x>
+          <y>110</y>
+          <width>241</width>
           <height>61</height>
          </rect>
         </property>
@@ -3935,8 +3935,8 @@ background-repeat: none;
        <widget class="QWidget" name="widget_clock2" native="true">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>40</y>
+          <x>60</x>
+          <y>10</y>
           <width>121</width>
           <height>101</height>
          </rect>
@@ -3946,7 +3946,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>530</y>
+          <y>510</y>
           <width>151</width>
           <height>51</height>
          </rect>
@@ -4059,8 +4059,8 @@ border-image: url(:EnregistrerR_hover.png);
        <widget class="QTimeEdit" name="timeEdit_DureeMAJ">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>340</y>
+          <x>130</x>
+          <y>360</y>
           <width>191</width>
           <height>41</height>
          </rect>
@@ -4132,7 +4132,7 @@ background-repeat: none;
        <widget class="QComboBox" name="comboBox_NomCartier_MAJ">
         <property name="geometry">
          <rect>
-          <x>490</x>
+          <x>450</x>
           <y>230</y>
           <width>191</width>
           <height>41</height>
@@ -4158,7 +4158,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_11">
         <property name="geometry">
          <rect>
-          <x>490</x>
+          <x>450</x>
           <y>190</y>
           <width>221</width>
           <height>31</height>
@@ -4177,7 +4177,7 @@ background-repeat: none;
        <widget class="QDateEdit" name="dateEditR_MAJ">
         <property name="geometry">
          <rect>
-          <x>740</x>
+          <x>780</x>
           <y>230</y>
           <width>191</width>
           <height>41</height>
@@ -4246,10 +4246,10 @@ background-repeat: none;
        <widget class="QLabel" name="label_7">
         <property name="geometry">
          <rect>
-          <x>740</x>
+          <x>780</x>
           <y>300</y>
           <width>151</width>
-          <height>21</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
@@ -4265,8 +4265,8 @@ background-repeat: none;
        <widget class="QTimeEdit" name="timeEdit_DebMAJ">
         <property name="geometry">
          <rect>
-          <x>740</x>
-          <y>340</y>
+          <x>780</x>
+          <y>360</y>
           <width>191</width>
           <height>41</height>
          </rect>
@@ -4297,7 +4297,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_10">
         <property name="geometry">
          <rect>
-          <x>740</x>
+          <x>780</x>
           <y>190</y>
           <width>151</width>
           <height>31</height>
@@ -4316,10 +4316,10 @@ background-repeat: none;
        <widget class="QLabel" name="label_9">
         <property name="geometry">
          <rect>
-          <x>250</x>
+          <x>130</x>
           <y>300</y>
           <width>119</width>
-          <height>21</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
@@ -4335,9 +4335,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_8">
         <property name="geometry">
          <rect>
-          <x>250</x>
+          <x>130</x>
           <y>190</y>
-          <width>181</width>
+          <width>241</width>
           <height>31</height>
          </rect>
         </property>
@@ -4393,7 +4393,7 @@ background-repeat: none;
          <rect>
           <x>90</x>
           <y>20</y>
-          <width>111</width>
+          <width>131</width>
           <height>41</height>
          </rect>
         </property>
@@ -4417,7 +4417,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="lineEdit_Matricule_MAJ">
         <property name="geometry">
          <rect>
-          <x>250</x>
+          <x>130</x>
           <y>230</y>
           <width>191</width>
           <height>41</height>
@@ -4446,10 +4446,10 @@ background-repeat: none;
        <widget class="QLabel" name="label_15">
         <property name="geometry">
          <rect>
-          <x>490</x>
+          <x>450</x>
           <y>300</y>
-          <width>191</width>
-          <height>21</height>
+          <width>241</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
@@ -4465,8 +4465,8 @@ background-repeat: none;
        <widget class="QSpinBox" name="spinBox_NbPoubelle_MAJ">
         <property name="geometry">
          <rect>
-          <x>490</x>
-          <y>340</y>
+          <x>450</x>
+          <y>360</y>
           <width>191</width>
           <height>41</height>
          </rect>
@@ -4581,7 +4581,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="lineEdit_IDChauffeurAJ">
         <property name="geometry">
          <rect>
-          <x>340</x>
+          <x>360</x>
           <y>140</y>
           <width>191</width>
           <height>41</height>
@@ -4637,7 +4637,7 @@ border-image: url(:EnregistrerR_hover.png);
        <widget class="QDateEdit" name="dateEditR_AJ">
         <property name="geometry">
          <rect>
-          <x>590</x>
+          <x>610</x>
           <y>280</y>
           <width>191</width>
           <height>41</height>
@@ -4704,7 +4704,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>100</x>
-          <y>410</y>
+          <y>420</y>
           <width>191</width>
           <height>41</height>
          </rect>
@@ -4732,7 +4732,7 @@ background-repeat: none;
        <widget class="QComboBox" name="comboBox_NomCartier_AJ">
         <property name="geometry">
          <rect>
-          <x>340</x>
+          <x>360</x>
           <y>280</y>
           <width>191</width>
           <height>41</height>
@@ -4758,8 +4758,8 @@ background-repeat: none;
        <widget class="QTimeEdit" name="timeEdit_DureeAJ">
         <property name="geometry">
          <rect>
-          <x>350</x>
-          <y>410</y>
+          <x>370</x>
+          <y>420</y>
           <width>181</width>
           <height>41</height>
          </rect>
@@ -4807,8 +4807,8 @@ background-repeat: none;
        <widget class="QSpinBox" name="spinBox_NbPoubelle_AJ">
         <property name="geometry">
          <rect>
-          <x>590</x>
-          <y>410</y>
+          <x>610</x>
+          <y>420</y>
           <width>191</width>
           <height>41</height>
          </rect>
@@ -4836,7 +4836,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="lineEdit_IDEmpl1_Rama">
         <property name="geometry">
          <rect>
-          <x>590</x>
+          <x>610</x>
           <y>140</y>
           <width>191</width>
           <height>41</height>
@@ -4888,7 +4888,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_23">
         <property name="geometry">
          <rect>
-          <x>340</x>
+          <x>360</x>
           <y>230</y>
           <width>221</width>
           <height>41</height>
@@ -4906,7 +4906,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_24">
         <property name="geometry">
          <rect>
-          <x>340</x>
+          <x>360</x>
           <y>100</y>
           <width>211</width>
           <height>31</height>
@@ -4961,10 +4961,10 @@ background-repeat: none;
        <widget class="QLabel" name="label_25">
         <property name="geometry">
          <rect>
-          <x>590</x>
+          <x>610</x>
           <y>370</y>
-          <width>191</width>
-          <height>21</height>
+          <width>241</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
@@ -4979,7 +4979,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_26">
         <property name="geometry">
          <rect>
-          <x>590</x>
+          <x>610</x>
           <y>230</y>
           <width>151</width>
           <height>41</height>
@@ -5017,7 +5017,7 @@ background-repeat: none;
          <rect>
           <x>100</x>
           <y>100</y>
-          <width>181</width>
+          <width>251</width>
           <height>31</height>
          </rect>
         </property>
@@ -5073,7 +5073,7 @@ background-repeat: none;
           <x>100</x>
           <y>370</y>
           <width>151</width>
-          <height>21</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
@@ -5088,10 +5088,10 @@ background-repeat: none;
        <widget class="QLabel" name="label_30">
         <property name="geometry">
          <rect>
-          <x>350</x>
+          <x>370</x>
           <y>370</y>
           <width>119</width>
-          <height>21</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
@@ -5106,9 +5106,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_31">
         <property name="geometry">
          <rect>
-          <x>590</x>
+          <x>610</x>
           <y>100</y>
-          <width>211</width>
+          <width>221</width>
           <height>31</height>
          </rect>
         </property>
@@ -5159,9 +5159,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_61">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>230</x>
           <y>-10</y>
-          <width>521</width>
+          <width>621</width>
           <height>111</height>
          </rect>
         </property>
@@ -5178,7 +5178,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>970</x>
-          <y>510</y>
+          <y>500</y>
           <width>161</width>
           <height>51</height>
          </rect>
@@ -5248,7 +5248,7 @@ background-repeat: none;
          <rect>
           <x>910</x>
           <y>60</y>
-          <width>161</width>
+          <width>181</width>
           <height>31</height>
          </rect>
         </property>
@@ -5436,7 +5436,7 @@ background-repeat: none;
         <widget class="QLabel" name="label_62">
          <property name="geometry">
           <rect>
-           <x>60</x>
+           <x>50</x>
            <y>100</y>
            <width>181</width>
            <height>31</height>
@@ -5455,7 +5455,7 @@ background-repeat: none;
         <widget class="QLabel" name="label_63">
          <property name="geometry">
           <rect>
-           <x>60</x>
+           <x>50</x>
            <y>160</y>
            <width>91</width>
            <height>31</height>
@@ -5474,7 +5474,7 @@ background-repeat: none;
         <widget class="QLabel" name="label_64">
          <property name="geometry">
           <rect>
-           <x>60</x>
+           <x>50</x>
            <y>220</y>
            <width>181</width>
            <height>31</height>
@@ -5493,7 +5493,7 @@ background-repeat: none;
         <widget class="QLabel" name="label_65">
          <property name="geometry">
           <rect>
-           <x>60</x>
+           <x>50</x>
            <y>40</y>
            <width>181</width>
            <height>31</height>
@@ -5616,7 +5616,7 @@ background-repeat: none;
          <rect>
           <x>710</x>
           <y>160</y>
-          <width>111</width>
+          <width>131</width>
           <height>381</height>
          </rect>
         </property>
@@ -5676,7 +5676,7 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_Icon_serachZV">
         <property name="geometry">
          <rect>
-          <x>1030</x>
+          <x>1050</x>
           <y>60</y>
           <width>41</width>
           <height>41</height>
@@ -5701,14 +5701,14 @@ background-repeat: none;
          <rect>
           <x>910</x>
           <y>20</y>
-          <width>161</width>
+          <width>181</width>
           <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Javanese Text</family>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="styleSheet">
@@ -5745,7 +5745,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>970</x>
-          <y>510</y>
+          <y>500</y>
           <width>161</width>
           <height>51</height>
          </rect>
@@ -5895,7 +5895,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>510</y>
+          <y>500</y>
           <width>161</width>
           <height>51</height>
          </rect>
@@ -5946,7 +5946,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>450</y>
+          <y>440</y>
           <width>161</width>
           <height>51</height>
          </rect>
@@ -6015,7 +6015,7 @@ border-image: url(:Enregistrer_ZV_hover.png);
          <rect>
           <x>100</x>
           <y>30</y>
-          <width>111</width>
+          <width>131</width>
           <height>41</height>
          </rect>
         </property>
@@ -6436,7 +6436,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="lineEdit_ID_Ramas_Imp">
         <property name="geometry">
          <rect>
-          <x>550</x>
+          <x>560</x>
           <y>30</y>
           <width>141</width>
           <height>51</height>
@@ -6506,9 +6506,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_76">
         <property name="geometry">
          <rect>
-          <x>190</x>
+          <x>160</x>
           <y>140</y>
-          <width>201</width>
+          <width>241</width>
           <height>31</height>
          </rect>
         </property>
@@ -6678,7 +6678,7 @@ background-repeat: none;
          <rect>
           <x>370</x>
           <y>30</y>
-          <width>131</width>
+          <width>161</width>
           <height>51</height>
          </rect>
         </property>
@@ -6952,9 +6952,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_67">
         <property name="geometry">
          <rect>
-          <x>190</x>
+          <x>160</x>
           <y>410</y>
-          <width>181</width>
+          <width>231</width>
           <height>31</height>
          </rect>
         </property>
@@ -6970,7 +6970,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_69">
         <property name="geometry">
          <rect>
-          <x>680</x>
+          <x>630</x>
           <y>230</y>
           <width>221</width>
           <height>31</height>
@@ -6989,7 +6989,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_70">
         <property name="geometry">
          <rect>
-          <x>680</x>
+          <x>630</x>
           <y>320</y>
           <width>151</width>
           <height>31</height>
@@ -7008,7 +7008,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_71">
         <property name="geometry">
          <rect>
-          <x>680</x>
+          <x>630</x>
           <y>410</y>
           <width>151</width>
           <height>31</height>
@@ -7027,7 +7027,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_165">
         <property name="geometry">
          <rect>
-          <x>190</x>
+          <x>160</x>
           <y>510</y>
           <width>119</width>
           <height>31</height>
@@ -7046,9 +7046,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_166">
         <property name="geometry">
          <rect>
-          <x>190</x>
+          <x>160</x>
           <y>320</y>
-          <width>211</width>
+          <width>231</width>
           <height>31</height>
          </rect>
         </property>
@@ -7064,9 +7064,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_167">
         <property name="geometry">
          <rect>
-          <x>680</x>
+          <x>630</x>
           <y>140</y>
-          <width>191</width>
+          <width>241</width>
           <height>31</height>
          </rect>
         </property>
@@ -7083,9 +7083,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_168">
         <property name="geometry">
          <rect>
-          <x>190</x>
+          <x>160</x>
           <y>230</y>
-          <width>171</width>
+          <width>211</width>
           <height>31</height>
          </rect>
         </property>
@@ -7146,7 +7146,7 @@ background-repeat: none;
         <x>0</x>
         <y>10</y>
         <width>1171</width>
-        <height>581</height>
+        <height>591</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -7161,7 +7161,7 @@ background-repeat: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QPushButton" name="pushButton_etat">
@@ -7844,7 +7844,7 @@ background-repeat: none;
           <x>320</x>
           <y>30</y>
           <width>681</width>
-          <height>81</height>
+          <height>101</height>
          </rect>
         </property>
         <property name="font">
@@ -7931,7 +7931,7 @@ background-repeat: none;
          <rect>
           <x>160</x>
           <y>359</y>
-          <width>71</width>
+          <width>91</width>
           <height>31</height>
          </rect>
         </property>
@@ -8151,7 +8151,7 @@ background-repeat: none;
          <rect>
           <x>390</x>
           <y>359</y>
-          <width>141</width>
+          <width>171</width>
           <height>31</height>
          </rect>
         </property>
@@ -8343,7 +8343,7 @@ background-repeat: none;
        <widget class="QPushButton" name="pushButton_del_event">
         <property name="geometry">
          <rect>
-          <x>930</x>
+          <x>910</x>
           <y>460</y>
           <width>61</width>
           <height>61</height>
@@ -8399,7 +8399,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>1000</x>
-          <y>460</y>
+          <y>450</y>
           <width>71</width>
           <height>71</height>
          </rect>
@@ -8563,7 +8563,7 @@ background-repeat: none;
           <x>250</x>
           <y>10</y>
           <width>831</width>
-          <height>81</height>
+          <height>101</height>
          </rect>
         </property>
         <property name="font">
@@ -8815,7 +8815,7 @@ background-repeat: none;
          <rect>
           <x>90</x>
           <y>319</y>
-          <width>71</width>
+          <width>101</width>
           <height>31</height>
          </rect>
         </property>
@@ -8870,7 +8870,7 @@ background-repeat: none;
          <rect>
           <x>320</x>
           <y>319</y>
-          <width>141</width>
+          <width>181</width>
           <height>31</height>
          </rect>
         </property>
@@ -9296,7 +9296,7 @@ background-repeat: none;
           <x>210</x>
           <y>20</y>
           <width>871</width>
-          <height>81</height>
+          <height>101</height>
          </rect>
         </property>
         <property name="font">
@@ -9383,7 +9383,7 @@ background-repeat: none;
          <rect>
           <x>130</x>
           <y>359</y>
-          <width>71</width>
+          <width>111</width>
           <height>31</height>
          </rect>
         </property>
@@ -9658,7 +9658,7 @@ background-repeat: none;
          <rect>
           <x>360</x>
           <y>359</y>
-          <width>141</width>
+          <width>171</width>
           <height>31</height>
          </rect>
         </property>
@@ -9949,7 +9949,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="input_tel">
         <property name="geometry">
          <rect>
-          <x>870</x>
+          <x>890</x>
           <y>370</y>
           <width>161</width>
           <height>31</height>
@@ -9975,7 +9975,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="input_lieu">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>370</x>
           <y>370</y>
           <width>161</width>
           <height>31</height>
@@ -10002,7 +10002,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>970</x>
-          <y>470</y>
+          <y>460</y>
           <width>131</width>
           <height>41</height>
          </rect>
@@ -10030,7 +10030,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="input_mail">
         <property name="geometry">
          <rect>
-          <x>620</x>
+          <x>640</x>
           <y>370</y>
           <width>161</width>
           <height>31</height>
@@ -10056,7 +10056,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="input_nom_2">
         <property name="geometry">
          <rect>
-          <x>350</x>
+          <x>360</x>
           <y>200</y>
           <width>161</width>
           <height>31</height>
@@ -10108,7 +10108,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="input_prenom">
         <property name="geometry">
          <rect>
-          <x>620</x>
+          <x>640</x>
           <y>200</y>
           <width>161</width>
           <height>31</height>
@@ -10135,7 +10135,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>960</x>
-          <y>530</y>
+          <y>520</y>
           <width>141</width>
           <height>41</height>
          </rect>
@@ -10189,7 +10189,7 @@ background-repeat: none;
        <widget class="QComboBox" name="input_sexe">
         <property name="geometry">
          <rect>
-          <x>870</x>
+          <x>890</x>
           <y>200</y>
           <width>161</width>
           <height>31</height>
@@ -10313,7 +10313,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_186">
         <property name="geometry">
          <rect>
-          <x>350</x>
+          <x>360</x>
           <y>160</y>
           <width>191</width>
           <height>31</height>
@@ -10368,7 +10368,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_187">
         <property name="geometry">
          <rect>
-          <x>620</x>
+          <x>640</x>
           <y>160</y>
           <width>191</width>
           <height>31</height>
@@ -10423,7 +10423,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_188">
         <property name="geometry">
          <rect>
-          <x>870</x>
+          <x>890</x>
           <y>160</y>
           <width>191</width>
           <height>31</height>
@@ -10480,7 +10480,7 @@ background-repeat: none;
          <rect>
           <x>70</x>
           <y>330</y>
-          <width>191</width>
+          <width>211</width>
           <height>31</height>
          </rect>
         </property>
@@ -10533,9 +10533,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_190">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>370</x>
           <y>330</y>
-          <width>191</width>
+          <width>211</width>
           <height>31</height>
          </rect>
         </property>
@@ -10588,7 +10588,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_191">
         <property name="geometry">
          <rect>
-          <x>620</x>
+          <x>640</x>
           <y>330</y>
           <width>191</width>
           <height>31</height>
@@ -10643,7 +10643,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_192">
         <property name="geometry">
          <rect>
-          <x>870</x>
+          <x>890</x>
           <y>330</y>
           <width>191</width>
           <height>31</height>
@@ -10700,7 +10700,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="out_nom_2">
         <property name="geometry">
          <rect>
-          <x>380</x>
+          <x>390</x>
           <y>240</y>
           <width>161</width>
           <height>31</height>
@@ -10729,7 +10729,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="out_prenom">
         <property name="geometry">
          <rect>
-          <x>650</x>
+          <x>670</x>
           <y>240</y>
           <width>161</width>
           <height>31</height>
@@ -10758,7 +10758,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="out_sexe">
         <property name="geometry">
          <rect>
-          <x>900</x>
+          <x>920</x>
           <y>240</y>
           <width>161</width>
           <height>31</height>
@@ -10862,7 +10862,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="out_tel">
         <property name="geometry">
          <rect>
-          <x>900</x>
+          <x>920</x>
           <y>400</y>
           <width>161</width>
           <height>31</height>
@@ -10891,7 +10891,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="out_lieu">
         <property name="geometry">
          <rect>
-          <x>390</x>
+          <x>400</x>
           <y>400</y>
           <width>161</width>
           <height>31</height>
@@ -10943,7 +10943,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="out_mail">
         <property name="geometry">
          <rect>
-          <x>650</x>
+          <x>670</x>
           <y>400</y>
           <width>161</width>
           <height>31</height>
@@ -11066,7 +11066,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_193">
         <property name="geometry">
          <rect>
-          <x>650</x>
+          <x>670</x>
           <y>190</y>
           <width>191</width>
           <height>31</height>
@@ -11121,7 +11121,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_194">
         <property name="geometry">
          <rect>
-          <x>380</x>
+          <x>390</x>
           <y>190</y>
           <width>191</width>
           <height>31</height>
@@ -11178,7 +11178,7 @@ background-repeat: none;
          <rect>
           <x>100</x>
           <y>190</y>
-          <width>191</width>
+          <width>221</width>
           <height>31</height>
          </rect>
         </property>
@@ -11231,7 +11231,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_196">
         <property name="geometry">
          <rect>
-          <x>900</x>
+          <x>920</x>
           <y>190</y>
           <width>191</width>
           <height>31</height>
@@ -11286,9 +11286,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_197">
         <property name="geometry">
          <rect>
-          <x>390</x>
+          <x>400</x>
           <y>360</y>
-          <width>191</width>
+          <width>211</width>
           <height>31</height>
          </rect>
         </property>
@@ -11341,7 +11341,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_198">
         <property name="geometry">
          <rect>
-          <x>650</x>
+          <x>670</x>
           <y>360</y>
           <width>191</width>
           <height>31</height>
@@ -11398,7 +11398,7 @@ background-repeat: none;
          <rect>
           <x>100</x>
           <y>360</y>
-          <width>191</width>
+          <width>221</width>
           <height>31</height>
          </rect>
         </property>
@@ -11451,7 +11451,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_200">
         <property name="geometry">
          <rect>
-          <x>900</x>
+          <x>920</x>
           <y>360</y>
           <width>191</width>
           <height>31</height>
@@ -11508,7 +11508,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="maj_sexe">
         <property name="geometry">
          <rect>
-          <x>900</x>
+          <x>920</x>
           <y>230</y>
           <width>161</width>
           <height>31</height>
@@ -11534,7 +11534,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="maj_nom_2">
         <property name="geometry">
          <rect>
-          <x>380</x>
+          <x>390</x>
           <y>230</y>
           <width>161</width>
           <height>31</height>
@@ -11560,7 +11560,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="maj_prenom">
         <property name="geometry">
          <rect>
-          <x>650</x>
+          <x>670</x>
           <y>230</y>
           <width>161</width>
           <height>31</height>
@@ -11586,7 +11586,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="maj_tel">
         <property name="geometry">
          <rect>
-          <x>900</x>
+          <x>920</x>
           <y>400</y>
           <width>161</width>
           <height>31</height>
@@ -11612,7 +11612,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="maj_lieu">
         <property name="geometry">
          <rect>
-          <x>390</x>
+          <x>400</x>
           <y>400</y>
           <width>161</width>
           <height>31</height>
@@ -11638,7 +11638,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="maj_mail">
         <property name="geometry">
          <rect>
-          <x>650</x>
+          <x>670</x>
           <y>400</y>
           <width>161</width>
           <height>31</height>
@@ -11718,7 +11718,7 @@ background-repeat: none;
          <rect>
           <x>320</x>
           <y>30</y>
-          <width>681</width>
+          <width>751</width>
           <height>101</height>
          </rect>
         </property>
@@ -11749,7 +11749,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_201">
         <property name="geometry">
          <rect>
-          <x>650</x>
+          <x>670</x>
           <y>180</y>
           <width>191</width>
           <height>31</height>
@@ -11804,7 +11804,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_202">
         <property name="geometry">
          <rect>
-          <x>380</x>
+          <x>390</x>
           <y>180</y>
           <width>191</width>
           <height>31</height>
@@ -11861,7 +11861,7 @@ background-repeat: none;
          <rect>
           <x>100</x>
           <y>180</y>
-          <width>191</width>
+          <width>221</width>
           <height>31</height>
          </rect>
         </property>
@@ -11914,7 +11914,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_204">
         <property name="geometry">
          <rect>
-          <x>900</x>
+          <x>920</x>
           <y>180</y>
           <width>191</width>
           <height>31</height>
@@ -11969,9 +11969,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_205">
         <property name="geometry">
          <rect>
-          <x>390</x>
+          <x>400</x>
           <y>350</y>
-          <width>191</width>
+          <width>211</width>
           <height>31</height>
          </rect>
         </property>
@@ -12024,7 +12024,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_206">
         <property name="geometry">
          <rect>
-          <x>650</x>
+          <x>670</x>
           <y>350</y>
           <width>191</width>
           <height>31</height>
@@ -12081,7 +12081,7 @@ background-repeat: none;
          <rect>
           <x>100</x>
           <y>350</y>
-          <width>191</width>
+          <width>221</width>
           <height>31</height>
          </rect>
         </property>
@@ -12134,7 +12134,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_208">
         <property name="geometry">
          <rect>
-          <x>900</x>
+          <x>920</x>
           <y>350</y>
           <width>191</width>
           <height>31</height>
@@ -12190,7 +12190,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>1010</x>
-          <y>470</y>
+          <y>460</y>
           <width>121</width>
           <height>41</height>
          </rect>
@@ -12213,7 +12213,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>1010</x>
-          <y>520</y>
+          <y>510</y>
           <width>121</width>
           <height>41</height>
          </rect>
@@ -12273,7 +12273,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>120</x>
-          <y>80</y>
+          <y>90</y>
           <width>821</width>
           <height>411</height>
          </rect>
@@ -12286,7 +12286,7 @@ background-repeat: none;
           <x>360</x>
           <y>-10</y>
           <width>681</width>
-          <height>81</height>
+          <height>101</height>
          </rect>
         </property>
         <property name="font">
@@ -12358,7 +12358,7 @@ background-repeat: none;
         <property name="geometry">
          <rect>
           <x>100</x>
-          <y>510</y>
+          <y>500</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -12690,7 +12690,7 @@ background-repeat: none;
           <x>1012</x>
           <y>80</y>
           <width>141</width>
-          <height>22</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="font">
@@ -12723,7 +12723,7 @@ background-repeat: none;
          <rect>
           <x>830</x>
           <y>80</y>
-          <width>71</width>
+          <width>81</width>
           <height>31</height>
          </rect>
         </property>
@@ -12742,7 +12742,7 @@ background-repeat: none;
          <rect>
           <x>720</x>
           <y>80</y>
-          <width>91</width>
+          <width>101</width>
           <height>31</height>
          </rect>
         </property>
@@ -12780,7 +12780,7 @@ background-repeat: none;
          <rect>
           <x>20</x>
           <y>130</y>
-          <width>1181</width>
+          <width>1141</width>
           <height>411</height>
          </rect>
         </property>
@@ -12797,7 +12797,7 @@ background-repeat: none;
          <bool>false</bool>
         </attribute>
         <attribute name="horizontalHeaderDefaultSectionSize">
-         <number>238</number>
+         <number>139</number>
         </attribute>
         <attribute name="verticalHeaderDefaultSectionSize">
          <number>50</number>
@@ -12914,9 +12914,9 @@ background-repeat: none;
        <widget class="QTableView" name="tableView_Reclamations_2">
         <property name="geometry">
          <rect>
-          <x>0</x>
+          <x>20</x>
           <y>140</y>
-          <width>1181</width>
+          <width>1141</width>
           <height>401</height>
          </rect>
         </property>
@@ -12930,7 +12930,7 @@ background-repeat: none;
          <bool>false</bool>
         </attribute>
         <attribute name="horizontalHeaderDefaultSectionSize">
-         <number>238</number>
+         <number>140</number>
         </attribute>
         <attribute name="verticalHeaderDefaultSectionSize">
          <number>50</number>
@@ -13087,7 +13087,7 @@ background-repeat: none;
        <widget class="QDoubleSpinBox" name="doubleSpinBox_XComp_2">
         <property name="geometry">
          <rect>
-          <x>330</x>
+          <x>320</x>
           <y>350</y>
           <width>181</width>
           <height>31</height>
@@ -13122,7 +13122,7 @@ background-repeat: none;
        <widget class="QDoubleSpinBox" name="doubleSpinBox_YComp_2">
         <property name="geometry">
          <rect>
-          <x>600</x>
+          <x>610</x>
           <y>350</y>
           <width>181</width>
           <height>31</height>
@@ -13158,7 +13158,7 @@ background-repeat: none;
        <widget class="QComboBox" name="comboBox_NomrouteComp_2">
         <property name="geometry">
          <rect>
-          <x>740</x>
+          <x>750</x>
           <y>170</y>
           <width>171</width>
           <height>31</height>
@@ -13205,7 +13205,7 @@ background-repeat: none;
        <widget class="QComboBox" name="comboBox_typeComp_2">
         <property name="geometry">
          <rect>
-          <x>210</x>
+          <x>200</x>
           <y>170</y>
           <width>181</width>
           <height>31</height>
@@ -13351,9 +13351,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_149">
         <property name="geometry">
          <rect>
-          <x>210</x>
+          <x>200</x>
           <y>90</y>
-          <width>221</width>
+          <width>231</width>
           <height>61</height>
          </rect>
         </property>
@@ -13401,7 +13401,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_151">
         <property name="geometry">
          <rect>
-          <x>740</x>
+          <x>750</x>
           <y>90</y>
           <width>221</width>
           <height>61</height>
@@ -13426,9 +13426,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_152">
         <property name="geometry">
          <rect>
-          <x>330</x>
+          <x>320</x>
           <y>270</y>
-          <width>221</width>
+          <width>231</width>
           <height>61</height>
          </rect>
         </property>
@@ -13451,9 +13451,9 @@ background-repeat: none;
        <widget class="QLabel" name="label_153">
         <property name="geometry">
          <rect>
-          <x>600</x>
+          <x>610</x>
           <y>270</y>
-          <width>221</width>
+          <width>241</width>
           <height>61</height>
          </rect>
         </property>
@@ -13687,7 +13687,7 @@ background-repeat: none;
          <rect>
           <x>300</x>
           <y>90</y>
-          <width>221</width>
+          <width>241</width>
           <height>61</height>
          </rect>
         </property>
@@ -13737,7 +13737,7 @@ background-repeat: none;
          <rect>
           <x>170</x>
           <y>270</y>
-          <width>221</width>
+          <width>281</width>
           <height>61</height>
          </rect>
         </property>
@@ -13762,7 +13762,7 @@ background-repeat: none;
          <rect>
           <x>520</x>
           <y>270</y>
-          <width>271</width>
+          <width>301</width>
           <height>61</height>
          </rect>
         </property>
@@ -13911,7 +13911,7 @@ background-repeat: none;
        </palette>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_16">
        <widget class="QPushButton" name="pushButton_2">
@@ -14248,7 +14248,7 @@ background-repeat: none;
          <string notr="true"/>
         </property>
         <property name="text">
-         <string>Gestion marchand</string>
+         <string>Gestion Marchand</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="numero_marchand">
@@ -14370,7 +14370,7 @@ background-repeat: none;
            <colorrole role="WindowText">
             <brush brushstyle="SolidPattern">
              <color alpha="255">
-              <red>0</red>
+              <red>85</red>
               <green>170</green>
               <blue>255</blue>
              </color>
@@ -14408,7 +14408,7 @@ background-repeat: none;
            <colorrole role="WindowText">
             <brush brushstyle="SolidPattern">
              <color alpha="255">
-              <red>0</red>
+              <red>85</red>
               <green>170</green>
               <blue>255</blue>
              </color>
@@ -14446,9 +14446,9 @@ background-repeat: none;
            <colorrole role="WindowText">
             <brush brushstyle="SolidPattern">
              <color alpha="255">
-              <red>120</red>
-              <green>120</green>
-              <blue>120</blue>
+              <red>85</red>
+              <green>170</green>
+              <blue>255</blue>
              </color>
             </brush>
            </colorrole>
@@ -14662,7 +14662,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_21">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>480</x>
           <y>20</y>
           <width>121</width>
           <height>21</height>
@@ -14712,13 +14712,13 @@ background-repeat: none;
          </font>
         </property>
         <property name="text">
-         <string>recherche</string>
+         <string>Recherche</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="recherche_2">
         <property name="geometry">
          <rect>
-          <x>490</x>
+          <x>610</x>
           <y>20</y>
           <width>181</width>
           <height>31</height>
@@ -14960,7 +14960,7 @@ background-repeat: none;
          </font>
         </property>
         <property name="text">
-         <string>Gestion mission</string>
+         <string>Gestion Mission</string>
         </property>
        </widget>
        <widget class="QPushButton" name="modifier_mission">
@@ -15321,7 +15321,7 @@ background-repeat: none;
        <widget class="QLineEdit" name="recherche_mission">
         <property name="geometry">
          <rect>
-          <x>490</x>
+          <x>590</x>
           <y>20</y>
           <width>191</width>
           <height>31</height>
@@ -15337,7 +15337,7 @@ background-repeat: none;
        <widget class="QLabel" name="label_85">
         <property name="geometry">
          <rect>
-          <x>370</x>
+          <x>470</x>
           <y>20</y>
           <width>121</width>
           <height>31</height>
@@ -15387,7 +15387,7 @@ background-repeat: none;
          </font>
         </property>
         <property name="text">
-         <string>recherche</string>
+         <string>Recherche</string>
         </property>
        </widget>
       </widget>
@@ -15445,7 +15445,7 @@ background-repeat: none;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1162</width>
+     <width>1187</width>
      <height>26</height>
     </rect>
    </property>
